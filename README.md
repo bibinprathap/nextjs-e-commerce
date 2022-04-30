@@ -396,3 +396,121 @@ store/
   [https://github.com/reduxjs/redux-thunk]: https://github.com/reduxjs/redux-thunk
   [https://photoswipe.com/]: https://photoswipe.com/
   [https://github.com/sindresorhus/query-string]: https://github.com/sindresorhus/query-string
+
+      <h1 class="docs-section__title">SCSS Files</h1>
+
+   <p>The directory with SCSS files contains the following files and subdirectories:</p>
+
+``` text
+scss/
+    account/
+    blocks/
+    blog/
+    common/
+    components/
+    filters/
+    footer/
+    header/
+    mixins/
+    mobile/
+    pages/
+    shop/
+    themes/
+    widgets/
+    _bootstrap-variables.scss
+    _constants.scss
+    _custom.scss
+    _custom-variables.scss
+    _functions.scss
+    _style.header.scss
+    _style.mobile.scss
+    _svg.scss
+    _variables.scss
+    bootstrap.scss
+    index.scss
+    style.header-classic-variant-five.scss
+    style.header-classic-variant-four.scss
+    style.header-classic-variant-one.scss
+    style.header-classic-variant-three.scss
+    style.header-classic-variant-two.scss
+    style.header-spaceship-variant-one.scss
+    style.header-spaceship-variant-three.scss
+    style.header-spaceship-variant-two.scss
+    style.mobile-header-variant-one.scss
+    style.mobile-header-variant-two.scss
+    style.scss
+```
+  <p>You can make changes to any of these files.</p>
+ 
+  To make it easier for you in the future to upgrade the template to the
+new version, we recommend (if possible) making changes only to
+`_custom-variables.scss` and `_custom.scss` files.
+-   `_custom-variables.scss` - It is used to override the values of
+    variables.
+-   `_custom.scss` - Use to write your own scss code.
+
+## How does LTR/RTL support work?
+
+The direction is controlled using two scss variables:
+
+-   `$direction` - indicates direction. Possible values: `ltr` or `rtl`.
+-   `$both-directions` - if `true` compiles styles for two directions,
+    the `$direction` variable will be ignored. Possible values: `true`
+    or `false`.
+
+Some "magic" variables are also used, which change their value depending
+on the given direction value. The names of these variables are the same
+as the names of the [Logical Properties][] (for example, variable
+`$margin-inline-start`). These variables should only be used in the
+`direction` mixin.
+
+  [Logical Properties]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties
+This example demonstrates how it works:
+
+``` scss
+.alert {
+    @include direction {
+        #{$margin-inline-start}: 20px;
+    }
+}
+```
+
+Will be compiled to:
+
+-   If `$direction == ltr` and `$both-directions == false`:
+
+    ``` css
+    .alert {
+        margin-left: 20px;
+    }
+    ```
+
+-   If `$direction == rtl` and `$both-directions == false`:
+
+    ``` css
+    .alert {
+        margin-right: 20px;
+    }
+    ```
+
+-   If `$both-directions == true`:
+
+    ``` css
+    [dir=ltr] .alert {
+        margin-left: 20px;
+    }
+    [dir=rtl] .alert {
+        margin-right: 20px;
+    }
+    ```
+
+### What if you want to use only one direction?
+
+Open `src/scss/_custom-variables.scss`, and define next variables:
+
+``` scss
+$direction:       ltr;   // specify the direction you need (ltr or rtl)
+$both-directions: false; // set to false to disable style compilation
+                         // for two directions
+```
+ 
