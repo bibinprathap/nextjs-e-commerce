@@ -1,0 +1,113 @@
+/*
+// .post-navigation
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+.post-navigation {}
+.post-navigation__body {
+    display: flex;
+}
+.post-navigation__item {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    color: inherit;
+    transition: background .12s;
+
+    &:hover {
+        background: map_get($card-scheme, hover);
+        color: inherit;
+    }
+}
+.post-navigation__item-image {
+    overflow: hidden;
+    border-radius: 2px;
+    flex-shrink: 0;
+
+    img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+}
+.post-navigation__item-title {
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 3px;
+}
+.post-navigation__direction {
+    display: flex;
+    font-size: 14px;
+    line-height: 21px;
+    color: map_get($card-scheme, muted);
+}
+.post-navigation__direction-arrow {
+    display: flex;
+    align-items: center;
+    fill: currentColor;
+    padding-bottom: 1px;
+    opacity: .8;
+
+    svg {
+        display: block;
+
+        @include direction {
+            transform: scaleX($transform-direction);
+        }
+    }
+}
+
+
+.post-navigation__item--prev {
+    @include direction {
+        text-align: $inline-start;
+    }
+
+    .post-navigation__item-image {
+        @include direction {
+            #{$margin-inline-end}: 18px;
+        }
+    }
+    .post-navigation__direction {
+        justify-content: flex-start;
+    }
+    .post-navigation__direction-arrow {
+        @include direction {
+            #{$margin-inline-end}: 8px;
+        }
+    }
+}
+.post-navigation__item--next {
+    @include direction {
+        text-align: $inline-end;
+    }
+
+    .post-navigation__item-image {
+        @include direction {
+            #{$margin-inline-start}: 18px;
+        }
+    }
+    .post-navigation__direction {
+        justify-content: flex-end;
+    }
+    .post-navigation__direction-arrow {
+        @include direction {
+            #{$margin-inline-start}: 8px;
+        }
+    }
+}
+@include media-breakpoint-down(sm) {
+    .post-navigation__body {
+        flex-direction: column;
+    }
+    .post-navigation__item {
+        width: 100%;
+    }
+    .post-navigation__item--next {
+        border-top: 1px solid map_get($card-scheme, divider);
+    }
+}

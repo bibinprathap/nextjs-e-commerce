@@ -1,0 +1,78 @@
+/*
+// .compare-table
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+.compare-table {
+    width: 100%;
+    font-size: 15px;
+    border-spacing: 0;
+
+    tr:not(:last-child) {
+        border-bottom: 1px solid map_get($card-scheme, divider);
+    }
+}
+.compare-table__column--header,
+.compare-table__column--product {
+    padding: 14px 16px;
+}
+.compare-table__column--product,
+.compare-table__column--fake {
+    @include direction {
+        #{$border-inline-start}: 1px solid map_get($card-scheme, divider);
+    }
+}
+.compare-table__column--header {
+    width: 15%;
+    background: $table-header-bg-color;
+    font-weight: $font-weight-medium;
+    min-width: 140px;
+
+    @include direction {
+        text-align: $inline-end;
+    }
+}
+.compare-table__column--product {
+    width: 17%;
+    text-align: center;
+    vertical-align: top;
+    min-width: 180px;
+}
+.compare-table__column--fake {
+    padding: 0;
+}
+
+.compare-table__column--product:nth-child(6) + .compare-table__column--fake {
+    display: none;
+}
+
+.compare-table__product {
+    display: block;
+    line-height: 20px;
+    color: inherit;
+    transition: color .12s;
+
+    &:hover {
+        color: $link-color;
+    }
+}
+.compare-table__product-image {
+    width: 150px;
+    margin: 0 auto;
+}
+.compare-table__product-name {
+    color: inherit;
+}
+
+.compare-table__rating-stars {
+    display: flex;
+    justify-content: center;
+    padding-top: 1px;
+}
+.compare-table__rating-title {
+    font-size: 13px;
+    color: map_get($card-scheme, opposite-alt);
+    margin-top: 5px;
+}

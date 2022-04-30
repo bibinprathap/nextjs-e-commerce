@@ -1,0 +1,58 @@
+/*
+// .decor
+*/
+@import '../variables';
+@import '../mixins/decor';
+
+
+.decor {
+    display: block;
+}
+.decor--type--center {
+    .decor__body {
+        overflow: hidden;
+        position: relative;
+    }
+    .decor__start,
+    .decor__end {
+        position: absolute;
+    }
+    .decor__start {
+        transform-origin: right top;
+    }
+    .decor__end {
+        transform-origin: left top;
+    }
+    .decor__center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @include decor-center-size(21px, 10px, 30deg)
+}
+.decor--type--bottom {
+    width: 100%;
+    position: relative;
+    pointer-events: none;
+    overflow: hidden;
+
+    .decor__start,
+    .decor__end {
+        position: absolute;
+        width: calc((100% - 1350px - 160px) / 2);
+        bottom: 0;
+    }
+    .decor__start {
+        left: 0;
+        transform-origin: right bottom;
+    }
+    .decor__end {
+        right: 0;
+        transform-origin: left bottom;
+    }
+
+    @include decor-bottom-height(21px, 10px);
+    @include decor-bottom-radius(2px);
+    @include decor-bottom-skew(30deg);
+}

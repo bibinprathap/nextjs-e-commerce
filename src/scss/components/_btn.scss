@@ -1,0 +1,66 @@
+/*
+// .btn
+*/
+@import '../variables';
+@import '../mixins/btn';
+@import '../mixins/loader';
+
+
+.btn {
+    @include btn;
+
+    &.disabled,
+    &:disabled {
+        cursor: default;
+    }
+}
+.btn-icon {
+    padding: 0;
+
+    svg {
+        display: block;
+        margin: auto;
+    }
+};
+.btn-loading {
+    position: relative;
+
+    &:after {/* nl size (default) */
+        @include loader();
+        @include loader-thickness(2px);
+        @include loader-size(24px);
+    }
+    &.btn-xl:after {/* xl size */
+        @include loader-size(42px);
+    }
+    &.btn-lg:after {/* lg size */
+        @include loader-size(32px);
+    }
+    &.btn-sm:after {/* sm size */
+        @include loader-size(20px);
+    }
+    &.btn-xs:after {/* xs size */
+        @include loader-size(16px);
+    }
+}
+
+.btn {
+    @include btn-size(nl);
+}
+.btn-sm {
+    @include btn-size(sm);
+}
+.btn-xs {
+    @include btn-size(xs);
+}
+.btn-lg {
+    @include btn-size(lg);
+}
+.btn-xl {
+    @include btn-size(xl);
+}
+
+@include btn-variant(primary, $btn-primary-scheme);
+@include btn-variant(secondary, $btn-secondary-scheme);
+@include btn-variant(light, $btn-light-scheme);
+@include btn-variant(muted, $btn-muted-scheme);

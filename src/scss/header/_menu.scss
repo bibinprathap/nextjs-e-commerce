@@ -1,0 +1,93 @@
+/*
+// .menu
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/scheme';
+@import '../mixins/header';
+
+
+@include desktop-header-variant-selector {
+    $local-padding-y: 8px;
+    $local-item-padding-y: 5px;
+    $local-item-padding-x: 14px;
+
+    .menu {
+        display: block;
+        color: map_get($menu-small-scheme, opposite);
+        background-color: map_get($menu-small-scheme, main);
+        box-shadow: map_get($menu-small-scheme, shadow);
+        width: 200px;
+        font-size: 15px;
+        line-height: 22px;
+
+        @include scheme-font-weight($menu-small-scheme, opposite, $font-weight-medium);
+    }
+    .menu__list {
+        list-style: none;
+        margin: 0;
+        padding: $local-padding-y 0;
+    }
+    .menu__submenu {
+        position: absolute;
+        top: -$local-padding-y;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .2s;
+
+        @include direction {
+            #{$inset-inline-start}: 100%;
+        }
+    }
+    .menu__link {
+        $local-padding-x: 15px;
+
+        display: block;
+        position: relative;
+        padding-top: $local-item-padding-y;
+        padding-bottom: $local-item-padding-y;
+
+        @include direction {
+            #{$padding-inline-start}: ($local-item-padding-x + 2px);
+            #{$padding-inline-end}: ($local-item-padding-x + 6px + 8px);
+        }
+
+        &,
+        &:hover {
+            color: inherit;
+        }
+    }
+    .menu__arrow {
+        fill: map_get($menu-small-scheme, arrow-color);
+        position: absolute;
+        top: calc(50% - 5px);
+
+        @include direction {
+            #{$inset-inline-end}: $local-item-padding-x;
+        }
+
+        svg {
+            display: block;
+
+            @include direction {
+                transform: scaleX($transform-direction);
+            }
+        }
+    }
+
+    // item / hover
+    .menu__item:hover {
+        & > .menu__link {
+            background: map_get($menu-small-scheme, hover);
+        }
+        & > .menu__submenu {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    // item / has-submenu
+    .menu__item--has-submenu {
+        position: relative;
+    }
+}

@@ -1,0 +1,81 @@
+/*
+// .widget-comments
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+.widget-comments {}
+.widget-comments__body {
+    padding: 0 $widget-padding $widget-padding;
+
+    a {
+        color: inherit;
+        transition: color .15s;
+    }
+    a:hover {
+        color: $link-color;
+    }
+}
+.widget-comments__list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 2px;
+}
+.widget-comments__item {
+    & + & {
+        margin-top: 20px;
+    }
+}
+.widget-comments__author {
+    font-size: 15px;
+    line-height: 18px;
+
+    a {
+        border-bottom: 2px solid map_get($card-scheme, divider);
+        transition: border .15s;
+    }
+    a:hover {
+        border-color: rgba($link-color, .8);
+    }
+}
+.widget-comments__content {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 20px;
+}
+.widget-comments__meta {
+    margin-top: 4px;
+    font-size: 13px;
+    color: map_get($card-scheme, muted);
+    display: flex;
+    white-space: nowrap;
+}
+.widget-comments__date {
+    flex-shrink: 0;
+}
+.widget-comments__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+
+    @include direction {
+        #{$padding-inline-start}: 20px;
+    }
+
+    &:before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 4px;
+        height: 4px;
+        background: currentColor;
+        border-radius: 2px;
+        top: 8px;
+        opacity: .8;
+
+        @include direction {
+            #{$inset-inline-start}: 8px;
+        }
+    }
+}

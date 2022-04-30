@@ -1,0 +1,10 @@
+/*
+// .header
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+@import '../mixins/direction';
+
+
+@import 'header--spaceship';
+@import 'header--classic';

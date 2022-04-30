@@ -1,0 +1,22 @@
+/*
+// .modal
+*/
+@import '../variables';
+
+
+.modal {
+    -webkit-overflow-scrolling: touch;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.modal-backdrop {
+    background: $modal-backdrop;
+}
+.modal-backdrop.show {
+    opacity: 1;
+}
+.modal-content {
+    border: none;
+    border-radius: 2px;
+    box-shadow: $modal-shadow;
+}

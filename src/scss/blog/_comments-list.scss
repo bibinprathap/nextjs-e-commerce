@@ -1,0 +1,59 @@
+/*
+// .comments-list
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+.comments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.comments-list__item + .comments-list__item {
+    margin-top: 28px;
+}
+.comments-list__children {
+    margin-top: 14px;
+    padding-top: 18px;
+    margin-bottom: -12px;
+    padding-bottom: 15px;
+
+    @include direction {
+        #{$border-inline-start}: 1px solid map_get($card-scheme, divider);
+        #{$padding-inline-start}: ($comment-avatar-size / 2 + $comment-avatar-margin - 2px);
+        #{$margin-inline-start}: ($comment-avatar-size / 2 - 1px);
+    }
+}
+.comments-list__item:last-child > .comments-list__children {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+
+@include media-breakpoint-down(sm) {
+    .comments-list__item + .comments-list__item {
+        margin-top: 24px;
+    }
+    .comments-list__children {
+        padding-top: 14px;
+        margin-bottom: -8px;
+    }
+    .comments-list__item:last-child > .comments-list__children {
+        padding-bottom: 0;
+    }
+}
+@media (max-width: 419px) {
+    .comments-list__item + .comments-list__item {
+        margin-top: 20px;
+    }
+    .comments-list__children {
+        padding-top: 12px;
+
+        @include direction {
+            #{$padding-inline-start}: 20px;
+            #{$margin-inline-start}: 12px;
+        }
+    }
+}

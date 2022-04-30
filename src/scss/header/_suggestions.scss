@@ -1,0 +1,114 @@
+/*
+// .suggestions
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/header';
+
+
+@include desktop-header-variant-selector {
+    $local-padding: 20px;
+
+    .suggestions {
+        padding: ($local-padding - 6px) 0;
+    }
+    .suggestions__group + .suggestions__group {
+        margin-top: 10px;
+    }
+    .suggestions__group-title {
+        padding: 3px $local-padding 3px;
+        font-size: 11px;
+        font-weight: $font-weight-medium;
+        text-transform: uppercase;
+        color: map_get($menu-scheme, muted);
+    }
+    .suggestions__category {
+        display: block;
+        padding: 6px $local-padding;
+        color: inherit;
+        font-size: 15px;
+        line-height: 17px;
+
+        &:hover {
+            color: inherit;
+            background: map_get($menu-scheme, hover);
+        }
+    }
+    .suggestions__product {
+        display: flex;
+        padding: 6px $local-padding;
+        color: inherit;
+
+        &:hover {
+            color: inherit;
+            background: map_get($menu-scheme, hover);
+        }
+    }
+    .suggestions__product-image {
+        position: relative;
+        border-radius: 1px;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        @include direction {
+            #{$margin-inline-end}: 10px;
+        }
+
+        &:before {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border: 1px solid $image-border-color;
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+    }
+    .suggestions__product-info {
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding-top: 4px;
+        min-width: 0;
+    }
+    .suggestions__product-name {
+        font-size: 15px;
+        line-height: 17px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .suggestions__product-rating {
+        display: flex;
+        margin-top: 2px;
+    }
+    .suggestions__product-rating-stars {
+        @include direction {
+            #{$margin-inline-end}: 8px;
+        }
+    }
+    .suggestions__product-rating-label {
+        font-size: 13px;
+        line-height: 1;
+        color: map_get($menu-scheme, opposite-alt);
+    }
+    .suggestions__product-price {
+        white-space: nowrap;
+        flex-shrink: 0;
+        font-size: 13px;
+        font-weight: $font-weight-bold;
+        padding-top: 3px;
+        width: 70px;
+
+        @include direction {
+            #{$margin-inline-start}: 14px;
+            text-align: $inline-end;
+        }
+    }
+}

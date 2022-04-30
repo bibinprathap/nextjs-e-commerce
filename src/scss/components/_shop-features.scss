@@ -1,0 +1,67 @@
+/*
+// .shop-features
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+@mixin local-layout($columns) {
+    .shop-features__item {
+        width: calc((100% - #{($columns - 1) * 1px}) / #{$columns});
+    }
+    .shop-features__divider {
+        width: 1px;
+
+        &:nth-child(#{$columns * 2}n) {
+            width: 100%;
+            height: 1px;
+        }
+        &:nth-child(#{$columns * 2}n):last-child {
+            display: none;
+        }
+    }
+}
+
+
+.shop-features {}
+.shop-features__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    list-style: none;
+    padding: 14px 0;
+}
+.shop-features__divider {}
+.shop-features__item {
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+}
+.shop-features__item-icon {
+    color: $shop-features-icon-color;
+
+    @include direction {
+        #{$margin-inline-end}: 18px;
+    }
+
+    svg {
+        $local-size: 38px;
+
+        width: $local-size;
+        height: $local-size;
+        fill: currentColor;
+        vertical-align: middle;
+    }
+}
+.shop-features__item-title {
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+}
+.shop-features__item-subtitle {
+    font-size: 14px;
+    color: map_get($card-scheme, opposite-alt);
+    margin-top: -2px;
+}
+
+
+@include local-layout(1);

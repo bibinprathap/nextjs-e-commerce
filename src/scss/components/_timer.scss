@@ -1,0 +1,73 @@
+/*
+// .timer
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+
+
+.timer {
+    display: flex;
+}
+.timer__dots {
+    width: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:before,
+    &:after {
+        display: block;
+        content: '';
+        width: 4px;
+        height: 4px;
+        background: $timer-dots-color;
+        border-radius: 2px;
+        margin: 4px 0;
+    }
+}
+.timer__part {
+    border-radius: 2px;
+    width: 50px;
+    line-height: 1;
+    padding: 8px 0;
+    text-align: center;
+    background: map_get($timer-scheme, main);
+    color: map_get($timer-scheme, opposite);
+}
+.timer__part-value {
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    letter-spacing: .04em;
+}
+.timer__part-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    color: map_get($timer-scheme, muted);
+}
+
+
+@include media-breakpoint-down(sm) {
+    .timer__dots {
+        width: 18px;
+
+        &:before,
+        &:after {
+            width: 3px;
+            height: 3px;
+            border-radius: 1.5px;
+        }
+    }
+    .timer__part {
+        width: 40px;
+        padding: 5px 0 6px;
+    }
+    .timer__part-value {
+        font-size: 20px;
+    }
+    .timer__part-label {
+        font-size: 9px;
+        margin-top: 3px;
+    }
+}

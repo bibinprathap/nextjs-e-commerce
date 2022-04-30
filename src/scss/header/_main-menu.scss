@@ -1,0 +1,216 @@
+/*
+// .main-menu
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/breakpoints';
+@import '../mixins/direction';
+@import '../mixins/scheme';
+@import '../mixins/header';
+
+
+@mixin local-define-scheme($scheme) {
+    .main-menu__link {
+        @include scheme-font-weight($scheme, opposite, $font-weight-medium);
+    }
+    .main-menu__item--has-submenu {
+        .main-menu__link {
+            svg {
+                color: map_get($scheme, arrow-color);
+            }
+        }
+    }
+    .main-menu__item:hover {
+        .main-menu__link {
+            background-color: map_get($scheme, hover)
+        }
+    }
+}
+
+
+@include desktop-header-variant-selector {
+    .main-menu {
+        height: 100%;
+    }
+    .main-menu__list {
+        position: relative;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+    .main-menu__link {
+        display: block;
+        padding: 5px 11px;
+        border-radius: 2px;
+        color: inherit;
+        white-space: nowrap;
+        font-size: 15px;
+
+        &:hover {
+            color: inherit;
+        }
+    }
+    .main-menu__submenu {
+        color: map_get($menu-scheme, opposite);
+    }
+    .main-menu__item--has-submenu {
+        .main-menu__link {
+            $padding: 9px;
+            $width: 5px;
+
+            position: relative;
+
+            @include direction {
+                #{$padding-inline-end}: $padding * 2 + $width;
+            }
+
+            svg {
+                top: 14px;
+                position: absolute;
+                fill: currentColor;
+
+                @include direction {
+                    #{$inset-inline-end}: $padding + 1px;
+                }
+            }
+        }
+    }
+
+
+
+    .main-menu__item--submenu--menu {
+        position: relative;
+
+        .main-menu__submenu {
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transform-origin: top;
+            transform: rotateX(45deg);
+            transition:
+                transform .2s,
+                opacity .2s;
+
+            @include direction {
+                #{$inset-inline-start}: 0;
+            }
+        }
+    }
+
+
+
+    .main-menu__item--submenu--megamenu {
+        .main-menu__submenu {
+            position: absolute;
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+            transform-origin: top;
+            transform: rotateX(45deg);
+            transition:
+                transform .2s,
+                opacity .2s;
+        }
+    }
+
+
+
+    .main-menu__item--has-submenu.main-menu__item--hover {
+        .main-menu__submenu {
+            visibility: visible;
+            opacity: 1;
+            transform: rotateX(0);
+        }
+    }
+
+
+
+    $local-megamenu-sizes: (
+        xxl: 6,
+        xl:  5,
+        lg:  4,
+        md:  3,
+        nl:  2,
+        sm:  1,
+    );
+
+
+    .main-menu__megamenu {
+        padding: 26px 30px 30px;
+        background-color: map_get($menu-scheme, main);
+        box-shadow: map_get($menu-scheme, shadow);
+    }
+
+    @each $name, $size in $local-megamenu-sizes {
+        .main-menu__megamenu--size--#{$name} {
+            @include media-breakpoint-up(xxl) {
+                width: calc((#{map_get($container-max-widths, xxl) - $grid-gutter-width} - 30px) / 6 * #{$size} + 30px);
+            }
+            @include media-breakpoint-only(xl) {
+                width: calc((#{map_get($container-max-widths, xl) - $grid-gutter-width} - 30px) / 6 * #{$size} + 30px);
+            }
+        }
+    }
+
+
+    @if($header-layout == spaceship) {
+        @include media-breakpoint-only(xl) {
+            .main-menu__link {
+                $delta: -2px;
+
+                @include direction {
+                    #{$padding-inline-start}: (11px + $delta);
+                    #{$padding-inline-end}: (23px + $delta);
+                }
+
+                svg {
+                    @include direction {
+                        #{$inset-inline-end}: (10px + $delta / 2);
+                    }
+                }
+            }
+        }
+    }
+
+
+    @if($header-layout == classic) {
+        .main-menu__link {
+            height: 100%;
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            align-items: center;
+        }
+        .main-menu__item--has-submenu {
+            .main-menu__link {
+                svg {
+                    top: calc(50% - 2px);
+                }
+            }
+        }
+    }
+
+
+    // define scheme
+    @if($header-layout == spaceship) {
+        .main-menu {
+            @include local-define-scheme($navbar-scheme);
+        }
+    }
+    @if ($header-layout == classic) {
+        .main-menu {
+            @include local-define-scheme($navbar-scheme);
+        }
+
+        @if ($navbar-stretch) {
+            .main-menu__link {
+                border-radius: 0;
+            }
+        }
+    }
+}

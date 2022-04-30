@@ -1,0 +1,85 @@
+/*
+// .addresses-list
+*/
+@import '../variables';
+@import '../mixins/card';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+@mixin local-layout($columns, $gutter) {
+    .addresses-list__item {
+        width: calc((100% - #{($columns - 1) * $gutter} - 1px) / #{$columns});
+    }
+    .addresses-list__divider:nth-child(2n) {
+        width: $gutter;
+    }
+    .addresses-list__divider:nth-child(#{$columns * 2}n) {
+        width: 100%;
+        height: $gutter;
+    }
+}
+
+
+.addresses-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.addresses-list__item {
+    flex-shrink: 0;
+}
+.addresses-list__item--new {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    @include card;
+}
+.addresses-list__divider:last-child {
+    display: none;
+}
+.addresses-list__plus {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border-radius: 30px;
+    margin-bottom: 24px;
+    color: $addresses-list-plus-normal-color;
+    border: 2px solid currentColor;
+    transition: color .2s;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        width: 32px;
+        height: 4px;
+        background: currentColor;
+        border-radius: 1.5px;
+        top: calc(50% - 2px);
+
+        @include direction {
+            #{$inset-inline-start}: calc(50% - 16px);
+        }
+    }
+
+    &:after {
+        transform: rotateZ(90deg);
+    }
+}
+.addresses-list__item--new:hover .addresses-list__plus {
+    color: $addresses-list-plus-hover-color;
+}
+
+
+@include media-breakpoint-up(md) {
+    @include local-layout(3, 16px);
+}
+@media (min-width: 480px) and (max-width: #{breakpoint-max(sm)}) {
+    @include local-layout(2, 16px);
+}
+@media (max-width: 479px) {
+    @include local-layout(1, 16px);
+}

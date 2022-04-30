@@ -1,0 +1,32 @@
+/*
+// .megamenu
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+@import '../mixins/header';
+
+
+@include desktop-header-variant-selector {
+    .megamenu {
+        position: relative;
+    }
+    .megamenu__image {
+        position: absolute;
+        bottom: 0;
+
+        @include direction {
+            #{$inset-inline-end}: 0;
+            transform-origin: bottom $inline-end;
+        }
+
+        img,
+        picture {
+            display: block;
+        }
+
+        @include media-breakpoint-only(xl) {
+            transform: scale(.81);
+        }
+    }
+}

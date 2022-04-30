@@ -1,0 +1,54 @@
+/*
+// .input-radio-label
+*/
+@import '../variables';
+
+
+$local-gutter: 6px;
+
+
+.input-radio-label {}
+.input-radio-label__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -($local-gutter / 2);
+}
+.input-radio-label__item {
+    margin: ($local-gutter / 2);
+}
+.input-radio-label__input {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+}
+.input-radio-label__title {
+    display: flex;
+    align-items: center;
+    background: $input-radio-label-bg-color;
+    height: 28px;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px $input-radio-label-border-color inset;
+    font-size: 13px;
+    font-weight: $font-weight-medium;
+    padding: 0 12px 2px;
+    cursor: pointer;
+    user-select: none;
+    transition:
+        box-shadow .15s;
+
+    &:hover {
+        box-shadow: 0 0 0 2px $input-radio-label-hover-border-color inset;
+    }
+    &:active {
+        box-shadow: 0 0 0 2px $input-radio-label-active-border-color inset;
+    }
+}
+.input-radio-label__input:checked ~ .input-radio-label__title {
+    box-shadow: 0 0 0 2px $input-radio-label-checked-border-color inset;
+}
+.input-radio-label__input:disabled ~ .input-radio-label__title {
+    color: $input-radio-label-disabled-font-color;
+    font-weight: $font-weight-normal;
+    cursor: default;
+    box-shadow: 0 0 0 1px $input-radio-label-border-color inset;
+}

@@ -1,0 +1,57 @@
+/*
+// .block-header
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+
+
+$local-title-padding-y: 36px;
+$local-breadcrumb-height: 21px;
+$local-breadcrumb-padding-top: 16px;
+$local-breadcrumb-padding-bottom: 40px;
+$local-breadcrumb-padding-y: $local-breadcrumb-padding-top + $local-breadcrumb-padding-bottom;
+
+
+.block-header {}
+.block-header__body {
+    display: flex;
+    flex-direction: column;
+}
+.block-header__breadcrumb {
+    padding-top: $local-breadcrumb-padding-top;
+    padding-bottom: $local-breadcrumb-padding-bottom;
+}
+.block-header__title {
+    font-size: 2.25rem;
+    font-weight: $font-weight-bold;
+    margin: 0;
+    padding-top: $local-title-padding-y;
+    padding-bottom: $local-title-padding-y + 4px;
+}
+
+.block-header__new {
+    font-size: 1.25rem;
+    font-weight: $font-weight-bold;
+    margin: 0;
+    padding-top:  4px; 
+}
+
+
+@include media-breakpoint-up(xl) {
+    .block-header__title {
+        margin: 0 auto;
+    }
+    .block-header__breadcrumb + .block-header__title {
+        margin-top: -($local-breadcrumb-height + $local-breadcrumb-padding-y);
+    }
+}
+@include media-breakpoint-down(lg) {
+    .block-header__title {
+        padding-bottom: 20px;
+        font-size: 2rem;
+        padding-top: 32px;
+    }
+    .block-header__breadcrumb + .block-header__title {
+        margin-top: -$local-breadcrumb-padding-bottom - 4px;
+    }
+}

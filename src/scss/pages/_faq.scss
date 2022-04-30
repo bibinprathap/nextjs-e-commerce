@@ -1,0 +1,145 @@
+/*
+// .faq
+*/
+@import '../variables';
+@import '../mixins/card';
+@import '../mixins/breakpoints';
+
+
+.faq {}
+.faq__header {
+    $local-padding-y: 52px;
+
+    padding: ($local-padding-y - 8px) 0 $local-padding-y;
+    text-align: center;
+}
+.faq__header-title {
+    font-weight: $font-weight-bold;
+    margin: 0;
+}
+.faq__section {
+    @include card;
+
+    padding: 48px;
+}
+.faq__section + .faq__section {
+    margin-top: 30px;
+}
+.faq__section-title {
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    padding-bottom: 8px;
+    border-bottom: 1px solid map_get($card-scheme, divider);
+    margin-bottom: 2.5rem;
+    margin-top: -4px;
+}
+.faq__footer {
+    margin-top: 56px;
+    text-align: center;
+}
+.faq__footer-title {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+.faq__footer-subtitle {
+    margin-bottom: 36px;
+    color: map_get($body-scheme, opposite-alt);
+}
+
+
+$local-gutter: 40px;
+
+.faq__section-body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -($local-gutter / 2);
+}
+.faq__question {
+    margin: ($local-gutter / 2);
+    width: calc(50% - #{$local-gutter});
+}
+.faq__question-title {
+    margin-bottom: 14px;
+}
+
+
+@include media-breakpoint-down(lg) {
+    .faq__header {
+        $local-padding-y: 48px;
+
+        padding: $local-padding-y 0 $local-padding-y;
+    }
+    .faq__section {
+        padding: 40px;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    $local-gutter: 24px;
+
+    .faq__section-body {
+        margin: -($local-gutter / 2);
+    }
+    .faq__question {
+        margin: ($local-gutter / 2);
+        width: calc(100% - #{$local-gutter});
+    }
+}
+
+
+@include media-breakpoint-down(sm) {
+    .faq__header {
+        $local-padding-y: 32px;
+
+        padding: ($local-padding-y + 4px) 0 $local-padding-y;
+    }
+    .faq__header-title {
+        font-size: 32px;
+    }
+    .faq__section {
+        padding: 32px;
+    }
+    .faq__section-title {
+        margin-bottom: 32px;
+    }
+
+
+    .faq__footer {
+        margin-top: 40px;
+    }
+    .faq__footer-title {
+        font-size: 24px;
+    }
+    .faq__footer-subtitle {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+}
+
+
+@include media-breakpoint-down(xs) {
+    .faq__header {
+        $local-padding-y: 28px;
+
+        padding: ($local-padding-y + 4px) 0 $local-padding-y;
+    }
+    .faq__section {
+        padding: 24px;
+    }
+    .faq__section-title {
+        margin-bottom: 28px;
+    }
+    .faq__question-title {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    .faq__question-answer {
+        .typography {
+            font-size: 15px;
+        }
+    }
+
+    .faq__footer-subtitle {
+        margin-bottom: 20px;
+    }
+}

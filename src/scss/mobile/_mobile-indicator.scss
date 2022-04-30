@@ -1,0 +1,127 @@
+/*
+// .mobile-indicator
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/scheme';
+@import '../mixins/header';
+
+
+@mixin local-define-scheme($scheme) {
+    .mobile-indicator__icon {
+        fill: map_get($scheme, opposite);
+    }
+    .mobile-indicator__title {
+        color: map_get($scheme, muted);
+    }
+    .mobile-indicator__value {
+        @include scheme-font-weight($scheme, opposite, $font-weight-medium);
+    }
+
+    .mobile-indicator:hover {
+        .mobile-indicator__button {
+            background: map_get($scheme, hover);
+        }
+    }
+}
+
+
+@include mobile-header-variant-selector {
+    $local-open-transition-duration: .2s;
+
+    .mobile-indicator {
+        position: relative;
+    }
+    .mobile-indicator__button {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        height: 50px;
+        width: 44px;
+        color: inherit;
+        background: transparent;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+    .mobile-indicator__icon {
+        display: block;
+        position: relative;
+
+        svg {
+            display: block;
+
+            @include direction {
+                transform: scaleX($transform-direction);
+            }
+        }
+    }
+    .mobile-indicator__counter {
+        position: absolute;
+        top: -7px;
+        font-size: 10px;
+        line-height: 1;
+        padding: 2px 3px 1px;
+        border-radius: (13px / 2);
+        text-align: center;
+        z-index: 0;
+
+        @include direction {
+            #{$inset-inline-end}: -7px;
+        }
+
+        &:before {
+            display: block;
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+            border-radius: 2.5px;
+
+            @include direction {
+                #{$inset-inline-start}: 0;
+                #{$inset-inline-end}: 0;
+                transform: skewX(#{-11deg * $transform-direction});
+            }
+        }
+    }
+    .mobile-indicator__title,
+    .mobile-indicator__value {
+        display: block;
+
+        @include direction {
+            #{$margin-inline-start}: 50px;
+        }
+    }
+    .mobile-indicator__title {
+        padding-top: 3px;
+        margin-bottom: -3px;
+        font-size: 13px;
+    }
+    .mobile-indicator__value {
+        font-size: 18px;
+        font-weight: $font-weight-medium;
+    }
+
+    // define scheme
+    @include local-define-scheme($mobile-header-scheme);
+
+    .mobile-indicator__counter {
+        color: map_get($mobile-indicator-counter-scheme, opposite);
+
+        @include scheme-font-weight($mobile-indicator-counter-scheme, opposite, $font-weight-medium);
+
+        &:before {
+            background-color: map_get($mobile-indicator-counter-scheme, main);
+        }
+    }
+}

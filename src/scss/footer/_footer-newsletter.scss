@@ -1,0 +1,117 @@
+/*
+// .footer-newsletter
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+@import '../mixins/scheme';
+
+
+.footer-newsletter {
+    display: block;
+}
+.footer-newsletter__title {
+    font-size: 20px;
+    color: map_get($footer-scheme, opposite);
+    margin-bottom: 26px;
+
+    @include scheme-font-weight($footer-scheme, opposite, $font-weight-medium);
+}
+.footer-newsletter__text {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 14px;
+}
+.footer-newsletter__text--social {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.footer-newsletter__social-links {
+    margin-top: 8px;
+}
+.footer-newsletter__form {
+    display: flex;
+    max-width: 380px;
+}
+.footer-newsletter__form-input {
+    flex-shrink: 1;
+    border-radius: 2px;
+    font-size: 15px;
+    height: 38px;
+    padding: 0 12px;
+    flex-basis: 0;
+    min-width: 0;
+    flex-grow: 1;
+    font-family: inherit;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    background-clip: padding-box;
+    transition:
+        border .2s,
+        background .2s;
+
+    @include define-input-scheme($form-control-dark-scheme, normal);
+
+    &::placeholder {
+        transition: color .2s;
+    }
+    &:hover {
+        @include define-input-scheme($form-control-dark-scheme, hover);
+    }
+    &:focus {
+        outline: none;
+
+        @include define-input-scheme($form-control-dark-scheme, focus);
+    }
+}
+.footer-newsletter__form-button {
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: none;
+    padding: 0 20px;
+    font-family: inherit;
+    font-size: 15px;
+    transition:
+        background .2s,
+        color .2s;
+
+    @include define-button-scheme($btn-dark-scheme);
+    @include direction {
+        #{$margin-inline-start}: 8px;
+    }
+
+    @include define-button-scheme($btn-dark-scheme);
+
+    &:active {
+        transition-duration: .1s,  .1s;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+
+
+@include media-breakpoint-down(sm) {
+    .footer-newsletter {
+        text-align: center;
+        margin-top: 28px;
+    }
+    .footer-newsletter__title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    .footer-newsletter__form {
+        margin: 0 auto;
+    }
+    .footer-newsletter__text--social {
+        margin-top: 24px;
+    }
+    .footer-newsletter__social-links {
+        margin-top: 12px;
+        display: flex;
+        justify-content: center;
+    }
+}

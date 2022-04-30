@@ -1,0 +1,58 @@
+@mixin define-button-state($scheme, $state) {
+    $bg-color-key:   #{$state}-bg-color;
+    $font-color-key: #{$state}-font-color;
+
+    @if(map_has_key($scheme, $bg-color-key)) {
+        background-color: map_get($scheme, $bg-color-key);
+    }
+    @if(map_has_key($scheme, $font-color-key)) {
+        color: map_get($scheme, $font-color-key);
+    }
+}
+
+@mixin define-button-scheme($scheme) {
+    @include define-button-state($scheme, normal);
+
+    &:hover {
+        @include define-button-state($scheme, hover);
+    }
+    &:active {
+        @include define-button-state($scheme, active);
+    }
+}
+
+@mixin define-input-scheme($input-scheme, $state) {
+    $font-color-key:        #{$state}-font-color;
+    $bg-color-key:          #{$state}-bg-color;
+    $border-color-key:      #{$state}-border-color;
+    $placeholder-color-key: #{$state}-placeholder-color;
+
+    @if(map_has_key($input-scheme, $font-color-key)) {
+        color: map_get($input-scheme, $font-color-key);
+    }
+    @if(map_has_key($input-scheme, $bg-color-key)) {
+        background-color: map_get($input-scheme, $bg-color-key);
+    }
+    @if(map_has_key($input-scheme, $border-color-key)) {
+        border-color: map_get($input-scheme, $border-color-key);
+    }
+    @if(map_has_key($input-scheme, $placeholder-color-key)) {
+        &::placeholder {
+            color: map_get($input-scheme, $placeholder-color-key);
+        }
+    }
+}
+
+@mixin scheme-font-weight($scheme, $color-name, $base-font-weight) {
+    font-weight: $base-font-weight;
+
+    @if(map_has_key($scheme, #{$color-name}-font-weight-map) and map_get($scheme, #{$color-name}-font-weight-map) != null) {
+        $font-weight-map: map_get($scheme, #{$color-name}-font-weight-map);
+
+        @if(map_has_key($font-weight-map, $base-font-weight)) {
+            @media (max-resolution: 1dppx) {
+                font-weight: map_get($font-weight-map, $base-font-weight);
+            }
+        }
+    }
+}

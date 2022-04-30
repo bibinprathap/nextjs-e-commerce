@@ -1,0 +1,24 @@
+/*
+// .reviews-list
+*/
+@import '../variables';
+
+
+.reviews-list {}
+.reviews-list__content {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.reviews-list__item {
+    & + & {
+        margin-top: 18px;
+        padding-top: 24px;
+        border-top: 1px solid map_get($card-scheme, divider);
+    }
+}
+.reviews-list__pagination {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid map_get($card-scheme, divider);
+}

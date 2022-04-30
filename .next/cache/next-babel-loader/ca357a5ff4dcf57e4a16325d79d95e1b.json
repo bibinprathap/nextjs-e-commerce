@@ -1,0 +1,1 @@
+{"ast":null,"code":"// react\nimport React from 'react';\nexport const MobileMenuContext = React.createContext({\n  lastPanelIdRef: {\n    current: 0\n  },\n  containerRef: null,\n  open: () => {},\n  close: () => {},\n  stack: [],\n  bin: []\n});\nexport const MobileMenuLevelContext = React.createContext(0);","map":null,"metadata":{},"sourceType":"module"}

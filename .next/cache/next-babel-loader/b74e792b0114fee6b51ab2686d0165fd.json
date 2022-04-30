@@ -1,0 +1,1 @@
+{"ast":null,"code":"/* eslint-disable import/prefer-default-export */\n// application\nimport { OPTIONS_NAMESPACE } from '~/store/options/optionsReducer';\nimport { useAppSelector } from '~/store/hooks';\nexport const useOptions = () => useAppSelector(state => state[OPTIONS_NAMESPACE]);","map":null,"metadata":{},"sourceType":"module"}

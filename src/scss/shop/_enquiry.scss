@@ -1,0 +1,227 @@
+/*
+// .enquiry
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+@import '../mixins/scheme';
+
+
+.enquiry {
+    max-width: 800px;
+}
+.enquiry__body {
+    padding: 32px 32px 36px;
+    display: flex;
+    flex-direction: row;
+}
+.enquiry__close {
+    z-index: 2;
+    position: absolute;
+    padding: 16px;
+    border: none;
+    top: 0;
+    border-radius: 0 2.5px 0 2.5px;
+    background: transparent;
+    fill: currentColor;
+    transition:
+        background .2s,
+        color .2s;
+
+    @include define-button-scheme($btn-muted-scheme);
+    @include direction {
+        #{$inset-inline-end}: 0;
+    }
+
+    svg {
+        display: block;
+    }
+
+    &:active {
+        transition-duration: 0s;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+.enquiry__gallery {
+    width: 320px;
+    flex-shrink: 0;
+
+    @include direction {
+        #{$margin-inline-end}: 28px;
+    }
+}
+.enquiry__product {
+    flex-grow: 1;
+}
+
+
+
+.enquiry__product-name {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: $font-weight-bold;
+    margin-top: -2px;
+}
+.enquiry__product-rating {
+    display: flex;
+    margin-top: 6px;
+}
+.enquiry__product-rating-title {
+    font-size: 13px;
+    line-height: 1;
+    color: map_get($card-scheme, opposite-alt);
+
+    @include direction {
+        #{$margin-inline-start}: 8px;
+    }
+}
+.enquiry__product-description {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 22px;
+}
+.enquiry__product-meta {
+    $local-gutter: 6px;
+
+    margin: 12px 0 0;
+
+    table {
+        display: block;
+        margin: -($local-gutter / 2);
+    }
+    tbody {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    tr,
+    th,
+    td {
+        display: block;
+    }
+    tr {
+        background: $enquiry-meta-bg-color;
+        border-radius: 1.5px;
+        margin: ($local-gutter / 2);
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        @include direction {
+            #{$padding-inline-start}: 7px;
+            #{$padding-inline-end}: 14px;
+        }
+    }
+    th {
+        font-size: 11px;
+        font-weight: $font-weight-normal;
+        color: $enquiry-meta-title-color;
+        line-height: 1;
+    }
+    td {
+        font-size: 13px;
+        line-height: 1;
+        font-weight: $font-weight-medium;
+    }
+    a {
+        color: inherit;
+    }
+}
+.enquiry__product-prices-stock {
+    display: flex;
+    align-items: center;
+    margin: 12px 0 16px;
+}
+.enquiry__product-prices {
+    line-height: 1;
+    padding: 6px 0;
+}
+.enquiry__product-price {
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    letter-spacing: -.04em;
+    color: $price-color;
+}
+.enquiry__product-price--new {
+    color: $price-new-color;
+}
+.enquiry__product-price--old {
+    font-size: 14px;
+    text-decoration: line-through;
+    font-weight: $font-weight-normal;
+    color: $price-old-color;
+    margin-bottom: 3px;
+}
+.enquiry__product-stock {
+    margin-bottom: 2px;
+
+    @include direction {
+        #{$margin-inline-start}: 12px;
+    }
+}
+.enquiry__product-form {
+    margin-bottom: 16px;
+}
+.enquiry__product-actions {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4px;
+}
+.enquiry__product-actions-item {
+    margin: 4px;
+}
+.enquiry__product-actions-item--quantity {
+    width: 100px;
+}
+.enquiry__see-details {
+    $local-height: 52px;
+
+    border-radius: 0 0 2.5px 2.5px;
+    border-top: 1px solid map_get($card-scheme, divider);
+    display: block;
+    text-align: center;
+    color: map_get($card-scheme, opposite-alt);
+    font-size: 15px;
+    height: $local-height;
+    line-height: ($local-height - 2px);
+    transition:
+        background .15s,
+        border-color .15s;
+
+    &:hover {
+        color: map_get($card-scheme, opposite-alt);
+        background: $enquiry-see-details-hover-bg-color;
+    }
+    &:active {
+        background: $enquiry-see-details-active-bg-color;
+        transition-duration: 0s;
+    }
+}
+
+
+@include media-breakpoint-down(md) {
+    .enquiry {
+        max-width: 520px;
+    }
+    .enquiry__body {
+        flex-direction: column;
+    }
+    .enquiry__gallery {
+        width: 100%;
+        margin-bottom: 28px;
+
+        @include direction {
+            #{$margin-inline-end}: 0;
+        }
+    }
+}
+@include media-breakpoint-down(xs) {
+    .enquiry {
+        max-width: 100%;
+    }
+}
+@media (max-width: 474px) {
+    .enquiry__body {
+        padding: 20px 20px 24px;
+    }
+}

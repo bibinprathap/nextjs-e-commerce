@@ -1,0 +1,319 @@
+@import '../variables';
+@import '../constants';
+@import '../mixins/direction';
+@import '../mixins/header';
+
+
+@mixin local-define-box-scheme($state) {
+    $bg-color-key: #{$state}-bg-color;
+
+    @if(map_has_key($search-spaceship-input-scheme, $bg-color-key)) {
+        $bg-color: map_get($search-spaceship-input-scheme, $bg-color-key);
+
+        opacity: opacity($bg-color);
+        color: change_color(map_get($search-spaceship-input-scheme, $bg-color-key), $alpha: 1);
+    }
+}
+
+
+@mixin local-define-input-scheme($state) {
+    $font-color-key:        #{$state}-font-color;
+    $placeholder-color-key: #{$state}-placeholder-color;
+
+    @if(map_has_key($search-spaceship-input-scheme, $font-color-key)) {
+        color: map_get($search-spaceship-input-scheme, $font-color-key);
+    }
+    @if(map_has_key($search-spaceship-input-scheme, $placeholder-color-key)) {
+        &::placeholder {
+            color: map_get($search-spaceship-input-scheme, $placeholder-color-key);
+        }
+    }
+}
+
+
+@mixin local-define-button-scheme($state) {
+    $bg-color-key:   #{$state}-bg-color;
+    $font-color-key: #{$state}-font-color;
+
+    @if(map_has_key($search-spaceship-button-scheme, $bg-color-key)) {
+        &:after {
+            background: map_get($search-spaceship-button-scheme, $bg-color-key);
+        }
+    }
+
+    @if(map_has_key($search-spaceship-button-scheme, $font-color-key)) {
+        color: map_get($search-spaceship-button-scheme, $font-color-key);
+    }
+}
+
+
+@include desktop-header-variant-selector {
+    @if ($header-layout == spaceship) {
+        $local-box-height: 44px;
+        $local-height: 24px;
+        $local-shadow-size: 10px;
+
+        .search__body {
+            position: relative;
+            display: flex;
+            z-index: 1;
+            height: $local-box-height;
+        }
+        .search__decor {
+            position: absolute;
+            display: flex;
+            bottom: -$local-shadow-size;
+            height: $local-height + $local-shadow-size;
+            width: calc(100% + #{$local-shadow-size * 2});
+            z-index: -1;
+
+            @include direction {
+                #{$inset-inline-start}: -$local-shadow-size;
+            }
+        }
+        .search__decor-start,
+        .search__decor-end {
+            overflow: hidden;
+            height: 100%;
+            flex-grow: 1;
+            padding: 0 $local-shadow-size;
+        }
+        .search__decor-start:before {
+            content: '';
+            display: block;
+            height: $local-height;
+
+            @include direction {
+                #{$border-end-start-radius}: 2px;
+                #{$margin-inline-end}: -($local-shadow-size * 2);
+                transform: skewX(#{30deg * $transform-direction});
+                transform-origin: $inline-start top;
+            }
+        }
+        .search__decor-end:before {
+            content: '';
+            display: block;
+            height: $local-height;
+
+            @include direction {
+                #{$border-end-end-radius}: 2px;
+                #{$margin-inline-start}: -($local-shadow-size * 2);
+                transform: skewX(#{-30deg * $transform-direction});
+                transform-origin: $inline-end top;
+            }
+        }
+        .search__box {
+            position: absolute;
+            top: calc((100% - 34px) / 2);
+            height: calc(34px);
+            transition:
+                color .2s,
+                opacity .2s;
+
+            @include local-define-box-scheme(normal);
+
+            &:before,
+            &:after {
+                position: absolute;
+                content: '';
+                display: block;
+                background: currentColor;
+                height: 100%;
+                width: 80%;
+                top: 0;
+                border-radius: 3px;
+            }
+            &:before {
+                @include direction {
+                    #{$inset-inline-start}: 0;
+                    transform: skewX(#{30deg * $transform-direction});
+                }
+            }
+            &:after {
+                @include direction {
+                    #{$inset-inline-end}: 0;
+                    transform: skewX(#{-30deg * $transform-direction});
+                }
+            }
+        }
+        .search__input {
+            width: 0;
+            flex-shrink: 1;
+            flex-grow: 1;
+            background: transparent;
+            border: none;
+            padding: 0 12px;
+            text-align: center;
+            font-size: 15px;
+            margin: 6px 0;
+            z-index: 1;
+            appearance: none;
+
+            @include local-define-input-scheme(normal);
+
+            &::-ms-clear {
+                display: none;
+            }
+
+            &::placeholder {
+                transition:
+                    opacity .15s,
+                    transform .15s,
+                    color .15s;
+            }
+
+            &:hover {
+                @include local-define-input-scheme(hover);
+            }
+
+            &:focus {
+                @include local-define-input-scheme(focus);
+
+                outline: none;
+
+                &::placeholder {
+                    opacity: 0;
+                    transform: translateY(-26px);
+                }
+            }
+        }
+        .search__input:hover ~ .search__box {
+            @include local-define-box-scheme(hover);
+        }
+        .search__input:focus ~ .search__box {
+            @include local-define-box-scheme(focus);
+        }
+        .search__button {
+            margin: 5px 7px;
+            width: 72px;
+            padding: 0;
+            border: none;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            fill: currentColor;
+            z-index: 1;
+            pointer-events: none;
+            position: relative;
+
+            @include local-define-button-scheme(normal);
+
+            &:focus {
+                outline: none;
+            }
+            &:before {
+                position: absolute;
+                display: block;
+                content: '';
+                width: 3px;
+                top: 0;
+                bottom: 0;
+                background: $search-spaceship-divider-color;
+                z-index: -1;
+                border-radius: 1.5px;
+
+                @include direction {
+                    #{$inset-inline-start}: -8px;
+                    transform: skewX(#{-30deg * $transform-direction});
+                }
+            }
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                top: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: auto;
+                z-index: -1;
+                border-radius: 3px;
+                transition:
+                    background .12s;
+
+                @include direction {
+                    #{$inset-inline-start}: 0;
+                    transform: skewX(#{-30deg * $transform-direction});
+                }
+            }
+        }
+        .search__button:hover,
+        .search__button--hover {
+            @include local-define-button-scheme(hover);
+        }
+        .search__button:active,
+        .search__button--hover:active {
+            @include local-define-button-scheme(active);
+
+            transition-duration: 0s;
+        }
+        .search__button-title {
+            display: none;
+        }
+        .search__button--start {
+            order: -1;
+
+            &:before {
+                @include direction {
+                    #{$inset-inline-start}: auto;
+                    #{$inset-inline-end}: -8px;
+                    transform: skewX(#{30deg * $transform-direction});
+                }
+            }
+            &:after {
+                @include direction {
+                    transform: skewX(#{30deg * $transform-direction});
+                }
+            }
+        }
+        .search__shadow {
+            position: absolute;
+            bottom: 100%;
+            height: 10px;
+            width: calc(100% - 20px);
+            overflow: hidden;
+
+            @include direction {
+                #{$inset-inline-start}: 10px;
+            }
+
+            &:before {
+                display: block;
+                content: '';
+                width: 100%;
+                height: 60px;
+                position: relative;
+                top: 100%;
+                box-shadow: $search-spaceship-top-shadow;
+                border-radius: $search-spaceship-top-shadow-radius;
+            }
+        }
+        .search__dropdown {
+            top: calc(100% + 5px);
+
+            @include direction {
+                #{$inset-inline-start}: ceil($TAN-30 * 24px);
+                #{$inset-inline-end}: ceil($TAN-30 * 24px);
+            }
+        }
+
+        // define scheme
+        .search__decor-start:before {
+            background-color: map_get($header-scheme, main);
+            box-shadow: map_get($header-scheme, shadow);
+        }
+        .search__decor-end:before {
+            background-color: map_get($header-scheme, main);
+            box-shadow: map_get($header-scheme, shadow);
+        }
+        .search__box {
+            @if ($search-spaceship-divider-color == transparent) {
+                left: 72px + 12px;
+                right: 72px + 12px;
+            } @else {
+                left: 72px + 20px;
+                right: 72px + 20px;
+            }
+        }
+    }
+}

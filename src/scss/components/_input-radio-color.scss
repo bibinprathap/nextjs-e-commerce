@@ -1,0 +1,109 @@
+/*
+// .input-radio-color
+*/
+@import '../variables';
+
+
+$local-field-height: 30px;
+$local-item-size: 28px;
+$local-border-width: 3px;
+$local-white-border-width: 2px;
+$local-item-inner-size: 14px;
+$local-item-margin: 2px;
+
+
+.input-radio-color {
+    display: block;
+}
+.input-radio-color__list {
+    padding: #{max(0, $local-field-height - $local-item-size) / 2} 0;
+    display: flex;
+    margin: -$local-item-margin;
+}
+.input-radio-color__item {
+    width: $local-item-size;
+    height: $local-item-size;
+    display: block;
+    margin: $local-item-margin;
+    cursor: pointer;
+
+    input {
+        pointer-events: none;
+        opacity: 0;
+        position: absolute;
+    }
+
+    span {
+        position: relative;
+        width: $local-item-size;
+        height: $local-item-size;
+        display: block;
+        border-radius: $local-item-size / 2;
+        background: currentColor;
+        transform: scale(#{round(($local-item-size * .75) / 2) / $local-item-size * 2});
+        transition: transform .2s;
+
+        &:before,
+        &:after {
+            display: block;
+            position: absolute;
+            content: '';
+            border-radius: 1000px;
+        }
+        &:before {
+            left: $local-border-width;
+            top: $local-border-width;
+            width: ($local-item-size - $local-border-width * 2);
+            height: ($local-item-size - $local-border-width * 2);
+            background: #fff;
+            transform: scale(0);
+            transition: transform .2s;
+        }
+        &:after {
+            left: ($local-item-size - $local-item-inner-size) / 2;
+            top: ($local-item-size - $local-item-inner-size) / 2;
+            width: $local-item-inner-size;
+            height: $local-item-inner-size;
+            background: currentColor;
+            transform: scale(0);
+            transition: transform .2s;
+        }
+    }
+
+    &:hover input:enabled ~ span {
+        transform: scale(#{round(($local-item-size * .875) / 2) / $local-item-size * 2});
+    }
+}
+.input-radio-color__item input:enabled:checked {
+    & ~ span,
+    & ~ span:before,
+    & ~ span:after {
+        transform: scale(1);
+    }
+}
+.input-radio-color__item--disabled {
+    cursor: default;
+
+    span {
+        transform: scale(.75);
+
+        &:before {
+            transform: scale(1.33) rotateZ(45deg);
+            left: $local-item-size / 2 - 1px;
+            top: -1px;
+            width: 2px;
+            height: calc(100% + 2px);
+            background: rgba(#000, .3);
+        }
+    }
+}
+.input-radio-color__item--white {
+    span {
+        background: #fff;
+        box-shadow: inset 0 0 0 $local-white-border-width #ccc;
+
+        &:after {
+            box-shadow: inset 0 0 0 $local-white-border-width #ccc;
+        }
+    }
+}

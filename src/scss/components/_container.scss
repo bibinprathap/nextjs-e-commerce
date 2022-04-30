@@ -1,0 +1,19 @@
+/*
+// .container
+*/
+@import '../variables';
+@import '../bootstrap-variables';
+
+
+.container {
+    @each $breakpoint, $container-max-width in $container-max-widths {
+        @media (min-width: #{map_get($grid-breakpoints, $breakpoint)}) {
+            &--max--#{$breakpoint} {
+                max-width: $container-max-width;
+            }
+        }
+    }
+}
+.container .container {
+    padding: 0;
+}

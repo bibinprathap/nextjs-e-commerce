@@ -1,0 +1,31 @@
+/*
+// .image
+*/
+@import '../variables';
+
+.image {};
+.image--type--product,
+.image--type--category {
+    .image__body {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+    .image__tag {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: scale-down;
+    }
+}
+.image--type--product {
+    .image__body {
+        padding-bottom: #{100% * (1 / $product-image-ratio)};
+    }
+}
+.image--type--category {
+    .image__body {
+        padding-bottom: #{100% * (1 / $category-image-ratio)};
+    }
+}

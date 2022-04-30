@@ -1,0 +1,23 @@
+/*
+// .comments-view
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+
+
+.comments-view {}
+.comments-view__pagination {
+    margin-top: 36px;
+}
+
+
+@include media-breakpoint-down(md) {
+    .comments-view__pagination {
+        margin-top: 32px;
+    }
+}
+@include media-breakpoint-down(xs) {
+    .comments-view__pagination {
+        margin-top: 24px;
+    }
+}

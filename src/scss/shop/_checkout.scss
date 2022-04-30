@@ -1,0 +1,95 @@
+/*
+// .checkout
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+$local-totals-row-padding-y: 4px;
+$local-totals-section-padding-y: 16px;
+
+
+.checkout {}
+.checkout__totals {
+    width: 100%;
+    font-size: 15px;
+    line-height: 19px;
+    border-spacing: 0;
+    margin-bottom: 40px;
+
+    th,
+    td {
+        padding: 0;
+    }
+
+    th:last-child,
+    td:last-child {
+        @include direction {
+            #{$padding-inline-start}: 20px;
+            text-align: $inline-end;
+        }
+    }
+}
+.checkout__totals-header {
+    font-size: 13px;
+    text-transform: uppercase;
+
+    th {
+        padding-bottom: 4px;
+        border-bottom: 1px solid map_get($card-scheme, divider);
+    }
+}
+.checkout__totals-products {
+    td {
+        padding: $local-totals-row-padding-y 0;
+    }
+    tr:first-child td {
+        padding-top: $local-totals-section-padding-y;
+    }
+    tr:last-child td {
+        padding-bottom: $local-totals-section-padding-y;
+    }
+}
+.checkout__totals-subtotals {
+    th {
+        font-weight: $font-weight-medium;
+    }
+    td,
+    th {
+        padding: $local-totals-row-padding-y 0;
+    }
+    tr:first-child td,
+    tr:first-child th {
+        padding-top: $local-totals-section-padding-y;
+        border-top: 1px solid map_get($card-scheme, divider);
+    }
+    tr:last-child {
+        td,
+        th {
+            padding-bottom: $local-totals-section-padding-y;
+        }
+    }
+}
+.checkout__totals-footer {
+    font-size: 24px;
+
+    th {
+        font-weight: $font-weight-medium;
+    }
+
+    tr:first-child td,
+    tr:first-child th {
+        padding-top: 20px;
+        border-top: 1px solid map_get($card-scheme, divider);
+    }
+}
+.checkout__payment-methods {
+    margin-bottom: 20px;
+}
+.checkout__agree {
+    margin-bottom: 40px;
+
+    a:hover {
+        text-decoration: underline;
+    }
+}

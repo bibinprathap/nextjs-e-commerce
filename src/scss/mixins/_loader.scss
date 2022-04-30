@@ -1,0 +1,79 @@
+@import '../variables';
+
+
+@mixin loader-animation() {
+    @keyframes loader-animation {
+        from {
+            transform: rotateZ(0deg);
+        }
+        to {
+            transform: rotateZ(360deg);
+        }
+    }
+}
+
+@mixin loader-size($size) {
+    left: calc(50% - #{$size / 2});
+    top: calc(50% - #{$size / 2});
+    width: $size;
+    height: $size;
+    border-radius: $size / 2;
+}
+
+@mixin loader-thickness($thickness) {
+    border-width: $thickness;
+}
+
+@mixin loader-color($color) {
+    border-color: rgba($color, .1);
+    border-top-color: rgba($color, .5);
+}
+
+@mixin loader-base($size: null, $thickness: null, $color: null) {
+    @if ($size != null) {
+        @include loader-size($size);
+    }
+    @if ($thickness != null) {
+        @include loader-thickness($thickness);
+    }
+    @if ($color != null) {
+        @include loader-color($color);
+    }
+
+    border-style: solid;
+    animation-name: loader-animation;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@mixin loader($size: null, $thickness: null, $color: null) {
+    @include loader-base($size, $thickness, $color);
+
+    position: absolute;
+    display: block;
+    content: '';
+}
+
+@mixin loader-overlay($bg-color, $expand-x: 10px, $expand-y: 10px, $size: null, $thickness: null, $color: null) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        left: -$expand-x;
+        top: -$expand-y;
+        width: calc(100% + #{$expand-x * 2});
+        height: calc(100% + #{$expand-y * 2});
+        background: $bg-color;
+        opacity: .9;
+    }
+    &:after {
+        @include loader($size, $thickness, $color);
+    }
+}

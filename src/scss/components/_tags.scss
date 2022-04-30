@@ -1,0 +1,44 @@
+/*
+// .tags
+*/
+@import '../variables';
+
+
+$local-gutter: 4px;
+
+
+.tags {
+    font-size: 13px;
+}
+.tags__list {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: $font-weight-medium;
+    margin: -($local-gutter / 2);
+
+    a {
+        display: block;
+        margin: ($local-gutter / 2);
+        background: $tag-normal-bg-color;
+        padding: 4px 11px;
+        color: inherit;
+        border-radius: 1.5px;
+        transition: background .12s;
+
+        &:hover {
+            color: inherit;
+            background: $tag-hover-bg-color;
+        }
+        &:active {
+            transition-duration: 0s;
+            background: $tag-active-bg-color;
+        }
+    }
+}
+
+
+.tags--sm {
+    .tags__list a {
+        padding: 2px 8px;
+    }
+}

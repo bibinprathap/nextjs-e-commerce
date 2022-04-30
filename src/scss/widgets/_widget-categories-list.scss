@@ -1,0 +1,124 @@
+/*
+// .widget-categories-list
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+.widget-categories-list {}
+.widget-categories-list__body {
+    padding: $widget-padding;
+
+    a {
+        color: inherit;
+        transition: color .1s;
+
+        &:hover {
+            color: $link-color;
+        }
+    }
+
+}
+
+
+// root
+.widget-categories-list__root {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.widget-categories-list__root-item {
+    line-height: 20px;
+}
+.widget-categories-list__root-item + .widget-categories-list__root-item {
+    margin-top: .375rem;
+}
+.widget-categories-list__root-link {
+    font-weight: $font-weight-medium;
+    font-size: 17px;
+}
+.widget-categories-list__root-item--has-children + .widget-categories-list__root-item {
+    margin-top: 1.375rem;
+}
+
+
+// child
+.widget-categories-list__child {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
+    margin: 10px 0 0;
+}
+.widget-categories-list__child + .widget-categories-list__child {
+    margin-top: 0;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition:
+        height .2s ease-in-out,
+        opacity .2s ease-in-out;
+}
+.widget-categories-list__child-item {
+    padding: 3px 0;
+}
+
+
+// show more
+.widget-categories-list__show-more {
+    position: relative;
+    display: inline;
+    border: none;
+    background: transparent;
+    padding: 0;
+    color: map_get($card-scheme, muted);
+    font-size: 14px;
+    font-family: inherit;
+    margin-top: 4px;
+
+    @include direction {
+        #{$padding-inline-start}: 16px;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+.widget-categories-list__show-more-arrow {
+    fill: currentColor;
+    position: absolute;
+    top: 6px;
+    transition: transform .2s;
+    opacity: .78;
+
+    @include direction {
+        #{$inset-inline-start}: 0;
+    }
+
+    svg {
+        display: block;
+    }
+}
+.widget-categories-list__show-more-collapse-text {
+    display: none;
+}
+
+
+// open state
+.widget-categories-list--open {
+    .widget-categories-list__child + .widget-categories-list__child {
+        height: auto;
+        opacity: 1;
+    }
+    .widget-categories-list__show-more-expand-text {
+        display: none;
+    }
+    .widget-categories-list__show-more-collapse-text {
+        display: inline;
+    }
+    .widget-categories-list__show-more-arrow {
+        transform: rotate(180deg);
+    }
+}

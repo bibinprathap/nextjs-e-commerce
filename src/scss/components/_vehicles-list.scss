@@ -1,0 +1,116 @@
+/*
+// .vehicles-list
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+@import '../mixins/scheme';
+@import '../mixins/loader';
+
+
+$local-gutter: 8px;
+
+
+.vehicles-list {}
+.vehicles-list__body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -($local-gutter / 2);
+}
+.vehicles-list__item {
+    display: flex;
+    align-items: center;
+    border: 1px solid map_get($card-scheme, divider);
+    border-radius: 2px;
+    padding: 8px;
+    width: 100%;
+    margin: ($local-gutter / 2);
+}
+.vehicles-list__item-radio {
+    margin: 8px;
+}
+.vehicles-list__item-info {
+    margin: 2px 8px;
+    flex-grow: 1;
+    line-height: 1.25;
+}
+.vehicles-list__item-remove {
+    margin: 8px;
+
+    svg {
+        display: block;
+    }
+}
+.vehicles-list__item-name {
+    display: block;
+    font-size: 15px;
+    font-weight: $font-weight-medium;
+}
+.vehicles-list__item-details {
+    display: block;
+    font-size: 13px;
+    color: map_get($card-scheme, muted);
+    margin-top: 2px;
+}
+.vehicles-list__item-links {
+    font-size: 14px;
+    margin-top: 12px;
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+.vehicles-list__item-remove {
+    position: relative;
+    display: flex;
+    padding: 8px;
+    border: none;
+    margin: 0;
+    border-radius: 2px;
+    fill: currentColor;
+    transition:
+        background-color .15s,
+        color .15s;
+
+    @include define-button-scheme($btn-muted-light-scheme);
+
+    &:focus {
+        outline: none;
+    }
+
+    &.vehicles-list__item-remove--loading {
+        cursor: default;
+        fill: transparent;
+        background: transparent;
+    }
+}
+.vehicles-list__item-remove--loading {
+    &:before {
+        @include loader(18px, 2px, #000);
+    }
+}
+
+
+.vehicles-list--layout--account {
+    $local-gutter: 12px;
+
+    .vehicles-list__body {
+        margin: -($local-gutter / 2);
+    }
+    .vehicles-list__item {
+        padding: 10px 8px;
+        width: calc(50% - #{$local-gutter});
+        margin: ($local-gutter / 2);
+    }
+
+    @include media-breakpoint-down(sm) {
+        $local-gutter: 12px;
+
+        .vehicles-list__body {
+            margin: -($local-gutter / 2);
+        }
+        .vehicles-list__item {
+            width: calc(100% - #{$local-gutter});
+            margin: ($local-gutter / 2);
+        }
+    }
+}

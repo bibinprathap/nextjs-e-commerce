@@ -1,0 +1,47 @@
+/*
+// .footer-links
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/breakpoints';
+@import '../mixins/scheme';
+
+
+.footer-links {
+    display: block;
+}
+.footer-links__title {
+    font-size: 20px;
+    color: map_get($footer-scheme, opposite);
+    margin-bottom: 22px;
+
+    @include scheme-font-weight($footer-scheme, opposite, $font-weight-medium);
+}
+.footer-links__list {
+    font-size: 15px;
+    line-height: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+        color: inherit;
+        transition: .15s;
+    }
+    a:hover {
+        color: map_get($footer-scheme, opposite);
+    }
+}
+.footer-links__item {
+    padding: 5px 0;
+}
+
+
+@include media-breakpoint-down(sm) {
+    .footer-links {
+        text-align: center;
+    }
+    .footer-links__title {
+        margin-bottom: 12px;
+    }
+}

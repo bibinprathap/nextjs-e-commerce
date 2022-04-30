@@ -1,0 +1,50 @@
+/*
+// .filter-list
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+$local-margin: 8px;
+
+
+.filter-list {}
+.filter-list__list {
+    margin: -$local-margin 0;
+}
+.filter-list__item {
+    padding: 1px 0;
+    cursor: pointer;
+    display: flex;
+    margin: $local-margin 0;
+}
+.filter-list__input {
+    flex-shrink: 0;
+
+    @include direction {
+        #{$margin-inline-end}: 7px;
+    }
+}
+.filter-list__title {
+    padding: 1px 0;
+    font-size: 14px;
+    line-height: 16px;
+    flex-grow: 1;
+}
+.filter-list__counter {
+    padding-top: 3px;
+    font-size: 12px;
+    line-height: 12px;
+    color: map_get($card-scheme, opposite-alt);
+
+    @include direction {
+        #{$margin-inline-start}: 12px;
+    }
+}
+.filter-list__item--disabled {
+    cursor: default;
+
+    .filter-list__title {
+        color: map_get($card-scheme, opposite-alt);
+    }
+}

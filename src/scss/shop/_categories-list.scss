@@ -1,0 +1,185 @@
+/*
+// .categories-list
+*/
+@import '../variables';
+@import '../mixins/card';
+@import '../mixins/breakpoints';
+
+
+@mixin local-layout($columns) {
+    .categories-list__item {
+        width: calc((100% - #{($columns - 1) * 1px}) / #{$columns});
+    }
+    .categories-list__divider {
+        &:nth-child(#{$columns * 2}n) {
+            width: 100%;
+            height: 1px;
+        }
+
+        &:last-child:nth-child(#{$columns * 2}n) {
+            display: none;
+        }
+    }
+}
+
+
+.categories-list {}
+.categories-list__body {
+    @include card;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.categories-list__item {
+    padding: 1.125rem;
+    text-align: center;
+    position: relative;
+
+    a {
+        display: block;
+        font-size: 15px;
+        font-weight: $font-weight-medium;
+        line-height: 20px;
+        color: inherit;
+    }
+
+    .image {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: $categories-list-hover-overlay-bg-color;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .12s;
+        z-index: 1;
+    }
+
+    &:hover:before {
+        opacity: 1;
+    }
+}
+.categories-list__item-products {
+    margin-top: 4px;
+    font-size: 14px;
+    color: map_get($card-scheme, opposite-alt);
+}
+.categories-list__divider {
+    width: 1px;
+    background-color: map_get($card-scheme, divider);
+}
+
+
+.categories-list--layout--columns-3-sidebar {
+    @include media-breakpoint-up(sm) {
+        @include local-layout(3);
+    }
+    @include media-breakpoint-down(xs) {
+        @include local-layout(2);
+    }
+}
+
+
+.categories-list--layout--columns-4-sidebar {
+    @include media-breakpoint-up(xl) {
+        @include local-layout(4);
+    }
+    @include media-breakpoint-between(sm, lg) {
+        @include local-layout(3);
+    }
+    @include media-breakpoint-down(xs) {
+        @include local-layout(2);
+    }
+}
+
+
+.categories-list--layout--columns-5-sidebar {
+    @include media-breakpoint-up(xxl) {
+        @include local-layout(5);
+    }
+    @include media-breakpoint-only(xl) {
+        @include local-layout(4);
+    }
+    @include media-breakpoint-between(sm, lg) {
+        @include local-layout(3);
+    }
+    @include media-breakpoint-down(xs) {
+        @include local-layout(2);
+    }
+}
+
+
+.categories-list--layout--columns-4-full {
+    @include media-breakpoint-up(lg) {
+        @include local-layout(4);
+    }
+    @include media-breakpoint-between(sm, md) {
+        @include local-layout(3);
+    }
+    @include media-breakpoint-down(xs) {
+        @include local-layout(2);
+    }
+}
+
+
+.categories-list--layout--columns-5-full {
+    @include media-breakpoint-up(xl) {
+        @include local-layout(5);
+    }
+    @include media-breakpoint-only(lg) {
+        @include local-layout(4);
+    }
+    @include media-breakpoint-between(sm, md) {
+        @include local-layout(3);
+    }
+    @include media-breakpoint-down(xs) {
+        @include local-layout(2);
+    }
+}
+
+
+.categories-list--layout--columns-6-full {
+    @include media-breakpoint-up(xl) {
+        @include local-layout(6);
+    }
+    @include media-breakpoint-only(lg) {
+        @include local-layout(4);
+    }
+    @include media-breakpoint-between(sm, md) {
+        @include local-layout(3);
+    }
+    @include media-breakpoint-down(xs) {
+        @include local-layout(2);
+    }
+}
+
+
+.categories-list--layout--columns-7-full {
+    @include media-breakpoint-up(xxl) {
+        @include local-layout(7);
+    }
+    @include media-breakpoint-only(xl) {
+        @include local-layout(6);
+    }
+    @include media-breakpoint-only(lg) {
+        @include local-layout(4);
+    }
+    @include media-breakpoint-between(sm, md) {
+        @include local-layout(3);
+    }
+    @include media-breakpoint-down(xs) {
+        @include local-layout(2);
+    }
+}

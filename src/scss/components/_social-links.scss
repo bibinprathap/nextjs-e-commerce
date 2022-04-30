@@ -1,0 +1,44 @@
+/*
+// .social-links
+*/
+@import '../variables';
+
+
+$local-gutter: 8px;
+$local-size: 36px;
+
+
+.social-links {}
+.social-links__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: -($local-gutter / 2);
+}
+.social-links__item {
+    margin: $local-gutter / 2;
+
+    a {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: inherit;
+        width: $local-size;
+        height: $local-size;
+        border-radius: $local-size / 2;
+        transition: all .2s;
+    }
+    a:hover {
+        opacity: .8;
+    }
+}
+
+
+@each $name, $scheme in $social-links {
+    .social-links__item--#{$name} a {
+        background: map_get($scheme, main);
+        color: map_get($scheme, opposite);
+    }
+}

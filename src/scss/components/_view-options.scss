@@ -1,0 +1,153 @@
+/*
+// .view-options
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+.view-options {
+    font-size: .9375rem;
+    overflow: hidden;
+}
+.view-options__body {
+    padding: .75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    margin-top: -8px;
+
+    & + & {
+        margin-top: 0;
+        border-top: 1px solid map_get($card-scheme, divider);
+    }
+
+    @include direction {
+        #{$margin-inline-end}: -20px;
+    }
+}
+.view-options__body--filters {
+    padding: .875rem 1rem;
+}
+.view-options__label {
+    position: absolute;
+    background: map_get($card-scheme, main);
+    padding: 0 8px;
+    top: -5px;
+    font-size: 10px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: map_get($card-scheme, muted);
+
+    @include direction {
+        #{$inset-inline-start}: 50%;
+        transform: translateX(#{-50% * $transform-direction});
+    }
+}
+.view-options__filters-button {
+    @include direction {
+        #{$margin-inline-end}: 1.25rem;
+    }
+}
+.view-options__layout {
+    @include direction {
+        #{$margin-inline-end}: 1.25rem;
+    }
+}
+.view-options__legend {
+    white-space: nowrap;
+}
+.view-options__spring {
+    flex-grow: 1;
+}
+.view-options__select {
+    display: flex;
+    align-items: center;
+
+    & > label {
+        margin-bottom: 0;
+        white-space: nowrap;
+
+        @include direction {
+            #{$margin-inline-end}: 10px;
+        }
+    }
+}
+
+.view-options__filters-button,
+.view-options__layout,
+.view-options__legend,
+.view-options__spring,
+.view-options__select,
+.view-options__applied-filters {
+    @include direction {
+        #{$margin-inline-end}: 20px;
+    }
+}
+.view-options__filters-button,
+.view-options__layout,
+.view-options__legend,
+.view-options__select {
+    margin-top: 8px;
+}
+
+
+.view-options--offcanvas--mobile {
+    @include media-breakpoint-up(lg) {
+        .view-options__filters-button {
+            display: none;
+        }
+    }
+}
+
+
+@include media-breakpoint-down(md) {
+    .view-options__legend {
+        @include direction {
+            #{$margin-inline-start}: auto;
+        }
+    }
+    .view-options__spring {
+        width: 100%;
+    }
+    .view-options__select {
+        @include direction {
+            #{$margin-inline-start}: auto;
+        }
+
+        & + & {
+            @include direction {
+                #{$margin-inline-start}: 0;
+            }
+        }
+    }
+}
+@include media-breakpoint-down(xs) {
+    .view-options__body {
+        & + & {
+            margin-top: 2px;
+        }
+    }
+    .view-options__legend {
+        width: 100%;
+        padding-top: 2px;
+    }
+    .view-options__select {
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include direction {
+            #{$margin-inline-start}: 0;
+        }
+
+        & > label {
+            margin: 0 0 2px;
+        }
+    }
+    .view-options__layout {
+        @include direction {
+            #{$margin-inline-start}: auto;
+        }
+    }
+}

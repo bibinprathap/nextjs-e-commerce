@@ -1,0 +1,30 @@
+$theme-color: #e52727;
+
+$theme-scheme: () !default;
+$theme-scheme: map_merge((
+    main:  $theme-color,
+    hover: rgba(#000, .12),
+), $theme-scheme);
+
+// topbar variants
+$topbar-classic-scheme-variants: (
+    classic-two: (
+        main: adjust-color($theme-color, $lightness: -7, $saturation: -5),
+    ),
+) !default;
+
+// logo variants
+$logo-scheme-variants: (
+    classic-two: (
+        primary:   rgba(#fff, .9),
+        secondary: rgba(#fff, .6),
+    ),
+    classic-four: (
+        primary:   rgba(#fff, .9),
+        secondary: rgba(#fff, .6),
+    ),
+    mobile-two: (
+        primary:   rgba(#fff, .9),
+        secondary: rgba(#fff, .6),
+    ),
+) !default;

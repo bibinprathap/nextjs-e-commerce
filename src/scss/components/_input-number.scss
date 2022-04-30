@@ -1,0 +1,70 @@
+/*
+// .input-number
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+.input-number {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+.input-number__input {
+    -moz-appearance: textfield;
+    display: block;
+    width: 100%;
+    min-width: 88px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+}
+.input-number__sub,
+.input-number__add {
+    position: absolute;
+    height: 100%;
+    width: 24px;
+    top: 0;
+    cursor: pointer;
+    user-select: none;
+    opacity: .3;
+    transition: opacity .18s;
+
+    &:before,
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background: currentColor;
+    }
+    &:before {
+        width: 8px;
+        height: 2px;
+    }
+    &:hover {
+        opacity: 1;
+    }
+}
+.input-number__sub {
+    @include direction {
+        #{$inset-inline-start}: 1px;
+    }
+}
+.input-number__add {
+    @include direction {
+        #{$inset-inline-end}: 1px;
+    }
+
+    &:after {
+        width: 2px;
+        height: 8px;
+    }
+}

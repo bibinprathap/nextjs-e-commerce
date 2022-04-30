@@ -1,0 +1,59 @@
+/*
+// .widget-filters
+*/
+@import '../variables';
+@import '../mixins/card';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+@mixin local-offcanvas() {
+    .widget-filters__header {
+        display: none;
+    }
+    .widget-filters__item {
+        padding: 8px 20px;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+}
+
+
+.widget-filters {
+    display: block;
+}
+.widget-filters__item {
+    padding: 8px $widget-padding;
+    border-bottom: 1px solid map_get($card-scheme, divider);
+
+    &:first-child {
+        border-top: 1px solid map_get($card-scheme, divider);
+    }
+}
+.widget-filters__actions {
+    padding: 20px $widget-padding $widget-padding;
+
+    & > * + * {
+        @include direction {
+            #{$margin-inline-start}: 8px;
+        }
+    }
+}
+
+
+.widget-filters--offcanvas--none {
+    @include card;
+}
+.widget-filters--offcanvas--mobile {
+    @include media-breakpoint-up(lg) {
+        @include card;
+    }
+    @include media-breakpoint-down(md) {
+        @include local-offcanvas;
+    }
+}
+.widget-filters--offcanvas--always {
+    @include local-offcanvas;
+}

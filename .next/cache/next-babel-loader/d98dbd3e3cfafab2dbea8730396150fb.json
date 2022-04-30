@@ -1,0 +1,1 @@
+{"ast":null,"code":"// application\nexport var WISHLIST_ADD_ITEM = 'WISHLIST_ADD_ITEM';\nexport var WISHLIST_REMOVE_ITEM = 'WISHLIST_REMOVE_ITEM';","map":null,"metadata":{},"sourceType":"module"}

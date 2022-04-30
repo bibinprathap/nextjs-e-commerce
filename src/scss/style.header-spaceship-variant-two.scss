@@ -1,0 +1,44 @@
+@import 'custom-variables';
+
+$header-variant-name: spaceship-two;
+
+$header-scheme-based-on:                 theme !default;
+$topbar-spaceship-start-scheme-based-on: dark  !default;
+$indicator-counter-scheme-based-on:      dark  !default;
+
+// logo
+$logo-scheme: (
+    primary:   rgba(#fff, .9),
+    secondary: rgba(#fff, .9),
+) !default;
+
+// departments button
+$departments-button-scheme-based-on: (
+    normal: theme,
+    hover:  dark,
+) !default;
+
+// search spaceship
+$search-spaceship-top-shadow:    none        !default;
+$search-spaceship-divider-color: transparent !default;
+
+// search spaceship input
+$search-spaceship-input-scheme: (
+    // normal
+    normal-bg-color:          #fff,
+    normal-font-color:        #262626,
+    normal-placeholder-color: #999,
+    // hover
+    hover-bg-color:           #ebebeb,
+    // focus
+    focus-bg-color:           #fff,
+) !default;
+
+// search spaceship button
+$search-spaceship-button-scheme: (
+    // normal
+    normal-bg-color:   #fff,
+    normal-font-color: rgba(#000, .3),
+) !default;
+
+@import 'style.header';

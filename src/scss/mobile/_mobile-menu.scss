@@ -1,0 +1,448 @@
+/*
+// .mobile-menu
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/direction';
+@import '../mixins/scheme';
+@import '../mixins/header';
+
+
+@include mobile-header-variant-selector {
+    $local-transition-duration: .25s;
+    $local-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    .mobile-menu {
+        visibility: hidden;
+        transition: visibility 0s $local-transition-duration;
+    }
+    .mobile-menu__backdrop {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        background: $modal-backdrop;
+        opacity: 0;
+        will-change: opacity;
+        transition: opacity $local-transition-duration $local-transition-timing-function;
+    }
+    .mobile-menu__body {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+        background: map_get($card-scheme, main);
+        width: 300px;
+        transition: transform $local-transition-duration $local-transition-timing-function;
+        will-change: transform;
+        overflow: hidden;
+
+        @include direction {
+            #{$inset-inline-start}: 0;
+            transform: translateX(#{-100% * $transform-direction});
+        }
+    }
+    .mobile-menu--open {
+        visibility: visible;
+        transition-delay: 0s;
+
+        .mobile-menu__backdrop {
+            opacity: 1;
+        }
+        .mobile-menu__body {
+            transform: translateX(0);
+        }
+    }
+
+
+    .mobile-menu__close {
+        position: absolute;
+        top: 0;
+        width: 48px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        border: none;
+        padding: 0;
+        fill: currentColor;
+        transition:
+            background-color .15s,
+            color .15s;
+
+        @include define-button-scheme($btn-muted-scheme);
+        @include direction {
+            #{$inset-inline-end}: 0;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+    .mobile-menu__conveyor {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: transform $local-transition-duration $local-transition-timing-function;
+    }
+    .mobile-menu__panel {
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        background: map_get($card-scheme, main);
+    }
+    .mobile-menu__panel-header {
+        flex-shrink: 0;
+        height: 51px;
+        border-bottom: 1px solid map_get($card-scheme, divider);
+        display: flex;
+        align-items: center;
+        padding-bottom: 2px;
+        position: relative;
+        backface-visibility: hidden;
+    }
+    .mobile-menu__panel-back {
+        position: absolute;
+        top: 0;
+        width: 48px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        border: none;
+        padding-top: 0;
+        padding-bottom: 0;
+        fill: currentColor;
+        transition:
+            background-color .15s,
+            color .15s;
+
+        @include define-button-scheme($btn-muted-scheme);
+        @include direction {
+            #{$inset-inline-start}: 0;
+            #{$padding-inline-start}: 0;
+            #{$padding-inline-end}: 2px;
+        }
+
+        svg {
+            @include direction {
+                transform: scaleX(#{1 * $transform-direction});
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+    .mobile-menu__panel-arrow {
+        position: absolute;
+    }
+    .mobile-menu__panel-title {
+        text-align: center;
+        margin: auto;
+        font-size: 15px;
+        font-weight: $font-weight-medium;
+    }
+    .mobile-menu__panel-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        backface-visibility: hidden;
+    }
+    .mobile-menu__divider {
+        flex-shrink: 0;
+        height: 1px;
+        background: map_get($card-scheme, divider);
+    }
+    .mobile-menu__spring {
+        flex-grow: 1;
+    }
+
+
+    $local-gutter: 0px;
+
+
+    .mobile-menu__indicators {
+        display: flex;
+        padding: 8px (11px + $local-gutter / 2);
+    }
+    .mobile-menu__indicator {
+        width: calc((100% - #{$local-gutter} * 3) / 4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        fill: map_get($card-scheme, icon-color);
+        border-radius: 2px;
+        padding: 8px 0 6px;
+
+        &:hover {
+            background: map_get($card-scheme, hover);
+        }
+
+        & + & {
+            @include direction {
+                #{$margin-inline-start}: $local-gutter;
+            }
+        }
+    }
+    .mobile-menu__indicator-title {
+        font-size: 9px;
+        font-weight: $font-weight-medium;
+        text-transform: uppercase;
+        color: map_get($card-scheme, muted);
+        margin-top: 5px;
+    }
+    .mobile-menu__indicator-icon {
+        position: relative;
+
+        svg {
+            display: block;
+        }
+    }
+    .mobile-menu__indicator-counter {
+        position: absolute;
+        bottom: calc(100% - 7px);
+        color: map_get($mobile-menu-indicator-counter-scheme, opposite);
+        font-size: 10px;
+        line-height: 1;
+        padding: 2px 3px 1px;
+        border-radius: (13px / 2);
+        text-align: center;
+        z-index: 0;
+
+        @include scheme-font-weight($mobile-menu-indicator-counter-scheme, opposite, $font-weight-medium);
+
+        @include direction {
+            #{$inset-inline-start}: calc(100% - 4px);
+        }
+
+        &:before {
+            display: block;
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: map_get($mobile-menu-indicator-counter-scheme, main);
+            z-index: -1;
+            border-radius: 2.5px;
+
+            @include direction {
+                transform: skewX(#{-11deg * $transform-direction});
+            }
+        }
+    }
+    .mobile-menu__links {
+        ul {
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            font-size: 15px;
+            line-height: 22px;
+            font-weight: $font-weight-medium;
+        }
+        ul > li > a,
+        ul > li > button {
+            position: relative;
+            color: inherit;
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            display: flex;
+            align-items: center;
+            padding-top: 7px;
+            padding-bottom: 7px;
+
+            @include direction {
+                #{$padding-inline-start}: 20px;
+                #{$padding-inline-end}: (16px + 7px + 10px);
+                text-align: $inline-start;
+            }
+
+            &:hover {
+                background: map_get($card-scheme, hover);
+            }
+            &:focus {
+                outline: none;
+            }
+            svg {
+                position: absolute;
+                top: calc(50% - 6px);
+                fill: map_get($card-scheme, arrow-color);
+
+                @include direction {
+                    #{$inset-inline-end}: 16px;
+                    transform: scaleX($transform-direction);
+                }
+            }
+
+            &.highlight:before {
+                $local-size: 5px;
+
+                position: absolute;
+                display: block;
+                content: '';
+                width: $local-size;
+                height: $local-size;
+                border-radius: ($local-size / 2);
+                background: $mobile-menu-link-highlight-color;
+                top: 15px;
+
+                @include direction {
+                    #{$inset-inline-start}: 8px;
+                }
+            }
+        }
+    }
+    .mobile-menu__links-image {
+        display: block;
+        width: 22px;
+        height: 16px;
+        border-radius: 1.5px;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        @include direction {
+            #{$margin-inline-end}: 9px;
+        }
+
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+    .mobile-menu__contacts {
+        text-align: center;
+        padding: 16px 20px 14px;
+        transition: background .2s;
+
+        &:hover {
+            background: map_get($card-scheme, hover);
+        }
+        &,
+        &:hover {
+            color: inherit;
+        }
+    }
+    .mobile-menu__contacts-subtitle {
+        font-size: 13px;
+        color: map_get($card-scheme, muted);
+    }
+    .mobile-menu__contacts-title {
+        font-size: 18px;
+        font-weight: $font-weight-medium;
+    }
+
+
+    .mobile-menu__settings-list {
+        display: flex;
+    }
+    .mobile-menu__setting {
+        flex-basis: 0;
+        flex-grow: 1;
+        width: 50%;
+
+        & + & {
+            @include direction {
+                #{$border-inline-start}: 1px solid map_get($card-scheme, divider);
+            }
+        }
+    }
+    .mobile-menu__setting-button {
+        background: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: inherit;
+        color: inherit;
+        position: relative;
+        width: 100%;
+        padding-top: 9px;
+        padding-bottom: 9px;
+
+        @include direction {
+            #{$padding-inline-start}: 14px;
+            #{$padding-inline-end}: (12px + 6px + 8px);
+        }
+
+        &:hover {
+            background: map_get($card-scheme, hover);
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    .mobile-menu__setting-panel {
+        display: none;
+    }
+    .mobile-menu__setting-icon {
+        display: block;
+        width: 22px;
+        height: 16px;
+        border-radius: 1.5px;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        @include direction {
+            #{$margin-inline-end}: 7px;
+        }
+
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+    .mobile-menu__setting-icon--currency {
+        background: $mobile-menu-currency-bg-color;
+        color: $mobile-menu-currency-font-color;
+        font-size: 10px;
+        line-height: 16px;
+    }
+    .mobile-menu__setting-title {
+        font-size: 13px;
+        font-weight: $font-weight-medium;
+        line-height: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        @include direction {
+            text-align: $inline-start;
+        }
+    }
+    .mobile-menu__setting-arrow {
+        position: absolute;
+        top: calc(50% - 5px);
+        fill: map_get($card-scheme, arrow-color);
+
+        @include direction {
+            #{$inset-inline-end}: 12px;
+            transform: scaleX($transform-direction);
+        }
+
+        svg {
+            display: block;
+        }
+    }
+}

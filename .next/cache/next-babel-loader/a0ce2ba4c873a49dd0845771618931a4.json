@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\n// react\nimport React from 'react'; // application\n\nimport BlogPagePost from '~/components/blog/BlogPagePost';\n\nfunction Page() {\n  return __jsx(BlogPagePost, {\n    featuredImage: true,\n    sidebarPosition: \"end\"\n  });\n}\n\nexport default Page;","map":null,"metadata":{},"sourceType":"module"}

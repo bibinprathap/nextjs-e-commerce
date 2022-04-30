@@ -1,0 +1,43 @@
+/*
+// .block-split
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+@mixin local-layout($sidebar-width, $gutter) {
+    .block-split__item-sidebar {
+        width: $sidebar-width;
+    }
+    .block-split__item-content {
+        width: calc(100% - #{$sidebar-width + $gutter});
+    }
+    .block-split__item + .block-split__item {
+        @include direction {
+            #{$margin-inline-start}: $gutter;
+        }
+    }
+}
+
+
+@include media-breakpoint-up(xxl) {
+    .block-split--has-sidebar {
+        @include local-layout(270px, 40px);
+    }
+}
+@include media-breakpoint-between(lg, xl) {
+    .block-split--has-sidebar {
+        @include local-layout(260px, 32px);
+    }
+}
+@include media-breakpoint-down(md) {
+    .block-split__item-sidebar {
+        width: 100%;
+        order: 1;
+        margin-top: 52px;
+    }
+    .block-split__item-content {
+        width: 100%;
+    }
+}

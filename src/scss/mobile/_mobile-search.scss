@@ -1,0 +1,252 @@
+/*
+// .mobile-search
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+@import '../mixins/scheme';
+@import '../mixins/header';
+
+
+@mixin local-search-button-selector($state) {
+    @if ($state != normal) {
+        .mobile-search__input:#{$state} ~ {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+
+@include mobile-header-variant-selector {
+    $local-height: 36px;
+
+    .mobile-search {}
+    .mobile-search__body {
+        display: flex;
+        position: relative;
+        z-index: 0;
+        width: 100%;
+    }
+    .mobile-search__input,
+    .mobile-search__button {
+        background: transparent;
+        border: none;
+        font-family: inherit;
+        color: inherit;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    .mobile-search__input {
+        flex-grow: 1;
+        font-size: 15px;
+    }
+    .mobile-search__field {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        z-index: -1;
+        transition:
+            color .2s,
+            background .2s,
+            border-color .2s;
+    }
+    .mobile-search__button {
+        width: ($local-height + 2px);
+        flex-shrink: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: color .2s;
+        fill: currentColor;
+    }
+    .mobile-search__vehicle-picker {
+        order: -1;
+        background: map_get($mobile-search-vehicle-button-scheme, normal-bg-color);
+        color: map_get($mobile-search-vehicle-button-scheme, normal-font-color);
+        min-width: 44px;
+        padding: 0 12px;
+        white-space: nowrap;
+        font-size: 15px;
+        font-weight: $font-weight-medium;
+        border-radius: 2.5px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        transition:
+            color .15s,
+            background-color .15s;
+
+        &:hover {
+            background: map_get($mobile-search-vehicle-button-scheme, hover-bg-color);
+        }
+        &:active {
+            background: map_get($mobile-search-vehicle-button-scheme, active-bg-color);
+        }
+        &:focus {
+            outline: none;
+        }
+
+        svg {
+            display: block;
+            flex-shrink: 0;
+            fill: rgba(#000, .75);
+        }
+
+        svg + .mobile-search__vehicle-picker-label {
+            @include direction {
+                #{$margin-inline-start}: 8px;
+            };
+        }
+    }
+
+
+    @include media-breakpoint-up(md) {
+        .mobile-search__input {
+            height: $local-height;
+            padding: 0 11px;
+            border-radius: 3px;
+            border-width: 1px;
+            border-style: solid;
+            transition:
+                color .2s,
+                background .2s,
+                border-color .2s;
+
+            @include define-input-scheme($mobile-search-scheme, normal);
+
+            @include direction {
+                #{$padding-inline-start}: 12px - 1px;
+                #{$padding-inline-end}: 38px - 1px;
+            }
+
+            &:hover {
+                @include define-input-scheme($mobile-search-scheme, hover);
+            }
+            &:focus {
+                @include define-input-scheme($mobile-search-scheme, focus);
+            }
+        }
+        .mobile-search__button--close {
+            display: none;
+        }
+        .mobile-search__button--search {
+            position: absolute;
+            top: 0;
+            height: 100%;
+
+            @include direction {
+                #{$inset-inline-end}: 0;
+            }
+        }
+        .mobile-search__vehicle-picker {
+            @include direction {
+                #{$margin-inline-end}: 6px;
+            }
+        }
+
+        @each $state in (normal, focus, hover) {
+            @include local-search-button-selector($state) {
+                $local-button-scheme: map-get-default-map($mobile-search-scheme, #{$state}-icon-scheme);
+
+                .mobile-search__button--search {
+                    color: map_get($local-button-scheme, normal-font-color);
+                }
+                .mobile-search__button--search:hover {
+                    color: map_get($local-button-scheme, hover-font-color);
+                }
+            }
+        }
+    }
+    @include media-breakpoint-only(md) {
+        .mobile-search__vehicle-picker-label {
+            display: none;
+        }
+    }
+
+
+    @include media-breakpoint-down(sm) {
+        .mobile-search__body {
+            height: 100%;
+        }
+        .mobile-search__input {
+            padding-top: 0;
+            padding-bottom: 0;
+            flex-basis: 0;
+            width: 0;
+
+            @include direction {
+                #{$padding-inline-start}: 12px;
+                #{$padding-inline-end}: 0;
+            }
+        }
+        .mobile-search__button {
+            width: 52px;
+        }
+        .mobile-search__button--close {
+            border-width: 0;
+            border-style: solid;
+
+            @include direction {
+                #{$border-inline-start}-width: 1px;
+            }
+        }
+
+        @each $state in (normal, focus, hover) {
+            $input-selector: '';
+
+            @if ($state != normal) {
+                $input-selector: ':' + $state;
+            }
+
+            .mobile-search__input#{$input-selector} {
+                color: map_get($mobile-search-overlay-scheme, #{$state}-font-color);
+
+                &::placeholder {
+                    color: map_get($mobile-search-overlay-scheme, #{$state}-placeholder-color);
+                }
+
+                & ~ .mobile-search__field {
+                    background: map_get($mobile-search-overlay-scheme, #{$state}-bg-color);
+                }
+
+                & ~ .mobile-search__button--close {
+                    border-color: map_get($mobile-search-overlay-scheme, #{$state}-border-color);
+                }
+            }
+
+            @include local-search-button-selector($state) {
+                $local-button-scheme: map-get-default-map($mobile-search-overlay-scheme, #{$state}-icon-scheme);
+
+                .mobile-search__button {
+                    color: map_get($local-button-scheme, normal-font-color);
+                }
+                .mobile-search__button:hover {
+                    color: map_get($local-button-scheme, hover-font-color);
+                }
+            }
+        }
+
+        .mobile-search__vehicle-picker {
+            margin: 8px 0;
+
+            @include direction {
+                #{$margin-inline-start}: 8px;
+            }
+        }
+    }
+    @media (max-width: 440px) {
+        .mobile-search__vehicle-picker-label {
+            display: none;
+        }
+    }
+}

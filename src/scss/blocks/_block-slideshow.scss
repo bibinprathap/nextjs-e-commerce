@@ -1,0 +1,275 @@
+/*
+// .block-slideshow
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+@import '../mixins/direction';
+
+
+@mixin local-item-active {
+    .correct-slick-active & {
+        @content;
+    }
+}
+
+
+.block-slideshow {}
+.block-slideshow__item {
+    border-radius: 2.5px;
+    overflow: hidden;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 84px 100px;
+    position: relative;
+    z-index: 0;
+
+    &,
+    &:hover {
+        color: map_get($block-slideshow-scheme, opposite);
+    }
+}
+.block-slideshow__item-image {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-size: cover;
+}
+.block-slideshow__item-image--mobile {
+    display: none;
+    background-position: top center;
+}
+.block-slideshow__item-offer {
+    background: map_get($block-slideshow-offer-scheme, main);
+    color: map_get($block-slideshow-offer-scheme, opposite);
+    align-self: flex-start;
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: $font-weight-bold;
+    padding: 2px 8px 0;
+    margin-bottom: 12px;
+    opacity: 0;
+    transition:
+        transform .5s .5s,
+        opacity .5s .5s;
+
+    @include direction {
+        transform: translateX(#{-24px * $transform-direction});
+    }
+
+    @include local-item-active() {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.block-slideshow__item-title {
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: $font-weight-bold;
+    display: block;
+    opacity: 0;
+    transition:
+        opacity .8s .2s;
+
+    @include local-item-active() {
+        opacity: 1;
+    }
+}
+.block-slideshow__item-details {
+    color: map_get($block-slideshow-scheme, opposite-alt);
+    font-size: 18px;
+    line-height: 30px;
+    display: block;
+    margin-top: 16px;
+    flex-grow: 1;
+    transform: translateY(12px);
+    opacity: 0;
+    transition:
+        transform .5s .5s,
+        opacity .5s .5s;
+
+    @include local-item-active() {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.block-slideshow__item-button {
+    margin-top: 24px;
+    align-self: flex-start;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 10px 40px;
+    border-radius: 2px;
+    transition:
+        background-color .2s,
+        color .2s,
+        opacity .5s .5s;
+    background: map_get($btn-primary-scheme, normal-bg-color);
+    color: map_get($btn-primary-scheme, normal-font-color);
+    opacity: 0;
+
+    @include local-item-active() {
+        opacity: 1;
+    }
+
+    &:hover {
+        background: map_get($btn-primary-scheme, hover-bg-color);
+        color: map_get($btn-primary-scheme, hover-font-color);
+    }
+    &:active {
+        background: map_get($btn-primary-scheme, active-bg-color);
+        color: map_get($btn-primary-scheme, active-font-color);
+    }
+}
+.block-slideshow__carousel {
+    $local-dot-size: 12px;
+    $local-dot-gutter: 10px;
+
+    .slick-dots {
+        width: 100%;
+        position: absolute;
+        bottom: 26px;
+        padding: 0;
+        font-size: 0;
+        list-style: none;
+        margin: 0;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            padding: ($local-dot-gutter / 2);
+        }
+
+        button {
+            width: $local-dot-size;
+            height: $local-dot-size;
+            padding: 0;
+            border: none;
+            border-radius: $local-dot-size / 2;
+            background: $body-carousel-dot-normal-color;
+
+            &:focus {
+                outline: none;
+            }
+
+            &:hover {
+                background: $body-carousel-dot-hover-color;
+            }
+        }
+        .slick-active button {
+            background: $body-carousel-dot-active-color;
+        }
+    }
+}
+
+
+
+@include media-breakpoint-down(xl) {
+    .block-slideshow__item {
+        padding: 68px 80px;
+        height: 460px;
+    }
+    .block-slideshow__item-details {
+        margin-top: 12px;
+    }
+}
+@include media-breakpoint-down(lg) {
+    .block-slideshow__item {
+        padding: 60px;
+        height: 380px;
+    }
+    .block-slideshow__item-offer {
+        font-size: 24px;
+        line-height: 28px;
+        padding: 1px 6px 1px;
+        margin-bottom: 8px;
+    }
+    .block-slideshow__item-title {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .block-slideshow__item-details {
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: 8px;
+    }
+    .block-slideshow__item-button {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 8px 28px;
+    }
+    .block-slideshow__carousel .slick-dots {
+        bottom: 22px;
+    }
+}
+@include media-breakpoint-down(md) {
+    .block-slideshow__item {
+        padding: 36px 40px 40px;
+        height: 320px;
+    }
+    .block-slideshow__item-offer {
+        margin-bottom: 10px;
+    }
+    .block-slideshow__item-title {
+        font-size: 32px;
+        line-height: 38px;
+    }
+    .block-slideshow__item-button {
+        font-size: 15px;
+        line-height: 24px;
+        padding: 6px 24px;
+    }
+    .block-slideshow__carousel .slick-dots {
+        bottom: 18px;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .block-slideshow__item {
+        align-items: center;
+        text-align: center;
+        height: 480px;
+    }
+    .block-slideshow__item-image--desktop {
+        display: none;
+    }
+    .block-slideshow__item-image--mobile {
+        display: block;
+    }
+    .block-slideshow__item-offer {
+        align-self: center;
+    }
+    .block-slideshow__item-details {
+        display: none;
+    }
+    .block-slideshow__item-button {
+        align-self: center;
+    }
+    .block-slideshow__item--dark {
+        justify-content: center;
+    }
+}
+@media (max-width: 474px) {
+    .block-slideshow__item {
+        padding: 28px 32px 32px;
+        height: 360px;
+    }
+    .block-slideshow__item-offer {
+        font-size: 20px;
+        line-height: 24px;
+        padding: 1px 6px 1px;
+        margin-bottom: 8px;
+    }
+    .block-slideshow__item-title {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .block-slideshow__item-button {
+        font-size: 14px;
+        line-height: 21px;
+        padding: 5.5px 20px;
+        margin-top: 20px;
+    }
+}

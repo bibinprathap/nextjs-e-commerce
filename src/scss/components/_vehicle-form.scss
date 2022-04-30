@@ -1,0 +1,130 @@
+/*
+// .vehicle-form
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+@import '../mixins/loader';
+
+
+$local-gutter: 12px;
+
+
+.vehicle-form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -($local-gutter / 2);
+
+    .vehicle-form__item {
+        width: calc(50% - #{$local-gutter});
+        margin: ($local-gutter / 2);
+    }
+    .vehicle-form__item:last-child {
+        width: 100%;
+    }
+}
+.vehicle-form__divider {
+    width: 100%;
+    line-height: 1;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    color: map_get($card-scheme, muted);
+    margin: 12px ($local-gutter / 2);
+
+    &:before,
+    &:after {
+        display: block;
+        content: '';
+        height: 1px;
+        flex-grow: 1;
+        background: map_get($card-scheme, divider);
+    }
+    &:before {
+        @include direction {
+            #{$margin-inline-end}: 6px;
+        }
+    }
+    &:after {
+        @include direction {
+            #{$margin-inline-start}: 6px;
+        }
+    }
+}
+.vehicle-form__item {
+    position: relative;
+}
+.vehicle-form__item--select {
+    .vehicle-form__loader {
+        @include loader-overlay(#ebebeb, 0px, 0px, 20px, 2px, #000);
+
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+
+        &:before {
+            opacity: 1;
+            border-radius: 2.5px;
+        }
+    }
+}
+.vehicle-form__item-input {
+    position: relative;
+
+    .vehicle-form__loader {
+        $local-size: 18px;
+        $local-input-height: 36px;
+
+        @include loader($local-size, 2px, #000);
+        @include direction {
+            #{$inset-inline-start}: auto;
+            #{$inset-inline-end}: ($local-input-height - $local-size) / 2;
+        }
+
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+    }
+}
+.vehicle-form__item-alert {
+    &:before {
+        display: block;
+        content: '';
+        height: .375rem;
+    }
+}
+.vehicle-form__item--loading {
+    .vehicle-form__loader {
+        pointer-events: all;
+        opacity: 1;
+    }
+}
+
+
+.vehicle-form--layout--account {
+    .vehicle-form__item {
+        width: calc(25% - #{$local-gutter});
+    }
+
+    @include media-breakpoint-down(sm) {
+        .vehicle-form__item {
+            width: calc(50% - #{$local-gutter});
+        }
+    }
+
+    @media (max-width: 459px) {
+        .vehicle-form__item {
+            width: calc(100% - #{$local-gutter});
+        }
+    }
+}
+
+
+.vehicle-form--layout--modal {
+    @media (max-width: 399px) {
+        .vehicle-form__item {
+            width: calc(100% - #{$local-gutter});
+        }
+    }
+}

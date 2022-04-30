@@ -1,0 +1,227 @@
+/*
+// .dropcart
+*/
+@import '../variables';
+@import '../constants';
+@import '../functions';
+@import '../mixins/direction';
+@import '../mixins/scheme';
+@import '../mixins/loader';
+@import '../mixins/header';
+
+
+@include desktop-header-variant-selector {
+    $local-padding: 24px;
+    $local-image-size: 70px;
+    $local-image-margin: 10px;
+
+    .dropcart {
+        display: block;
+        width: 320px;
+        background-color: map_get($menu-scheme, main);
+        box-shadow: map_get($menu-scheme, shadow);
+        border-radius: 1.5px;
+        padding: $local-padding;
+        color: map_get($menu-scheme, opposite);
+    }
+    .dropcart__empty {
+        text-align: center;
+        font-size: 15px;
+        padding: 20px 0;
+    }
+    .dropcart__list {
+        list-style: none;
+        padding: 0;
+        margin: -8px 0 0;
+    }
+    .dropcart__divider {
+        height: 1px;
+        background: map_get($menu-scheme, divider);
+        margin: 8px 0;
+    }
+    .dropcart__item {
+        display: flex;
+    }
+    .dropcart__item-image {
+        flex-shrink: 0;
+        width: 70px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+    .dropcart__item-info {
+        padding: 4px 0 5px;
+        flex-grow: 1;
+        margin: 0 $local-image-margin;
+    }
+    .dropcart__item-name {
+        font-size: 15px;
+        line-height: 18px;
+
+        a {
+            color: inherit;
+            transition: color .2s;
+        }
+        a:hover {
+            color: $link-color;
+        }
+    }
+    .dropcart__item-features {
+        list-style: none;
+        padding: 0;
+        margin-top: 2px;
+        font-size: 13px;
+        line-height: 17px;
+        color: map_get($menu-scheme, opposite-alt);
+    }
+    .dropcart__item-meta {
+        display: flex;
+        align-items: center;
+        margin-top: 4px;
+    }
+    .dropcart__item-remove {
+        $local-size: 26px;
+
+        position: relative;
+        flex-shrink: 0;
+        width: $local-size;
+        height: $local-size;
+        border-radius: $local-size / 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        fill: currentColor;
+
+        @include define-button-scheme($btn-muted-light-scheme);
+        @include direction {
+            #{$margin-inline-end}: -($local-size / 2);
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        svg {
+            display: block;
+        }
+    }
+    .dropcart__item-remove.dropcart__item-remove--loading {
+        fill: transparent;
+        cursor: default;
+        background: transparent;
+
+        &:after {
+            @include loader(16px, 2px, #000);
+        }
+    }
+
+
+
+    $local-ribbon-height: 16px;
+    $local-ribbon-padding-x: $local-ribbon-height * $TAN-20;
+    $local-ribbon-border-radius: 2.5px;
+
+    .dropcart__item-quantity,
+    .dropcart__item-price {
+        position: relative;
+        height: $local-ribbon-height;
+        z-index: 0;
+        font-size: 11px;
+        padding: 1px ($local-ribbon-padding-x + 5px) 0;
+
+        &:before {
+            position: absolute;
+            display: block;
+            content: '';
+            width: calc(100% - #{$local-ribbon-padding-x});
+            height: 100%;
+            top: 0;
+            z-index: -1;
+            border-radius: $local-ribbon-border-radius ($local-ribbon-border-radius + .5px);
+
+            @include direction {
+                #{$inset-inline-start}: 0;
+                transform: skewX(#{-20deg * $transform-direction});
+                transform-origin: $inline-start bottom;
+            }
+        }
+    }
+    .dropcart__item-quantity {
+        color: map_get($dropcart-quantity-scheme, opposite);
+
+        @include scheme-font-weight($dropcart-quantity-scheme, opposite, $font-weight-medium);
+
+        @include direction {
+            #{$padding-inline-start}: 6px;
+            #{$margin-inline-end}: 3px - $local-ribbon-padding-x;
+        }
+
+        &:before,
+        &:after {
+            background: map_get($dropcart-quantity-scheme, main);
+        }
+
+        &:after {
+            position: absolute;
+            display: block;
+            content: '';
+            width: $local-ribbon-padding-x + $local-ribbon-border-radius;
+            height: 100%;
+            top: 0;
+            z-index: -1;
+
+            @include direction {
+                #{$inset-inline-start}: 0;
+                #{$border-start-start-radius}: $local-ribbon-border-radius;
+                #{$border-end-start-radius}: $local-ribbon-border-radius;
+            }
+        }
+    }
+    .dropcart__item-price {
+        color: map_get($dropcart-price-scheme, opposite);
+
+        @include scheme-font-weight($dropcart-price-scheme, opposite, $font-weight-medium);
+
+        &:before {
+            background: map_get($dropcart-price-scheme, main);
+        }
+    }
+    .dropcart__totals {
+        font-size: 15px;
+        margin-top: 18px;
+        margin-bottom: 24px;
+
+        table {
+            width: 100%;
+        }
+        th, td {
+            padding: 0;
+        }
+        th {
+            font-weight: $font-weight-medium;
+        }
+        td {
+            @include direction {
+                text-align: $inline-end;
+            }
+        }
+        tr + tr > * {
+            padding-top: 4px;
+        }
+    }
+    .dropcart__actions {
+        display: flex;
+
+        & > * {
+            flex-grow: 1;
+        }
+        & > * + * {
+            @include direction {
+                #{$margin-inline-start}: 8px;
+            }
+        }
+    }
+}

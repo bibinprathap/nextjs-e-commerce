@@ -1,0 +1,16 @@
+@import 'custom-variables';
+
+$header-variant-name: classic-three;
+
+$header-layout:                  classic !default;
+$topbar-classic-scheme-based-on: dark    !default;
+$header-scheme-based-on:         light   !default;
+$navbar-scheme-based-on:         light   !default;
+$navbar-stretch:                 false   !default;
+
+$departments-button-scheme-based-on: (
+    normal: theme,
+    hover: dark,
+) !default;
+
+@import 'style.header';

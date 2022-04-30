@@ -1,0 +1,1 @@
+{"ast":null,"code":"/* eslint-disable import/prefer-default-export */\n// application\nimport { brands } from '~/fake-server/database/brands';\nexport function getBrands(options) {\n  return Promise.resolve(brands.slice(0, options === null || options === void 0 ? void 0 : options.limit));\n}","map":null,"metadata":{},"sourceType":"module"}

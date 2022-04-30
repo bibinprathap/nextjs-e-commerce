@@ -1,0 +1,20 @@
+/*
+// .product-card
+*/
+@import '../variables';
+@import '../mixins/card';
+@import '../mixins/loader';
+@import '../mixins/direction';
+@import '../mixins/product-card';
+@import '../mixins/status-badge';
+
+
+.product-card {
+    @include product-card-base;
+}
+.product-card--layout--grid {
+    @include product-card-grid-base;
+}
+.product-card--layout--horizontal {
+    @include product-card-horizontal-base;
+}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"/* eslint-disable import/prefer-default-export */\n// application\nimport { CURRENCY_CHANGE } from '~/store/currency/currencyActionTypes';\nexport function currencyChange(currency) {\n  return {\n    type: CURRENCY_CHANGE,\n    currency\n  };\n}","map":null,"metadata":{},"sourceType":"module"}

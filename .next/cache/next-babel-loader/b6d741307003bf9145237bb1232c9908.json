@@ -1,0 +1,1 @@
+{"ast":null,"code":"// application\nimport Page from './[slug]/index';\nexport var __N_SSP = true;\nexport default Page;","map":null,"metadata":{},"sourceType":"module"}

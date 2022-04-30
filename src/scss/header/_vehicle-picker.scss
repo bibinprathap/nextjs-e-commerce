@@ -1,0 +1,53 @@
+/*
+// .vehicle-picker
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/header';
+
+
+@include desktop-header-variant-selector {
+    .vehicle-picker {}
+    .vehicle-picker__panel {
+        display: none;
+    }
+    .vehicle-picker__panel--active {
+        display: block;
+    }
+    .vehicle-picker__panel-body {
+        $local-padding: 20px;
+
+        padding: $local-padding $local-padding ($local-padding + 8px);
+    }
+    .vehicle-picker__text {
+        font-size: 15px;
+        line-height: 18px;
+        color: map_get($menu-scheme, opposite-alt);
+        margin-bottom: 12px;
+
+        &:first-child {
+            margin-top: -3px;
+        }
+    }
+    .vehicle-picker__actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 32px;
+
+        & > * + * {
+            @include direction {
+                #{$margin-inline-start}: 20px;
+            }
+        }
+    }
+    .search__car-selector-link {
+        a {
+            font-size: 14px;
+            color: map_get($menu-scheme, muted);
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}

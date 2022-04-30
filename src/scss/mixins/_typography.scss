@@ -1,0 +1,177 @@
+@import '../variables';
+@import '../mixins/breakpoints';
+@import '../mixins/direction';
+
+
+@mixin make-typography() {
+    line-height: 1.625;
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 1.5em;
+        margin-bottom: .75em;
+    }
+
+    h2, h3 {
+        padding-bottom: 8px;
+        border-bottom: 1px solid map_get($card-scheme, divider);
+    }
+    h3 {
+        padding-bottom: 6px;
+    }
+
+    p {
+        margin-bottom: 1.5em;
+    }
+
+    ol, ul {
+        margin: 1.5em 0;
+
+        @include direction {
+            #{$padding-inline-start}: 2.5rem;
+        }
+    }
+
+    li {
+        margin-bottom: .5em;
+    }
+
+    hr {
+        $local-size: 4px;
+        $local-margin: 30px;
+
+        position: relative;
+        width: $local-size;
+        height: $local-size;
+        border-radius: $local-size / 2;
+        border: none;
+        background: $typography-hr-color;
+        margin: 2.5em auto;
+
+        &:after,
+        &:before {
+            position: absolute;
+            content: '';
+            display: block;
+            width: inherit;
+            height: inherit;
+            border-radius: inherit;
+            background: inherit;
+        }
+
+        &:after {
+            left: -$local-margin;
+        }
+
+        &:before {
+            right: -$local-margin;
+        }
+    }
+
+    blockquote {
+        margin: 2.25rem 0;
+        text-align: center;
+        font-size: 18px;
+        font-style: italic;
+        background: $typography-blockquote-bg-color;
+        border-radius: 4px;
+        padding: 2.25em 2.25em 2em;
+
+        cite {
+            margin-top: -.5em;
+            color: map_get($card-scheme, opposite-alt);
+            display: block;
+            font-size: 15px;
+            font-style: normal;
+        }
+
+        p {
+            margin-bottom: 1.25em;
+        }
+
+        > *:first-child {
+            margin-top: 0;
+        }
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    & > *:first-child {
+        margin-top: 0;
+    }
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+
+    img {
+        max-width: 100%;
+        border-radius: 2px;
+    }
+
+    figure {
+        margin: 1.875rem 0 2.25rem;
+    }
+    figcaption {
+        font-size: 14px;
+        text-align: center;
+        color: map_get($card-scheme, opposite-alt);
+        padding-top: .875rem;
+    }
+
+    @include media-breakpoint-down(xs) {
+        font-size: 15px;
+        line-height: 1.75;
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 1.25em;
+            margin-bottom: .5em;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+        h3 {
+            font-size: 24px;
+        }
+        h4 {
+            font-size: 20px;
+        }
+        h5 {
+            font-size: 18px;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        ol, ul {
+            margin: 1.25em 0;
+
+            @include direction {
+                #{$padding-inline-start}: 2rem;
+            }
+        }
+
+        hr {
+            margin: 1.5em auto;
+        }
+
+        blockquote {
+            padding: 1em;
+            font-size: 16px;
+            margin: 1.5rem 0;
+
+            p {
+                margin-bottom: .75em;
+            }
+        }
+
+        figure {
+            margin: 1.5rem 0 1.5rem;
+        }
+    }
+}

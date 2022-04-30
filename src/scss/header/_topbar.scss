@@ -1,0 +1,219 @@
+/*
+// .topbar
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+@import '../mixins/scheme';
+@import '../mixins/header';
+
+
+@mixin local-define-scheme($scheme) {
+    background: map_get($scheme, main);
+
+    .topbar__item-text {
+        color: map_get($scheme, opposite);
+
+        @include scheme-font-weight($scheme, opposite, $font-weight-medium);
+    }
+    .topbar__link {
+        color: map_get($scheme, muted);
+
+        @include scheme-font-weight($scheme, muted, $font-weight-normal);
+
+        &:hover {
+            color: map_get($scheme, opposite);
+        }
+    }
+    .topbar__button-label {
+        color: map_get($scheme, muted);
+
+        @include scheme-font-weight($scheme, muted, $font-weight-normal);
+    }
+    .topbar__button-title {
+        color: map_get($scheme, opposite);
+
+        @include scheme-font-weight($scheme, opposite, $font-weight-medium);
+    }
+    .topbar__button-arrow {
+        color: map_get($scheme, arrow-color);
+    }
+    .topbar__menu--open .topbar__menu-button,
+    .topbar__button:hover {
+        @if(map_has_key($scheme, hover)) {
+            background: map_get($scheme, hover);
+        }
+
+        .topbar__button-label {
+            color: map_get($scheme, opposite);
+        }
+    }
+}
+
+
+@include desktop-header-variant-selector {
+    $local-padding: 8px;
+    $local-item-padding-x: 10px;
+    $local-transition-duration: .2s;
+
+    .topbar {
+        display: flex;
+        height: 100%;
+        font-size: 14px;
+        line-height: 1;
+    }
+    .topbar__item-spring {
+        flex-grow: 1;
+    }
+    // text
+    .topbar__item-text {
+        display: flex;
+        align-items: center;
+        padding: 0 $local-item-padding-x;
+    }
+    // link
+    .topbar__link {
+        transition: color .12s;
+    }
+    .topbar__link-label {
+        transition: inherit;
+    }
+    // dropdown
+    .topbar__button {
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: transparent;
+        font-family: inherit;
+        border: none;
+        padding: 0 $local-item-padding-x;
+        transition: background .12s;
+        height: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    .topbar__button-title,
+    .topbar__button-label {
+        transition: color .12s;
+    }
+    .topbar__button-label {
+        @include direction {
+            #{$margin-inline-end}: 3px;
+        }
+    }
+    .topbar__button--has-arrow {
+        @include direction {
+            #{$padding-inline-end}: $local-padding + 10px;
+            #{$padding-inline-end}: ($local-padding + 2px) + 12px;
+        }
+    }
+    .topbar__button-arrow {
+        position: absolute;
+        fill: currentColor;
+        top: calc(50% - 3px);
+
+        @include direction {
+            #{$inset-inline-end}: $local-padding;
+            #{$inset-inline-end}: ($local-padding + 2px);
+        }
+
+        svg {
+            display: block;
+        }
+    }
+
+    // menu
+    .topbar__menu {
+        position: relative;
+    }
+    .topbar__menu-body {
+        visibility: hidden;
+        transform-origin: top;
+        transform: rotateX(60deg);
+        opacity: 0;
+        transition:
+            transform $local-transition-duration,
+            opacity $local-transition-duration,
+            visibility 0s $local-transition-duration;
+    }
+    .topbar__menu-body {
+        color: map_get($menu-small-scheme, opposite);
+        background-color: map_get($menu-small-scheme, main);
+        box-shadow: map_get($menu-small-scheme, shadow);
+        position: absolute;
+        width: 150px;
+        padding: .5rem 0;
+        font-size: 14px;
+        line-height: 26px;
+        z-index: 1;
+
+        @include scheme-font-weight($menu-small-scheme, opposite, $font-weight-medium);
+
+        @include direction {
+            #{$inset-inline-end}: 0;
+        }
+    }
+    .topbar__menu-item {
+        display: block;
+        padding: 3px 1rem;
+        background: transparent;
+        color: map_get($menu-small-scheme, opposite);
+        font-family: inherit;
+        font-weight: inherit;
+        border: none;
+        width: 100%;
+
+        @include direction {
+            text-align: $inline-start;
+        }
+
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            color: map_get($menu-small-scheme, opposite);
+            background: map_get($menu-small-scheme, hover);
+        }
+
+        img {
+            @include direction {
+                #{$margin-inline-end}: 8px;
+            }
+        }
+
+        span {
+            position: relative;
+            top: 1px;
+        }
+    }
+    .topbar__menu--open {
+        .topbar__menu-body {
+            visibility: visible;
+            transition-delay: 0s, 0s, 0s;
+            opacity: 1;
+            transform: rotateX(0deg);
+        }
+    }
+    .topbar--spaceship-end {
+        justify-content: flex-end;
+    }
+
+
+    // define scheme
+    @if ($header-layout == spaceship) {
+        .topbar--spaceship-start {
+            @include local-define-scheme($topbar-spaceship-start-scheme);
+        }
+        .topbar--spaceship-end {
+            @include local-define-scheme($topbar-spaceship-end-scheme);
+        }
+    }
+    @if ($header-layout == classic) {
+        .topbar--classic {
+            @include local-define-scheme($topbar-classic-scheme);
+        }
+    }
+}

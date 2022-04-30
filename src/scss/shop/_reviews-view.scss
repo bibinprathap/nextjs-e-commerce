@@ -1,0 +1,30 @@
+/*
+// .reviews-view
+*/
+@import '../variables';
+
+
+.reviews-view {}
+.reviews-view__form {
+    margin-top: 48px;
+}
+.reviews-view__header {
+    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: $font-weight-medium;
+}
+
+
+ 
+.enquiry-view__form {
+    // margin-top: 48px;
+}
+.enquiry-view__header {
+    margin: 5px;
+    margin-bottom: 24px;
+    font-size: 28px;
+    font-weight: $font-weight-medium;
+}
+.enquiry-view__body {
+    margin: 5px;
+}

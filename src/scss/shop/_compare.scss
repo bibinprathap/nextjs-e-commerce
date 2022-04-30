@@ -1,0 +1,31 @@
+/*
+// .compare
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+.compare {}
+.compare__options-list {
+    padding: 16px 20px;
+    border-bottom: 1px solid map_get($card-scheme, divider);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.compare__option {
+    display: flex;
+    align-items: center;
+
+    & + & {
+        @include direction {
+            #{$margin-inline-start}: 16px;
+        }
+    }
+}
+.compare__option-label {
+    @include direction {
+        #{$margin-inline-end}: 8px;
+    }
+}

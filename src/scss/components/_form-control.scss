@@ -1,0 +1,39 @@
+/*
+// .form-control
+*/
+@import '../variables';
+@import '../mixins/form-control';
+
+
+// common
+.form-control {
+    @include form-control;
+    @include form-control--size(nl);
+}
+.form-control-lg {
+    @include form-control--size(lg);
+}
+.form-control-sm {
+    @include form-control--size(sm);
+}
+
+// select
+select.form-control {
+    @include form-control-select;
+    @include form-control-select--size(nl);
+}
+select.form-control-lg {
+    @include form-control-select--size(lg);
+}
+select.form-control-sm {
+    @include form-control-select--size(sm);
+}
+
+
+
+.valid-feedback {
+    color: $form-valid-feedback-font-color;
+}
+.invalid-feedback {
+    color: $form-invalid-feedback-font-color;
+}

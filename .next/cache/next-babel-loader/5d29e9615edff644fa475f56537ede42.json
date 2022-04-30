@@ -1,0 +1,1 @@
+{"ast":null,"code":"// third-party\nimport { HYDRATE } from 'next-redux-wrapper'; // application\n\nimport { OPTIONS_NAMESPACE } from '~/store/options/optionsReducer';\nexport const OPTIONS_HYDRATE = HYDRATE;\nexport const OPTIONS_SET_ALL = 'OPTIONS_SET_ALL';","map":null,"metadata":{},"sourceType":"module"}

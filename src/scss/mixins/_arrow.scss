@@ -1,0 +1,37 @@
+@import '../functions';
+@import 'direction';
+
+
+@mixin arrow-skew($angel) {
+    .arrow__button:before {
+        @include direction {
+            transform: skewX(#{$angel * $transform-direction});
+        }
+    }
+}
+@mixin arrow-size($height, $padding-x, $angel) {
+    $padding-x-skew: $height * tan($angel);
+    $padding-x-total: $padding-x + $padding-x-skew;
+
+    .arrow__button {
+        height: $height;
+        padding: 0 $padding-x-total;
+
+        &:before {
+            width: calc(100% - #{$padding-x-skew});
+
+            @include direction {
+                #{$inset-inline-start}: $padding-x-skew / 2;
+            }
+        }
+    }
+
+    @include arrow-skew($angel);
+}
+
+
+@function calc-arrow-width($height, $padding-x, $angel) {
+    $icon-width: 6px;
+
+    @return ($height * tan($angel) + $padding-x) * 2 + $icon-width;
+}

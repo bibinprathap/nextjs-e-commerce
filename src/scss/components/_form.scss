@@ -1,0 +1,21 @@
+/*
+// .form
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+.form {}
+.form-check {
+    @include direction {
+        #{$padding-inline-start}: 1.5rem;
+    }
+}
+.form-check-input {
+    position: absolute;
+    margin-top: .1875rem;
+
+    @include direction {
+        #{$margin-inline-start}: -1.5rem;
+    }
+}

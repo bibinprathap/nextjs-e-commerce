@@ -1,0 +1,110 @@
+/*
+// .mobile-header
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+@import '../mixins/header';
+
+
+@include mobile-header-variant-selector {
+    .mobile-header {
+        display: block;
+        background: map_get($mobile-header-scheme, main);
+        box-shadow: map_get($mobile-header-scheme, shadow);
+        position: relative;
+        z-index: 100;
+
+        @include media-breakpoint-up(xl) {
+            display: none;
+        }
+    }
+    .mobile-header__body {
+        height: 50px;
+        display: flex;
+    }
+    .mobile-header__menu-button {
+        width: 52px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: map_get($mobile-header-scheme, main);
+        fill: map_get($mobile-header-scheme, icon-color);
+
+        &:hover {
+            background: map_get($mobile-header-scheme, hover);
+        }
+        &:active {
+            background: map_get($mobile-header-scheme, active);
+        }
+        &:focus {
+            outline: none;
+        }
+
+        svg {
+            display: block;
+        }
+    }
+    .mobile-header__logo {
+        display: flex;
+        align-items: center;
+        padding: 0 14px;
+    }
+    .mobile-header__search {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        max-width: 440px;
+        flex-grow: 1;
+        padding: 0 12px;
+        margin: 0 auto;
+    }
+    .mobile-header__indicators {
+        display: flex;
+
+        @include direction {
+            #{$margin-inline-start}: auto;
+        }
+    }
+
+
+    @include media-breakpoint-down(sm) {
+        .mobile-header {
+            position: relative;
+        }
+        .mobile-header .container {
+            padding: 0 8px;
+        }
+        .mobile-header__menu-button {
+            width: 44px;
+        }
+        .mobile-header__logo {
+            @include direction {
+                #{$padding-inline-start}: 10px;
+                #{$padding-inline-end}: 10px;
+            }
+        }
+        .mobile-header__search {
+            top: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            padding: 0;
+            z-index: 1;
+            transform: translateY(-100%);
+            transition: transform .3s;
+
+            @include direction {
+                #{$inset-inline-start}: 0;
+            }
+        }
+        .mobile-header__search--open {
+            transform: none;
+        }
+    }
+}

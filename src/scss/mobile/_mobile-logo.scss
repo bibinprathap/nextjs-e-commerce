@@ -1,0 +1,22 @@
+/*
+// .mobile-header
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+@import '../mixins/header';
+
+
+@include mobile-header-variant-selector {
+    .mobile-logo {
+        svg {
+            display: block;
+        }
+    }
+    .mobile-logo__part-one {
+        fill: map_get($logo-scheme, primary);
+    }
+    .mobile-logo__part-two {
+        fill: map_get($logo-scheme, secondary);
+    }
+}

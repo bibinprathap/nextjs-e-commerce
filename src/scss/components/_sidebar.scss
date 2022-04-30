@@ -1,0 +1,111 @@
+/*
+// .sidebar
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+@import '../mixins/scheme';
+
+
+$local-transition-duration: .25s;
+$local-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+
+@mixin local-offcanvas() {
+    visibility: hidden;
+    transition: visibility 0s $local-transition-duration;
+
+    .sidebar__backdrop {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        background: $modal-backdrop;
+        opacity: 0;
+        will-change: opacity;
+        transition: opacity $local-transition-duration $local-transition-timing-function;
+    }
+    .sidebar__body {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+        background: map_get($card-scheme, main);
+        width: 300px;
+        transition: transform $local-transition-duration $local-transition-timing-function;
+        will-change: transform;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        @include direction {
+            #{$inset-inline-start}: 0;
+            transform: translateX(#{-100% * $transform-direction});
+        }
+    }
+    .sidebar__content {
+        flex-grow: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    &.sidebar--open {
+        visibility: visible;
+        transition-delay: 0s;
+
+        .sidebar__backdrop {
+            opacity: 1;
+        }
+        .sidebar__body {
+            transform: translateX(0);
+        }
+    }
+    .sidebar__header {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid map_get($card-scheme, divider);
+        flex-shrink: 0;
+    }
+    .sidebar__title {
+        flex-grow: 1;
+        font-size: 15px;
+        font-weight: $font-weight-medium;
+        padding: 0 20px;
+    }
+    .sidebar__close {
+        width: 48px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        fill: currentColor;
+        padding: 0 0 2px;
+        flex-shrink: 0;
+        transition:
+            background-color .15s,
+            color .15s;
+
+        @include define-button-scheme($btn-muted-scheme);
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+
+.sidebar__header {
+    display: none;
+}
+
+
+.sidebar--offcanvas--mobile {
+    @include media-breakpoint-down(md) {
+        @include local-offcanvas;
+    }
+}
+.sidebar--offcanvas--always {
+    @include local-offcanvas;
+}

@@ -1,0 +1,65 @@
+/*
+// .address-card
+*/
+@import '../variables';
+@import '../constants';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+.address-card {
+    position: relative;
+}
+.address-card__badge {
+    position: absolute;
+    top: 12px;
+
+    @include direction {
+        #{$inset-inline-end}: 12px;
+    }
+}
+.address-card__body {
+    padding: 1.5rem;
+    font-size: 15px;
+    line-height: 18px;
+}
+.address-card__name {
+    font-size: 16px;
+    font-weight: $font-weight-bold;
+    margin-bottom: 1.125rem;
+}
+.address-card__row + .address-card__row {
+    margin-top: .75rem;
+}
+.address-card__row-title {
+    font-size: 13px;
+    color: map_get($card-scheme, opposite-alt);
+}
+.address-card__footer {
+    margin-top: 1.625rem;
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+
+.address-card--featured {
+    .address-card__body {
+        padding: 2rem;
+    }
+    .address-card__name {
+        font-weight: $font-weight-bold;
+    }
+
+    @include media-breakpoint-only(md) {
+        .address-card__body {
+            padding: 1.5rem;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .address-card__body {
+            padding: 1.375rem;
+        }
+    }
+}

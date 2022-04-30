@@ -1,0 +1,117 @@
+@import 'constants';
+
+
+// Replace `$search` with `$replace` in `$string`
+// @author Hugo Giraudel
+// @param {String} $string - Initial string
+// @param {String} $search - Substring to replace
+// @param {String} $replace ('') - New value
+// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+
+@function tan($angel) {
+    $angel: abs($angel);
+
+    @if(map_has_key($TAN, $angel)) {
+        @return map_get($TAN, $angel);
+    }
+
+    @warn 'Define the value of tangent for '+$angel + ' in _constatnts.scss';
+
+    @return 1;
+}
+
+
+// get scheme from collection by name
+@function get-scheme($name) {
+    @if(type-of($name) == 'map') {
+        @return $name;
+    }
+
+    $schemes-registry: () !global !default;
+
+    @if(map_has_key($schemes-registry, $name)) {
+        @return map_get($schemes-registry, $name);
+    }
+
+    @return ();
+}
+
+
+@function register-scheme($scheme) {
+    $schemes-registry: () !global !default;
+    $schemes-registry: map_merge($schemes-registry, (
+        map_get($scheme, name): $scheme,
+    )) !global;
+
+    @return $scheme;
+}
+
+
+@function map-get-default-map($map, $key) {
+    @if(map_has_key($map, $key)) {
+        @return map_get($map, $key);
+    }
+
+    @return ();
+}
+
+
+@function map-merge-all($maps...) {
+    $result: ();
+
+    @each $map in $maps {
+        $result: map_merge($result, $map);
+    }
+
+    @return $result;
+}
+
+
+@function map-merge-deep($maps...) {
+    $result: ();
+
+    @each $map in $maps {
+        @each $key, $value in $map {
+            @if(map_has_key($result, $key) and type_of(map_get($result, $key)) == 'map' and type_of($value) == 'map') {
+                $result: map_merge($result, (
+                    $key: map-merge-deep(map_get($result, $key), $value),
+                ));
+            } @else {
+                $result: map_merge($result, (
+                    $key: $value,
+                ));
+            }
+        }
+    }
+
+    @return $result;
+}
+
+
+@function blend($color1, $color2) {
+    $r1: red($color1);
+    $g1: green($color1);
+    $b1: blue($color1);
+    $a1: opacity($color1);
+
+    $r2: red($color2);
+    $g2: green($color2);
+    $b2: blue($color2);
+    $a2: opacity($color2);
+
+    $r: min(255, round($r1 * (1 -  $a2) + $r2 * $a2));
+    $g: min(255, round($g1 * (1 -  $a2) + $g2 * $a2));
+    $b: min(255, round($b1 * (1 -  $a2) + $b2 * $a2));
+
+    @return rgba($r, $g, $b, $a1);
+}

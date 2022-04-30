@@ -1,0 +1,86 @@
+/*
+// .tooltip
+*/
+@import '../variables';
+
+
+$local-arrow-size: 8px;
+$local-offset: 3px;
+$local-square-root-of-two: 1.414213;
+
+
+.tooltip {
+    pointer-events: none;
+    transition-duration: 0s;
+    font-family: inherit;
+}
+.tooltip.show {
+    opacity: 1;
+}
+.tooltip-inner {
+    background: $tooltip-bg-color;
+    color: $tooltip-font-color;
+    border-radius: 2px;
+    position: relative;
+    padding: 5px 8px;
+    box-sizing: content-box;
+    font-size: 14px;
+    line-height: 1.25;
+}
+.tooltip .arrow {
+    width: $local-arrow-size;
+    height: $local-arrow-size;
+
+    &:before {
+        width: $local-arrow-size;
+        height: $local-arrow-size;
+        border-radius: 1px;
+        border: none;
+        background: $tooltip-bg-color;
+        transform: rotateZ(45deg) scale($local-arrow-size / (floor($local-square-root-of-two * $local-arrow-size) - .8));
+    }
+}
+
+// top
+.bs-tooltip-auto[x-placement^=top],
+.bs-tooltip-top {
+    padding: #{$local-arrow-size / 2} 0;
+
+    .arrow,
+    .tooltip-inner {
+        bottom: $local-offset;
+    }
+}
+
+// bottom
+.bs-tooltip-auto[x-placement^=bottom],
+.bs-tooltip-bottom {
+    padding: #{$local-arrow-size / 2} 0;
+
+    .arrow,
+    .tooltip-inner {
+        top: $local-offset;
+    }
+}
+
+// right
+.bs-tooltip-auto[x-placement^=right],
+.bs-tooltip-right {
+    padding: 0 #{$local-arrow-size / 2};
+
+    .arrow,
+    .tooltip-inner {
+        left: $local-offset;
+    }
+}
+
+// left
+.bs-tooltip-auto[x-placement^=left],
+.bs-tooltip-left {
+    padding: 0 #{$local-arrow-size / 2};
+
+    .arrow,
+    .tooltip-inner {
+        right: $local-offset;
+    }
+}

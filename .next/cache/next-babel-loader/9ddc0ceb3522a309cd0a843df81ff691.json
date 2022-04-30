@@ -1,0 +1,1 @@
+{"ast":null,"code":"// application\nexport const WISHLIST_ADD_ITEM = 'WISHLIST_ADD_ITEM';\nexport const WISHLIST_REMOVE_ITEM = 'WISHLIST_REMOVE_ITEM';","map":null,"metadata":{},"sourceType":"module"}

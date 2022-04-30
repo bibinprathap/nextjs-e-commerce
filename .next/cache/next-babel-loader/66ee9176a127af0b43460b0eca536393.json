@@ -1,0 +1,1 @@
+{"ast":null,"code":"/* eslint-disable import/prefer-default-export,class-methods-use-this */\n// application\nimport { CountriesApi } from '~/api/base';\nimport { getCountries } from '~/fake-server/endpoints';\nexport class FakeCountriesApi extends CountriesApi {\n  getCountries() {\n    return getCountries();\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,139 @@
+/*
+// .product-tabs
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+.product-tabs {}
+.product-tabs__list {
+    display: flex;
+    padding: 0;
+    margin: 0 0 -1px;
+    list-style: none;
+    overflow-x: auto;
+}
+.product-tabs__content {
+    border-top: 1px solid map_get($card-scheme, divider);
+}
+.product-tabs__item {
+    position: relative;
+
+    a {
+        font-size: 16px;
+        font-weight: $font-weight-medium;
+        color: inherit;
+        display: flex;
+        padding: 14px 18px 13px;
+        transition:
+            background .12s,
+            box-shadow .12s;
+
+        &:hover {
+            background: $product-tabs-hover-bg-color;
+            box-shadow: 0 -1px $product-tabs-hover-border-color inset;
+        }
+        &:active {
+            background: $product-tabs-active-bg-color;
+            box-shadow: 0 -1px $product-tabs-active-border-color inset;
+        }
+    }
+    &:first-child {
+        @include direction {
+            #{$margin-inline-start}: auto;
+        }
+    }
+    &:last-child {
+        @include direction {
+            #{$margin-inline-end}: auto;
+        }
+    }
+}
+.product-tabs__item-counter {
+    color: $product-tabs-counter-color;
+    font-size: 14px;
+    top: -4px;
+    position: relative;
+
+    @include direction {
+        #{$margin-inline-start}: 3px;
+        #{$margin-inline-end}: -3px;
+    }
+}
+.product-tabs__item--active {
+    a {
+        &,
+        &:hover,
+        &:active {
+            background: transparent;
+            box-shadow: 0 -2px $product-tabs-current-border-color inset;
+        }
+    }
+}
+.product-tabs__pane {
+    display: block;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: opacity .5s;
+}
+.product-tabs__pane--active {
+    padding: 42px 48px 48px;
+    overflow: visible;
+    height: auto;
+    opacity: 1;
+    max-width: calc(100% - .001px); // this is due to safari bag
+}
+
+
+.product-tabs--layout--full {
+    .product-tabs__pane--active {
+        padding: 48px;
+    }
+
+    @include media-breakpoint-down(md) {
+        .product-tabs__pane--active {
+            padding: 40px 44px 44px;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .product-tabs__pane--active {
+            padding: 24px 28px 28px;
+        }
+    }
+    @media (max-width: 419px) {
+        .product-tabs__pane--active {
+            padding: 20px 24px 24px;
+        }
+    }
+}
+
+
+.product-tabs--layout--sidebar {
+    @include media-breakpoint-only(xxl) {
+        .product-tabs__pane--active {
+            padding: 36px;
+        }
+    }
+    @include media-breakpoint-only(xl) {
+        .product-tabs__pane--active {
+            padding: 48px;
+        }
+    }
+    @include media-breakpoint-down(lg) {
+        .product-tabs__pane--active {
+            padding: 36px;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .product-tabs__pane--active {
+            padding: 28px;
+        }
+    }
+    @media (max-width: 419px) {
+        .product-tabs__pane--active {
+            padding: 24px;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+/*
+// .filter-category
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+$local-item-padding-left: 14px;
+
+
+.filter-category {}
+.filter-category__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    line-height: 18px;
+
+    a {
+        color: inherit;
+        transition: color .15s;
+    }
+    a:hover {
+        color: $link-color;
+    }
+}
+.filter-category__item {
+    padding: 5px 0;
+    display: flex;
+
+    & > a {
+        flex-grow: 1;
+
+        @include direction {
+            #{$padding-inline-end}: 10px;
+        }
+    }
+}
+.filter-category__item--parent {
+    position: relative;
+
+    @include direction {
+        #{$padding-inline-start}: $local-item-padding-left;
+    }
+}
+.filter-category__item--current {
+    font-weight: $font-weight-bold;
+}
+.filter-category__item--child {
+    position: relative;
+    font-size: 15px;
+
+    @include direction {
+        #{$padding-inline-start}: $local-item-padding-left;
+    }
+}
+.filter-category__arrow {
+    fill: $filter-title-default-arrow-color;
+    position: absolute;
+    top: 10px;
+
+    @include direction {
+        #{$inset-inline-start}: 0;
+        transform: scaleX(#{$transform-direction});
+    }
+
+    svg {
+        display: block;
+    }
+}
+.filter-category__counter {
+    font-size: 12px;
+    line-height: 12px;
+    padding-top: 4px;
+    font-weight: $font-weight-normal;
+    color: map_get($card-scheme, opposite-alt);
+}

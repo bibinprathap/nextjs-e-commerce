@@ -1,0 +1,61 @@
+/*
+// .filters-button
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+.filters-button {
+    display: flex;
+    background: $filters-button-normal-bg-color;
+    border: none;
+    border-radius: 2px;
+    font-size: 15px;
+    line-height: 1;
+    align-items: center;
+    color: inherit;
+    font-family: inherit;
+    transition: background-color .12s;
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+    @include direction {
+        #{$padding-inline-start}: 9px;
+        #{$padding-inline-end}: 7px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        background: $filters-button-hover-bg-color;
+    }
+    &:active {
+        background: $filters-button-active-bg-color;
+    }
+}
+.filters-button__icon {
+    fill: $filters-button-icon-color;
+
+    @include direction {
+        #{$margin-inline-end}: 7px;
+    }
+
+    svg {
+        display: block;
+    }
+}
+.filters-button__title {
+    padding-top: 1px;
+}
+.filters-button__counter {
+    background: $filters-button-counter-bg-color;
+    color: $filters-button-counter-font-color;
+    padding: 3px 4px 2px;
+    font-size: 11px;
+    border-radius: 1.5px;
+
+    @include direction {
+        #{$margin-inline-start}: 6px;
+    }
+}

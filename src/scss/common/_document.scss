@@ -1,0 +1,82 @@
+/*
+// .document
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+
+
+.document {
+    max-width: 760px;
+    margin: 0 auto;
+}
+.document__header {
+    $local-padding: 52px;
+
+    text-align: center;
+    padding: #{$local-padding - 8px} 0 #{$local-padding};
+}
+.document__title {
+    font-weight: $font-weight-bold;
+    letter-spacing: .01em;
+    margin: 0;
+}
+.document__subtitle {
+    font-size: 15px;
+    color: map_get($body-scheme, muted);
+    margin-top: 8px;
+    margin-bottom: -4px;
+}
+.document__content {
+    padding: 50px;
+}
+.document__signature {
+    margin-top: 2.5rem;
+}
+
+
+@include media-breakpoint-down(lg) {
+    .document__header {
+        $local-padding: 48px;
+
+        padding: #{$local-padding - 4px} 0 #{$local-padding};
+    }
+    .document__subtitle {
+        margin-top: 4px;
+    }
+}
+@include media-breakpoint-down(md) {
+    .document__content {
+        padding: 40px;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .document__header {
+        $local-padding: 40px;
+
+        padding: #{$local-padding - 4px} 0 #{$local-padding};
+    }
+    .document__title {
+        font-size: 36px;
+    }
+    .document__content {
+        padding: 28px;
+    }
+}
+@include media-breakpoint-down(xs) {
+    .document__title {
+        font-size: 32px;
+    }
+    .document__subtitle {
+        font-size: 14px;
+    }
+    .document__content {
+        padding: 24px;
+
+        .typography {
+            font-size: 15px;
+        }
+    }
+    .document__signature {
+        margin-top: 24px;
+    }
+}

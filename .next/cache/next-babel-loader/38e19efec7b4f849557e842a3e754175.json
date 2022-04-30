@@ -1,0 +1,1 @@
+{"ast":null,"code":"/* eslint-disable import/prefer-default-export */\n// application\nimport { OPTIONS_SET_ALL } from '~/store/options/optionsActionTypes';\nexport function optionsSetAll(options) {\n  return {\n    type: OPTIONS_SET_ALL,\n    options: options\n  };\n}","map":null,"metadata":{},"sourceType":"module"}

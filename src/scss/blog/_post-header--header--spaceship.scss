@@ -1,0 +1,17 @@
+/*
+// .post-header
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+@import '../mixins/header';
+
+
+@include desktop-header-variant-selector {
+    @if($header-layout == spaceship) {
+        @include media-breakpoint-up(xl) {
+            .post-header {
+                padding-top: $spaceship-ledge-height;
+            }
+        }
+    }
+}

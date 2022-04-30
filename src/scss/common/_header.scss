@@ -1,0 +1,19 @@
+/*
+// header
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+
+
+@include media-breakpoint-up(xl) {
+    .mobile-header,
+    .mobile-menu {
+        display: none;
+    }
+}
+@include media-breakpoint-down(lg) {
+    .header {
+        display: none;
+    }
+}
+

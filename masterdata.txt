@@ -1,0 +1,2777 @@
+{
+      CACHED: true,
+      whatsappnumber: '+971552886575',
+      ONSALEMAIN: [{
+        imagepath: 'https://autopartsemirates.com/PortalImages/Onsale/alternator.jpg',
+        imagename: 'alternator.jpg',
+        Itemid: 'MB012.154.4502OE',
+        Brand: 'MERCEDES',
+        Partno: '012.154.4502',
+        Origin: 'OE',
+        Descr: 'ALTERNATOR',
+        gid: 'ALTER',
+        wishitem: '',
+        systemid: '',
+        salep3: '2670',
+        salep4: '2136',
+        perc: '20%',
+        Itemfind: '0121544502',
+        rating: ''
+      }],
+      HOMEDATA: {
+        "homepageheader": [
+          {
+            "id": 13,
+            "vicno": "HS-1",
+            "pageName": "HOME",
+            "logoPath": "https://autopartsemirates.com/PortalImages/HomeLogo/logo.png",
+            "logoFileName": "logo.png",
+            "appstorelink": "https://www.apple.com/ios/app-store/",
+            "playstorelink": "https://play.google.com/store/apps",
+            "contactinfodesc": "Our extensive user friendly online parts and accessories catalog makes it fast and easy to have your vehicle on the road in no time.",
+            "contactinfoaddr": "Our excellent customer service is standing buy to answer all your questions and help you place an order! Al Thahabi ships all parts to the Africa , Middle East and Worldwide.",
+            "copyrightlink": "https://google.com",
+            "mainHeading1": "Welcome To Al Nesr Al Thahabi Auto Spare Parts",
+            "subHeading1": "Custom Shopping Store Online",
+            "subHeading2": "100% Satisfaction Guaranteed",
+            "shippingCost": 100,
+            "salespercentage": 30,
+            "careno": "+971 6 5642889",
+            "minimumamt": 100,
+            "createdDate": "2020May03",
+            "updatedDate": "2020May03",
+            "isenable": true
+          }
+        ],
+        "mainbannergroup": [
+          {
+            "id": 1073,
+            "vicno": "HS-1",
+            "pageName": "HOME",
+            "slno": "1",
+            "heading": "Solutions for Exporting.Worldwide",
+            "subheading": "Exclusive Offer -20% Off This Week",
+            "imagepath": "https://autopartsemirates.com//PortalImages/Banner/slider13.jpg",
+            "imagename": "slider13.jpg",
+            "ordervalue": "MB",
+            "type": "BANNER"
+          },
+          {
+            "id": 1075,
+            "vicno": "HS-1",
+            "pageName": "HOME",
+            "slno": "2",
+            "heading": "Choose the Right part.With right price",
+            "subheading": "Exclusive Offer -20% Off This Week",
+            "imagepath": "https://autopartsemirates.com//PortalImages/Banner/slider15.jpg",
+            "imagename": "slider15.jpg",
+            "ordervalue": "BM",
+            "type": "BANNER"
+          },
+          {
+            "id": 1076,
+            "vicno": "HS-1",
+            "pageName": "HOME",
+            "slno": "3",
+            "heading": "All major brands. under one roof",
+            "subheading": "Exclusive Offer -20% Off This Week",
+            "imagepath": "https://autopartsemirates.com//PortalImages/Banner/slider16.jpg",
+            "imagename": "slider16.jpg",
+            "ordervalue": "AU",
+            "type": "BANNER"
+          },
+          {
+            "id": 1077,
+            "vicno": "HS-1",
+            "pageName": "HOME",
+            "slno": "4",
+            "heading": "Low cost. world wide shipping",
+            "subheading": "Exclusive Offer -20% Off This Week",
+            "imagepath": "https://autopartsemirates.com//PortalImages/Banner/slider17.jpg",
+            "imagename": "slider17.jpg",
+            "ordervalue": "VW",
+            "type": "BANNER"
+          },
+          {
+            "id": 1078,
+            "vicno": "HS-1",
+            "pageName": "HOME",
+            "slno": "5",
+            "heading": "Solutions for Exporting.Worldwide",
+            "subheading": "Exclusive Offer -20% Off This Week",
+            "imagepath": "https://autopartsemirates.com//PortalImages/Banner/slider21.jpg",
+            "imagename": "slider21.jpg",
+            "ordervalue": "PO",
+            "type": "BANNER"
+          },
+          {
+            "id": 1079,
+            "vicno": "HS-1",
+            "pageName": "HOME",
+            "slno": "6",
+            "heading": "All your parts need. under one roof",
+            "subheading": "Exclusive Offer -20% Off This Week",
+            "imagepath": "https://autopartsemirates.com//PortalImages/Banner/slider19.jpg",
+            "imagename": "slider19.jpg",
+            "ordervalue": "LR",
+            "type": "BANNER"
+          },
+          {
+            "id": 1080,
+            "vicno": "HS-1",
+            "pageName": "HOME",
+            "slno": "7",
+            "heading": "Choose the Right part.With right price",
+            "subheading": "Exclusive Offer -20% Off This Week",
+            "imagepath": "https://autopartsemirates.com//PortalImages/Banner/slider20.jpg",
+            "imagename": "slider20.jpg",
+            "ordervalue": "JP",
+            "type": "BANNER"
+          }
+        ],
+        "subbannergroup1": [
+          {
+            "id": 1088,
+            "vicno": "HS-1",
+            "pageName": "HOME",
+            "slno": "1",
+            "heading": "HOME DELIVERY",
+            "subheading": "delivery.html",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Banner/banner1.jpg",
+            "imagename": "banner1.jpg",
+            "ordervalue": "1",
+            "type": "SUBBANNER1"
+          },
+          {
+            "id": 1089,
+            "vicno": "HS-1",
+            "pageName": "HOME",
+            "slno": "2",
+            "heading": "MAINTENANCE WORK POLICY 2020",
+            "subheading": "payment.html",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Banner/banner2.jpg",
+            "imagename": "banner2.jpg",
+            "ordervalue": "2",
+            "type": "SUBBANNER1"
+          },
+          {
+            "id": 1090,
+            "vicno": "HS-1",
+            "pageName": "HOME",
+            "slno": "3",
+            "heading": "WHEELS & TIRES BIG SALE THIS WEEK ONLY",
+            "subheading": "export.html",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Banner/banner3.jpg",
+            "imagename": "banner3.jpg",
+            "ordervalue": "3",
+            "type": "SUBBANNER1"
+          }
+        ],
+        "subbannergroup2": [
+          {
+            "id": 1030,
+            "vicno": "HS-1",
+            "pageName": "HOME",
+            "slno": "1",
+            "heading": "dasdas",
+            "subheading": "asd",
+            "imagepath": "https://autopartsemirates.com//PortalImages/Banner/Toyota.jpg",
+            "imagename": "Toyota.jpg",
+            "ordervalue": "1",
+            "type": "SUBBANNER2"
+          }
+        ],
+        "onsaleproductgroup": [
+          {
+            "id": 12,
+            "vicno": "HS-1",
+            "slno": "1",
+            "pageName": "HOME",
+            "heading": "dasdas",
+            "description": "dsad",
+            "percentage": null,
+            "color": "dsad",
+            "specification": "dsad",
+            "subheading": null,
+            "imagepath": "https://autopartsemirates.com/PortalImages/Banner/Audi.jpg",
+            "imagename": "Audi.jpg",
+            "ordervalue": "1",
+            "type": "ONSALEPRODUCT"
+          }
+        ],
+        "blogpost": [
+          {
+            "id": 1030,
+            "vicno": "HS-1",
+            "slno": "1",
+            "smallimagepath": "https://autopartsemirates.com//PortalImages/BlogPost/MB.jpg",
+            "smallimagename": "MB.jpg",
+            "heading": "Mercedes Benz Fault Codes",
+            "smalldesc": "Mercedes builds some of the most advanced vehicles on the road. To keep everything running smoothly,",
+            "largeimagepath": "https://autopartsemirates.com//PortalImages/BlogPost/Chrysler-1.jpg",
+            "largeimagename": "Chrysler-1.jpg",
+            "largedesc": "Mercedes_Fault_Code.html",
+            "tags": "fgdfgdfg",
+            "createddate": null,
+            "yyyymmdd": null
+          },
+          {
+            "id": 1031,
+            "vicno": "HS-1",
+            "slno": "2",
+            "smallimagepath": "https://autopartsemirates.com//PortalImages/BlogPost/AfricanSparePartsMarket.jpg",
+            "smallimagename": "AfricanSparePartsMarket.jpg",
+            "heading": "The Rising Demand for Automobile Spare Parts in Africa",
+            "smalldesc": "The UAE is the major supplier of",
+            "largeimagepath": "https://autopartsemirates.com//PortalImages/BlogPost/AfricanSparePartsMarket.jpg",
+            "largeimagename": "AfricanSparePartsMarket.jpg",
+            "largedesc": "African_spare_parts_market.html",
+            "tags": "fgdfgdfg",
+            "createddate": null,
+            "yyyymmdd": null
+          },
+          {
+            "id": 1032,
+            "vicno": "HS-1",
+            "slno": "3",
+            "smallimagepath": "https://autopartsemirates.com//PortalImages/BlogPost/COVID19.png",
+            "smallimagename": "COVID19.png",
+            "heading": "Covid-19 Impact in UAE",
+            "smalldesc": "COVID-19 and the subsequent government responses to the pandemic are having a significant",
+            "largeimagepath": "https://autopartsemirates.com//PortalImages/BlogPost/COVID19.png",
+            "largeimagename": "COVID19.png",
+            "largedesc": "Covid_Impact.html",
+            "tags": "fgdfgdfg",
+            "createddate": null,
+            "yyyymmdd": null
+          },
+          {
+            "id": 1033,
+            "vicno": "HS-1",
+            "slno": "4",
+            "smallimagepath": "https://autopartsemirates.com//PortalImages/BlogPost/SparePartsMarket.jpg",
+            "smallimagename": "SparePartsMarket.jpg",
+            "heading": "The Future of Automotive Market",
+            "smalldesc": "By definition, “the automotive industry is a",
+            "largeimagepath": null,
+            "largeimagename": null,
+            "largedesc": "Future_spare_parts_market.html",
+            "tags": null,
+            "createddate": null,
+            "yyyymmdd": null
+          }
+        ],
+        "socialmedia": [
+          {
+            "id": 55,
+            "vicno": "HS-1",
+            "slno": "1",
+            "mediaid": "facebook",
+            "mediavalue": "FACEBOOK",
+            "imagepath": "https://autopartsemirates.com/PortalImages/SocialMedia/FB.jpg",
+            "imagename": "FB.jpg",
+            "medialink": "https://www.facebook.com/AlthahabiAutoSpareParts",
+            "ordervalue": 1
+          },
+          {
+            "id": 56,
+            "vicno": "HS-1",
+            "slno": "2",
+            "mediaid": "instagram2",
+            "mediavalue": "INSTAGRAM",
+            "imagepath": "https://autopartsemirates.com/PortalImages/SocialMedia/Insta.png",
+            "imagename": "Insta.png",
+            "medialink": "https://www.instagram.com/althahabiauto",
+            "ordervalue": 2
+          },
+          {
+            "id": 57,
+            "vicno": "HS-1",
+            "slno": "3",
+            "mediaid": "twitter",
+            "mediavalue": "TWITTER",
+            "imagepath": "https://autopartsemirates.com/PortalImages/SocialMedia/twitter.png",
+            "imagename": "twitter.png",
+            "medialink": "https://twitter.com/althahabiauto",
+            "ordervalue": 3
+          }
+        ],
+        "coupens": [
+          {
+            "slno": "1",
+            "vicno": "HS-1",
+            "code": "AAT2020",
+            "percentage": "10",
+            "validdate": null,
+            "validdateyyyymmdd": "20200510"
+          },
+          {
+            "slno": "2",
+            "vicno": "HS-1",
+            "code": "AATSMART",
+            "percentage": "10",
+            "validdate": null,
+            "validdateyyyymmdd": "20200517"
+          }
+        ],
+        "categories": [
+          {
+            "slno": "1",
+            "categoryname": "BODY PARTS",
+            "imagename": "category1.jpg",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Categories/category1.jpg",
+            "ordervalue": "1",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "3",
+            "categoryname": "INTERIORS",
+            "imagename": "category3.jpg",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Categories/category3.jpg",
+            "ordervalue": "3",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "4",
+            "categoryname": "LIGHTING & LAMP",
+            "imagename": "category4.jpg",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Categories/category4.jpg",
+            "ordervalue": "4",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "2",
+            "categoryname": "CAR ENGINE",
+            "imagename": "category2.jpg",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Categories/category2.jpg",
+            "ordervalue": "2",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "5",
+            "categoryname": "REPAIR PARTS",
+            "imagename": "category5.jpg",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Categories/category5.jpg",
+            "ordervalue": "5",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "6",
+            "categoryname": "SMART DEVICES",
+            "imagename": "category6.jpg",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Categories/category6.jpg",
+            "ordervalue": "6",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "7",
+            "categoryname": "WHEELS & TIRES",
+            "imagename": "category7.jpg",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Categories/category7.jpg",
+            "ordervalue": "7",
+            "vicno": "HS-1"
+          }
+        ],
+        "brands": [
+          {
+            "slno": "1",
+            "brandname": "MERCEDES",
+            "imagename": "MERCEDES.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/MERCEDES.png",
+            "ordervalue": "1",
+            "category": "PREMIUM",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "2",
+            "brandname": "BMW",
+            "imagename": "BMW.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/BMW.png",
+            "ordervalue": "2",
+            "category": "PREMIUM",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "3",
+            "brandname": "VOLKSWAGEN",
+            "imagename": "VOLKSWAGEN.jpg",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/VOLKSWAGEN.jpg",
+            "ordervalue": "3",
+            "category": "PREMIUM",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "4",
+            "brandname": "AUDI",
+            "imagename": "Audi.jpg",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/Audi.jpg",
+            "ordervalue": "4",
+            "category": "PREMIUM",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "5",
+            "brandname": "PORSCHE",
+            "imagename": "PORSCHE.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/PORSCHE.png",
+            "ordervalue": "5",
+            "category": "PREMIUM",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "6",
+            "brandname": "JEEP",
+            "imagename": "JEEP.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/JEEP.png",
+            "ordervalue": "6",
+            "category": "PREMIUM",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "7",
+            "brandname": "LAND ROVER",
+            "imagename": "LAND ROVER.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/LAND ROVER.png",
+            "ordervalue": "7",
+            "category": "PREMIUM",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "8",
+            "brandname": "TOYOTA",
+            "imagename": "TOYOTA.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/TOYOTA.png",
+            "ordervalue": "8",
+            "category": "OTHER",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "9",
+            "brandname": "ROLLS ROYCE",
+            "imagename": "ROLLS ROYCE.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/ROLLS ROYCE.png",
+            "ordervalue": "9",
+            "category": "LUXURY",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "10",
+            "brandname": "MASERATI",
+            "imagename": "MASERATI.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/MASERATI.png",
+            "ordervalue": "10",
+            "category": "LUXURY",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "11",
+            "brandname": "LAMBORGHINI",
+            "imagename": "LAMBORGHINI.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/LAMBORGHINI.png",
+            "ordervalue": "11",
+            "category": "LUXURY",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "12",
+            "brandname": "JAGUAR",
+            "imagename": "JAGUAR.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/JAGUAR.png",
+            "ordervalue": "12",
+            "category": "LUXURY",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "13",
+            "brandname": "BENTLEY",
+            "imagename": "BENTLEY.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/BENTLEY.png",
+            "ordervalue": "13",
+            "category": "LUXURY",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "14",
+            "brandname": "MITSUBISHI",
+            "imagename": "MITSUBISHI.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/MITSUBISHI.png",
+            "ordervalue": "14",
+            "category": "OTHER",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "15",
+            "brandname": "NISSAN",
+            "imagename": "NISSAN.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/NISSAN.png",
+            "ordervalue": "15",
+            "category": "OTHER",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "16",
+            "brandname": "GMC",
+            "imagename": "GMC.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/GMC.png",
+            "ordervalue": "16",
+            "category": "PREMIUM",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "17",
+            "brandname": "MINI COOPER",
+            "imagename": "MINI.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/MINI.png",
+            "ordervalue": "17",
+            "category": "PREMIUM",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "18",
+            "brandname": "HONDA",
+            "imagename": "HONDA.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/HONDA.png",
+            "ordervalue": "18",
+            "category": "OTHER",
+            "vicno": "HS-1"
+          },
+          {
+            "slno": "19",
+            "brandname": "FORD",
+            "imagename": "FORD.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/Brands/FORD.png",
+            "ordervalue": "19",
+            "category": "OTHER",
+            "vicno": "HS-1"
+          }
+        ],
+        "menus": [
+          {
+            "slno": "1",
+            "mainmenu": "Home",
+            "submenu": null,
+            "menulink": "index.html",
+            "ordervalue": "1",
+            "vicno": "HS-1"
+          }
+        ],
+        "footermenus": [
+          {
+            "slno": "1",
+            "mainmenu": "INFORMATION",
+            "submenu": "About Us",
+            "menulink": "about.html",
+            "ordervalue": "1",
+            "vicno": "HS-1",
+            "parentid": "1"
+          },
+          {
+            "slno": "2",
+            "mainmenu": "INFORMATION",
+            "submenu": "My Account",
+            "menulink": "my-account.html",
+            "ordervalue": "2",
+            "vicno": "HS-1",
+            "parentid": "1"
+          },
+          {
+            "slno": "3",
+            "mainmenu": "CUSTOMER SERVICE",
+            "submenu": "Shopping Cart",
+            "menulink": "cart.html",
+            "ordervalue": "1",
+            "vicno": "HS-1",
+            "parentid": "2"
+          },
+          {
+            "slno": "4",
+            "mainmenu": "CUSTOMER SERVICE",
+            "submenu": "Wish List",
+            "menulink": "wishlist.html",
+            "ordervalue": "2",
+            "vicno": "HS-1",
+            "parentid": "2"
+          },
+          {
+            "slno": "5",
+            "mainmenu": "MY ACCOUNT",
+            "submenu": "Site Map",
+            "menulink": "cart.html",
+            "ordervalue": "1",
+            "vicno": "HS-1",
+            "parentid": "3"
+          },
+          {
+            "slno": "6",
+            "mainmenu": "EXTRAS",
+            "submenu": "Wish List",
+            "menulink": "wishlist.html",
+            "ordervalue": "1",
+            "vicno": "HS-1",
+            "parentid": "4"
+          },
+          {
+            "slno": "7",
+            "mainmenu": "PAYMENT & METHODS",
+            "submenu": "FAQs",
+            "menulink": "faq.html",
+            "ordervalue": "1",
+            "vicno": "HS-1",
+            "parentid": "5"
+          }
+        ],
+        "origins": [
+          {
+            "slno": "1",
+            "imagepath": "assets/img/Origins/FEBI.png"
+          },
+          {
+            "slno": "2",
+            "imagepath": "assets/img/Origins/LEMFORDER.png"
+          },
+          {
+            "slno": "3",
+            "imagepath": "assets/img/Origins/ELRING.png"
+          },
+          {
+            "slno": "4",
+            "imagepath": "assets/img/Origins/VICTORREINZ.png"
+          },
+          {
+            "slno": "5",
+            "imagepath": "assets/img/Origins/MEYLE.png"
+          },
+          {
+            "slno": "6",
+            "imagepath": "assets/img/Origins/MOBIL1.png"
+          },
+          {
+            "slno": "7",
+            "imagepath": "assets/img/Origins/ACDELCO.png"
+          }
+        ]
+      },
+      OURPRODUCTS: {
+        "query1": [
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/68079744AD  OIL FILTER 30.jpeg",
+            "imagename": "68079744AD  OIL FILTER 30.jpeg",
+            "Itemid": "JP68079744ADOE",
+            "Brand": "JP",
+            "Partno": "68079744AD",
+            "Origin": "OE",
+            "Descr": "OIL FILTER",
+            "gid": "FI",
+            "Ritemid": "JP68079744ADOE",
+            "wishitem": "",
+            "salep3": 35,
+            "salep4": 28,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/04884899AC  OIL FILTER 25.jpeg",
+            "imagename": "04884899AC  OIL FILTER 25.jpeg",
+            "Itemid": "JP04884899ACOE",
+            "Brand": "JP",
+            "Partno": "04884899AC",
+            "Origin": "OE",
+            "Descr": "OIL FILTER",
+            "gid": "FIILTER",
+            "Ritemid": "JP04884899ACOE",
+            "wishitem": "",
+            "salep3": 29,
+            "salep4": 23,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/04801865AE ALTERNATOR  2025.jpeg",
+            "imagename": "04801865AE ALTERNATOR  2025.jpeg",
+            "Itemid": "JP04801865AEOE",
+            "Brand": "JP",
+            "Partno": "04801865AE",
+            "Origin": "OE",
+            "Descr": "ALTERNATOR ENGINE",
+            "gid": "ENGINE",
+            "Ritemid": "JP04801865AEOE",
+            "wishitem": "",
+            "salep3": 848,
+            "salep4": 678,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/04801778AI  ALTERNATOR  1865.jpeg",
+            "imagename": "04801778AI  ALTERNATOR  1865.jpeg",
+            "Itemid": "JP04801778AIOE",
+            "Brand": "JP",
+            "Partno": "04801778AI",
+            "Origin": "OE",
+            "Descr": "ALTERNATOR ",
+            "gid": "ALTER",
+            "Ritemid": "JP04801778AIOE",
+            "wishitem": "",
+            "salep3": 760,
+            "salep4": 608,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/52108332AA GASKET 40.jpeg",
+            "imagename": "52108332AA GASKET 40.jpeg",
+            "Itemid": "JP52108332AAOE",
+            "Brand": "JP",
+            "Partno": "52108332AA",
+            "Origin": "OE",
+            "Descr": "SEAL",
+            "gid": "SEAL",
+            "Ritemid": "JP52108332AAOE",
+            "wishitem": "",
+            "salep3": 86,
+            "salep4": 69,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/68191349AC OIL FILTER  35.jpeg",
+            "imagename": "68191349AC OIL FILTER  35.jpeg",
+            "Itemid": "JP68191349ACOE",
+            "Brand": "JP",
+            "Partno": "68191349AC",
+            "Origin": "OE",
+            "Descr": "OIL FILTER ENG",
+            "gid": "FIILTER",
+            "Ritemid": "JP68191349ACOE",
+            "wishitem": "",
+            "salep3": 38,
+            "salep4": 31,
+            "perc": -20
+          }
+        ],
+        "query2": [
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "MB210.540.1117FBI",
+            "Brand": "MB",
+            "Partno": "210.540.1117",
+            "Origin": "FBI",
+            "Descr": "BRAKE WIRE SENSOR AMG",
+            "gid": "A/C",
+            "Ritemid": "MB2105401117FBI",
+            "wishitem": "",
+            "salep3": 23,
+            "salep4": 18,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "MB211.421.0812GER",
+            "Brand": "MB",
+            "Partno": "211.421.0812",
+            "Origin": "GER",
+            "Descr": "BRAKE DISC 211 FR",
+            "gid": "BRK",
+            "Ritemid": "MB2114210812GER",
+            "wishitem": "",
+            "salep3": 120,
+            "salep4": 96,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/EngineMount.jpg",
+            "imagename": "EngineMount.jpg",
+            "Itemid": "MB204.240.0917LEM",
+            "Brand": "MB",
+            "Partno": "204.240.0917",
+            "Origin": "LEM",
+            "Descr": "ENGINE MOUNTING 204",
+            "gid": "ENGINE",
+            "Ritemid": "MB2042400917LEM",
+            "wishitem": "",
+            "salep3": 184,
+            "salep4": 147,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/productbig5.jpg",
+            "imagename": "productbig5.jpg",
+            "Itemid": "MB204.240.0917LEM",
+            "Brand": "MB",
+            "Partno": "204.240.0917",
+            "Origin": "LEM",
+            "Descr": "ENGINE MOUNTING 204",
+            "gid": "ENGINE",
+            "Ritemid": "MB2042400917LEM",
+            "wishitem": "",
+            "salep3": 184,
+            "salep4": 147,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "MB163.880.0029MEY",
+            "Brand": "MB",
+            "Partno": "163.880.0029",
+            "Origin": "MEY",
+            "Descr": "BONNET SHOCKS 163 ",
+            "gid": "BO",
+            "Ritemid": "MB1638800029MEY",
+            "wishitem": "",
+            "salep3": 45,
+            "salep4": 36,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "BM11 23 8 512 072OE",
+            "Brand": "BM",
+            "Partno": "11 23 8 512 072",
+            "Origin": "OE",
+            "Descr": "VIBRATION DAMPER",
+            "gid": "VIBRA",
+            "Ritemid": "BM11238512072OE",
+            "wishitem": "",
+            "salep3": 1950,
+            "salep4": 1560,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "BM11 28 8 519 128OE",
+            "Brand": "BM",
+            "Partno": "11 28 8 519 128",
+            "Origin": "OE",
+            "Descr": "BELT",
+            "gid": "BELT",
+            "Ritemid": "BM11288519128OE",
+            "wishitem": "",
+            "salep3": 165,
+            "salep4": 132,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "BM11 11 7 802 665OE",
+            "Brand": "BM",
+            "Partno": "11 11 7 802 665",
+            "Origin": "OE",
+            "Descr": "SHAFT SEAL",
+            "gid": "SHAFT",
+            "Ritemid": "BM11117802665OE",
+            "wishitem": "",
+            "salep3": 126,
+            "salep4": 101,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "BM11 11 7 797 932OE",
+            "Brand": "BM",
+            "Partno": "11 11 7 797 932",
+            "Origin": "OE",
+            "Descr": "SELING ENDS CAP",
+            "gid": "CAP",
+            "Ritemid": "BM11117797932OE",
+            "wishitem": "",
+            "salep3": 26,
+            "salep4": 21,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "BM22 11 6 773 742OE",
+            "Brand": "BM",
+            "Partno": "22 11 6 773 742",
+            "Origin": "OE",
+            "Descr": "ENGINE MOUNTING",
+            "gid": "MOUNTNG",
+            "Ritemid": "BM22116773742OE",
+            "wishitem": "",
+            "salep3": 435,
+            "salep4": 348,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "MB163.420.0320TEX",
+            "Brand": "MB",
+            "Partno": "163.420.0320",
+            "Origin": "TEX",
+            "Descr": "BRAKE PAD 163 FR",
+            "gid": "BRAKE",
+            "Ritemid": "MB1634200320TEX",
+            "wishitem": "",
+            "salep3": 201,
+            "salep4": 161,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "BM12 12 0 037 581OE",
+            "Brand": "BM",
+            "Partno": "12 12 0 037 581",
+            "Origin": "OE",
+            "Descr": "SPARK PLUG",
+            "gid": "SPARK",
+            "Ritemid": "BM12120037581OE",
+            "wishitem": "",
+            "salep3": 83,
+            "salep4": 66,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "BM12 13 8 657 273OE",
+            "Brand": "BM",
+            "Partno": "12 13 8 657 273",
+            "Origin": "OE",
+            "Descr": "IGNITION COIL",
+            "gid": "IGNIT",
+            "Ritemid": "BM12138657273OE",
+            "wishitem": "",
+            "salep3": 225,
+            "salep4": 180,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "BM64 31 6 945 585OE",
+            "Brand": "BM",
+            "Partno": "64 31 6 945 585",
+            "Origin": "OE",
+            "Descr": "MICRO FILTER",
+            "gid": "FI",
+            "Ritemid": "BM64316945585OE",
+            "wishitem": "",
+            "salep3": 428,
+            "salep4": 342,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "MB113.997.0192OE",
+            "Brand": "MB",
+            "Partno": "113.997.0192",
+            "Origin": "OE",
+            "Descr": "BELT 8PK 1289",
+            "gid": "BLT",
+            "Ritemid": "MB1139970192OE",
+            "wishitem": "",
+            "salep3": 92,
+            "salep4": 73,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "MBD2SOSR",
+            "Brand": "MB",
+            "Partno": "D2S",
+            "Origin": "OSR",
+            "Descr": "XENON BULB (66040)",
+            "gid": "BLB",
+            "Ritemid": "MBD2SOSR",
+            "wishitem": "",
+            "salep3": 135,
+            "salep4": 108,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "BM37 12 6 790 079OE",
+            "Brand": "BM",
+            "Partno": "37 12 6 790 079",
+            "Origin": "OE",
+            "Descr": "NUEMATIC SPRING",
+            "gid": "SPRIN",
+            "Ritemid": "BM37126790079OE",
+            "wishitem": "",
+            "salep3": 1500,
+            "salep4": 1200,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "BM11 12 7 552 281OE",
+            "Brand": "BM",
+            "Partno": "11 12 7 552 281",
+            "Origin": "OE",
+            "Descr": "HEAD COVER",
+            "gid": "COVER",
+            "Ritemid": "BM11127552281OE",
+            "wishitem": "",
+            "salep3": 1538,
+            "salep4": 1230,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "MB0.221.502.433BSH",
+            "Brand": "MB",
+            "Partno": "0.221.502.433",
+            "Origin": "BSH",
+            "Descr": "IGNITION COIL ",
+            "gid": "IGNIT",
+            "Ritemid": "MB0221502433BSH",
+            "wishitem": "",
+            "salep3": 210,
+            "salep4": 168,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/NoPreview.jpg",
+            "imagename": "NoPreview.jpg",
+            "Itemid": "MB170.880.0183TWN",
+            "Brand": "MB",
+            "Partno": "170.880.0183",
+            "Origin": "TWN",
+            "Descr": "GRILL SLK 170 2 LINES",
+            "gid": "GRILL",
+            "Ritemid": "MB1708800183TWN",
+            "wishitem": "",
+            "salep3": 570,
+            "salep4": 456,
+            "perc": -20
+          }
+        ],
+        "query3": [
+          {
+            "ITEMID": "JP68191349ACOE",
+            "src": "JP",
+            "Partno": "68191349AC",
+            "brnid": "OE",
+            "IDESC": "OIL FILTER ENG",
+            "RITEMID": "JP68191349ACOE",
+            "Itype": "0",
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/68191349AC OIL FILTER  35.jpeg",
+            "imagename": "68191349AC OIL FILTER  35.jpeg"
+          },
+          {
+            "ITEMID": "JP52108332AAOE",
+            "src": "JP",
+            "Partno": "52108332AA",
+            "brnid": "OE",
+            "IDESC": "SEAL",
+            "RITEMID": "JP52108332AAOE",
+            "Itype": "0",
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/52108332AA GASKET 40.jpeg",
+            "imagename": "52108332AA GASKET 40.jpeg"
+          },
+          {
+            "ITEMID": "JP04801778AIOE",
+            "src": "JP",
+            "Partno": "04801778AI",
+            "brnid": "OE",
+            "IDESC": "ALTERNATOR ",
+            "RITEMID": "JP04801778AIOE",
+            "Itype": "0",
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/04801778AI  ALTERNATOR  1865.jpeg",
+            "imagename": "04801778AI  ALTERNATOR  1865.jpeg"
+          },
+          {
+            "ITEMID": "JP04801865AEOE",
+            "src": "JP",
+            "Partno": "04801865AE",
+            "brnid": "OE",
+            "IDESC": "ALTERNATOR ENGINE",
+            "RITEMID": "JP04801865AEOE",
+            "Itype": "0",
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/04801865AE ALTERNATOR  2025.jpeg",
+            "imagename": "04801865AE ALTERNATOR  2025.jpeg"
+          },
+          {
+            "ITEMID": "JP04884899ACOE",
+            "src": "JP",
+            "Partno": "04884899AC",
+            "brnid": "OE",
+            "IDESC": "OIL FILTER",
+            "RITEMID": "JP04884899ACOE",
+            "Itype": "0",
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/04884899AC  OIL FILTER 25.jpeg",
+            "imagename": "04884899AC  OIL FILTER 25.jpeg"
+          },
+          {
+            "ITEMID": "JP68079744ADOE",
+            "src": "JP",
+            "Partno": "68079744AD",
+            "brnid": "OE",
+            "IDESC": "OIL FILTER",
+            "RITEMID": "JP68079744ADOE",
+            "Itype": "0",
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/68079744AD  OIL FILTER 30.jpeg",
+            "imagename": "68079744AD  OIL FILTER 30.jpeg"
+          },
+          {
+            "ITEMID": "MB004.159.4403OE",
+            "src": "MB",
+            "Partno": "004.159.4403",
+            "brnid": "OE",
+            "IDESC": "SPARK PLUG",
+            "RITEMID": "MB0041594403OE",
+            "Itype": "0",
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/spark-plug-1425985.jpg",
+            "imagename": "spark-plug-1425985.jpg"
+          },
+          {
+            "ITEMID": "AU8R0601025APOE",
+            "src": "AU",
+            "Partno": "8R0601025AP",
+            "brnid": "OE",
+            "IDESC": "WHEEL",
+            "RITEMID": "AU8R0601025APOE",
+            "Itype": "0",
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/wheel.jpg",
+            "imagename": "wheel.jpg"
+          },
+          {
+            "ITEMID": "VW03G906051EOE",
+            "src": "VW",
+            "Partno": "03G906051E",
+            "brnid": "OE",
+            "IDESC": "SENSOR",
+            "RITEMID": "VW03G906051EOE",
+            "Itype": "0",
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/sensor.jpg",
+            "imagename": "sensor.jpg"
+          },
+          {
+            "ITEMID": "MB204.240.0917LEM",
+            "src": "MB",
+            "Partno": "204.240.0917",
+            "brnid": "LEM",
+            "IDESC": "ENGINE MOUNTING 204",
+            "RITEMID": "MB2042400917LEM",
+            "Itype": "0.034",
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/productbig5.jpg",
+            "imagename": "productbig5.jpg"
+          },
+          {
+            "ITEMID": "MB204.240.0917LEM",
+            "src": "MB",
+            "Partno": "204.240.0917",
+            "brnid": "LEM",
+            "IDESC": "ENGINE MOUNTING 204",
+            "RITEMID": "MB2042400917LEM",
+            "Itype": "0.034",
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/EngineMount.jpg",
+            "imagename": "EngineMount.jpg"
+          },
+          {
+            "ITEMID": "PO95835193910OE",
+            "src": "PO",
+            "Partno": "95835193910",
+            "brnid": "OE",
+            "IDESC": "BRAKE PAD",
+            "RITEMID": "PO95835193910OE",
+            "Itype": "0",
+            "imagepath": "https://autopartsemirates.com/PortalImages/ItemMaster/brake.jpg",
+            "imagename": "brake.jpg"
+          }
+        ],
+        "query4": [
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/Onsale/Transmission.jpg",
+            "imagename": "Transmission.jpg",
+            "Itemid": "MB034.545.4232OE",
+            "Brand": "MB",
+            "Partno": "034.545.4232",
+            "Origin": "OE",
+            "Descr": "TRANSMISSION CONTROL UNIT",
+            "gid": "TRANS",
+            "Ritemid": "MB0345454232OE",
+            "wishitem": "",
+            "salep3": 5138,
+            "salep4": 4110,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/Onsale/Steering Wheel.jpg",
+            "imagename": "Steering Wheel.jpg",
+            "Itemid": "MB221.460.0103OE",
+            "Brand": "MB",
+            "Partno": "221.460.0103",
+            "Origin": "OE",
+            "Descr": "STEERING WHEEL ",
+            "gid": "WHEEL",
+            "Ritemid": "MB2214600103OE",
+            "wishitem": "",
+            "salep3": 6039,
+            "salep4": 4831,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/Onsale/SBC Unit.jpg",
+            "imagename": "SBC Unit.jpg",
+            "Itemid": "MB005.431.8112OE",
+            "Brand": "MB",
+            "Partno": "005.431.8112",
+            "Origin": "OE",
+            "Descr": "SBC UNIT",
+            "gid": "OTHER",
+            "Ritemid": "MB0054318112OE",
+            "wishitem": "",
+            "salep3": 6525,
+            "salep4": 5220,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/Onsale/Hand Brake Acutator.jpg",
+            "imagename": "Hand Brake Acutator.jpg",
+            "Itemid": "MB221.430.2949OE",
+            "Brand": "MB",
+            "Partno": "221.430.2949",
+            "Origin": "OE",
+            "Descr": "HAND BRAKE ACTUATOR 221",
+            "gid": "HAN",
+            "Ritemid": "MB2214302949OE",
+            "wishitem": "",
+            "salep3": 2475,
+            "salep4": 1980,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/Onsale/Power Steering Pump.jpg",
+            "imagename": "Power Steering Pump.jpg",
+            "Itemid": "MB005.466.2201OE",
+            "Brand": "MB",
+            "Partno": "005.466.2201",
+            "Origin": "OE",
+            "Descr": "POWER STEERING PUMP ",
+            "gid": "STEER",
+            "Ritemid": "MB0054662201OE",
+            "wishitem": "",
+            "salep3": 1950,
+            "salep4": 1560,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/Onsale/Thermostat.jpg",
+            "imagename": "Thermostat.jpg",
+            "Itemid": "MB272.200.0415OE",
+            "Brand": "MB",
+            "Partno": "272.200.0415",
+            "Origin": "OE",
+            "Descr": "THERMOSTAT",
+            "gid": "THERM",
+            "Ritemid": "MB2722000415OE",
+            "wishitem": "",
+            "salep3": 450,
+            "salep4": 360,
+            "perc": -20
+          },
+          {
+            "imagepath": "https://autopartsemirates.com/PortalImages/Onsale/Airmatic Compressor.jpg",
+            "imagename": "Airmatic Compressor.jpg",
+            "Itemid": "MB221.320.1704TTC",
+            "Brand": "MB",
+            "Partno": "221.320.1704",
+            "Origin": "TTC",
+            "Descr": "AIRMATIC COMPRESSOR 221 ",
+            "gid": "AIR",
+            "Ritemid": "MB2213201704TTC",
+            "wishitem": "",
+            "salep3": 1088,
+            "salep4": 870,
+            "perc": -20
+          }
+        ],
+        "query5": [
+          {
+            "id": "ASTON",
+            "idname": "ASTON",
+            "imagename": "ASTON.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/ASTON.png"
+          },
+          {
+            "id": "AU",
+            "idname": "AUDI",
+            "imagename": "AUDI.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/AUDI.png"
+          },
+          {
+            "id": "BENTLEY",
+            "idname": "BENTLEY",
+            "imagename": "BENTLEY.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/BENTLEY.png"
+          },
+          {
+            "id": "BM",
+            "idname": "BMW",
+            "imagename": "BMW.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/BMW.png"
+          },
+          {
+            "id": "CADILLIC",
+            "idname": "CADILLIC",
+            "imagename": "CADILLAC.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/CADILLAC.png"
+          },
+          {
+            "id": "CH",
+            "idname": "CHEVROLET",
+            "imagename": "CHEVROLET.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/CHEVROLET.png"
+          },
+          {
+            "id": "FR",
+            "idname": "FERRARI",
+            "imagename": "FERRARI.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/FERRARI.png"
+          },
+          {
+            "id": "FD",
+            "idname": "FORD",
+            "imagename": "FORD.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/FORD.png"
+          },
+          {
+            "id": "G.M.C",
+            "idname": "G.M.C",
+            "imagename": "GMC.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/GMC.png"
+          },
+          {
+            "id": "JAGUAR",
+            "idname": "JAGUAR",
+            "imagename": "JAGUAR.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/JAGUAR.png"
+          },
+          {
+            "id": "JP",
+            "idname": "JEEP",
+            "imagename": "JEEP.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/JEEP.png"
+          },
+          {
+            "id": "LR",
+            "idname": "LAND ROVER",
+            "imagename": "LAND ROVER.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/LAND ROVER.png"
+          },
+          {
+            "id": "MAS",
+            "idname": "MASERATI",
+            "imagename": "MASERATI.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/MASERATI.png"
+          },
+          {
+            "id": "MB",
+            "idname": "MERCEDES BENZ",
+            "imagename": "MERCEDES.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/MERCEDES.png"
+          },
+          {
+            "id": "MS",
+            "idname": "MITSUBISHI",
+            "imagename": "MITSUBISHI.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/MITSUBISHI.png"
+          },
+          {
+            "id": "NS",
+            "idname": "NISSAN",
+            "imagename": "NISSAN.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/NISSAN.png"
+          },
+          {
+            "id": "PO",
+            "idname": "PORSCHE",
+            "imagename": "PORSCHE.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/PORSCHE.png"
+          },
+          {
+            "id": "TY",
+            "idname": "TOYOTA",
+            "imagename": "TOYOTA.png",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/TOYOTA.png"
+          },
+          {
+            "id": "VW",
+            "idname": "VOLKS WAGON",
+            "imagename": "VOLKSWAGEN.jpg",
+            "imagepath": "https://autopartsemirates.com/PortalImages/BrandsOrigins/VOLKSWAGEN.jpg"
+          }
+        ],
+        "query6": [
+          {
+            "value": "A/C",
+            "label": "A/C"
+          },
+          {
+            "value": "ABSORBER",
+            "label": "ABSORBER"
+          },
+          {
+            "value": "AC ASSY",
+            "label": "AC ASSY"
+          },
+          {
+            "value": "AC BELT",
+            "label": "AC BELT"
+          },
+          {
+            "value": "AC BLOWER",
+            "label": "AC BLOWER"
+          },
+          {
+            "value": "AC BLOWER MOTOR",
+            "label": "AC BLOWER MOTOR"
+          },
+          {
+            "value": "AC COMPRESSOR",
+            "label": "AC COMPRESSOR"
+          },
+          {
+            "value": "AC CONDENSER",
+            "label": "AC CONDENSER"
+          },
+          {
+            "value": "AC DRIER",
+            "label": "AC DRIER"
+          },
+          {
+            "value": "AC FAN",
+            "label": "AC FAN"
+          },
+          {
+            "value": "ACCELERATOR",
+            "label": "ACCELERATOR"
+          },
+          {
+            "value": "ACCUMUALTOR",
+            "label": "ACCUMUALTOR"
+          },
+          {
+            "value": "ACTUATOR",
+            "label": "ACTUATOR"
+          },
+          {
+            "value": "ADAPTER",
+            "label": "ADAPTER"
+          },
+          {
+            "value": "ADDITIONAL",
+            "label": "ADDITIONAL"
+          },
+          {
+            "value": "ADJUSTER",
+            "label": "ADJUSTER"
+          },
+          {
+            "value": "AIR",
+            "label": "AIR"
+          },
+          {
+            "value": "ALTERNATOR",
+            "label": "ALTERNATOR"
+          },
+          {
+            "value": "ALTERNATOR ",
+            "label": "ALTERNATOR "
+          },
+          {
+            "value": "AMPLIFIER",
+            "label": "AMPLIFIER"
+          },
+          {
+            "value": "ANTENNA",
+            "label": "ANTENNA"
+          },
+          {
+            "value": "ANTI FREEZE",
+            "label": "ANTI FREEZE"
+          },
+          {
+            "value": "ARM",
+            "label": "ARM"
+          },
+          {
+            "value": "ASA BOLT",
+            "label": "ASA BOLT"
+          },
+          {
+            "value": "ASA SCREW",
+            "label": "ASA SCREW"
+          },
+          {
+            "value": "ASA-BOLT",
+            "label": "ASA-BOLT"
+          },
+          {
+            "value": "ASHTRAY",
+            "label": "ASHTRAY"
+          },
+          {
+            "value": "ATF",
+            "label": "ATF"
+          },
+          {
+            "value": "AUDIO",
+            "label": "AUDIO"
+          },
+          {
+            "value": "AUXILARY",
+            "label": "AUXILARY"
+          },
+          {
+            "value": "AXLE",
+            "label": "AXLE"
+          },
+          {
+            "value": "BADGE",
+            "label": "BADGE"
+          },
+          {
+            "value": "BAFFLE",
+            "label": "BAFFLE"
+          },
+          {
+            "value": "BALL",
+            "label": "BALL"
+          },
+          {
+            "value": "BALL JOINT",
+            "label": "BALL JOINT"
+          },
+          {
+            "value": "BAR",
+            "label": "BAR"
+          },
+          {
+            "value": "BASE",
+            "label": "BASE"
+          },
+          {
+            "value": "BASIC",
+            "label": "BASIC"
+          },
+          {
+            "value": "BATTERY",
+            "label": "BATTERY"
+          },
+          {
+            "value": "BAZEL",
+            "label": "BAZEL"
+          },
+          {
+            "value": "BEAM",
+            "label": "BEAM"
+          },
+          {
+            "value": "BEARING",
+            "label": "BEARING"
+          },
+          {
+            "value": "BELLOWS",
+            "label": "BELLOWS"
+          },
+          {
+            "value": "BELT",
+            "label": "BELT"
+          },
+          {
+            "value": "BLADE",
+            "label": "BLADE"
+          },
+          {
+            "value": "BLINKER",
+            "label": "BLINKER"
+          },
+          {
+            "value": "BLOWER",
+            "label": "BLOWER"
+          },
+          {
+            "value": "BODY",
+            "label": "BODY"
+          },
+          {
+            "value": "BOLT",
+            "label": "BOLT"
+          },
+          {
+            "value": "BONET",
+            "label": "BONET"
+          },
+          {
+            "value": "BOOT",
+            "label": "BOOT"
+          },
+          {
+            "value": "BOWDEN CABLE",
+            "label": "BOWDEN CABLE"
+          },
+          {
+            "value": "BRACKET",
+            "label": "BRACKET"
+          },
+          {
+            "value": "BRAKE",
+            "label": "BRAKE"
+          },
+          {
+            "value": "BRAKE PAD",
+            "label": "BRAKE PAD"
+          },
+          {
+            "value": "BREATHER",
+            "label": "BREATHER"
+          },
+          {
+            "value": "BRG",
+            "label": "BRG"
+          },
+          {
+            "value": "BUFFER",
+            "label": "BUFFER"
+          },
+          {
+            "value": "BULB",
+            "label": "BULB"
+          },
+          {
+            "value": "BUMPER",
+            "label": "BUMPER"
+          },
+          {
+            "value": "BUSH",
+            "label": "BUSH"
+          },
+          {
+            "value": "CABLE",
+            "label": "CABLE"
+          },
+          {
+            "value": "CALIPER",
+            "label": "CALIPER"
+          },
+          {
+            "value": "CAMERA",
+            "label": "CAMERA"
+          },
+          {
+            "value": "CAP",
+            "label": "CAP"
+          },
+          {
+            "value": "CARRIER",
+            "label": "CARRIER"
+          },
+          {
+            "value": "CASE",
+            "label": "CASE"
+          },
+          {
+            "value": "CATALYST CONVERTER",
+            "label": "CATALYST CONVERTER"
+          },
+          {
+            "value": "CATCH",
+            "label": "CATCH"
+          },
+          {
+            "value": "CENTER",
+            "label": "CENTER"
+          },
+          {
+            "value": "CHAIN",
+            "label": "CHAIN"
+          },
+          {
+            "value": "CHANNEL",
+            "label": "CHANNEL"
+          },
+          {
+            "value": "CHARGE",
+            "label": "CHARGE"
+          },
+          {
+            "value": "CHASSIS",
+            "label": "CHASSIS"
+          },
+          {
+            "value": "CHECK ASSY",
+            "label": "CHECK ASSY"
+          },
+          {
+            "value": "CHROME",
+            "label": "CHROME"
+          },
+          {
+            "value": "CLAMP ",
+            "label": "CLAMP "
+          },
+          {
+            "value": "CLIP",
+            "label": "CLIP"
+          },
+          {
+            "value": "CLUTCH",
+            "label": "CLUTCH"
+          },
+          {
+            "value": "CLY ASSY",
+            "label": "CLY ASSY"
+          },
+          {
+            "value": "COIL",
+            "label": "COIL"
+          },
+          {
+            "value": "COMBI SWITCH",
+            "label": "COMBI SWITCH"
+          },
+          {
+            "value": "COMBINATION",
+            "label": "COMBINATION"
+          },
+          {
+            "value": "COMPRESSION",
+            "label": "COMPRESSION"
+          },
+          {
+            "value": "COMPRESSOR",
+            "label": "COMPRESSOR"
+          },
+          {
+            "value": "COMPUTER",
+            "label": "COMPUTER"
+          },
+          {
+            "value": "CONDENSER ",
+            "label": "CONDENSER "
+          },
+          {
+            "value": "CONNECTING",
+            "label": "CONNECTING"
+          },
+          {
+            "value": "CONNECTOR",
+            "label": "CONNECTOR"
+          },
+          {
+            "value": "CONSOLE",
+            "label": "CONSOLE"
+          },
+          {
+            "value": "CONTACT",
+            "label": "CONTACT"
+          },
+          {
+            "value": "CONTROL",
+            "label": "CONTROL"
+          },
+          {
+            "value": "CONVERTER",
+            "label": "CONVERTER"
+          },
+          {
+            "value": "COOLANT",
+            "label": "COOLANT"
+          },
+          {
+            "value": "COOLENT",
+            "label": "COOLENT"
+          },
+          {
+            "value": "COOLER",
+            "label": "COOLER"
+          },
+          {
+            "value": "COOLING",
+            "label": "COOLING"
+          },
+          {
+            "value": "COUPLING",
+            "label": "COUPLING"
+          },
+          {
+            "value": "COVER",
+            "label": "COVER"
+          },
+          {
+            "value": "CRANK",
+            "label": "CRANK"
+          },
+          {
+            "value": "CROSS",
+            "label": "CROSS"
+          },
+          {
+            "value": "CUP",
+            "label": "CUP"
+          },
+          {
+            "value": "CUSHION",
+            "label": "CUSHION"
+          },
+          {
+            "value": "CUT BUSH",
+            "label": "CUT BUSH"
+          },
+          {
+            "value": "CV JOINT",
+            "label": "CV JOINT"
+          },
+          {
+            "value": "CYLENDER",
+            "label": "CYLENDER"
+          },
+          {
+            "value": "CYLINDER",
+            "label": "CYLINDER"
+          },
+          {
+            "value": "DAMPER",
+            "label": "DAMPER"
+          },
+          {
+            "value": "DASHBOARD",
+            "label": "DASHBOARD"
+          },
+          {
+            "value": "DEFLECTION",
+            "label": "DEFLECTION"
+          },
+          {
+            "value": "DEFLECTOR",
+            "label": "DEFLECTOR"
+          },
+          {
+            "value": "DELIVERY UNIT",
+            "label": "DELIVERY UNIT"
+          },
+          {
+            "value": "DICKY",
+            "label": "DICKY"
+          },
+          {
+            "value": "DISC",
+            "label": "DISC"
+          },
+          {
+            "value": "DISTRIBUTION",
+            "label": "DISTRIBUTION"
+          },
+          {
+            "value": "DME",
+            "label": "DME"
+          },
+          {
+            "value": "DOOR",
+            "label": "DOOR"
+          },
+          {
+            "value": "DOWEL",
+            "label": "DOWEL"
+          },
+          {
+            "value": "DRIER",
+            "label": "DRIER"
+          },
+          {
+            "value": "DRIVE",
+            "label": "DRIVE"
+          },
+          {
+            "value": "DRUM",
+            "label": "DRUM"
+          },
+          {
+            "value": "ECU",
+            "label": "ECU"
+          },
+          {
+            "value": "ELECTRICAL",
+            "label": "ELECTRICAL"
+          },
+          {
+            "value": "ELEMENT",
+            "label": "ELEMENT"
+          },
+          {
+            "value": "EMBLEM",
+            "label": "EMBLEM"
+          },
+          {
+            "value": "END",
+            "label": "END"
+          },
+          {
+            "value": "ENGINE",
+            "label": "ENGINE"
+          },
+          {
+            "value": "EVAPORATOR",
+            "label": "EVAPORATOR"
+          },
+          {
+            "value": "EXHAUST",
+            "label": "EXHAUST"
+          },
+          {
+            "value": "EXPANSION",
+            "label": "EXPANSION"
+          },
+          {
+            "value": "EXTENSION",
+            "label": "EXTENSION"
+          },
+          {
+            "value": "FAN",
+            "label": "FAN"
+          },
+          {
+            "value": "FASTENER",
+            "label": "FASTENER"
+          },
+          {
+            "value": "FENDER",
+            "label": "FENDER"
+          },
+          {
+            "value": "FIILTER",
+            "label": "FIILTER"
+          },
+          {
+            "value": "FILLER CAP",
+            "label": "FILLER CAP"
+          },
+          {
+            "value": "FILLER FLAP",
+            "label": "FILLER FLAP"
+          },
+          {
+            "value": "FILLER NECK",
+            "label": "FILLER NECK"
+          },
+          {
+            "value": "FILLER PIPE",
+            "label": "FILLER PIPE"
+          },
+          {
+            "value": "FILLER PIPE WASH CONTAINER",
+            "label": "FILLER PIPE WASH CONTAINER"
+          },
+          {
+            "value": "FILLER SUB ASSY",
+            "label": "FILLER SUB ASSY"
+          },
+          {
+            "value": "FILL-IN FLAP",
+            "label": "FILL-IN FLAP"
+          },
+          {
+            "value": "FILLISTER",
+            "label": "FILLISTER"
+          },
+          {
+            "value": "FILM",
+            "label": "FILM"
+          },
+          {
+            "value": "FILTER",
+            "label": "FILTER"
+          },
+          {
+            "value": "FINISHER",
+            "label": "FINISHER"
+          },
+          {
+            "value": "FITTING",
+            "label": "FITTING"
+          },
+          {
+            "value": "FLANGE",
+            "label": "FLANGE"
+          },
+          {
+            "value": "FLAP",
+            "label": "FLAP"
+          },
+          {
+            "value": "FLOOR",
+            "label": "FLOOR"
+          },
+          {
+            "value": "FOG",
+            "label": "FOG"
+          },
+          {
+            "value": "FRAME",
+            "label": "FRAME"
+          },
+          {
+            "value": "FRONR",
+            "label": "FRONR"
+          },
+          {
+            "value": "FRONT",
+            "label": "FRONT"
+          },
+          {
+            "value": "FUEL",
+            "label": "FUEL"
+          },
+          {
+            "value": "FUNNEL",
+            "label": "FUNNEL"
+          },
+          {
+            "value": "FUSE",
+            "label": "FUSE"
+          },
+          {
+            "value": "GASKET",
+            "label": "GASKET"
+          },
+          {
+            "value": "GASKET",
+            "label": "GASKET"
+          },
+          {
+            "value": "GEAR",
+            "label": "GEAR"
+          },
+          {
+            "value": "GLASS",
+            "label": "GLASS"
+          },
+          {
+            "value": "GLOW",
+            "label": "GLOW"
+          },
+          {
+            "value": "GRID",
+            "label": "GRID"
+          },
+          {
+            "value": "GRILL",
+            "label": "GRILL"
+          },
+          {
+            "value": "GROMMET",
+            "label": "GROMMET"
+          },
+          {
+            "value": "GUIDE",
+            "label": "GUIDE"
+          },
+          {
+            "value": "HAND",
+            "label": "HAND"
+          },
+          {
+            "value": "HARNESS",
+            "label": "HARNESS"
+          },
+          {
+            "value": "HEAD",
+            "label": "HEAD"
+          },
+          {
+            "value": "HEAT",
+            "label": "HEAT"
+          },
+          {
+            "value": "HIGH PRESSURE",
+            "label": "HIGH PRESSURE"
+          },
+          {
+            "value": "HINGE",
+            "label": "HINGE"
+          },
+          {
+            "value": "HOLDER",
+            "label": "HOLDER"
+          },
+          {
+            "value": "HOOD",
+            "label": "HOOD"
+          },
+          {
+            "value": "HOOK",
+            "label": "HOOK"
+          },
+          {
+            "value": "HORN",
+            "label": "HORN"
+          },
+          {
+            "value": "HOSE",
+            "label": "HOSE"
+          },
+          {
+            "value": "HOUSING",
+            "label": "HOUSING"
+          },
+          {
+            "value": "HUB",
+            "label": "HUB"
+          },
+          {
+            "value": "HYDRAULIC",
+            "label": "HYDRAULIC"
+          },
+          {
+            "value": "IDLER",
+            "label": "IDLER"
+          },
+          {
+            "value": "IGNITION",
+            "label": "IGNITION"
+          },
+          {
+            "value": "INDICATOR",
+            "label": "INDICATOR"
+          },
+          {
+            "value": "INJECTOR",
+            "label": "INJECTOR"
+          },
+          {
+            "value": "INSERT",
+            "label": "INSERT"
+          },
+          {
+            "value": "INSTRUMENT",
+            "label": "INSTRUMENT"
+          },
+          {
+            "value": "INSULATOR",
+            "label": "INSULATOR"
+          },
+          {
+            "value": "INTAKE",
+            "label": "INTAKE"
+          },
+          {
+            "value": "INTERIOR",
+            "label": "INTERIOR"
+          },
+          {
+            "value": "JOINT",
+            "label": "JOINT"
+          },
+          {
+            "value": "KEY",
+            "label": "KEY"
+          },
+          {
+            "value": "KIT",
+            "label": "KIT"
+          },
+          {
+            "value": "KNOB",
+            "label": "KNOB"
+          },
+          {
+            "value": "KNUCKLE",
+            "label": "KNUCKLE"
+          },
+          {
+            "value": "LAMP",
+            "label": "LAMP"
+          },
+          {
+            "value": "LATCH",
+            "label": "LATCH"
+          },
+          {
+            "value": "LATERAL",
+            "label": "LATERAL"
+          },
+          {
+            "value": "LENS & BODY",
+            "label": "LENS & BODY"
+          },
+          {
+            "value": "LEVER",
+            "label": "LEVER"
+          },
+          {
+            "value": "LIGHT",
+            "label": "LIGHT"
+          },
+          {
+            "value": "LINE",
+            "label": "LINE"
+          },
+          {
+            "value": "LINK",
+            "label": "LINK"
+          },
+          {
+            "value": "LOCK",
+            "label": "LOCK"
+          },
+          {
+            "value": "LOGO",
+            "label": "LOGO"
+          },
+          {
+            "value": "LOWER",
+            "label": "LOWER"
+          },
+          {
+            "value": "MASTER",
+            "label": "MASTER"
+          },
+          {
+            "value": "MECHATRONIC",
+            "label": "MECHATRONIC"
+          },
+          {
+            "value": "MIRROR",
+            "label": "MIRROR"
+          },
+          {
+            "value": "MODULE",
+            "label": "MODULE"
+          },
+          {
+            "value": "MOLDING",
+            "label": "MOLDING"
+          },
+          {
+            "value": "MOTOR",
+            "label": "MOTOR"
+          },
+          {
+            "value": "MOUDLING",
+            "label": "MOUDLING"
+          },
+          {
+            "value": "MOULDING",
+            "label": "MOULDING"
+          },
+          {
+            "value": "MOUNT",
+            "label": "MOUNT"
+          },
+          {
+            "value": "MOUNTING",
+            "label": "MOUNTING"
+          },
+          {
+            "value": "MUD",
+            "label": "MUD"
+          },
+          {
+            "value": "MULTIRIB",
+            "label": "MULTIRIB"
+          },
+          {
+            "value": "NAME PLATE",
+            "label": "NAME PLATE"
+          },
+          {
+            "value": "NOZZLE",
+            "label": "NOZZLE"
+          },
+          {
+            "value": "NUMBER PLATE",
+            "label": "NUMBER PLATE"
+          },
+          {
+            "value": "NUT",
+            "label": "NUT"
+          },
+          {
+            "value": "O - RING",
+            "label": "O - RING"
+          },
+          {
+            "value": "OIL",
+            "label": "OIL"
+          },
+          {
+            "value": "OIL ASSY",
+            "label": "OIL ASSY"
+          },
+          {
+            "value": "OIL CAP",
+            "label": "OIL CAP"
+          },
+          {
+            "value": "OIL COOLER",
+            "label": "OIL COOLER"
+          },
+          {
+            "value": "ORNAMENTAL",
+            "label": "ORNAMENTAL"
+          },
+          {
+            "value": "OTHERS",
+            "label": "OTHERS"
+          },
+          {
+            "value": "PAD",
+            "label": "PAD"
+          },
+          {
+            "value": "PANEL",
+            "label": "PANEL"
+          },
+          {
+            "value": "PIECE",
+            "label": "PIECE"
+          },
+          {
+            "value": "PIN",
+            "label": "PIN"
+          },
+          {
+            "value": "PIPE",
+            "label": "PIPE"
+          },
+          {
+            "value": "PISTON",
+            "label": "PISTON"
+          },
+          {
+            "value": "PLATE",
+            "label": "PLATE"
+          },
+          {
+            "value": "PLUG",
+            "label": "PLUG"
+          },
+          {
+            "value": "POWER",
+            "label": "POWER"
+          },
+          {
+            "value": "PRESSURE",
+            "label": "PRESSURE"
+          },
+          {
+            "value": "PROTECTOR",
+            "label": "PROTECTOR"
+          },
+          {
+            "value": "PULLEY",
+            "label": "PULLEY"
+          },
+          {
+            "value": "PULLY",
+            "label": "PULLY"
+          },
+          {
+            "value": "PUMP",
+            "label": "PUMP"
+          },
+          {
+            "value": "RACK",
+            "label": "RACK"
+          },
+          {
+            "value": "RADIATOR",
+            "label": "RADIATOR"
+          },
+          {
+            "value": "RAIL",
+            "label": "RAIL"
+          },
+          {
+            "value": "REAR",
+            "label": "REAR"
+          },
+          {
+            "value": "REFLECTOR",
+            "label": "REFLECTOR"
+          },
+          {
+            "value": "REGISTER",
+            "label": "REGISTER"
+          },
+          {
+            "value": "REGULATOR",
+            "label": "REGULATOR"
+          },
+          {
+            "value": "REINFORCEMENT",
+            "label": "REINFORCEMENT"
+          },
+          {
+            "value": "RELAY",
+            "label": "RELAY"
+          },
+          {
+            "value": "RELEY",
+            "label": "RELEY"
+          },
+          {
+            "value": "REPAIR KIT",
+            "label": "REPAIR KIT"
+          },
+          {
+            "value": "RESERVOIR",
+            "label": "RESERVOIR"
+          },
+          {
+            "value": "RESISTOR",
+            "label": "RESISTOR"
+          },
+          {
+            "value": "RETAINER",
+            "label": "RETAINER"
+          },
+          {
+            "value": "RING",
+            "label": "RING"
+          },
+          {
+            "value": "RIVET",
+            "label": "RIVET"
+          },
+          {
+            "value": "ROD",
+            "label": "ROD"
+          },
+          {
+            "value": "ROLLER",
+            "label": "ROLLER"
+          },
+          {
+            "value": "ROOF",
+            "label": "ROOF"
+          },
+          {
+            "value": "ROTOR",
+            "label": "ROTOR"
+          },
+          {
+            "value": "RUBBER",
+            "label": "RUBBER"
+          },
+          {
+            "value": "SCREW",
+            "label": "SCREW"
+          },
+          {
+            "value": "SEAL",
+            "label": "SEAL"
+          },
+          {
+            "value": "SEALING",
+            "label": "SEALING"
+          },
+          {
+            "value": "SEAT",
+            "label": "SEAT"
+          },
+          {
+            "value": "SENDER",
+            "label": "SENDER"
+          },
+          {
+            "value": "SENSOR",
+            "label": "SENSOR"
+          },
+          {
+            "value": "SHAFT",
+            "label": "SHAFT"
+          },
+          {
+            "value": "SHIELD",
+            "label": "SHIELD"
+          },
+          {
+            "value": "SHOCK",
+            "label": "SHOCK"
+          },
+          {
+            "value": "SIDE",
+            "label": "SIDE"
+          },
+          {
+            "value": "SILICON",
+            "label": "SILICON"
+          },
+          {
+            "value": "SLEEVE",
+            "label": "SLEEVE"
+          },
+          {
+            "value": "SLIDE",
+            "label": "SLIDE"
+          },
+          {
+            "value": "SOCKET",
+            "label": "SOCKET"
+          },
+          {
+            "value": "SOLENOID",
+            "label": "SOLENOID"
+          },
+          {
+            "value": "SPACER",
+            "label": "SPACER"
+          },
+          {
+            "value": "SPARK PLUG",
+            "label": "SPARK PLUG"
+          },
+          {
+            "value": "SPEAKER",
+            "label": "SPEAKER"
+          },
+          {
+            "value": "SPINDLE",
+            "label": "SPINDLE"
+          },
+          {
+            "value": "SPOILER",
+            "label": "SPOILER"
+          },
+          {
+            "value": "SPRAY NOZZLE",
+            "label": "SPRAY NOZZLE"
+          },
+          {
+            "value": "SPRING",
+            "label": "SPRING"
+          },
+          {
+            "value": "SPROCKET",
+            "label": "SPROCKET"
+          },
+          {
+            "value": "SPROCKET",
+            "label": "SPROCKET"
+          },
+          {
+            "value": "ST.LINK",
+            "label": "ST.LINK"
+          },
+          {
+            "value": "STAB LINK",
+            "label": "STAB LINK"
+          },
+          {
+            "value": "STABILIZER",
+            "label": "STABILIZER"
+          },
+          {
+            "value": "STARTER",
+            "label": "STARTER"
+          },
+          {
+            "value": "STB LINK",
+            "label": "STB LINK"
+          },
+          {
+            "value": "STEARING",
+            "label": "STEARING"
+          },
+          {
+            "value": "STEERING",
+            "label": "STEERING"
+          },
+          {
+            "value": "STICKER",
+            "label": "STICKER"
+          },
+          {
+            "value": "STOP",
+            "label": "STOP"
+          },
+          {
+            "value": "STRIP",
+            "label": "STRIP"
+          },
+          {
+            "value": "STRUT",
+            "label": "STRUT"
+          },
+          {
+            "value": "STUD",
+            "label": "STUD"
+          },
+          {
+            "value": "SUCTION",
+            "label": "SUCTION"
+          },
+          {
+            "value": "SUN",
+            "label": "SUN"
+          },
+          {
+            "value": "SUPPORT",
+            "label": "SUPPORT"
+          },
+          {
+            "value": "SUSPENSION",
+            "label": "SUSPENSION"
+          },
+          {
+            "value": "SWITCH",
+            "label": "SWITCH"
+          },
+          {
+            "value": "TANK",
+            "label": "TANK"
+          },
+          {
+            "value": "TENSIONER",
+            "label": "TENSIONER"
+          },
+          {
+            "value": "THERMOSTAT",
+            "label": "THERMOSTAT"
+          },
+          {
+            "value": "THERMOSTAT AND HOUSING",
+            "label": "THERMOSTAT AND HOUSING"
+          },
+          {
+            "value": "THROTTLE",
+            "label": "THROTTLE"
+          },
+          {
+            "value": "THRUST",
+            "label": "THRUST"
+          },
+          {
+            "value": "TIE ROD",
+            "label": "TIE ROD"
+          },
+          {
+            "value": "TIMING",
+            "label": "TIMING"
+          },
+          {
+            "value": "TIMING CHAIN",
+            "label": "TIMING CHAIN"
+          },
+          {
+            "value": "TIRROD",
+            "label": "TIRROD"
+          },
+          {
+            "value": "TRACK ROD",
+            "label": "TRACK ROD"
+          },
+          {
+            "value": "TRANSMISSION",
+            "label": "TRANSMISSION"
+          },
+          {
+            "value": "TRIM",
+            "label": "TRIM"
+          },
+          {
+            "value": "TRUNK",
+            "label": "TRUNK"
+          },
+          {
+            "value": "TUBE",
+            "label": "TUBE"
+          },
+          {
+            "value": "TURBO",
+            "label": "TURBO"
+          },
+          {
+            "value": "TURN",
+            "label": "TURN"
+          },
+          {
+            "value": "TYPE",
+            "label": "TYPE"
+          },
+          {
+            "value": "TYRE",
+            "label": "TYRE"
+          },
+          {
+            "value": "TYRE LINER",
+            "label": "TYRE LINER"
+          },
+          {
+            "value": "UPPER ARM",
+            "label": "UPPER ARM"
+          },
+          {
+            "value": "VACCUM",
+            "label": "VACCUM"
+          },
+          {
+            "value": "VALVE",
+            "label": "VALVE"
+          },
+          {
+            "value": "V-BELT",
+            "label": "V-BELT"
+          },
+          {
+            "value": "VENT",
+            "label": "VENT"
+          },
+          {
+            "value": "VIBRATION",
+            "label": "VIBRATION"
+          },
+          {
+            "value": "VOLTAGE",
+            "label": "VOLTAGE"
+          },
+          {
+            "value": "WASHER",
+            "label": "WASHER"
+          },
+          {
+            "value": "WATER PUMP",
+            "label": "WATER PUMP"
+          },
+          {
+            "value": "WEATER STRIPE",
+            "label": "WEATER STRIPE"
+          },
+          {
+            "value": "WHEEL",
+            "label": "WHEEL"
+          },
+          {
+            "value": "WIND",
+            "label": "WIND"
+          },
+          {
+            "value": "WINDOW",
+            "label": "WINDOW"
+          },
+          {
+            "value": "WINDSHIELD",
+            "label": "WINDSHIELD"
+          },
+          {
+            "value": "WIPER",
+            "label": "WIPER"
+          },
+          {
+            "value": "WIRE",
+            "label": "WIRE"
+          },
+          {
+            "value": "WIRING",
+            "label": "WIRING"
+          },
+          {
+            "value": "WISH BONE",
+            "label": "WISH BONE"
+          }
+        ]
+      }
+    }

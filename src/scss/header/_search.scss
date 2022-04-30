@@ -1,0 +1,47 @@
+/*
+// .search
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/header';
+
+
+@include desktop-header-variant-selector {
+    .search {}
+    .search__dropdown {
+        $local-timing: cubic-bezier(0.645, 0.045, 0.355, 1);
+        $local-duration: .25s;
+
+        color: map_get($menu-scheme, opposite);
+        background-color: map_get($menu-scheme, main);
+        box-shadow: map_get($menu-scheme, shadow);
+        position: absolute;
+        top: 100%;
+        border-radius: 1.5px;
+        opacity: 0;
+        transform: translateY(26px);
+        visibility: hidden;
+        transition:
+            opacity $local-duration $local-timing,
+            transform $local-duration $local-timing,
+            visibility 0s $local-duration;
+
+        @include direction {
+            #{$inset-inline-start}: 0;
+            #{$inset-inline-end}: 0;
+        }
+    }
+    .search__dropdown--open {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        transition-delay: 0s;
+    }
+    .search__button-icon svg {
+        display: block;
+    }
+}
+
+
+@import 'search--header--spaceship';
+@import 'search--header--classic';

@@ -1,0 +1,18 @@
+/*
+// .teammate
+*/
+@import '../variables';
+@import '../mixins/card';
+
+
+.teammate {
+    @include card;
+}
+.teammate__info {
+    padding: 14px 16px 16px;
+    text-align: center;
+}
+.teammate__position {
+    font-size: 14px;
+    color: map_get($card-scheme, opposite-alt);
+}

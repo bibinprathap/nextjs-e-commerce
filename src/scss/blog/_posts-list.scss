@@ -1,0 +1,48 @@
+/*
+// .posts-list
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+
+
+@mixin local-layout($columns, $gutter) {
+    .posts-list__body {
+        margin: -($gutter / 2);
+    }
+    .posts-list__item {
+        margin: ($gutter / 2);
+        width: calc(#{100% / $columns} - #{$gutter});
+    }
+}
+
+
+.posts-list {}
+.posts-list__body {
+    display: flex;
+    flex-wrap: wrap;
+}
+.posts-list__item {
+    display: flex;
+}
+
+
+.posts-list--layout--classic {
+    @include local-layout(1, 40px);
+}
+
+
+.posts-list--layout--grid-2 {
+    @include local-layout(2, 28px);
+
+    @include media-breakpoint-down(xl) {
+        @include local-layout(2, 20px);
+    }
+    @include media-breakpoint-down(sm) {
+        @include local-layout(1, 32px);
+    }
+}
+
+
+.posts-list--layout--list {
+    @include local-layout(1, 28px);
+}

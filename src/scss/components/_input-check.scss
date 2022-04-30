@@ -1,0 +1,74 @@
+/*
+// .input-check
+*/
+@import '../variables';
+
+
+$local-box-size: 16px;
+$local-border-radius: 1.2px;
+$local-transition-duration: .15s;
+
+
+.input-check {
+    display: inline-block;
+}
+.input-check__body {
+    display: block;
+    position: relative;
+    width: $local-box-size;
+    height: $local-box-size;
+}
+.input-check__input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    cursor: inherit;
+}
+.input-check__box {
+    display: block;
+    width: $local-box-size;
+    height: $local-box-size;
+    border-radius: $local-border-radius;
+    background: $input-check-box-bg;
+    box-shadow: $input-check-box-shadow;
+    transition: background $local-transition-duration,
+                box-shadow $local-transition-duration;
+}
+.input-check__icon {
+    pointer-events: none;
+    position: absolute;
+    left: 4px;
+    top: 5px;
+    fill: $input-check-icon-color;
+    transform: scale(0);
+    transition: fill $local-transition-duration,
+                transform $local-transition-duration,
+                visibility 0s $local-transition-duration;
+
+    svg {
+        display: block;
+    }
+}
+.input-check__input:checked ~ {
+    .input-check__box {
+        background: $input-check-checked-box-bg;
+        box-shadow: $input-check-checked-box-shadow;
+    }
+    .input-check__icon {
+        fill: $input-check-checked-icon-color;
+        transition-delay: 0s, 0s, 0s;
+        transform: scale(1);
+    }
+}
+.input-check__input:disabled ~ {
+    .input-check__box {
+        background: $input-check-disabled-box-bg;
+        box-shadow: $input-check-disabled-box-shadow;
+    }
+    .input-check__icon {
+        fill: $input-check-disabled-icon-color;
+    }
+}

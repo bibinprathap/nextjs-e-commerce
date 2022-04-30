@@ -1,0 +1,22 @@
+@import '../functions';
+@import 'direction';
+
+
+@mixin tag-badge-size($height, $padding-x, $angel) {
+    $tan: tan($angel);
+
+    $padding-x-skew: ceil($height * $tan);
+    $padding-x-total: $padding-x-skew + $padding-x;
+
+    height: $height;
+    padding: (($height - 10px) / 2) ($padding-x-total) 0;
+
+    &:before {
+        left: $padding-x-skew / 2;
+        right: $padding-x-skew / 2;
+
+        @include direction {
+            transform: skewX(#{$angel * $transform-direction});
+        }
+    }
+}

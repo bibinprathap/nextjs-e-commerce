@@ -1,0 +1,25 @@
+$grid-gutter-width: 30px !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1380px
+) !default;
+
+// Pagination
+$pagination-padding-y:              .375rem !default;
+$pagination-padding-x:              .625rem !default;
+$pagination-bg:                     transparent !default;
+$pagination-border-width:           0 !default;
+$pagination-hover-bg:               #f0f0f0 !default;

@@ -1,0 +1,231 @@
+@import '../variables';
+@import '../svg';
+@import '../mixins/direction';
+@import '../mixins/scheme';
+@import '../mixins/header';
+
+
+@mixin local-define-button-scheme($state) {
+    $bg-color-key:    #{$state}-bg-color;
+    $font-color-key:  #{$state}-font-color;
+    $icon-color-key:  #{$state}-icon-color;
+    $arrow-color-key: #{$state}-arrow-color;
+
+    @if(map_has_key($search-classic-button-scheme, $bg-color-key)) {
+        background-color: map_get($search-classic-button-scheme, $bg-color-key);
+    }
+    @if(map_has_key($search-classic-button-scheme, $font-color-key)) {
+        color: map_get($search-classic-button-scheme, $font-color-key);
+    }
+    @if(map_has_key($search-classic-button-scheme, $icon-color-key)) {
+        .search__button-icon {
+            fill: map_get($search-classic-button-scheme, $icon-color-key);
+        }
+    }
+    @if(map_has_key($search-classic-button-scheme, $arrow-color-key)) {
+        background-image: url(svg-select-arrow(map_get($search-classic-button-scheme, $arrow-color-key)));
+    }
+}
+
+
+@include desktop-header-variant-selector {
+    @if ($header-layout == classic) {
+        $local-height: 38px;
+        $local-border-radius: 2.5px;
+        $local-input-border-width: 1px;
+        $local-gutter: 5px;
+
+
+        .search__body {
+            display: flex;
+            z-index: 0;
+            position: relative;
+            max-width: 560px;
+            height: $local-height;
+        }
+        .search__input,
+        .search__button {
+            background: transparent;
+            border: none;
+            font-family: inherit;
+            padding: 0;
+            flex-basis: 0;
+
+            &:focus {
+                outline: none;
+            }
+        }
+        .search__button {
+            flex-shrink: 0;
+            border: 2px solid transparent;
+            fill: currentColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 9px;
+            white-space: nowrap;
+        }
+        .search__button-icon {
+            flex-shrink: 0;
+        }
+        .search__button-title {
+            font-size: 14px;
+            font-weight: $font-weight-medium;
+            line-height: 1;
+            margin-top: 1px;
+
+            @include direction {
+                #{$margin-inline-start}: 9px;
+            }
+        }
+        .search__input {
+            @include define-input-scheme($search-classic-input-scheme, normal);
+
+            flex-grow: 1;
+            font-size: 15px;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-width: $local-input-border-width;
+            border-style: solid;
+            border-radius: $local-border-radius;
+            transition:
+                background-color .2s,
+                border-color .2s,
+                color .2s;
+
+            @include direction {
+                #{$padding-inline-start}: 14px - $local-input-border-width;
+                #{$padding-inline-end}: $local-height - $local-input-border-width;
+            }
+
+            &:hover {
+                @include define-input-scheme($search-classic-input-scheme, hover);
+            }
+            &:focus {
+                @include define-input-scheme($search-classic-input-scheme, focus);
+            }
+        }
+        .search__button--start {
+            $local-padding-x: 12px;
+            $local-arrow-width: 10px;
+
+            order: -1;
+            padding-top: 0;
+            padding-bottom: 0;
+            border: 1px solid transparent;
+            background-repeat: no-repeat;
+            background-size: 5px 10px;
+            border-radius: $local-border-radius;
+            transition:
+                color .15s,
+                background-color .15s;
+
+            @include local-define-button-scheme(normal);
+
+            @include direction {
+                #{$padding-inline-start}: $local-padding-x;
+                #{$padding-inline-end}: ($local-padding-x + $local-arrow-width + 5px);
+                #{$margin-inline-end}: $local-gutter;
+                background-position: $inline-end $local-padding-x center;
+            }
+
+            &:hover {
+                @include local-define-button-scheme(hover);
+            }
+            &:active {
+                transition-duration: 0s;
+
+                @include local-define-button-scheme(active);
+            }
+        }
+        .search__button--end {
+            transition: color .2s;
+            position: absolute;
+            height: $local-height;
+            width: $local-height;
+            border: none;
+
+            @include direction {
+                #{$inset-inline-end}: 0;
+            }
+
+            @if(map_has_key($search-classic-input-scheme, normal-icon-scheme)) {
+                @include define-button-scheme(map_get($search-classic-input-scheme, normal-icon-scheme));
+            }
+        }
+
+        @if(map_has_key($search-classic-input-scheme, hover-icon-scheme)) {
+            .search__input:hover ~ .search__button--end {
+                @include define-button-scheme(map_get($search-classic-input-scheme, hover-icon-scheme));
+            }
+        }
+        @if(map_has_key($search-classic-input-scheme, focus-icon-scheme)) {
+            .search__input:focus ~ .search__button--end {
+                @include define-button-scheme(map_get($search-classic-input-scheme, focus-icon-scheme));
+            }
+        }
+
+        .search__dropdown--vehicle-picker {
+            max-width: 440px;
+        }
+        .search__dropdown-arrow {
+            $local-size: 7px;
+            $local-button-icon-width: 20px;
+            $local-button-icon-offset: 13px;
+
+            position: absolute;
+            width: ($local-button-icon-width + $local-button-icon-offset * 2);
+            height: 21px;
+            pointer-events: none;
+            bottom: 100%;
+            overflow: hidden;
+
+            &:before {
+                position: absolute;
+                display: block;
+                content: '';
+                width: $local-size;
+                height: $local-size;
+                top: 100%;
+                margin-top: -($local-size / 2);
+                background-color: map_get($menu-scheme, main);
+                border-radius: 1px;
+
+                @include direction {
+                    #{$inset-inline-start}: 50%;
+                    #{$margin-inline-start}: -($local-size / 2);
+                    transform: rotate(45deg) translateX(#{-.5px * $transform-direction}) translateY(-.5px);
+                }
+            }
+        }
+
+
+        // define scheme
+        .search__input {
+            @include define-input-scheme($search-classic-input-scheme, normal);
+
+            &:hover {
+                @include define-input-scheme($search-classic-input-scheme, hover);
+            }
+            &:focus {
+                @include define-input-scheme($search-classic-input-scheme, focus);
+            }
+        }
+
+        .search__button--end {
+            @if(map_has_key($search-classic-input-scheme, normal-icon-scheme)) {
+                @include define-button-scheme(map_get($search-classic-input-scheme, normal-icon-scheme));
+            }
+        }
+        @if(map_has_key($search-classic-input-scheme, hover-icon-scheme)) {
+            .search__input:hover ~ .search__button--end {
+                @include define-button-scheme(map_get($search-classic-input-scheme, hover-icon-scheme));
+            }
+        }
+        @if(map_has_key($search-classic-input-scheme, focus-icon-scheme)) {
+            .search__input:focus ~ .search__button--end {
+                @include define-button-scheme(map_get($search-classic-input-scheme, focus-icon-scheme));
+            }
+        }
+    }
+}

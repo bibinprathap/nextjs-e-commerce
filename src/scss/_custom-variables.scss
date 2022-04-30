@@ -1,0 +1,120 @@
+@import 'functions';
+
+// ----------------------------------------------------------
+// -- You can add your variables to overwrite default values.
+// ----------------------------------------------------------
+
+
+// Change main theme color
+//$theme-scheme: (
+//    main:  #584d8c, // main theme color
+//    muted: #cdc8e5, // muted text color
+//);
+
+// Change departments (menu / shop by category) button color
+//$departments-button-scheme-based-on: (
+//    normal: dark,
+//    hover:  theme,
+//);
+
+// How to define your own scheme and use it?
+//$my-scheme: (
+//    name:         my-scheme,              // scheme name
+//    // colors
+//    main:         #c74686,                // usually background color
+//    opposite:     #fff,                   // font color
+//
+//    // use construction [KEY]-font-weight-map to tweak font-weight,
+//    // see examples and explanation below
+//    opposite-font-weight-map: (500: 400), // medium (500) to normal (400) font weight
+//
+//    opposite-alt: #fff,                   // alternative font color
+//    muted:        #ffcccc,                // muted font color
+//    // states
+//    hover:        rgba(#000, .1),         // background color in hover state
+//    active:       rgba(#000, .15),        // background color in active (mouse pressed) state
+//    // decor
+//    divider:      rgba(#000, .15),        //
+//    arrow-color:  rgba(#000, .25),        // for example: color of menu arrow which indicates that menu has a submenu.
+//    icon-color:   #fff,                   // for example: cart icon, heart (wishlist) icon, etc.
+//    shadow:       none,                   // for example: card shadow, header shadow, etc. (depending on what the scheme applies to)
+//);
+// to use a schema by name, you must first register it
+//$my-scheme: register-scheme($my-scheme);
+// now we can apply our scheme, for example, to the menu
+//$menu-small-scheme-based-on: my-scheme;
+
+// You can also customize built in scheme
+//$dark-scheme: (
+//    main:        #4d323f,
+//    muted:       #b89caa,
+//    arrow-color: rgba(#fff, .25),
+//);
+
+
+// [KEY]-font-weight-map
+// As you know on screens with a small pixel density, text with the same font-weight value,
+// looks thicker on a black background than on a white background. This construction helps solve this problem.
+//
+//     $my-scheme: (
+//         main:     #000,
+//         opposite: #fff,
+//         opposite-font-weight-map: (500: 400),
+//     );
+//
+// The base-font-weight value should answer the question: What will be the font-weight of black text on a white background?
+//
+//     $base-font-weight: 500;
+//
+//     div {
+//         @include scheme-font-weight($my-scheme, opposite, $base-font-weight);
+//     }
+//
+// this will compiled into:
+//
+//     div {
+//         font-weight: 500;
+//     }
+//     @media (max-resolution: 1dppx) {
+//         font-weight: 400;
+//     }
+//
+// if opposite-font-weight-map == null or undefined then, this will compiled into:
+//
+//     div {
+//         font-weight: 500;
+//     }
+//
+// Thus, in one place we can control the font-weight depending on the color scheme used,
+// without the need to change the font-weight in all style files.
+
+
+// How to change form-control (input) scheme
+//$form-control-default-scheme: (
+//    normal-bg-color: #fff,
+//    normal-border-color: #d9d9d9,
+//
+//    hover-border-color: #bfbfbf,
+//    focus-border-color: #bfbfbf,
+//);
+
+// How to change button scheme
+//$btn-secondary-scheme: (
+//    normal-bg-color: #c74686,
+//    normal-font-color: #fff,
+//
+//    hover-bg-color: #4d323f,
+//    hover-font-color: #fff,
+//
+//    active-bg-color: lighten(#4d323f, 8%),
+//    active-font-color: #fff,
+//
+//    loader-color:      #fff,
+//);
+
+
+//@import 'themes/theme-red/theme-variables';
+//@import 'themes/theme-blue/theme-variables';
+//@import 'themes/theme-green/theme-variables';
+//@import 'themes/theme-orange/theme-variables';
+//@import 'themes/theme-violet/theme-variables';

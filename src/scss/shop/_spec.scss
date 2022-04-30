@@ -1,0 +1,79 @@
+/*
+// .spec
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+.spec {
+    font-size: 14px;
+    line-height: 18px;
+}
+.spec__header {
+    margin-bottom: 50px;
+}
+.spec__section {
+    & + & {
+        margin-top: 40px;
+    }
+}
+.spec__section-title {
+    font-weight: $font-weight-medium;
+    font-size: 17px;
+    letter-spacing: -.03em;
+    line-height: 20px;
+    margin: 0 0 12px;
+}
+.spec__row {
+    padding: 8px 0;
+    display: flex;
+    border-bottom: 1px solid map_get($card-scheme, divider);
+
+    &:first-of-type {
+        border-top: 1px solid map_get($card-scheme, divider);
+    }
+}
+.spec__name {
+    width: 230px;
+    flex-shrink: 0;
+    color: map_get($card-scheme, opposite-alt);
+
+    @include direction {
+        #{$padding-inline-end}: 30px;
+    }
+}
+.spec__disclaimer {
+    margin-top: 40px;
+    font-size: 13px;
+    line-height: 20px;
+    color: map_get($card-scheme, opposite-alt);
+}
+
+@include media-breakpoint-only(sm) {
+    .spec__name {
+        width: 170px;
+    }
+}
+@include media-breakpoint-down(xs) {
+    .spec__header {
+        margin-bottom: 30px;
+    }
+    .spec__section + .spec__section {
+        margin-top: 24px;
+    }
+    .spec__row {
+        display: block;
+        padding: 8px 0;
+    }
+    .spec__name {
+        width: auto;
+        margin-bottom: 2px;
+        text-transform: uppercase;
+        font-size: 11px;
+        line-height: 15px;
+    }
+    .spec__disclaimer {
+        margin-top: 28px;
+    }
+}

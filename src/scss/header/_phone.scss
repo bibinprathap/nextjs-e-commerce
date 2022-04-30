@@ -1,0 +1,62 @@
+/*
+// .phone
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/direction';
+@import '../mixins/scheme';
+@import '../mixins/header';
+
+
+@mixin local-define-scheme($scheme) {
+    .phone__body {
+        &:hover {
+            background: map_get($scheme, hover);
+        }
+    }
+    .phone__title {
+        color: map_get($scheme, muted);
+    }
+    .phone__number {
+        @include scheme-font-weight($scheme, opposite, $font-weight-medium);
+    }
+}
+
+
+@include desktop-header-variant-selector {
+    @if ($header-layout == classic) {
+        .phone {}
+        .phone__body {
+            display: flex;
+            align-items: center;
+            color: inherit;
+            line-height: 1;
+            height: 100%;
+            padding: 4px 11px;
+            border-radius: 2px;
+            transition: background .12s;
+            font-size: 17px;
+
+            &:hover {
+                color: inherit;
+            }
+        }
+        .phone__title {
+            font-size: 15px;
+            margin-top: 1px;
+
+            @include direction {
+                #{$margin-inline-end}: 5px;
+            }
+        }
+
+        // define scheme
+        @include local-define-scheme($navbar-scheme);
+
+        @if ($navbar-stretch) {
+            .phone__body {
+                border-radius: 0;
+            }
+        }
+    }
+}

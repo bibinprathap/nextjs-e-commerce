@@ -1,0 +1,23 @@
+/*
+// .filter-color
+*/
+@import '../variables';
+
+
+$local-margin: 4px;
+
+
+.filter-color {}
+.filter-color__list {
+    padding: 2px 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -$local-margin;
+}
+.filter-color__item {
+    cursor: pointer;
+    margin: $local-margin;
+}
+.filter-color__check {
+    display: block;
+}

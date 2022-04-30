@@ -1,0 +1,77 @@
+/*
+// .applied-filters
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+$local-gutter: 4px;
+
+
+.applied-filters {}
+.applied-filters__list {
+    list-style: none;
+    padding: 0;
+    margin: -($local-gutter / 2);
+    display: flex;
+    flex-wrap: wrap;
+}
+.applied-filters__item {
+    margin: ($local-gutter / 2);
+}
+.applied-filters__button {
+    padding: 4px 11px;
+    display: block;
+    height: 21px;
+    font-size: 13px;
+    line-height: 1;
+    color: inherit;
+    background-color: $applied-filters-normal-bg-color;
+    transition:
+        background .12s,
+        color .12s;
+    border-radius: (23px / 2);
+    position: relative;
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        background-color: $applied-filters-hover-bg-color;
+        color: inherit;
+    }
+}
+.applied-filters__button--filter {
+    @include direction {
+        #{$padding-inline-end}: (10px + 11px + 9px + 3px);
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 1px;
+        top: 4px;
+        bottom: 4px;
+        background-color: $applied-filters-divider-color;
+
+        @include direction {
+            #{$inset-inline-end}: (10px + 9px + 6px);
+        }
+    }
+
+    svg {
+        position: absolute;
+        top: 6px;
+        fill: $applied-filters-cross-color;
+
+        @include direction {
+            #{$inset-inline-end}: 10px;
+        }
+    }
+}
+.applied-filters__button--clear {
+    background: transparent;
+    color: $applied-filters-clear-font-color;
+}

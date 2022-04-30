@@ -1,0 +1,1 @@
+{"ast":null,"code":"// application\nimport { hrefToRouterArgs, useAppRouter } from '~/services/router';\n\nfunction Redirect(props) {\n  const {\n    href\n  } = props;\n  const router = useAppRouter();\n\n  if (false) {\n    router.push(...hrefToRouterArgs(href)).then();\n  }\n\n  return null;\n}\n\nexport default Redirect;","map":null,"metadata":{},"sourceType":"module"}

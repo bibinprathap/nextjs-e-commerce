@@ -1,0 +1,30 @@
+/*
+// .rating
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../svg';
+
+
+.rating {}
+.rating__body {
+    display: flex;
+}
+.rating__star {
+    width: 13px;
+    height: 12px;
+    background-image:
+        url(svg-star-normal-stroke($rating-star-default-bg-color)),
+        url(svg-star-normal($rating-star-default-border-color));
+
+    & + & {
+        @include direction {
+            #{$margin-inline-start}: 3px;
+        }
+    }
+}
+.rating__star--active {
+    background-image:
+        url(svg-star-normal-stroke($rating-star-active-border-color)),
+        url(svg-star-normal($rating-star-active-bg-color));
+}

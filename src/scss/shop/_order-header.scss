@@ -1,0 +1,68 @@
+/*
+// .order-header
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+.order-header {
+    padding: 1.625rem 2rem 1.375rem;
+
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+}
+.order-header__actions {
+    margin-top: -1px;
+
+    @include direction {
+        float: $inline-end;
+    }
+}
+.order-header__title {
+    border-bottom: 2px solid #e5e5e5;
+    padding-bottom: 4px;
+    margin-bottom: 0;
+
+    @include direction {
+        #{$padding-inline-end}: 3.5rem;
+        float: $inline-start;
+    }
+}
+.order-header__subtitle {
+    color: map_get($card-scheme, opposite-alt);
+    font-size: 14px;
+    line-height: 1.375;
+    clear: both;
+    padding-top: 12px;
+
+    mark {
+        padding: 0;
+        color: map_get($card-scheme, opposite);
+        background: transparent;
+        font-weight: $font-weight-medium;
+    }
+}
+
+@include media-breakpoint-only(md)  {
+    .order-header {
+        padding: 1.375rem 1.5rem 1.25rem;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .order-header {
+        padding: 1.125rem 1.375rem 1rem;
+    }
+}
+@media (max-width: 440px) {
+    .order-header__actions {
+        margin-bottom: .875rem;
+
+        @include direction {
+            float: none;
+        }
+    }
+}

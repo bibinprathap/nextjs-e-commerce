@@ -1,0 +1,1 @@
+{"ast":null,"code":"var config = {\n  desktopHeaderVariant: 'spaceship/one',\n  mobileHeaderVariant: 'one'\n};\nexport default config;","map":null,"metadata":{},"sourceType":"module"}

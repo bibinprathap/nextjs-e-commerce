@@ -1,0 +1,89 @@
+/*
+// .account-nav
+*/
+@import '../variables';
+@import '../mixins/card';
+@import '../mixins/breakpoints';
+@import '../mixins/direction';
+
+
+.account-nav {
+    @include card;
+}
+.account-nav__title {
+    padding: 1.375rem 1.5rem;
+    font-size: 20px;
+    font-weight: $font-weight-medium;
+    margin-bottom: 0;
+}
+.account-nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    line-height: 20px;
+}
+.account-nav__item a,
+.account-nav__item button, {
+    cursor: pointer;
+    display: block;
+    color: map_get($card-scheme, opposite-alt);
+    padding: 7px 1.5rem;
+    border: none;
+    width: 100%;
+    background: transparent;
+
+    @include direction {
+        text-align: $inline-start;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+.account-nav__item:hover a,
+.account-nav__item:hover button {
+    background: map_get($card-scheme, hover);
+}
+.account-nav__item--active a,
+.account-nav__item--active button {
+    color: inherit;
+    font-weight: $font-weight-medium;
+}
+.account-nav__divider {
+    height: 1px;
+    background: map_get($card-scheme, divider);
+    margin: 10px 0;
+}
+
+
+@include media-breakpoint-up(lg) {
+    .account-nav__list {
+        padding-bottom: 1.375rem;
+    }
+    .account-nav__item--active a {
+        @include direction {
+            box-shadow: #{3px * $transform-direction} 0 $account-nav-border-color inset;
+        }
+    }
+}
+@include media-breakpoint-down(md) {
+    .account-nav {
+        overflow-x: auto;
+        max-width: 100%;
+    }
+    .account-nav__list {
+        display: flex;
+        white-space: nowrap;
+        padding: 0 8px;
+    }
+    .account-nav__title {
+        display: none;
+    }
+    .account-nav__item a {
+        padding: 14px 20px;
+    }
+    .account-nav__item--active a {
+        box-shadow: 0 -3px $account-nav-border-color inset;
+    }
+}

@@ -1,0 +1,59 @@
+/*
+// .review
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+.review {}
+.review__body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.review__content {
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 12px;
+}
+.review__avatar {
+    overflow: hidden;
+    border-radius: 1.5px;
+    width: 42px;
+
+    @include direction {
+        #{$margin-inline-end}: 12px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+.review__meta {
+    flex-grow: 1;
+
+    @include direction {
+        #{$margin-inline-end}: 20px;
+    }
+}
+.review__author {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: $font-weight-bold;
+    margin-top: 2px;
+}
+.review__date {
+    font-size: 13px;
+    color: map_get($card-scheme, muted);
+}
+
+
+@media (max-width: 474px) {
+    .review__rating {
+        width: 100%;
+        margin-top: 12px;
+        margin-bottom: -3px;
+    }
+}

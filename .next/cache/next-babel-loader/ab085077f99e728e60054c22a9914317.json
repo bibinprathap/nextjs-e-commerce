@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\n// react\nimport React from 'react'; // application\n\nimport BlogPageCategory from '~/components/blog/BlogPageCategory';\n\nfunction Page() {\n  return __jsx(BlogPageCategory, {\n    layout: \"list\",\n    sidebarPosition: \"end\"\n  });\n}\n\nexport default Page;","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,67 @@
+@import '../variables';
+
+
+@function local-define-direction-variables($direction) {
+    $inline-start:              if($direction == ltr, left, right)       !global;
+    $inline-end:                if($direction == ltr, right, left)       !global;
+    $transform-direction:       if($direction == ltr, 1, -1)             !global;
+
+    $margin-inline-start:       margin- + $inline-start                  !global;
+    $margin-inline-end:         margin- + $inline-end                    !global;
+    $padding-inline-start:      padding- + $inline-start                 !global;
+    $padding-inline-end:        padding- + $inline-end                   !global;
+    $inset-inline-start:        $inline-start                            !global;
+    $inset-inline-end:          $inline-end                              !global;
+    $border-inline-start:       border- + $inline-start                  !global;
+    $border-inline-end:         border- + $inline-end                    !global;
+    $border-start-start-radius: border-top- + $inline-start + -radius    !global;
+    $border-start-end-radius:   border-top- + $inline-end + -radius      !global;
+    $border-end-start-radius:   border-bottom- + $inline-start + -radius !global;
+    $border-end-end-radius:     border-bottom- + $inline-end + -radius   !global;
+
+    @return null;
+}
+
+
+@mixin logical-border-radius($args) {
+    @if (length($args) == 1) {
+        border-radius: nth($args, 1);
+    } @else if(length($args) == 2) {
+        border-top-#{$inline-start}-radius: nth($args, 1);
+        border-top-#{$inline-end}-radius: nth($args, 2);
+        border-bottom-#{$inline-start}-radius: nth($args, 2);
+        border-bottom-#{$inline-end}-radius: nth($args, 1);
+    } @else if(length($args) == 3) {
+        border-top-#{$inline-start}-radius: nth($args, 1);
+        border-top-#{$inline-end}-radius: nth($args, 2);
+        border-bottom-#{$inline-start}-radius: nth($args, 2);
+        border-bottom-#{$inline-end}-radius: nth($args, 3);
+    } @else if(length($args) == 4) {
+        border-top-#{$inline-start}-radius: nth($args, 1);
+        border-top-#{$inline-end}-radius: nth($args, 2);
+        border-bottom-#{$inline-start}-radius: nth($args, 4);
+        border-bottom-#{$inline-end}-radius: nth($args, 3);
+    }
+}
+
+
+@mixin direction() {
+    @if ($both-directions == true) {
+        [dir=#{$direction}] & {
+            @content;
+        }
+
+        $original-direction: $direction;
+        $direction: if($original-direction == ltr, rtl, ltr) !global;
+        $_: local-define-direction-variables($direction);
+
+        [dir=#{$direction}] & {
+            @content;
+        }
+
+        $direction: $original-direction !global;
+        $_: local-define-direction-variables($direction);
+    } @else {
+        @content;
+    }
+}

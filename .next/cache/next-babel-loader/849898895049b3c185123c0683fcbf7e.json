@@ -1,0 +1,1 @@
+{"ast":null,"code":"/* eslint-disable import/prefer-default-export */\n// application\nimport { delayResponse } from '~/fake-server/utils';\nimport { posts as dbPosts } from '~/fake-server/database/posts';\nexport function getLatestPosts(limit) {\n  return delayResponse(Promise.resolve(dbPosts.slice(0, limit)));\n}","map":null,"metadata":{},"sourceType":"module"}

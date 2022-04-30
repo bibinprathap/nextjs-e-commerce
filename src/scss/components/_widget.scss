@@ -1,0 +1,20 @@
+/*
+// .widget
+*/
+@import '../variables';
+
+
+.widget {
+    & + & {
+        margin-top: 20px;
+    }
+}
+.widget__header {
+    padding: ($widget-padding - .125rem) $widget-padding;
+
+    h4 {
+        font-size: 20px;
+        font-weight: $font-weight-medium;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,40 @@
+/*
+// .block-products-columns
+*/
+@import '../variables';
+@import '../mixins/product-card';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+.block-products-columns {}
+.block-products-columns__title {
+    border-bottom: 2px solid map_get($body-scheme, divider);
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+}
+.block-products-columns__list-item {
+    & + & {
+        margin-top: 16px;
+    }
+
+    .product-card {
+        @include product-card-horizontal-base;
+    }
+}
+
+
+@include media-breakpoint-up(xxl) {
+    .block-products-columns__list-item {
+        .product-card {
+            @include product-card-horizontal-base-md;
+        }
+    }
+}
+@include media-breakpoint-down(lg) {
+    .block-products-columns {
+        display: none;
+    }
+}

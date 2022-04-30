@@ -1,0 +1,91 @@
+/*
+// .block-map
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+
+
+.block-map {
+    display: block;
+    position: relative;
+    height: 420px;
+
+    .first {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        content: '';
+        display: block;
+        left: 0;
+        width: 50%;
+        height: 3px;
+        z-index: 1;
+        pointer-events: none;
+    }
+    &:before {
+        top: 0;
+        background: linear-gradient(to bottom, rgba(#000, .03), rgba(#000, 0));
+    }
+    &:after {
+        bottom: 0;
+        background-image: linear-gradient(to top, rgba(#000, .03), rgba(#000, 0));
+    }
+
+    .second {
+        position: absolute;
+        right : 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        content: '';
+        display: block;
+        right: 0;
+        width: 50%;
+        height: 3px;
+        z-index: 1;
+        pointer-events: none;
+    }
+    &:before {
+        top: 0;
+        background: linear-gradient(to bottom, rgba(#000, .03), rgba(#000, 0));
+    }
+    &:after {
+        bottom: 0;
+        background-image: linear-gradient(to top, rgba(#000, .03), rgba(#000, 0));
+    }
+
+}
+
+
+@include media-breakpoint-down(xl) {
+    .block-map {
+        height: 400px;
+    }
+}
+@include media-breakpoint-down(lg) {
+    .block-map {
+        height: 380px;
+    }
+}
+@include media-breakpoint-down(md) {
+    .block-map {
+        height: 360px;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .block-map {
+        height: 340px;
+    }
+}

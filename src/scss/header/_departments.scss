@@ -1,0 +1,343 @@
+/*
+// .departments
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/breakpoints';
+@import '../mixins/grid';
+@import '../mixins/direction';
+@import '../mixins/scheme';
+@import '../mixins/header';
+
+
+@mixin local-departments-layout($args) {
+    $container-width: map_get($args, container-width);
+    $list-width: map_get($args, list-width);
+    $list-padding-y: map_get($args, list-padding-y);
+    $megamenu-gutter: map_get($args, megamenu-gutter);
+    $item-padding-x: map_get($args, item-padding-x);
+    $item-padding-y: map_get($args, item-padding-y);
+
+    $local-column-width: ($container-width - $list-width - $megamenu-gutter * 2) / 5;
+    $local-megamenu-sizes: (
+        xl: 5,
+        lg: 4,
+        md: 3,
+        nl: 2,
+        sm: 1,
+    );
+
+    .departments__list {
+        width: $list-width;
+    }
+    .departments__list-padding {
+        height: $list-padding-y;
+    }
+    .departments__item-link {
+        padding-top: $item-padding-y;
+        padding-bottom: $item-padding-y;
+
+        @include direction {
+            #{$padding-inline-start}: ($item-padding-x + 6px);
+            #{$padding-inline-end}: ($item-padding-x + 8px + 7px);
+        }
+    }
+    .departments__item-arrow {
+        @include direction {
+            #{$inset-inline-end}: $item-padding-x;
+            transform: scaleX(#{$transform-direction});
+        }
+    }
+    .departments__megamenu {
+        padding: ($megamenu-gutter - 3px) $megamenu-gutter $megamenu-gutter;
+
+        @if ($megamenu-gutter != 30px) {
+            @include grid-override-gutter($megamenu-gutter);
+        }
+    }
+
+    @each $name, $size in $local-megamenu-sizes {
+        .departments__megamenu--size--#{$name} {
+            width: ($local-column-width * $size) + $megamenu-gutter;
+        }
+    }
+}
+
+
+@mixin local-define-departments-button($scheme, $is-normal-state: false) {
+    background: map_get($scheme, main);
+    color: map_get($scheme, opposite);
+
+    @if($is-normal-state) {
+        @include scheme-font-weight($scheme, opposite, $font-weight-medium);
+    }
+
+    .departments__button-icon {
+        color: map_get($scheme, icon-color);
+    }
+    .departments__button-arrow {
+        color: map_get($scheme, arrow-color);
+    }
+}
+
+
+@include desktop-header-variant-selector {
+    .departments {
+        display: block;
+        position: relative;
+    }
+    .departments__button {
+        position: relative;
+        fill: currentColor;
+        border: none;
+        border-radius: 2px;
+        font-family: inherit;
+        font-size: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        transition:
+            background-color .2s,
+            color .2s;
+
+        @include direction {
+            #{$padding-inline-start}: 35px;
+            #{$padding-inline-end}: 11px;
+            text-align: $inline-start;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+    .departments__button-icon {
+        top: 10px;
+        position: absolute;
+        fill: currentColor;
+        display: inline-block;
+        transition: color .2s;
+
+        @include direction {
+            #{$inset-inline-start}: 10px;
+            transform: scaleX($transform-direction);
+        }
+
+        svg {
+            display: block;
+        }
+    }
+    .departments__button-arrow {
+        display: none;
+        fill: currentColor;
+        position: absolute;
+        top: calc(50% - 4px);
+        transition:
+            transform .2s,
+            color .2s;
+
+        @include direction {
+            #{$inset-inline-end}: 14px;
+        }
+
+        svg {
+            display: block;
+        }
+    }
+    .departments__menu {
+        position: absolute;
+        z-index: 1;
+        visibility: hidden;
+        opacity: 0;
+        top: 100%;
+        transform: translateY(-10px);
+        transition:
+            opacity .2s,
+            transform .2s,
+            visibility 0s .2s;
+    }
+    .departments__body {
+        border-radius: 1.5px;
+        pointer-events: auto;
+        display: flex;
+        background-color: map_get($departments-menu-scheme, main);
+        box-shadow: map_get($departments-menu-scheme, shadow);
+        color: map_get($departments-menu-scheme, opposite);
+
+        @include direction {
+            float: $inline-start;
+        }
+    }
+    .departments__list {
+        flex-shrink: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+        line-height: 20px;
+
+        @include scheme-font-weight($departments-menu-scheme, opposite, $font-weight-medium);
+    }
+    .departments__item-link {
+        color: inherit;
+        display: block;
+        position: relative;
+    }
+    .departments__item-arrow {
+        fill: map_get($departments-menu-scheme, arrow-color);
+        position: absolute;
+        top: calc(50% - 6px);
+
+        svg {
+            display: block;
+        }
+    }
+    .departments__item-menu {
+        display: none;
+    }
+    .departments__item--hover {
+        .departments__item-link {
+            background: map_get($departments-menu-scheme, hover);
+            color: inherit;
+        }
+    }
+    .departments__megamenu {
+        min-height: 100%;
+        display: none;
+
+        @include direction {
+            box-shadow: #{1px * $transform-direction} 0 map_get($departments-menu-scheme, divider) inset;
+        }
+    }
+
+    .departments__megamenu--open {
+        display: block;
+    }
+    .departments__arrow {
+        $local-size: 7px;
+        $local-button-icon-width: 16px;
+        $local-button-icon-offset: 9px;
+
+        position: absolute;
+        width: ($local-button-icon-width + $local-button-icon-offset * 2) - 3px;
+        height: 21px;
+        pointer-events: none;
+        bottom: 100%;
+        overflow: hidden;
+
+        &:before {
+            position: absolute;
+            display: block;
+            content: '';
+            width: $local-size;
+            height: $local-size;
+            top: 100%;
+            margin-top: -($local-size / 2);
+            background-color: map_get($departments-menu-scheme, main);
+            box-shadow: map_get($departments-menu-scheme, shadow);
+            border-radius: 1px;
+
+            @include direction {
+                #{$inset-inline-start}: 50%;
+                #{$margin-inline-start}: -($local-size / 2);
+                transform: rotate(45deg) translateX(#{-.5px * $transform-direction}) translateY(-.5px);
+            }
+        }
+    }
+
+    .departments--open {
+        .departments__menu {
+            transition-delay: 0s;
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .departments__button-arrow {
+            transform: rotate(180deg);
+        }
+    }
+
+
+    @if($header-layout == spaceship) {
+        @include media-breakpoint-only(xl) {
+            .departments__button {
+                height: 32px;
+                display: block;
+
+                @include direction {
+                    #{$padding-inline-end}: 0;
+                }
+            }
+            .departments__button-title {
+                display: none;
+            }
+        }
+    }
+    @if($header-layout == classic) {
+        .departments__button {
+            height: 100%;
+            width: 230px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            @include direction {
+                #{$padding-inline-start}: (16px + 14px + 13px);
+                #{$padding-inline-end}: (15px + 7px + 15px);
+            }
+
+            @include media-breakpoint-only(xl) {
+                width: 210px;
+            }
+        }
+        .departments__button-icon {
+            top: calc(50% - 6px);
+
+            @include direction {
+                #{$inset-inline-start}: 14px;
+            }
+        }
+        .departments__button-arrow{
+            display: block;
+        }
+        .departments__arrow {
+            $local-button-icon-width: 16px;
+            $local-button-icon-offset: 14px;
+
+            width: ($local-button-icon-width + $local-button-icon-offset * 2) - 3px;
+        }
+    }
+
+
+    @include media-breakpoint-up(xxl) {
+        @include local-departments-layout((
+            container-width: map_get($container-max-widths, xxl),
+            list-width: 230px,
+            list-padding-y: 14px,
+            megamenu-gutter: 30px,
+            item-padding-x: 14px,
+            item-padding-y: 7px,
+        ));
+    }
+    @include media-breakpoint-only(xl) {
+        @include local-departments-layout((
+            container-width: map_get($container-max-widths, xl),
+            list-width: 210px,
+            list-padding-y: 10px,
+            megamenu-gutter: 20px,
+            item-padding-x: 11px,
+            item-padding-y: 6px,
+        ));
+    }
+
+
+    // define scheme
+    .departments__button {
+        @include local-define-departments-button(map_get($departments-button-scheme, normal), $is-normal-state: true);
+
+        @if ($navbar-stretch) {
+            border-radius: 0;
+        }
+    }
+    .departments__button:hover,
+    .departments--open .departments__button {
+        @include local-define-departments-button(map_get($departments-button-scheme, hover));
+    }
+}

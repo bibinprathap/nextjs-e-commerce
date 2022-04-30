@@ -1,0 +1,79 @@
+/*
+// .input-radio
+*/
+@import '../variables';
+
+
+$local-circle-size: 16px;
+$local-inner-circle-size: 6px;
+$local-transition-duration: .2s;
+
+
+.input-radio {
+    display: inline-block;
+}
+.input-radio__body {
+    display: block;
+    position: relative;
+    width: $local-circle-size;
+    height: $local-circle-size;
+}
+.input-radio__input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    cursor: inherit;
+}
+.input-radio__circle {
+    display: block;
+    width: $local-circle-size;
+    height: $local-circle-size;
+    border-radius: $local-circle-size / 2;
+    background: $input-radio-circle-bg;
+    box-shadow: $input-radio-circle-shadow;
+    transition: background $local-transition-duration,
+                box-shadow $local-transition-duration;
+
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        left: ($local-circle-size - $local-inner-circle-size) / 2;
+        top: ($local-circle-size - $local-inner-circle-size) / 2;
+        width: $local-inner-circle-size;
+        height: $local-inner-circle-size;
+        border-radius: $local-inner-circle-size / 2;
+        background: $input-radio-inner-circle-color;
+        transform: scale(0);
+        transition: background $local-transition-duration,
+                    transform $local-transition-duration,
+                    visibility 0s $local-transition-duration;
+        visibility: hidden;
+    }
+}
+.input-radio__input:checked ~ {
+    .input-radio__circle {
+        background: $input-radio-checked-circle-bg;
+        box-shadow: $input-radio-checked-circle-shadow;
+
+        &:after {
+            background: $input-radio-checked-inner-circle-color;
+            visibility: visible;
+            transition-delay: 0s, 0s, 0s;
+            transform: scale(1);
+        }
+    }
+}
+.input-radio__input:disabled ~ {
+    .input-radio__circle {
+        background: $input-radio-disabled-circle-bg;
+        box-shadow: $input-radio-disabled-circle-shadow;
+
+        &:after {
+            background: $input-radio-disabled-inner-circle-color;
+        }
+    }
+}

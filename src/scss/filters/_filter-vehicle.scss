@@ -1,0 +1,76 @@
+/*
+// .filter-vehicle
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+$local-margin: 8px;
+
+
+.filter-vehicle {}
+.filter-vehicle__empty {
+    font-size: 15px;
+    line-height: 19px;
+}
+.filter-vehicle__list {
+    margin: -$local-margin 0;
+    padding: 0;
+    list-style: none;
+}
+.filter-vehicle__item-label {
+    padding: 1px 0;
+    cursor: pointer;
+    display: flex;
+    margin: $local-margin 0;
+}
+.filter-vehicle__item-input {
+    flex-shrink: 0;
+
+    @include direction {
+        #{$margin-inline-end}: 7px;
+    }
+}
+.filter-vehicle__item-title {
+    padding: 1px 0;
+    font-size: 14px;
+    line-height: 16px;
+    flex-grow: 1;
+    transition: color .2s;
+}
+.filter-vehicle__item-counter {
+    padding-top: 3px;
+    font-size: 12px;
+    line-height: 12px;
+    color: map_get($card-scheme, opposite-alt);
+
+    @include direction {
+        #{$margin-inline-start}: 12px;
+    }
+}
+.filter-vehicle__item--disabled {
+    .filter-vehicle__item-label {
+        cursor: default;
+    }
+    .filter-vehicle__item-title {
+        color: map_get($card-scheme, muted);
+    }
+}
+.filter-vehicle__vehicle {
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+    padding: 6px 9px;
+    line-height: 1.375;
+    margin-bottom: 6px;
+}
+.filter-vehicle__vehicle-title {
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+}
+.filter-vehicle__vehicle-subtitle {
+    font-size: 13px;
+    color: map_get($card-scheme, muted);
+}
+.filter-vehicle__button {
+    padding-top: 14px;
+}

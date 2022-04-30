@@ -1,0 +1,128 @@
+/*
+// .cart
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+.cart {
+    display: flex;
+}
+.cart__table {
+    flex-grow: 1;
+}
+.cart__totals {
+    width: 360px;
+    flex-shrink: 0;
+
+    @include direction {
+        #{$margin-inline-start}: 50px;
+    }
+}
+.cart__totals-table {
+    width: 100%;
+    margin-bottom: 32px;
+    font-size: 15px;
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    &,
+    thead,
+    tbody,
+    tfoot,
+    tr,
+    th,
+    td {
+        display: block;
+    }
+
+    tr:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+
+    th,
+    td {
+        padding: 0;
+    }
+    th {
+        @include direction {
+            float: $inline-start;
+        }
+    }
+    td {
+        @include direction {
+            text-align: $inline-end;
+        }
+    }
+
+    thead,
+    tbody {
+        line-height: 20px;
+    }
+
+    tbody {
+        tr {
+            & > * {
+                padding-top: 8px;
+            }
+        }
+        tr:last-child {
+            & > * {
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    tfoot {
+        font-size: 20px;
+
+        th {
+            font-weight: $font-weight-medium;
+        }
+
+        td, th {
+            padding-top: 12px;
+            border-top: 1px solid map_get($card-scheme, divider);
+        }
+        td {
+            letter-spacing: -.02em;
+        }
+    }
+}
+
+
+@include media-breakpoint-down(xl) {
+    .cart {
+        flex-wrap: wrap;
+    }
+    .cart__table {
+        width: 100%;
+    }
+    .cart__totals {
+        margin-top: 40px;
+        width: 400px;
+
+        @include direction {
+            #{$margin-inline-start}: auto;
+        }
+    }
+}
+@include media-breakpoint-down(md) {
+    .cart__totals {
+        width: 360px;
+
+        @include direction {
+            #{$margin-inline-start}: 0;
+        }
+    }
+}
+@include media-breakpoint-down(sm) {
+    .cart__totals {
+        width: 100%;
+    }
+}

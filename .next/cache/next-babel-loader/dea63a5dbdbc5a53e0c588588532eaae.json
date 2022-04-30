@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Page from '~/pages/404';\nexport default Page;","map":null,"metadata":{},"sourceType":"module"}

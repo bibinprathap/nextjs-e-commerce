@@ -1,0 +1,61 @@
+/*
+// .share-links
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+.share-links {
+    display: block;
+}
+.share-links__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    font-weight: $font-weight-medium;
+    white-space: nowrap;
+}
+.share-links__item {
+    & + & {
+        @include direction {
+            #{$margin-inline-start}: 4px;
+        }
+    }
+}
+.share-links__item a {
+    border-radius: 1.5px;
+    display: block;
+    padding: 2px 7px 1px;
+
+    &, &:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+
+@each $name, $scheme in $share-links {
+    .share-links__item--type--#{$name} a {
+        background: map_get($scheme, main);
+        color: map_get($scheme, opposite);
+
+        &:hover {
+            color: map_get($scheme, opposite);
+            background: darken(map_get($scheme, main), 5%);
+        }
+    }
+}
+
+
+.share-links__item--type--counter a {
+    background: $share-links-counter-bg-color;
+    color: $share-links-counter-font-color;
+    box-shadow: inset 0 0 0 1px $share-links-counter-border-color;
+
+    &:hover {
+        color: darken($share-links-counter-font-color, 5%);
+    }
+}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"// react\nimport React from 'react';\nexport const LanguageLocaleContext = React.createContext('');\nexport const LanguageSetLocaleContext = React.createContext(() => {});","map":null,"metadata":{},"sourceType":"module"}

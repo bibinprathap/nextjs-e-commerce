@@ -1,0 +1,19 @@
+/*
+// .slick-prevent-click
+*/
+@import '../variables';
+
+
+.slick-prevent-click {}
+.slick-prevent-click--active {
+    .slick-list:before {
+        position: absolute;
+        content: '';
+        display: block;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+    }
+}

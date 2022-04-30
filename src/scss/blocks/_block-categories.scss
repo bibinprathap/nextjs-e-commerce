@@ -1,0 +1,90 @@
+/*
+// .block-categories
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+@import '../mixins/decor';
+
+
+$local-top-decor-height: 24px;
+$local-bottom-decor-height: 24px;
+
+
+@mixin local-layout($columns, $gutter) {
+    .block-categories__list {
+        margin: -($gutter / 2);
+    }
+    .block-categories__item {
+        width: calc((100% - #{$columns * $gutter}) / #{$columns});
+        margin: $gutter / 2;
+    }
+}
+
+
+.block-categories {}
+.block-categories__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.block-categories__item {
+    display: flex;
+}
+.block-categories__header {
+    display: flex;
+    justify-content: center;
+}
+.block-categories__title {
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: -$local-top-decor-height;
+    padding: 0 64px 28px;
+}
+.block-categories__title-decor {
+    position: absolute;
+    width: 100%;
+    bottom: 1px;
+
+    @include direction {
+        #{$inset-inline-start}: 0;
+    }
+
+    @include decor-style(map_get($body-scheme, main), $block-categories-shadow);
+    @include decor-center-size($local-top-decor-height + 1px, 10px, 30deg);
+}
+.block-categories__body {
+    position: relative;
+    background-color: $block-categories-bg-color;
+    padding: 76px 0 64px;
+    box-shadow: inset $block-categories-shadow;
+}
+.block-categories__body-decor {
+    position: absolute;
+    bottom: -1px;
+
+    @include decor-style(map_get($body-scheme, main), $block-categories-shadow);
+    @include decor-bottom-height($local-bottom-decor-height + 1px, 10px);
+}
+
+
+@include media-breakpoint-up(xxl) {
+    @include local-layout(3, 24px);
+}
+@include media-breakpoint-only(xl) {
+    @include local-layout(3, 16px);
+}
+@include media-breakpoint-only(lg) {
+    @include local-layout(2, 16px);
+}
+@include media-breakpoint-only(md) {
+    @include local-layout(3, 16px);
+}
+@include media-breakpoint-down(sm) {
+    @include local-layout(2, 16px);
+}
+@media (max-width: 474px) {
+    @include local-layout(1, 16px);
+}

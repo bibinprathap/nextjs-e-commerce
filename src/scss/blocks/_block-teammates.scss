@@ -1,0 +1,89 @@
+/*
+// .block-teammates
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+
+
+.block-teammates {}
+.block-teammates__title {
+    font-size: 32px;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.block-teammates__subtitle {
+    color: map_get($card-scheme, opposite-alt);
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 15px;
+    margin-top: -36px;
+}
+.block-teammates__list {
+    img {
+        width: 100%;
+    }
+
+    .slick-list {
+        margin: -10px;
+        padding: 10px 0;
+    }
+    .slick-slide {
+        padding: 0 10px;
+    }
+    .slick-slide,
+    .slick-slide > div > div {
+        &:focus {
+            outline: none;
+        }
+    }
+
+    $local-dot-size: 10px;
+
+    .slick-dots {
+        width: auto;
+        position: static;
+        padding: 0;
+        font-size: 0;
+        list-style: none;
+        margin: 18px 0 0;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            padding: 6px;
+        }
+
+        button {
+            width: $local-dot-size;
+            height: $local-dot-size;
+            padding: 0;
+            border: none;
+            border-radius: $local-dot-size / 2;
+            background: $body-carousel-dot-normal-color;
+
+            &:focus {
+                outline: none;
+            }
+
+            &:hover {
+                background: $body-carousel-dot-hover-color;
+            }
+        }
+        .slick-active button {
+            background: $body-carousel-dot-active-color;
+        }
+    }
+}
+.block-teammates__item {
+    flex-shrink: 0;
+    max-width: 240px;
+    margin: 0 auto;
+}
+
+
+@include media-breakpoint-down(sm) {
+    .block-teammates__list {
+        padding: 0 10px;
+    }
+}

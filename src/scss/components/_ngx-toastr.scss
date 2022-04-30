@@ -1,0 +1,64 @@
+/*
+// .ngx-toastr
+*/
+@import '../variables';
+
+
+@mixin local-define-scheme($type) {
+    background: map_get(map_get($alerts, $type), main);
+    color: map_get(map_get($alerts, $type), opposite);
+
+    &:hover {
+        background: darken(map_get(map_get($alerts, $type), main), 4%);
+    }
+}
+
+
+.toast-container {
+    max-width: calc(100% - 24px);
+
+    .ngx-toastr {
+        user-select: none;
+        box-shadow: 0 1px 3px rgba(#000, .07);
+        border-radius: 2px;
+        padding: .875rem 1rem;
+        transition: background .12s ease-in-out;
+        max-width: 100%;
+    }
+    .ngx-toastr:hover {
+        transition-duration: .1s;
+        box-shadow: 0 1px 3px rgba(#000, .07);
+    }
+    .ngx-toastr:active {
+        transition-duration: 0s;
+    }
+
+    .ngx-toastr {
+        @include local-define-scheme(primary);
+    }
+    .toast-warning {
+        @include local-define-scheme(warning);
+    }
+    .toast-info {
+        @include local-define-scheme(info);
+    }
+    .toast-error {
+        @include local-define-scheme(danger);
+    }
+    .toast-success {
+        @include local-define-scheme(success);
+    }
+}
+.ngx-toastr {
+    font-size: 15px;
+    line-height: 1.375;
+}
+.toast-title {
+    font-weight: $font-weight-medium;
+}
+.toast-message {
+    font-size: 14px;
+}
+.toast-title + .toast-message {
+    margin-top: .3125rem;
+}

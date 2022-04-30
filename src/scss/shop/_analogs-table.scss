@@ -1,0 +1,195 @@
+/*
+// .analogs-table
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+.analogs-table {
+    display: block;
+}
+.analogs-table__rating {
+    display: inline-block;
+    vertical-align: middle;
+}
+.analogs-table__rating-stars {
+    display: flex;
+    justify-content: center;
+}
+.analogs-table__rating-label {
+    color: map_get($card-scheme, opposite-alt);
+    font-size: 13px;
+    line-height: 1;
+}
+.analogs-table__sku,
+.analogs-table__country {
+    color: map_get($card-scheme, opposite-alt);
+    font-size: 13px;
+    line-height: 1;
+    margin-top: 1px;
+    margin-bottom: 4px;
+}
+.analogs-table__product-name {
+    color: inherit;
+    transition: color .12s;
+
+    &:hover {
+        color: $link-color;
+    }
+}
+
+
+@include media-breakpoint-up(md) {
+    .analogs-table {
+        $local-margin: 10px;
+        $local-padding-x: 14px;
+        $local-body-padding-y: 10px;
+
+        table {
+            width: 100%;
+            font-size: 15px;
+        }
+        th,
+        td {
+            padding: 0;
+
+            &:first-child {
+                @include direction {
+                    #{$padding-inline-start}: $local-padding-x;
+                }
+            }
+            &:last-child {
+                @include direction {
+                    #{$padding-inline-end}: $local-padding-x;
+                }
+            }
+            &:not(:first-child) {
+                @include direction {
+                    #{$padding-inline-start}: 16px;
+                }
+            }
+        }
+        thead {
+            font-size: 13px;
+            text-transform: uppercase;
+
+            th,
+            td {
+                padding-bottom: 6px;
+            }
+        }
+        tbody {
+            th,
+            td {
+                border-top: 1px solid map_get($card-scheme, divider);
+                padding: #{$local-body-padding-y} 0;
+
+                &:first-child {
+                    @include direction {
+                        #{$border-inline-start}: 1px solid map_get($card-scheme, divider);
+                    }
+                }
+                &:last-child {
+                    @include direction {
+                        #{$border-inline-end}: 1px solid map_get($card-scheme, divider);
+                    }
+                }
+            }
+            tr:last-child {
+                th,
+                td {
+                    border-bottom: 1px solid map_get($card-scheme, divider);
+                }
+            }
+            tr:hover {
+                th,
+                td {
+                    background: $table-row-hover-bg;
+                }
+            }
+        }
+    }
+    .analogs-table__column--rating {
+        text-align: center;
+    }
+    .analogs-table__column--brand {
+        text-align: center;
+    }
+    .analogs-table__column--price {
+        @include direction {
+            text-align: $inline-end;
+        }
+    }
+
+    .analogs-table__rating-label {
+        margin-top: 6px;
+    }
+}
+
+
+@include media-breakpoint-down(sm) {
+    .analogs-table {
+        table {
+            display: block;
+            font-size: 15px;
+        }
+        thead {
+            display: none;
+        }
+        tbody {
+            display: block;
+        }
+        tr,
+        td {
+            display: block;
+        }
+        tr {
+            padding: 14px 16px;
+            background: map_get($child-card-scheme, main);
+            border-radius: 2px;
+        }
+        tr + tr {
+            margin-top: 12px;
+        }
+        td {
+            padding: 0;
+        }
+
+        .analogs-table__column--rating {
+            margin-top: 11px;
+        }
+        .analogs-table__column--brand {
+            font-size: 13px;
+            padding-top: 8px;
+            margin-top: 12px;
+            border-top: 1px solid map_get($child-card-scheme, divider);
+
+            &:before {
+                content: attr(data-title) ': ';
+            }
+        }
+        .analogs-table__column--price {
+            font-weight: $font-weight-medium;
+            margin-top: 16px;
+        }
+        .analogs-table__sku {
+            margin: 2px 0 0;
+
+            &:before {
+                content: attr(data-title) ': ';
+            }
+        }
+        .analogs-table__rating {
+            display: flex;
+        }
+        .analogs-table__rating-label {
+            @include direction {
+                #{$margin-inline-start}: 8px;
+            }
+        }
+        .analogs-table__country {
+            display: inline;
+        }
+    }
+}

@@ -1,0 +1,203 @@
+/*
+// .indicator
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/scheme';
+@import '../mixins/header';
+
+
+@mixin local-define-scheme($scheme) {
+    .indicator__icon {
+        fill: map_get($scheme, opposite);
+    }
+    .indicator__title {
+        color: map_get($scheme, muted);
+    }
+    .indicator__value {
+        @include scheme-font-weight($scheme, opposite, $font-weight-medium);
+    }
+
+    .indicator:hover,
+    .indicator--open {
+        .indicator__button {
+            background: map_get($scheme, hover);
+        }
+    }
+}
+
+
+@include desktop-header-variant-selector {
+    $local-open-transition-duration: .2s;
+
+    .indicator {
+        position: relative;
+    }
+    .indicator__button {
+        padding: 3px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 54px;
+        min-width: 54px;
+        color: inherit;
+        border-radius: 2px;
+        background: transparent;
+        border: none;
+
+        @include direction {
+            #{$padding-inline-end}: 12px;
+        }
+
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+    .indicator__icon {
+        position: absolute;
+        padding: 8px;
+        display: block;
+        width: 48px;
+        height: 48px;
+
+        svg {
+            display: block;
+
+            @include direction {
+                transform: scaleX($transform-direction);
+            }
+        }
+    }
+    .indicator__counter {
+        position: absolute;
+        top: 5px;
+        font-size: 10px;
+        line-height: 1;
+        padding: 2px 3px 1px;
+        border-radius: (13px / 2);
+        text-align: center;
+        z-index: 0;
+
+        @include direction {
+            #{$inset-inline-end}: 4px;
+        }
+
+        &:before {
+            display: block;
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+            border-radius: 2.5px;
+
+            @include direction {
+                #{$inset-inline-start}: 0;
+                #{$inset-inline-end}: 0;
+                transform: skewX(#{-11deg * $transform-direction});
+            }
+        }
+    }
+    .indicator__title,
+    .indicator__value {
+        display: block;
+        white-space: nowrap;
+
+        @include direction {
+            #{$margin-inline-start}: 50px;
+        }
+    }
+    .indicator__title {
+        padding-top: 3px;
+        margin-bottom: -3px;
+        font-size: 13px;
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .indicator__value {
+        font-size: 18px;
+        font-weight: $font-weight-medium;
+    }
+    .indicator__content {
+        pointer-events: none;
+        top: 100%;
+        position: absolute;
+        visibility: hidden;
+        transform-origin: top;
+        transform: rotateX(60deg);
+        opacity: 0;
+        transition:
+            transform $local-open-transition-duration,
+            opacity $local-open-transition-duration,
+            visibility 0s $local-open-transition-duration;
+
+        @include direction {
+            #{$inset-inline-end}: 0;
+        }
+    }
+
+
+    /*
+    // .indicator--trigger--click.indicator--open,
+    // .indicator--trigger--hover:hover
+    */
+
+
+    .indicator--trigger--click.indicator--open,
+    .indicator--trigger--hover:hover {
+        .indicator__content {
+            pointer-events: auto;
+            z-index: 1;
+            transition-delay: 0s, 0s, 0s;
+            opacity: 1;
+            visibility: visible;
+            transform: rotateX(0deg);
+        }
+    }
+
+
+    .indicator--mobile {
+        .indicator__button {
+            padding: 0 0 2px;
+            height: 50px;
+            width: 44px;
+            min-width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+        }
+        .indicator__icon {
+            padding: 0;
+            position: relative;
+            height: auto;
+            width: auto;
+        }
+        .indicator__counter {
+            top: -7px;
+
+            @include direction {
+                #{$inset-inline-end}: -7px;
+            }
+        }
+    }
+
+
+    // define scheme
+    @include local-define-scheme($header-scheme);
+
+    .indicator__counter {
+        color: map_get($indicator-counter-scheme, opposite);
+
+        @include scheme-font-weight($indicator-counter-scheme, opposite, $font-weight-medium);
+
+        &:before {
+            background-color: map_get($indicator-counter-scheme, main);
+        }
+    }
+}

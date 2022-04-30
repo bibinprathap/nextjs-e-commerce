@@ -1,0 +1,113 @@
+/*
+// .order-success
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+.order-success {}
+.order-success__body {
+    max-width: 690px;
+    margin: 0 auto;
+}
+.order-success__header {
+    padding: 60px 0 52px;
+    text-align: center;
+}
+.order-success__icon {
+    fill: map_get($theme-scheme, main);
+    margin: 0 auto;
+    display: block;
+}
+.order-success__title {
+    margin-top: 24px;
+    margin-bottom: 2px;
+}
+.order-success__subtitle {
+    font-size: 19px;
+    font-weight: $font-weight-medium;
+}
+.order-success__actions {
+    margin-top: 20px;
+}
+.order-success__meta {
+    padding: 16px 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.order-success__meta-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+.order-success__meta-item {
+    flex-basis: 25%;
+    line-height: 1.25;
+    position: relative;
+    padding: 2px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:not(:last-child):before {
+        position: absolute;
+        display: block;
+        content: '';
+        border-left: 2px dashed rgba(#000, .1);
+        width: 0;
+        height: 100%;
+        top: 0;
+
+        @include direction {
+            #{$inset-inline-end}: -1px
+        }
+    }
+}
+.order-success__meta-title {
+    display: block;
+    font-size: 13px;
+    color: map_get($light-scheme, opposite-alt);
+    margin-bottom: 4px;
+}
+.order-success__meta-value {
+    display: block;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: $font-weight-medium;
+}
+.order-success__addresses {
+    margin-left: -20px;
+    display: flex;
+}
+.order-success__address {
+    margin-left: 20px;
+    margin-top: 20px;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+@include media-breakpoint-down(sm) {
+    .order-success__header {
+        padding: 44px 0 40px;
+    }
+    .order-success__meta-list {
+        flex-wrap: wrap;
+    }
+    .order-success__meta-item {
+        flex-basis: 50%;
+
+        &:nth-child(2n):before {
+            display: none;
+        }
+        &:nth-child(n + 3) {
+            margin-top: 16px;
+        }
+    }
+    .order-success__addresses {
+        display: block;
+    }
+}

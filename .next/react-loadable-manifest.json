@@ -1,0 +1,34 @@
+{
+  "./ar.json": [
+    {
+      "id": "V3Aw",
+      "file": "static/chunks/136.7db27babc53d70b630c0.js"
+    }
+  ],
+  "./en.json": [
+    {
+      "id": "lWpT",
+      "file": "static/chunks/137.f20e1086cb675ef94669.js"
+    }
+  ],
+  "./ru.json": [
+    {
+      "id": "AMPI",
+      "file": "static/chunks/138.2df587d3ac0124cc9736.js"
+    }
+  ],
+  "~/services/photoswipe": [
+    {
+      "id": "FP2o",
+      "file": "static/chunks/135.b8b775b24369e1aa08b9.js"
+    },
+    {
+      "id": "e/zI",
+      "file": "static/chunks/135.b8b775b24369e1aa08b9.js"
+    },
+    {
+      "id": "sk+M",
+      "file": "static/chunks/135.b8b775b24369e1aa08b9.js"
+    }
+  ]
+}

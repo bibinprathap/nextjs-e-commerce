@@ -1,0 +1,144 @@
+/*
+// .pagination
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/scheme';
+@import '../mixins/breakpoints';
+
+
+.pagination {
+    margin-bottom: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .page-item {
+        @include direction {
+            #{$margin-inline-end}: 6px;
+        }
+    }
+    .page-item:last-child {
+        @include direction {
+            #{$margin-inline-end}: 0;
+        }
+    }
+}
+.page-link {
+    font-size: 15px;
+    line-height: 18px;
+    border-radius: 2px;
+    padding: 6px 10px;
+    transition: background .15s;
+    cursor: pointer;
+    user-select: none;
+
+    @include define-button-state($pagination-scheme, normal);
+
+    &:hover {
+        @include define-button-state($pagination-scheme, hover);
+    }
+    &:active {
+        transition-duration: 0s;
+
+        @include define-button-state($pagination-scheme, active);
+    }
+    &:focus {
+        box-shadow: none;
+    }
+}
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+    border-radius: 2px;
+}
+.page-item.disabled .page-link {
+    @include define-button-state($pagination-scheme, disabled);
+}
+.page-item.active .page-link {
+    @include define-button-state($pagination-scheme, current);
+
+    cursor: default;
+}
+.pagination__dots {
+    $local-vertical: true;
+    $local-size: 2px;
+    $local-gutter: 3px;
+
+    position: relative;
+    width: $local-size;
+    height: $local-size;
+    border-radius: ($local-size / 2);
+    background: $pagination-dots-color;
+
+    @if($local-vertical) {
+        margin: 0 4px;
+    } @else {
+        margin: 0 #{$local-size + $local-gutter + 4px};
+    }
+
+    &:before,
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        background: inherit;
+    }
+    &:before {
+        @if($local-vertical) {
+            top: -($local-size + $local-gutter);
+        } @else {
+            left: -($local-size + $local-gutter);
+        }
+    }
+    &:after {
+        @if($local-vertical) {
+            bottom: -($local-size + $local-gutter);
+        } @else {
+            right: -($local-size + $local-gutter);
+        }
+    }
+}
+.page-item--dots {
+    display: flex;
+    align-items: center;
+}
+.page-link--with-arrow {
+    display: flex;
+    align-items: center;
+}
+.page-link__arrow {
+    display: block;
+    margin: 3px 0 4px;
+    fill: currentColor;
+    opacity: .8;
+
+    @include direction {
+        transform: scaleX($transform-direction);
+    }
+
+    svg {
+        display: block;
+    }
+}
+.page-link__arrow--left {
+    @include direction {
+        #{$margin-inline-start}: -1px;
+        #{$margin-inline-end}: 1px;
+    }
+}
+.page-link__arrow--right {
+    @include direction {
+        #{$margin-inline-start}: 1px;
+        #{$margin-inline-end}: -1px;
+    }
+}
+
+
+@include media-breakpoint-down(xs) {
+    .page-link {
+        padding: 5px 9px;
+    }
+}

@@ -1,0 +1,83 @@
+/*
+// .filter
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+$local-title-vertical-padding: 6px;
+$local-title-horizontal-padding: 10px;
+$local-transition-duration: .2s;
+
+
+.filter {}
+.filter__title {
+    display: block;
+    border: none;
+    padding: $local-title-vertical-padding $local-title-horizontal-padding;
+    cursor: pointer;
+    width: calc(100% + #{$local-title-horizontal-padding * 2});
+    position: relative;
+    color: inherit;
+    font-weight: $font-weight-bold;
+    font-size: 15px;
+    line-height: 18px;
+    border-radius: 2px;
+    margin: 0 #{-$local-title-horizontal-padding};
+    transition: background-color .2s, fill .2s;
+    background: $filter-title-default-bg;
+    fill: $filter-title-default-arrow-color;
+
+    @include direction {
+        text-align: $inline-start;
+    }
+
+    &:focus,
+    &:hover {
+        transition-duration: .1s, .1s;
+        background: $filter-title-hover-bg;
+        fill: $filter-title-hover-arrow-color;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+.filter__arrow {
+    position: absolute;
+    top: 5px + $local-title-vertical-padding;
+    transition: transform $local-transition-duration;
+
+    @include direction {
+        #{$inset-inline-end}: $local-title-horizontal-padding;
+    }
+
+    svg {
+        display: block;
+    }
+}
+.filter__body {
+    margin: 0 (-$widget-padding);
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    transition: height $local-transition-duration,
+                opacity $local-transition-duration,
+                visibility 0s $local-transition-duration;
+}
+.filter__container {
+    padding: 10px $widget-padding 16px;
+}
+
+.filter--opened {
+    .filter__body {
+        transition-delay: 0s, 0s;
+        visibility: visible;
+        height: auto;
+        opacity: 1;
+    }
+    .filter__arrow {
+        transform: rotateZ(180deg);
+    }
+}

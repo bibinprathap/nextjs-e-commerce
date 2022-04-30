@@ -1,0 +1,85 @@
+/*
+// .status-badge
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+$local-height: 23px;
+$local-icon-size: 13px;
+$local-icon-margin-end: 6px;
+$local-icon-padding-x: 9px;
+$local-text-padding-x: 12px;
+
+
+.status-badge {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: default;
+}
+.status-badge__body {
+    position: relative;
+    min-height: $local-height;
+    border-radius: $local-height / 2;
+    min-width: $local-icon-padding-x * 2 + $local-icon-size;
+}
+.status-badge__icon {
+    fill: currentColor;
+    position: absolute;
+    top: calc(50% - #{$local-icon-size / 2});
+    opacity: .85;
+
+    @include direction {
+        #{$inset-inline-start}: $local-icon-padding-x;
+    }
+
+    svg {
+        display: block;
+    }
+}
+.status-badge__text {
+    font-size: 13px;
+    line-height: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    @include direction {
+        #{$padding-inline-start}: $local-text-padding-x;
+        #{$padding-inline-end}: $local-text-padding-x;
+    }
+}
+.status-badge__tooltip {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+
+.status-badge--has-text {
+    .status-badge__tooltip {
+        display: none;
+    }
+}
+.status-badge--has-icon {
+    .status-badge__text {
+        @include direction {
+            #{$padding-inline-start}: ($local-icon-padding-x + $local-icon-size + $local-icon-margin-end);
+        }
+    }
+}
+
+
+@each $name, $scheme in $status-badges {
+    .status-badge--style--#{$name} {
+        .status-badge__body {
+            background-color: map_get($scheme, main);
+            color: map_get($scheme, opposite);
+        }
+    }
+}

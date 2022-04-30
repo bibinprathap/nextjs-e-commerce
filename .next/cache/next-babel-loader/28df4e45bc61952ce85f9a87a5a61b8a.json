@@ -1,0 +1,1 @@
+{"ast":null,"code":"// application\nimport { MOBILE_MENU_CLOSE, MOBILE_MENU_OPEN } from '~/store/mobile-menu/mobileMenuActionTypes';\nexport function mobileMenuOpen() {\n  return {\n    type: MOBILE_MENU_OPEN\n  };\n}\nexport function mobileMenuClose() {\n  return {\n    type: MOBILE_MENU_CLOSE\n  };\n}","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,62 @@
+/*
+// .site-footer
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+@import '../mixins/decor';
+@import '../mixins/scheme';
+
+
+.site-footer {
+    position: relative;
+    background-color: map_get($footer-scheme, main);
+    color: map_get($footer-scheme, muted);
+}
+.site-footer__decor {
+    position: absolute;
+    bottom: calc(100% - 1px);
+
+    @include decor-style(map_get($footer-scheme, main));
+}
+.site-footer__widgets {
+    padding: 56px 0 50px;
+}
+.site-footer__bottom {
+    background-color: map_get($footer-copyright-scheme, main);
+    font-size: 14px;
+    color: map_get($footer-copyright-scheme, muted);
+
+    @include scheme-font-weight($footer-copyright-scheme, muted, $font-weight-normal);
+
+    a {
+        color: map_get($footer-copyright-scheme, opposite);
+
+        @include scheme-font-weight($footer-copyright-scheme, opposite, $font-weight-medium);
+    }
+}
+.site-footer__bottom-row {
+    display: flex;
+    height: 72px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@include media-breakpoint-down(sm) {
+    .site-footer__decor {
+        display: none;
+    }
+    .site-footer__widgets {
+        padding: 40px 0 36px;
+    }
+    .site-footer__bottom-row {
+        height: auto;
+        flex-direction: column;
+        padding: 20px 0 24px;
+    }
+    .site-footer__payments {
+        margin-top: 12px;
+    }
+}

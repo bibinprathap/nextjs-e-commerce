@@ -1,0 +1,1 @@
+{"ast":null,"code":"import _classCallCheck from \"@babel/runtime/helpers/esm/classCallCheck\";\n// application\nexport var BlogApi = function BlogApi() {\n  _classCallCheck(this, BlogApi);\n};","map":null,"metadata":{},"sourceType":"module"}

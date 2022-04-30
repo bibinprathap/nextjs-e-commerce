@@ -1,0 +1,43 @@
+/*
+// .filter-rating
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+$local-margin: 8px;
+
+
+.filter-rating {}
+.filter-rating__list {
+    list-style: none;
+    padding: 0;
+    margin: -$local-margin 0;
+}
+.filter-rating__item-label {
+    padding: 2px 0;
+    cursor: pointer;
+    display: flex;
+    margin: $local-margin 0;
+}
+.filter-rating__item-input {
+    flex-shrink: 0;
+
+    @include direction {
+        #{$margin-inline-end}: 8px;
+    }
+}
+.filter-rating__item-stars {
+    padding: 2px 0;
+    flex-grow: 1;
+}
+.filter-rating__item-counter {
+    padding-top: 2px;
+    font-size: 12px;
+    line-height: 12px;
+    color: map_get($card-scheme, opposite-alt);
+
+    @include direction {
+        #{$margin-inline-start}: 12px;
+    }
+}

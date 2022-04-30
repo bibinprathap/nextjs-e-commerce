@@ -1,0 +1,1297 @@
+@import 'functions';
+@import 'custom-variables';
+
+
+// ----------------------------------------
+// Table of Contents:
+// - direction
+// - font-weight
+// - schemes
+// - body
+// - link
+// - header
+//   - .topbar--spaceship-start
+//   - .topbar--spaceship-end
+//   - .topbar--classic
+//   - .header__navbar
+//   - .indicator__counter
+//   - .menu
+//   - .departments__button
+//   - .departments__menu
+//   - .logo
+//   - .search--layout--spaceship
+//   - .search--layout--classic
+//   - .dropcart
+// - footer
+// - .mobile-header
+//   - .mobile-search
+//   - .mobile-search (overlay state)
+//   - .mobile-search__button--vehicle
+//   - .mobile-indicator__counter
+//   - .mobile-menu
+// - common
+//   - headers
+//   - price
+//   - .typography
+//   - table
+//   - form
+//   - image
+// - components
+//   - .card
+//   - .btn
+//   - .form-control
+//   - .select2-dropdown
+//   - .timer
+//   - .arrow
+//   - .social-links
+//   - .alert
+//   - .status-badge
+//   - .tag-badge
+//   - .share-links
+//   - .tooltip
+//   - .rating
+//   - .pagination
+//   - .layout-switcher
+//   - .breadcrumb
+//   - .applied-filters
+//   - .filters-button
+//   - .input-check
+//   - .input-check-color
+//   - .input-radio
+//   - .input-radio-label
+//   - .nouislider
+//   - .section-header
+//   - .tags
+//   - .modal
+//   - .widget
+//   - .shop-features
+// - account
+//   - .account-nav
+//   - .addresses-list
+// - blog
+//   - .post-header
+//   - .comment
+// - shop
+//   - .product-gallery
+//   - .product-tabs
+//   - .product-card__addtocart-icon
+//   - .product-card__wishlist, .product-card__compare, .product__actions-item--wishlist, .product__actions-item--compare
+//   - .category-card
+//   - .quickview
+//   - .product-form
+//   - .categories-list
+// - other
+//   - .filter
+//   - .about
+// - blocks
+//   - .block-categories
+//   - .block-finder
+//   - .block-zone
+//   - .block-slideshow
+//   - .block-sale
+//   - .block-banners
+//   - .block-features
+//   - .block-brands
+// - widgets
+//   - .widget-search
+//   - .widget-newsletter
+// - utils
+// ----------------------------------------
+
+
+
+// ----------------------------------------
+// -- direction
+// ----------------------------------------
+   $direction:                 ltr                                      !default; // or rtl
+   $both-directions:           true                                     !default;
+
+   $inline-start:              if($direction == ltr, left, right)       !default;
+   $inline-end:                if($direction == ltr, right, left)       !default;
+   $transform-direction:       if($direction == ltr, 1, -1)             !default;
+
+   $margin-inline-start:       margin- + $inline-start                  !default;
+   $margin-inline-end:         margin- + $inline-end                    !default;
+   $padding-inline-start:      padding- + $inline-start                 !default;
+   $padding-inline-end:        padding- + $inline-end                   !default;
+   $inset-inline-start:        $inline-start                            !default;
+   $inset-inline-end:          $inline-end                              !default;
+   $border-inline-start:       border- + $inline-start                  !default;
+   $border-inline-end:         border- + $inline-end                    !default;
+   $border-start-start-radius: border-top- + $inline-start + -radius    !default;
+   $border-start-end-radius:   border-top- + $inline-end + -radius      !default;
+   $border-end-start-radius:   border-bottom- + $inline-start + -radius !default;
+   $border-end-end-radius:     border-bottom- + $inline-end + -radius   !default;
+
+// ----------------------------------------
+// -- font-weight
+// ----------------------------------------
+   $font-weight-thin:        100 !default;
+   $font-weight-extra-light: 200 !default;
+   $font-weight-light:       300 !default;
+   $font-weight-normal:      400 !default;
+   $font-weight-medium:      500 !default;
+   $font-weight-semi-bold:   600 !default;
+   $font-weight-bold:        700 !default;
+   $font-weight-extra-bold:  800 !default;
+   $font-weight-black:       900 !default;
+
+   $font-weight-increase-map: (
+      $font-weight-normal: $font-weight-medium,
+   ) !default;
+   $font-weight-decrease-map: (
+      $font-weight-medium: $font-weight-normal,
+   ) !default;
+
+// ----------------------------------------
+// -- schemes
+// ----------------------------------------
+   // theme
+   $theme-scheme: () !default;
+   $theme-scheme: register-scheme(map_merge((
+      name:         theme,
+      // colors
+      main:         #ff3333,
+      opposite:     #fff, opposite-font-weight-map: $font-weight-decrease-map,
+      opposite-alt: #fff,
+      muted:        #ffcccc,
+      // states
+      hover:        rgba(#000, .15),
+      active:       rgba(#000, .20),
+      // decor
+      divider:      rgba(#000, .15),
+      arrow-color:  rgba(#000, .25),
+      icon-color:   #fff,
+      shadow:       none,
+   ), $theme-scheme));
+   // accent
+   $accent-scheme: () !default;
+   $accent-scheme: register-scheme(map_merge((
+      name:         accent,
+      // colors
+      main:         #ffdf40,
+      opposite:     #262626,
+      opposite-alt: #734c3f,
+      muted:        #99752e,
+      // states
+      hover:        rgba(#fff, .3),
+      active:       rgba(#fff, .4),
+      // decor
+      divider:      rgba(#000, .1),
+      arrow-color:  rgba(#000, .3),
+      icon-color:   rgba(#000, .75),
+      shadow:       none,
+   ), $accent-scheme));
+   // dark
+   $dark-scheme: () !default;
+   $dark-scheme: register-scheme(map_merge((
+      name:         dark,
+      // colors
+      main:         #333,
+      opposite:     #fff, opposite-font-weight-map: $font-weight-decrease-map,
+      opposite-alt: #ccc,
+      muted:        #9e9e9e,
+      // states
+      hover:        rgba(#fff, .08),
+      active:       rgba(#fff, .12),
+      // decor
+      divider:      #4d4d4d,
+      arrow-color:  #808080,
+      icon-color:   #fff,
+      shadow:       none,
+   ), $dark-scheme));
+   // light
+   $light-scheme: () !default;
+   $light-scheme: register-scheme(map_merge((
+      name:         light,
+      // colors
+      main:         #fff,
+      opposite:     #262626,
+      opposite-alt: #6c757d,
+      muted:        #999,
+      // states
+      hover:        #f2f2f2,
+      active:       #ededed,
+      // decor
+      divider:      #ebebeb,
+      arrow-color:  #bfbfbf,
+      icon-color:   #404040,
+      shadow:       none,
+   ), $light-scheme));
+
+// ----------------------------------------
+// -- body
+// ----------------------------------------
+   $body-font-family:  'Roboto', 'sans-serif' !default;
+   $body-font-size:    16px                   !default;
+   $body-font-weight:  $font-weight-normal    !default;
+   $body-line-height:  1.5                    !default;
+   $body-loader-color: #000                   !default;
+
+   // scheme
+   $body-scheme-based-on: light !default;
+   $body-scheme: () !default;
+   $body-scheme: map-merge-all(get-scheme($body-scheme-based-on), (
+       main: #fafafa,
+   ), $body-scheme);
+
+   // carousel dots
+   $body-carousel-dot-normal-color: rgba(#000, .12)              !default;
+   $body-carousel-dot-hover-color:  rgba(#000, .22)              !default;
+   $body-carousel-dot-active-color: map_get($theme-scheme, main) !default;
+
+// ----------------------------------------
+// -- link
+// ----------------------------------------
+   $link-color: darken(map_get($theme-scheme, main), 8%) !default;
+
+// ----------------------------------------
+// -- header
+// ----------------------------------------
+   $header-layout:          spaceship     !default;
+   $header-variant-name:    spaceship-one !default;
+   $spaceship-ledge-height: 24px          !default;
+
+   // scheme
+   $header-scheme-based-on: light !default;
+   $header-scheme: () !default;
+   $header-scheme: map-merge-all(get-scheme($header-scheme-based-on), (
+      shadow: 0 1px 3px rgba(#000, .09),
+   ), $header-scheme);
+
+   // ----------------------------------------
+   // -- .topbar--spaceship-start
+   // ----------------------------------------
+      $topbar-spaceship-start-scheme-based-on: theme !default;
+      $topbar-spaceship-start-scheme: () !default;
+      $topbar-spaceship-start-scheme: map-merge-all(get-scheme($topbar-spaceship-start-scheme-based-on), $topbar-spaceship-start-scheme);
+
+   // ----------------------------------------
+   // -- .topbar--spaceship-end
+   // ----------------------------------------
+      $topbar-spaceship-end-scheme-based-on: dark !default;
+      $topbar-spaceship-end-scheme: () !default;
+      $topbar-spaceship-end-scheme: map-merge-all(get-scheme($topbar-spaceship-end-scheme-based-on), $topbar-spaceship-end-scheme);
+
+   // ----------------------------------------
+   // -- .topbar--classic
+   // ----------------------------------------
+      $topbar-classic-scheme-based-on: light !default;
+      $topbar-classic-scheme-variants: () !default;
+      $topbar-classic-scheme: map-get-default-map($topbar-classic-scheme-variants, $header-variant-name) !default;
+      $topbar-classic-scheme: map-merge-all(get-scheme($topbar-classic-scheme-based-on), $topbar-classic-scheme);
+
+   // ----------------------------------------
+   // -- .header__navbar
+   // ----------------------------------------
+      $navbar-stretch: false !default;
+      $navbar-scheme-based-on: $header-scheme-based-on !default;
+      $navbar-scheme: () !default;
+      $navbar-scheme: map-merge-all(get-scheme($navbar-scheme-based-on), (
+         shadow: 0 1px 3px rgba(#000, .09),
+      ), $navbar-scheme);
+
+   // ----------------------------------------
+   // -- .indicator__counter
+   // ----------------------------------------
+      $indicator-counter-scheme-based-on: theme !default;
+      $indicator-counter-scheme: () !default;
+      $indicator-counter-scheme: map_merge(get-scheme($indicator-counter-scheme-based-on), $indicator-counter-scheme);
+
+   // ----------------------------------------
+   // -- .menu
+   // ----------------------------------------
+      $menu-scheme-based-on: light !default;
+      $menu-scheme: () !default;
+      $menu-scheme: map-merge-all(get-scheme($menu-scheme-based-on), (
+         shadow: 0 2px 20px rgba(#000, .2),
+      ), $menu-scheme);
+
+      // small
+      $menu-small-scheme-based-on: $menu-scheme !default;
+      $menu-small-scheme: () !default;
+      $menu-small-scheme: map-merge-all(get-scheme($menu-small-scheme-based-on), (
+         shadow: (0 1px 15px rgba(#000, .1), 0 1px 3px rgba(#000, .1)),
+      ), $menu-small-scheme);
+
+   // ----------------------------------------
+   // -- .departments__button
+   // ----------------------------------------
+      $departments-button-scheme-based-on: () !default;
+      $departments-button-scheme-based-on: map-merge-deep((
+         normal: light,
+         hover: theme,
+      ), $departments-button-scheme-based-on);
+      $departments-button-scheme: () !default;
+      $departments-button-scheme: map-merge-deep((
+         normal: get-scheme(map_get($departments-button-scheme-based-on, normal)),
+         hover: get-scheme(map_get($departments-button-scheme-based-on, hover)),
+      ), $departments-button-scheme);
+
+   // ----------------------------------------
+   // -- .departments__menu
+   // ----------------------------------------
+      $departments-menu-scheme-based-on: $menu-scheme !default;
+      $departments-menu-scheme: () !default;
+      $departments-menu-scheme: map_merge(get-scheme($departments-menu-scheme-based-on), $departments-menu-scheme);
+
+   // ----------------------------------------
+   // -- .logo
+   // ----------------------------------------
+      $logo-scheme-variants: () !default;
+      $logo-scheme: map-get-default-map($logo-scheme-variants, $header-variant-name) !default;
+      $logo-scheme: map_merge((
+         primary:   map_get($theme-scheme, main),
+         secondary: #404040,
+      ), $logo-scheme);
+
+   // ----------------------------------------
+   // -- .search--layout--spaceship
+   // ----------------------------------------
+      $search-spaceship-divider-color:     map_get($header-scheme, divider)                   !default;
+      $search-spaceship-top-shadow:        0 -1px 4px rgba(#000, .12), 0 -1px rgba(#000, .02) !default;
+      $search-spaceship-top-shadow-radius: #{120px} / #{10px}                                 !default;
+      // input
+      $search-spaceship-input-scheme: () !default;
+      $search-spaceship-input-scheme: map_merge((
+         // normal
+         normal-bg-color:          rgba(#f0f0f0, 0),
+         normal-font-color:        #262626,
+         normal-placeholder-color: #999,
+         // hover
+         hover-bg-color:           #f0f0f0,
+         // focus
+         focus-bg-color:           #f0f0f0,
+      ), $search-spaceship-input-scheme);
+      // button
+      $search-spaceship-button-scheme: () !default;
+      $search-spaceship-button-scheme: map_merge((
+         // normal
+         normal-bg-color:   transparent,
+         normal-font-color: rgba(#000, .3),
+         // hover
+         hover-bg-color:    #f0f0f0,
+         // active
+         active-bg-color:   #e5e5e5,
+      ), $search-spaceship-button-scheme);
+
+   // ----------------------------------------
+   // -- .search--layout--classic
+   // ----------------------------------------
+      // input
+      $search-classic-input-scheme: () !default;
+      $search-classic-input-scheme: map-merge-deep((
+         // normal
+         normal-bg-color:          #ededed,
+         normal-border-color:      #ededed,
+         normal-font-color:        #262626,
+         normal-placeholder-color: #6c757d,
+         normal-icon-scheme: (
+            normal-font-color: #b2b2b2,
+            hover-font-color:  #404040,
+         ),
+         // hover
+         hover-border-color:       #e0e0e0,
+         // focus
+         focus-bg-color:           #fff,
+         focus-border-color:       #e5e5e5,
+      ), $search-classic-input-scheme);
+
+      // button
+      $search-classic-button-scheme: () !default;
+      $search-classic-button-scheme: map_merge((
+         // normal
+         normal-bg-color:    map_get($accent-scheme, main),
+         normal-font-color:  #262626,
+         normal-icon-color:  rgba(#000, .75),
+         normal-arrow-color: rgba(#000, .35),
+         // hover
+         hover-bg-color:     #ffd226,
+         // active
+         active-bg-color:    #ffca16,
+      ), $search-classic-button-scheme);
+
+   // ----------------------------------------
+   // -- .dropcart
+   // ----------------------------------------
+      $dropcart-quantity-scheme: $theme-scheme                             !default;
+      $dropcart-price-scheme:    map_merge($light-scheme, (main: #ebebeb)) !default;
+
+// ----------------------------------------
+// -- footer
+// ----------------------------------------
+   $footer-contacts-card-bg-color: rgba(#fff, .05) !default;
+   // scheme
+   $footer-scheme-based-on: dark !default;
+   $footer-scheme: () !default;
+   $footer-scheme: map_merge(get-scheme($footer-scheme-based-on), $footer-scheme);
+   // copyright
+   $footer-copyright-scheme-based-on: $footer-scheme !default;
+   $footer-copyright-scheme: () !default;
+   $footer-copyright-scheme: map-merge-all($footer-scheme, (
+      main: blend(map_get($footer-scheme, main), rgba(#000, .16)),
+   ), $footer-copyright-scheme);
+
+// ----------------------------------------
+// -- .mobile-header
+// ----------------------------------------
+   $mobile-header-scheme-based-on: light !default;
+   $mobile-header-scheme: () !default;
+   $mobile-header-scheme: map-merge-all(get-scheme($mobile-header-scheme-based-on), (
+      shadow: 0 1px 3px rgba(#000, .09),
+   ), $mobile-header-scheme);
+
+   // ----------------------------------------
+   // -- .mobile-search
+   // ----------------------------------------
+      $mobile-search-scheme: () !default;
+      $mobile-search-scheme: map-merge-deep((
+         // normal
+         normal-bg-color:          #f0f0f0,
+         normal-border-color:      #f0f0f0,
+         normal-font-color:        #262626,
+         normal-placeholder-color: #6c757d,
+         normal-icon-scheme: (
+            normal-font-color: #b2b2b2,
+            hover-font-color:  map_get($theme-scheme, main),
+         ),
+         // hover
+         hover-border-color:       #d9d9d9,
+         // focus
+         focus-bg-color:           #fff,
+         focus-border-color:       #d9d9d9,
+      ), $mobile-search-scheme);
+
+   // ----------------------------------------
+   // -- .mobile-search (overlay state)
+   // ----------------------------------------
+      $mobile-search-overlay-scheme: () !default;
+      $mobile-search-overlay-scheme: map-merge-deep((
+         // normal
+         normal-bg-color:          #fff,
+         normal-border-color:      #ebebeb,
+         normal-font-color:        #262626,
+         normal-placeholder-color: #6c757d,
+         normal-icon-scheme: (
+            normal-font-color: #b2b2b2,
+            hover-font-color:  map_get($theme-scheme, main),
+         ),
+      ), $mobile-search-overlay-scheme);
+
+   // ----------------------------------------
+   // -- .mobile-search__button--vehicle
+   // ----------------------------------------
+      $mobile-search-vehicle-button-scheme: () !default;
+      $mobile-search-vehicle-button-scheme: map_merge((
+         // normal
+         normal-bg-color:    map_get($accent-scheme, main),
+         normal-font-color:  #262626,
+         normal-icon-color:  rgba(#000, .75),
+         // hover
+         hover-bg-color:     #ffd226,
+         // active
+         active-bg-color:    #ffca16,
+      ), $mobile-search-vehicle-button-scheme);
+
+   // ----------------------------------------
+   // -- .mobile-indicator__counter
+   // ----------------------------------------
+      $mobile-indicator-counter-scheme-based-on: theme !default;
+      $mobile-indicator-counter-scheme: () !default;
+      $mobile-indicator-counter-scheme: map_merge(get-scheme($mobile-indicator-counter-scheme-based-on), $mobile-indicator-counter-scheme);
+
+   // ----------------------------------------
+   // -- .mobile-menu
+   // ----------------------------------------
+      $mobile-menu-indicator-counter-scheme: $theme-scheme                !default;
+      $mobile-menu-link-highlight-color:     map_get($theme-scheme, main) !default;
+      $mobile-menu-currency-bg-color:        #5c6266                      !default;
+      $mobile-menu-currency-font-color:      #fff                         !default;
+
+// ----------------------------------------
+// -- common
+// ----------------------------------------
+   // ----------------------------------------
+   // -- headers
+   // ----------------------------------------
+      $headers-font-family: null                 !default;
+      $headers-font-weight: $font-weight-medium  !default;
+      $headers-font-style:  null                 !default;
+      // h1
+      $h1-font-family:      $headers-font-family !default;
+      $h1-font-size:        40px                 !default;
+      $h1-font-weight:      $headers-font-weight !default;
+      $h1-font-style:       $headers-font-style  !default;
+      // h2
+      $h2-font-family:      $headers-font-family !default;
+      $h2-font-size:        32px                 !default;
+      $h2-font-weight:      $headers-font-weight !default;
+      $h2-font-style:       $headers-font-style  !default;
+      // h3
+      $h3-font-family:      $headers-font-family !default;
+      $h3-font-size:        28px                 !default;
+      $h3-font-weight:      $headers-font-weight !default;
+      $h3-font-style:       $headers-font-style  !default;
+      // h4
+      $h4-font-family:      $headers-font-family !default;
+      $h4-font-size:        24px                 !default;
+      $h4-font-weight:      $headers-font-weight !default;
+      $h4-font-style:       $headers-font-style  !default;
+      // h5
+      $h5-font-family:      $headers-font-family !default;
+      $h5-font-size:        20px                 !default;
+      $h5-font-weight:      $headers-font-weight !default;
+      $h5-font-style:       $headers-font-style  !default;
+      // h6
+      $h6-font-family:      $headers-font-family !default;
+      $h6-font-size:        16px                 !default;
+      $h6-font-weight:      $headers-font-weight !default;
+      $h6-font-style:       $headers-font-style  !default;
+
+   // ----------------------------------------
+   // -- price
+   // ----------------------------------------
+      $price-color:     map_get($light-scheme, opposite) !default;
+      $price-new-color: map_get($light-scheme, opposite) !default;
+      $price-old-color: map_get($light-scheme, muted)    !default;
+
+   // ----------------------------------------
+   // -- .typography
+   // ----------------------------------------
+      $typography-hr-color:            #d9d9d9 !default;
+      $typography-blockquote-bg-color: #f7f7f7 !default;
+
+   // ----------------------------------------
+   // -- table
+   // ----------------------------------------
+      $table-header-bg-color: #f7f7f7 !default;
+      $table-row-hover-bg:    #f7f7f7 !default;
+
+   // ----------------------------------------
+   // -- form
+   // ----------------------------------------
+      $form-valid-feedback-font-color:   #388020 !default;
+      $form-invalid-feedback-font-color: #b32d2d !default;
+
+   // ----------------------------------------
+   // -- image
+   // ----------------------------------------
+      $image-overlay-color: rgba(#1a1a1a, .2) !default;
+      $image-border-color:  rgba(#000, .08)   !default;
+
+// ----------------------------------------
+// -- components
+// ----------------------------------------
+   // ----------------------------------------
+   // -- .card
+   // ----------------------------------------
+      $card-scheme-based-on: light !default;
+      $card-scheme: () !default;
+      $card-scheme: map-merge-all(get-scheme($card-scheme-based-on), (
+         shadow: 0 1px 3px rgba(#000, .09),
+      ), $card-scheme);
+
+      // child card
+      $child-card-scheme-based-on: $card-scheme !default;
+      $child-card-scheme: () !default;
+      $child-card-scheme: map-merge-all(get-scheme($child-card-scheme-based-on), map_merge((
+         main: #f5f5f5,
+         divider: #e5e5e5,
+         shadow: none,
+      ), $child-card-scheme));
+
+   // ----------------------------------------
+   // -- .btn
+   // ----------------------------------------
+      // primary
+      $btn-primary-scheme: () !default;
+      $btn-primary-scheme: map_merge((
+         // normal
+         normal-bg-color:   map_get($theme-scheme, main),
+         normal-font-color: map_get($theme-scheme, opposite),
+         // hover
+         hover-bg-color:    map_get($dark-scheme, main),
+         hover-font-color:  map_get($dark-scheme, opposite),
+         // active
+         active-bg-color:   lighten(map_get($dark-scheme, main), 10%),
+         active-font-color: map_get($dark-scheme, opposite),
+         // general
+         loader-color:      #fff,
+      ), $btn-primary-scheme);
+
+      // secondary
+      $btn-secondary-scheme: () !default;
+      $btn-secondary-scheme: map_merge((
+         // normal
+         normal-bg-color:   #f0f0f0,
+         normal-font-color: #333,
+         // hover
+         hover-bg-color:    #e5e5e5,
+         hover-font-color:  #333,
+         // active
+         active-bg-color:   darken(#e5e5e5, 6%),
+         active-font-color: #333,
+         // general
+         loader-color:      #000,
+      ), $btn-secondary-scheme);
+
+      // light
+      $btn-light-scheme: () !default;
+      $btn-light-scheme: map_merge((
+         // normal
+         normal-bg-color:   transparent,
+         normal-font-color: #333,
+         // hover
+         hover-bg-color:    #f0f0f0,
+         hover-font-color:  #333,
+         // active
+         active-bg-color:   darken(#f0f0f0, 6%),
+         active-font-color: #333,
+         // general
+         loader-color:      #000,
+      ), $btn-light-scheme);
+
+      // muted
+      $btn-muted-scheme: () !default;
+      $btn-muted-scheme: map_merge((
+         // normal
+         normal-bg-color:   #fff,
+         normal-font-color: #ccc,
+         // hover
+         hover-bg-color:    #f2f2f2,
+         hover-font-color:  #4d4d4d,
+         // active
+         active-bg-color:   #ebebeb,
+         active-font-color: #4d4d4d,
+         // general
+         loader-color:      #000,
+      ), $btn-muted-scheme);
+
+      // muted-light
+      $btn-muted-light-scheme: () !default;
+      $btn-muted-light-scheme: map_merge($btn-muted-scheme, map_merge((
+         hover-font-color:  #999,
+         active-font-color: #808080,
+      ), $btn-muted-light-scheme));
+
+      // dark
+      $btn-dark-scheme: () !default;
+      $btn-dark-scheme: map_merge($btn-primary-scheme, map_merge((
+         // hover
+         hover-bg-color:    #545454,
+         hover-font-color:  #fff,
+         // active
+         active-bg-color:   #4c4c4c,
+         active-font-color: #fff,
+      ), $btn-dark-scheme));
+
+   // ----------------------------------------
+   // -- .form-control
+   // ----------------------------------------
+      $form-control-select-arrow-color: rgba(#000, .55) !default;
+
+      // default
+      $form-control-default-scheme: () !default;
+      $form-control-default-scheme: map_merge((
+         // normal
+         normal-bg-color:          #ebebeb,
+         normal-border-color:      #ebebeb,
+         normal-font-color:        #262626,
+         normal-placeholder-color: #6c757d,
+         // hover
+         hover-border-color:       #d9d9d9,
+         // focus
+         focus-bg-color:           #fff,
+         focus-border-color:       #d9d9d9,
+      ), $form-control-default-scheme);
+
+      // valid
+      $form-control-valid-scheme: () !default;
+      $form-control-valid-scheme: map_merge($form-control-default-scheme, map_merge((
+         // normal
+         normal-bg-color:          #e2f2da,
+         normal-border-color:      #e2f2da,
+         // hover
+         hover-border-color:       #c3d9b8,
+         // focus
+         focus-border-color:       #88cc66,
+      ), $form-control-valid-scheme));
+
+      // invalid
+      $form-control-invalid-scheme: () !default;
+      $form-control-invalid-scheme: map_merge($form-control-default-scheme, map_merge((
+         // normal
+         normal-bg-color:          #f2dada,
+         normal-border-color:      #f2dada,
+         // hover
+         hover-border-color:       #d9a3a3,
+         // focus
+         focus-border-color:       #cc6666,
+      ), $form-control-invalid-scheme));
+
+      // dark
+      $form-control-dark-scheme: () !default;
+      $form-control-dark-scheme: map_merge((
+         // normal
+         normal-bg-color:          #4c4c4c,
+         normal-border-color:      #4c4c4c,
+         normal-font-color:        #fff,
+         normal-placeholder-color: #b2b2b2,
+         // hover
+         hover-bg-color:           rgba(#fff, .16),
+         hover-border-color:       rgba(#fff, .16),
+         // focus
+         focus-bg-color:           transparent,
+         focus-border-color:       rgba(#fff, .16),
+         focus-placeholder-color:  #9e9e9e,
+      ), $form-control-dark-scheme);
+
+      // button
+      $form-control-button-scheme: () !default;
+      $form-control-button-scheme: map_merge((
+         // normal
+         normal-bg-color:   fff,
+         normal-font-color: #6c757d,
+         // hover
+         hover-bg-color:    #333,
+         hover-font-color:  #fff,
+         // active
+         active-bg-color:   lighten(#333, 10%),
+         active-font-color: #fff,
+      ), $form-control-button-scheme);
+
+   // ----------------------------------------
+   // -- .select2-dropdown
+   // ----------------------------------------
+      $select2-dropdown-bg:                          #fff                                                !default;
+      $select2-dropdown-shadow:                      0 1px 20px rgba(#000, .2), 0 1px 5px rgba(#000, .1) !default;
+      $select2-dropdown-divider:                     #e5e5e5                                             !default;
+      $select2-dropdown-item-selected-bg-color:      #f2f2f2                                             !default;
+      $select2-dropdown-item-highlighted-bg-color:   #d9ecff                                             !default;
+      $select2-dropdown-item-highlighted-font-color: #36414d                                             !default;
+
+   // ----------------------------------------
+   // -- .timer
+   // ----------------------------------------
+      $timer-scheme-based-on: accent                             !default;
+      $timer-scheme:          get-scheme($timer-scheme-based-on) !default;
+      $timer-dots-color:      rgba(#000, .15)                    !default;
+
+   // ----------------------------------------
+   // -- .arrow
+   // ----------------------------------------
+      $arrow-scheme: () !default;
+      $arrow-scheme: map_merge((
+         // normal
+         normal-bg-color:   map_get($theme-scheme, main),
+         normal-font-color: map_get($theme-scheme, opposite),
+         // hover
+         hover-bg-color:    map_get($dark-scheme, main),
+         hover-font-color:  map_get($dark-scheme, opposite),
+         // active
+         active-bg-color:   lighten(map_get($dark-scheme, main), 8%),
+         active-font-color: map_get($dark-scheme, opposite),
+      ), $arrow-scheme);
+
+   // ----------------------------------------
+   // -- .social-links
+   // ----------------------------------------
+      $social-links: () !default;
+      $social-links: map_merge((
+         facebook:  (main: #3c5a99, opposite: #fff),
+         twitter:   (main: #00a2e8, opposite: #fff),
+         youtube:   (main: #e52e2e, opposite: #fff),
+         instagram: (main: #815dc7, opposite: #fff),
+         rss:       (main: #ffc338, opposite: #664729),
+      ), $social-links);
+
+   // ----------------------------------------
+   // -- .alert
+   // ----------------------------------------
+      // link
+      $alert-link-default-bg:            rgba(#fff, .5)  !default;
+      $alert-link-hover-bg:              rgba(#fff, .85) !default;
+      $alert-link-active-bg:             rgba(#fff, .5)  !default;
+      // close button
+      $alert-close-button-default-bg:    transparent     !default;
+      $alert-close-button-default-color: rgba(#000, .3)  !default;
+      $alert-close-button-hover-bg:      rgba(#000, .08) !default;
+      $alert-close-button-hover-color:   rgba(#000, .5)  !default;
+      // styles
+      $alerts: () !default;
+      $alerts: map_merge((
+         primary:   (main: #b2d9ff, opposite: #36414d),
+         secondary: (main: #d9d9d9, opposite: #4d4d4d),
+         info:      (main: #b8e2e5, opposite: #2d3e40),
+         success:   (main: #bde5a1, opposite: #34402d),
+         danger:    (main: #ffb8b8, opposite: #473333),
+         warning:   (main: #f2e291, opposite: #4d472e),
+      ), $alerts);
+
+   // ----------------------------------------
+   // -- .status-badge
+   // ----------------------------------------
+      $status-badges: () !default;
+      $status-badges: map_merge((
+         success: (main: #e2f2da, opposite: #44782a),
+         failure: (main: #f2dada, opposite: #993d3d),
+         warning: (main: #f2eeda, opposite: #786b2a),
+         unknown: (main: #ebebeb, opposite: #6a6a6a),
+      ), $status-badges);
+
+   // ----------------------------------------
+   // -- .tag-badge
+   // ----------------------------------------
+      $tag-badges: () !default;
+      $tag-badges: map_merge((
+         theme: $theme-scheme,
+         sale:  (main: #ff3333, opposite: #fff),
+         new:   (main: #3377ff, opposite: #fff),
+         hot:   (main: #614ba6, opposite: #fff),
+      ), $tag-badges);
+
+   // ----------------------------------------
+   // -- .share-links
+   // ----------------------------------------
+      $share-links-counter-bg-color:     #fff           !default;
+      $share-links-counter-border-color: rgba(#000, .2) !default;
+      $share-links-counter-font-color:   #737373        !default;
+
+      $share-links: () !default;
+      $share-links: map_merge((
+         like:  (main: #4267b2, opposite: #fff),
+         tweet: (main: #1b95e0, opposite: #fff),
+         pin:   (main: #e63939, opposite: #fff),
+      ), $share-links);
+
+   // ----------------------------------------
+   // -- .tooltip
+   // ----------------------------------------
+      $tooltip-bg-color:   #333 !default;
+      $tooltip-font-color: #fff !default;
+
+   // ----------------------------------------
+   // -- .rating
+   // ----------------------------------------
+      // default
+      $rating-star-default-bg-color:     #d0d5d9         !default;
+      $rating-star-default-border-color: rgba(#000, .08) !default;
+      // active
+      $rating-star-active-bg-color:      #ffd333         !default;
+      $rating-star-active-border-color:  rgba(#000, .08) !default;
+
+   // ----------------------------------------
+   // -- .pagination
+   // ----------------------------------------
+      $pagination-dots-color: rgba(#000, .25) !default;
+      // scheme
+      $pagination-scheme: () !default;
+      $pagination-scheme: map_merge((
+         // normal
+         normal-bg-color:     #f0f0f0,
+         normal-font-color:   #262626,
+         // hover
+         hover-bg-color:      #e5e5e5,
+         hover-font-color:    #262626,
+         // active
+         active-bg-color:     #e0e0e0,
+         active-font-color:   #262626,
+         // current
+         current-bg-color:    map_get($theme-scheme, main),
+         current-font-color:  map_get($theme-scheme, opposite),
+         // disabled
+         disabled-bg-color:   #f0f0f0,
+         disabled-font-color: #b3b3b3,
+      ), $pagination-scheme);
+
+   // ----------------------------------------
+   // -- .layout-switcher
+   // ----------------------------------------
+      $layout-switcher-scheme: () !default;
+      $layout-switcher-scheme: map_merge((
+         // normal
+         normal-bg-color:    transparent,
+         normal-font-color:  #95a0a6,
+         // hover
+         hover-bg-color:     #f0f0f0,
+         // current
+         current-font-color: map_get($theme-scheme, main),
+      ), $layout-switcher-scheme);
+
+   // ----------------------------------------
+   // -- .breadcrumb
+   // ----------------------------------------
+      $breadcrumb-font-color:      map_get($light-scheme, opposite-alt) !default;
+      $breadcrumb-normal-bg-color: #ebebeb                              !default;
+      $breadcrumb-hover-bg-color:  #e5e5e5                              !default;
+      $breadcrumb-active-bg-color: #e0e0e0                              !default;
+
+   // ----------------------------------------
+   // -- .applied-filters
+   // ----------------------------------------
+      $applied-filters-normal-bg-color:  #f0f0f0         !default;
+      $applied-filters-hover-bg-color:   #e5e5e5         !default;
+      $applied-filters-clear-font-color: #999            !default;
+      $applied-filters-divider-color:    rgba(#000, .15) !default;
+      $applied-filters-cross-color:      rgba(#000, .4)  !default;
+
+   // ----------------------------------------
+   // -- .filters-button
+   // ----------------------------------------
+      $filters-button-normal-bg-color:    #f0f0f0                          !default;
+      $filters-button-hover-bg-color:     #ebebeb                          !default;
+      $filters-button-active-bg-color:    #e0e0e0                          !default;
+      $filters-button-icon-color:         #404040                          !default;
+      $filters-button-counter-bg-color:   map_get($theme-scheme, main)     !default;
+      $filters-button-counter-font-color: map_get($theme-scheme, opposite) !default;
+
+   // ----------------------------------------
+   // -- .input-check
+   // ----------------------------------------
+      // normal
+      $input-check-box-bg:              #fff                             !default;
+      $input-check-box-shadow:          0 0 0 1px rgba(#000, .15) inset  !default;
+      $input-check-icon-color:          #fff                             !default;
+      // checked
+      $input-check-checked-box-bg:      map_get($theme-scheme, main)     !default;
+      $input-check-checked-box-shadow:  0 0 0 1px rgba(#000, .05) inset  !default;
+      $input-check-checked-icon-color:  map_get($theme-scheme, opposite) !default;
+      // disabled
+      $input-check-disabled-box-bg:     #f2f2f2                          !default;
+      $input-check-disabled-box-shadow: 0 0 0 1px rgba(#000, .1) inset   !default;
+      $input-check-disabled-icon-color: rgba(#000, .2)                   !default;
+
+   // ----------------------------------------
+   // -- .input-check-color
+   // ----------------------------------------
+      $input-check-color-stick-color:       rgba(#666, .9)          !default;
+      $input-check-color-arrow-light-color: #fff                    !default;
+      $input-check-color-arrow-dark-color:  #3d464d                 !default;
+      $input-check-color-white-shadow:      0 0 0 2px #d9d9d9 inset !default;
+      $input-check-color-white-arrow-color: #bfbfbf                 !default;
+
+   // ----------------------------------------
+   // -- .input-radio
+   // ----------------------------------------
+      // normal
+      $input-radio-circle-bg:                   #fff                             !default;
+      $input-radio-circle-shadow:               0 0 0 1px rgba(#000, .17) inset  !default;
+      $input-radio-inner-circle-color:          #fff                             !default;
+      // checked
+      $input-radio-checked-circle-bg:           map_get($theme-scheme, main)     !default;
+      $input-radio-checked-circle-shadow:       0 0 0 1px rgba(#000, .08) inset  !default;
+      $input-radio-checked-inner-circle-color:  map_get($theme-scheme, opposite) !default;
+      // disabled
+      $input-radio-disabled-circle-bg:          #f2f2f2                          !default;
+      $input-radio-disabled-circle-shadow:      0 0 0 1px rgba(#000, .12) inset  !default;
+      $input-radio-disabled-inner-circle-color: rgba(#000, .2)                   !default;
+
+   // ----------------------------------------
+   // -- .input-radio-label
+   // ----------------------------------------
+      // normal
+      $input-radio-label-bg-color:             #fff                         !default;
+      $input-radio-label-border-color:         rgba(#000, .1)               !default;
+      // hover
+      $input-radio-label-hover-border-color:   rgba(#000, .1)               !default;
+      // active
+      $input-radio-label-active-border-color:  rgba(#000, .2)               !default;
+      // checked
+      $input-radio-label-checked-border-color: map_get($theme-scheme, main) !default;
+      // disabled
+      $input-radio-label-disabled-font-color:  #a6a6a6                      !default;
+
+   // ----------------------------------------
+   // -- .nouislider
+   // ----------------------------------------
+      $nouislider-bg-color:      #e0e0e0                          !default;
+      $nouislider-connect-color: map_get($theme-scheme, main)     !default;
+      $nouislider-border-color:  map_get($theme-scheme, main)     !default;
+      $nouislider-handle-color:  map_get($theme-scheme, opposite) !default;
+
+   // ----------------------------------------
+   // -- .section-header
+   // ----------------------------------------
+      $section-header-group-font-color:         map_get($light-scheme, opposite-alt)   !default;
+      $section-header-group-hover-bg-color:     #ebebeb                                !default;
+      $section-header-group-hover-font-color:   map_get($light-scheme, opposite)       !default;
+      $section-header-group-active-bg-color:    #e0e0e0                                !default;
+      $section-header-group-active-font-color:  $section-header-group-hover-font-color !default;
+      $section-header-group-current-bg-color:   map_get($dark-scheme, main)            !default;
+      $section-header-group-current-font-color: map_get($dark-scheme, opposite)        !default;
+
+   // ----------------------------------------
+   // -- .tags
+   // ----------------------------------------
+      $tag-normal-bg-color: #f2f2f2 !default;
+      $tag-hover-bg-color:  #e5e5e5 !default;
+      $tag-active-bg-color: #d9d9d9 !default;
+
+   // ----------------------------------------
+   // -- .modal
+   // ----------------------------------------
+      $modal-backdrop: rgba(#333, .8)            !default;
+      $modal-shadow:   0 1px 10px rgba(#000, .1) !default;
+
+   // ----------------------------------------
+   // -- .widget
+   // ----------------------------------------
+      $widget-padding: 1.5rem !default;
+
+   // ----------------------------------------
+   // -- .shop-features
+   // ----------------------------------------
+      $shop-features-icon-color: map_get($theme-scheme, main) !default;
+
+// ----------------------------------------
+// -- account
+// ----------------------------------------
+   // ----------------------------------------
+   // -- .account-nav
+   // ----------------------------------------
+      $account-nav-border-color: map_get($theme-scheme, main) !default;
+
+   // ----------------------------------------
+   // -- .addresses-list
+   // ----------------------------------------
+      $addresses-list-plus-normal-color: #e0e0e0 !default;
+      $addresses-list-plus-hover-color:  #ccc    !default;
+
+// ----------------------------------------
+// -- blog
+// ----------------------------------------
+   // ----------------------------------------
+   // -- .post-header
+   // ----------------------------------------
+      $post-header-category-link-scheme:     $theme-scheme                 !default;
+      // overlay
+      $post-header-overlay-bg-color:         #262626                       !default;
+      $post-header-overlay-font-color:       #fff                          !default;
+      $post-header-overlay-font-shadow:      0 1px 5px rgba(#000, .25)     !default;
+      $post-header-overlay-link-hover-color: map_get($accent-scheme, main) !default;
+
+   // ----------------------------------------
+   // -- .comment
+   // ----------------------------------------
+      $comment-avatar-size:   38px !default;
+      $comment-avatar-margin: 14px !default;
+
+// ----------------------------------------
+// -- shop
+// ----------------------------------------
+   // ----------------------------------------
+   // -- .product-gallery
+   // ----------------------------------------
+      $product-gallery-thumbnail-normal-border-color:  #f2f2f2                      !default;
+      $product-gallery-thumbnail-hover-border-color:   #e0e0e0                      !default;
+      $product-gallery-thumbnail-current-border-color: map_get($theme-scheme, main) !default;
+
+   // ----------------------------------------
+   // -- .product-tabs
+   // ----------------------------------------
+      $product-tabs-hover-bg-color:       #f7f7f7                      !default;
+      $product-tabs-hover-border-color:   #e5e5e5                      !default;
+      $product-tabs-active-bg-color:      #f2f2f2                      !default;
+      $product-tabs-active-border-color:  #e0e0e0                      !default;
+      $product-tabs-current-border-color: map_get($theme-scheme, main) !default;
+      // counter
+      $product-tabs-counter-color:        map_get($theme-scheme, main) !default;
+
+   // ----------------------------------------
+   // -- .product-card__addtocart-icon
+   // ----------------------------------------
+      $addtocart-button-scheme: () !default;
+      $addtocart-button-scheme: map_merge((
+         // default
+         default-bg-color:   transparent,
+         default-font-color: #ccc,
+         // normal
+         normal-bg-color:    map_get($theme-scheme, main),
+         normal-font-color:  map_get($theme-scheme, opposite),
+         // hover
+         hover-bg-color:     map_get($dark-scheme, main),
+         hover-font-color:   map_get($dark-scheme, opposite),
+         // active
+         active-bg-color:    lighten(map_get($dark-scheme, main), 10%),
+         active-font-color:  map_get($dark-scheme, opposite),
+         // general
+         loader-color:       #fff,
+      ), $addtocart-button-scheme);
+
+   // ----------------------------------------
+   // -- .product-card__wishlist, .product-card__compare, .product__actions-item--wishlist, .product__actions-item--compare
+   // ----------------------------------------
+      $wishlist-button-scheme: () !default;
+      $wishlist-button-scheme: map_merge((
+         // normal
+         normal-bg-color:   transparent,
+         normal-font-color: map_get($light-scheme, opposite),
+         normal-icon-color: #d9d9d9,
+         // hover
+         hover-bg-color:    #f5f5f5,
+         hover-icon-color:  #bfbfbf,
+         // active
+         active-bg-color:   #f0f0f0,
+         active-icon-color: #b3b3b3,
+      ), $wishlist-button-scheme);
+
+   // ----------------------------------------
+   // -- .category-card
+   // ----------------------------------------
+      $category-card-shadow:                   0 1px 4px rgba(#000, .05)                                            !default;
+      // overlay
+      $category-card-overlay-color:            rgba(#1a1a1a, .6)                                                    !default;
+      $category-card-overlay-gradient:         linear-gradient(to top, rgba(#1a1a1a, .4) 20%, rgba(#1a1a1a, 0) 80%) !default;
+      $category-card-overlay-font-color:       #fff                                                                 !default;
+      $category-card-overlay-font-shadow:      0 1px 3px rgba(#000, .4)                                             !default;
+      $category-card-overlay-link-hover-color: map_get($accent-scheme, main)                                        !default;
+      $category-card-hover-overlay-bg-color:   rgba(#1a1a1a, .7)                                                    !default;
+
+   // ----------------------------------------
+   // -- .quickview
+   // ----------------------------------------
+      $quickview-meta-bg-color:               #f2f2f2 !default;
+      $quickview-meta-title-color:            #808080 !default;
+
+      $quickview-see-details-hover-bg-color:  #f7f7f7 !default;
+      $quickview-see-details-active-bg-color: #f0f0f0 !default;
+
+   // ----------------------------------------
+   // -- .product-form
+   // ----------------------------------------
+      $product-form-bg-color:    #f9f9f9 !default;
+      $product-form-title-color: #6c7177 !default;
+
+   // ----------------------------------------
+   // -- .categories-list
+   // ----------------------------------------
+      $categories-list-hover-overlay-bg-color: rgba(#000, .03) !default;
+
+   // ----------------------------------------
+   // -- .product-image
+   // ----------------------------------------
+      $product-image-width:  1                                              !default;
+      $product-image-height: 1                                              !default;
+      $product-image-ratio:  ($product-image-width / $product-image-height) !default;
+
+   // ----------------------------------------
+   // -- .category-image
+   // ----------------------------------------
+      $category-image-width:  1                                                !default;
+      $category-image-height: 1                                                !default;
+      $category-image-ratio:  ($category-image-width / $category-image-height) !default;
+
+// ----------------------------------------
+// -- other
+// ----------------------------------------
+   // ----------------------------------------
+   // -- .filter
+   // ----------------------------------------
+      // default
+      $filter-title-default-bg:          transparent !default;
+      $filter-title-default-arrow-color: #ccc        !default;
+      // hover
+      $filter-title-hover-bg:            #f2f2f2     !default;
+      $filter-title-hover-arrow-color:   #b3b3b3     !default;
+
+   // ----------------------------------------
+   // -- .about
+   // ----------------------------------------
+      $about-image-overlay-bg: linear-gradient(to bottom, rgba(#333, .7), rgba(#333, .4)) !default;
+
+// ----------------------------------------
+// -- blocks
+// ----------------------------------------
+   // ----------------------------------------
+   // -- .block-categories
+   // ----------------------------------------
+      $block-categories-bg-color: #f6f6f6                   !default;
+      $block-categories-shadow:   0 1px 5px rgba(#000, .08) !default;
+
+   // ----------------------------------------
+   // -- .block-finder
+   // ----------------------------------------
+      $block-finder-bg-color:                   #333                     !default;
+      $block-finder-font-color:                 #fff                     !default;
+      $block-finder-font-shadow:                0 1px 3px rgba(#000, .2) !default;
+      // select
+      $block-finder-select-bg-color:            #fff                     !default;
+      $block-finder-select-font-color:          #262626                  !default;
+      $block-finder-select-arrow-color:         #4d4d4d                  !default;
+      $block-finder-select-disabled-font-color: #999                     !default;
+
+   // ----------------------------------------
+   // -- .block-zone
+   // ----------------------------------------
+      $block-zone-tab-hover-bg-color:       #f2f2f2                      !default;
+      $block-zone-tab-hover-border-color:   #e0e0e0                      !default;
+      $block-zone-tab-current-border-color: map_get($theme-scheme, main) !default;
+
+   // ----------------------------------------
+   // -- .block-slideshow
+   // ----------------------------------------
+      $block-slideshow-scheme:            $light-scheme                !default;
+
+      $block-slideshow-offer-scheme:      $accent-scheme               !default;
+
+      $block-slideshow-dot-normal-color:  rgba(#ccc, .7)               !default;
+      $block-slideshow-dot-hover-color:   rgba(#b3b3b3, .7)            !default;
+      $block-slideshow-dot-active-color:  rgba(#999, .7)               !default;
+      $block-slideshow-dot-current-color: map_get($theme-scheme, main) !default;
+
+   // ----------------------------------------
+   // -- .block-sale
+   // ----------------------------------------
+      $block-sale-overlay-bg:        rgba(#262626, .8)            !default;
+      // dots
+      $block-sale-dot-normal-color:  rgba(#fff, .3)               !default;
+      $block-sale-dot-hover-color:   rgba(#fff, .5)               !default;
+      $block-sale-dot-active-color:  rgba(#fff, .7)               !default;
+      $block-sale-dot-current-color: map_get($theme-scheme, main) !default;
+
+   // ----------------------------------------
+   // -- .block-banners
+   // ----------------------------------------
+      $block-banners-font-color:              #fff                                          !default;
+      $block-banners-title-scheme:            $accent-scheme                                !default;
+      $block-banners-overlay-gradient:        rgba(#1a1a1a, .98) 25%, rgba(#1a1a1a, 0) 90%  !default;
+      $block-banners-overlay-mobile-gradient: rgba(#1a1a1a, .98) 35%, rgba(#1a1a1a, 0) 100% !default;
+
+   // ----------------------------------------
+   // -- .block-features
+   // ----------------------------------------
+      $block-features-icon-color: map_get($theme-scheme, main) !default;
+
+   // ----------------------------------------
+   // -- .block-brands
+   // ----------------------------------------
+      $block-brands-divider:                  map_get($body-scheme, divider) !default;
+      $block-brands-item-normal-font-color:   #b3b3b3                        !default;
+      $block-brands-item-hover-font-color:    #737373                        !default;
+      $block-brands-item-hover-overlay-color: rgba(#000, .02)                !default;
+
+// ----------------------------------------
+// -- widgets
+// ----------------------------------------
+   // ----------------------------------------
+   // -- .widget-search
+   // ----------------------------------------
+      $widget-search-button-icon-color:        #bfbfbf                  !default;
+      $widget-search-button-hover-bg-color:    #f5f5f5                  !default;
+      $widget-search-button-hover-icon-color:  #a6a6a6                  !default;
+      $widget-search-button-active-bg-color:   #f0f0f0                  !default;
+      $widget-search-button-active-icon-color: #a6a6a6                  !default;
+      $widget-search-input-hover-shadow:       0 0 0 1px rgba(#000, .1) !default;
+      $widget-search-input-focus-shadow:       0 0 0 3px rgba(#000, .1) !default;
+
+   // ----------------------------------------
+   // -- .widget-newsletter
+   // ----------------------------------------
+      $widget-newsletter-scheme: () !default;
+      $widget-newsletter-scheme: map_merge($dark-scheme, $widget-newsletter-scheme);
+
+// ----------------------------------------
+// -- utils
+// ----------------------------------------
+   $barely-black: rgba(#000, .01) !default;
+   $barely-white: rgba(#fff, .01) !default;

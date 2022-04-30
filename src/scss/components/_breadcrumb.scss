@@ -1,0 +1,180 @@
+/*
+// .breadcrumb
+*/
+@import '../variables';
+@import '../constants';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+$local-debug: false;
+$local-height: 21px;
+$local-padding-x-base: $TAN-30 * $local-height;
+$local-padding-x: 3px;
+$local-gutter-x: 5px;
+$local-gutter-y: 4px;
+$local-spaceship-search-width-xxl: 480px;
+$local-spaceship-search-width-xl: 440px;
+$local-spaceship-safe-area-expand: 20px;
+$local-title-safe-area-expand: 64px;
+
+
+@mixin local-debug($color, $title) {
+    background: rgba($color, .2);
+    border-radius: 2px;
+
+    &:before {
+        padding: 0 6px;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        content: $title;
+        color:  darken(rgba($color, .6), 25%);
+        font-size: 11px;
+        font-weight: $font-weight-medium;
+        text-transform: uppercase;
+    }
+}
+
+
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    line-height: 20px;
+    font-size: 14px;
+    color: $breadcrumb-font-color;
+
+    &:after {
+        content: '';
+        clear: both;
+    }
+}
+.breadcrumb__list {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: (-$local-gutter-y) 0 0;
+    width: 100%;
+}
+.breadcrumb__item {
+    margin-top: $local-gutter-y;
+
+    @include direction {
+        #{$margin-inline-end}: (-$local-padding-x-base + $local-gutter-x);
+        float: $inline-start;
+    }
+}
+.breadcrumb__item-link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    height: $local-height;
+    padding: 0 ($local-padding-x-base + $local-padding-x);
+    pointer-events: none;
+
+    &,
+    &:hover {
+        color: inherit;
+    }
+
+    &:before,
+    &:after {
+        pointer-events: auto;
+        position: absolute;
+        background-color: $breadcrumb-normal-bg-color;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        border-radius: 3px;
+        transition: background .1s;
+    }
+
+    &:before {
+        content: '';
+
+        @include direction {
+            #{$inset-inline-start}: ($local-padding-x-base / 2);
+            #{$inset-inline-end}: ($local-padding-x-base / 2);
+            transform: skewX(#{-30deg * $transform-direction});
+        }
+    }
+}
+.breadcrumb__item--first {
+    .breadcrumb__item-link {
+        @include direction {
+            #{$padding-inline-start}: ($local-padding-x + 4px);
+        }
+
+        &:after {
+            content: '';
+
+            @include direction {
+                #{$inset-inline-start}: 0;
+                #{$inset-inline-end}: $local-padding-x-base;
+            }
+        }
+    }
+}
+.breadcrumb__item--parent {
+    .breadcrumb__item-link:hover {
+        &:before,
+        &:after {
+            background-color: $breadcrumb-hover-bg-color;
+        }
+    }
+    .breadcrumb__item-link:active {
+        &:before,
+        &:after {
+            transition-duration: 0s;
+            background-color: $breadcrumb-active-bg-color;
+        }
+    }
+}
+.breadcrumb__item--last {
+    @include direction {
+        #{$margin-inline-end}: 0;
+    }
+}
+
+
+.breadcrumb__title-safe-area {
+    display: block;
+    height: $local-height;
+    width: calc(50% + var(--block-header-title-width, 0px) / 2 + #{$local-title-safe-area-expand});
+    margin-top: $local-gutter-y;
+
+    @if($local-debug) {
+        @include local-debug(#00f, 'title-safe-area');
+    }
+
+    @include direction {
+        float: $inline-start;
+    }
+
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}
+.breadcrumb__spaceship-safe-area {
+    display: block;
+    height: $local-height;
+    width: calc(50% + #{$local-spaceship-search-width-xxl} / 2 + #{$local-spaceship-safe-area-expand});
+    margin-top: $local-gutter-y;
+
+    @if($local-debug) {
+        @include local-debug(#f00, 'spaceship-safe-area');
+    }
+
+    @include direction {
+        float: $inline-end;
+    }
+
+    @include media-breakpoint-only(xl) {
+        width: calc(50% + #{$local-spaceship-search-width-xl} / 2 + #{$local-spaceship-safe-area-expand});
+    }
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}

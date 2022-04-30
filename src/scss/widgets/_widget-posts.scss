@@ -1,0 +1,103 @@
+/*
+// .widget-posts
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+.widget-posts {}
+.widget-posts__list {
+    list-style: none;
+    padding: 0 $widget-padding $widget-padding;
+    margin: 0;
+}
+.widget-posts__item {
+    display: flex;
+
+    & + & {
+        margin-top: 1rem;
+    }
+}
+.widget-posts__image {
+    flex-shrink: 0;
+    position: relative;
+
+    @include direction {
+        #{$margin-inline-end}: 14px;
+    }
+
+    img {
+        width: 70px;
+        height: 70px;
+        display: block;
+        border-radius: 1.5px;
+        object-fit: cover;
+    }
+
+    &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        top: 0;
+        bottom: 0;
+        background: $image-overlay-color;
+        border-radius: 1.5px;
+        opacity: 0;
+        transition: opacity .2s;
+        pointer-events: none;
+
+        @include direction {
+            #{$inset-inline-start}: 0;
+            #{$inset-inline-end}: 0;
+        }
+    }
+    &:hover:before {
+        opacity: 1;
+    }
+}
+.widget-posts__info {
+    padding-top: 5px;
+}
+.widget-posts__name {
+    $local-line-height: 19px;
+
+    font-size: 15px;
+    line-height: $local-line-height;
+    overflow: hidden;
+    max-height: $local-line-height * 2;
+
+    a {
+        color: inherit;
+        transition: color .12s;
+    }
+    a:hover {
+        color: $link-color;
+    }
+}
+.widget-posts__date {
+    $local-line-length: 16px;
+
+    font-size: 13px;
+    color: map_get($card-scheme, muted);
+    margin-top: 3px;
+    position: relative;
+
+    @include direction {
+        #{$padding-inline-start}: ($local-line-length + 6px);
+    }
+
+    &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        height: 1px;
+        width: $local-line-length;
+        background: currentColor;
+        opacity: .6;
+        top: 10px;
+
+        @include direction {
+            #{$inset-inline-start}: 0;
+        }
+    }
+}

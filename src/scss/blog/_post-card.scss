@@ -1,0 +1,71 @@
+/*
+// .post-card
+*/
+@import '../variables';
+@import '../mixins/card';
+@import '../mixins/post-card';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+.post-card--layout--grid {
+    @include post-card-grid-base;
+
+    @include media-breakpoint-up(md) {
+        @include post-card-grid-lg;
+    }
+    @media (max-width: breakpoint-max(sm)) and (min-width: 475px) {
+        @include post-card-grid-md;
+    }
+    @media (max-width: 474px) {
+        @include post-card-grid-sm;
+    }
+}
+
+
+.post-card--layout--list {
+    // list
+    @include media-breakpoint-up(md) {
+        @include post-card-list-base;
+    }
+    @include media-breakpoint-up(xxl) {
+        @include post-card-list-lg;
+    }
+    @include media-breakpoint-only(xl) {
+        @include post-card-list-md;
+    }
+    @include media-breakpoint-only(lg) {
+        @include post-card-list-sm;
+    }
+    @include media-breakpoint-only(md) {
+        @include post-card-list-md;
+    }
+    // grid
+    @include media-breakpoint-down(sm) {
+        @include post-card-grid-base;
+    }
+    @media (max-width: breakpoint-max(sm)) and (min-width: 475px) {
+        @include post-card-grid-md;
+    }
+    @media (max-width: 474px) {
+        @include post-card-grid-sm;
+    }
+}
+
+
+.post-card--layout--grid-sm {
+    @include post-card-grid-base;
+
+    @include media-breakpoint-up(xxl) {
+        @include post-card-grid-md;
+    }
+    @include media-breakpoint-between(md, xl) {
+        @include post-card-grid-sm;
+    }
+    @media (max-width: breakpoint-max(sm)) and (min-width: 475px) {
+        @include post-card-grid-md;
+    }
+    @media (max-width: 474px) {
+        @include post-card-grid-sm;
+    }
+}

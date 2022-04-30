@@ -1,0 +1,28 @@
+@import 'custom-variables';
+
+$header-variant-name: classic-two;
+
+$header-layout:                     classic !default;
+$topbar-classic-scheme-based-on:    theme   !default;
+$header-scheme-based-on:            theme   !default;
+$navbar-stretch:                    true    !default;
+$navbar-scheme-based-on:            light   !default;
+$indicator-counter-scheme-based-on: accent  !default;
+
+$departments-button-scheme-based-on: (
+    hover: dark,
+) !default;
+
+// search classic
+$search-classic-input-scheme: (
+    // normal
+    normal-bg-color:     #fff,
+    normal-border-color: #fff,
+    // hover
+    hover-bg-color:      #ebebeb,
+    hover-border-color:  #ebebeb,
+    // focus
+    focus-border-color:  #fff,
+) !default;
+
+@import 'style.header';

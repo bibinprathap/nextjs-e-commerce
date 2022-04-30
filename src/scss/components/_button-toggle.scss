@@ -1,0 +1,61 @@
+/*
+// .button-toggle
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+$local-border-radius: 2px;
+
+
+.button-toggle {}
+.button-toggle__list {
+    display: flex;
+}
+.button-toggle__item {
+    margin: 0;
+}
+.button-toggle__button {
+    margin: 0;
+    background: map_get($btn-secondary-scheme, normal-bg-color);
+    color: map_get($btn-secondary-scheme, normal-font-color);
+    font-weight: $font-weight-medium;
+    font-size: 13px;
+    line-height: 14px;
+    padding: 5px 9px;
+    cursor: pointer;
+    user-select: none;
+    transition:
+        background .12s,
+        color .12s;
+
+    &:hover {
+        background: map_get($btn-secondary-scheme, hover-bg-color);
+        color: map_get($btn-secondary-scheme, hover-font-color);
+    }
+    &:active {
+        background: map_get($btn-secondary-scheme, active-bg-color);
+        color: map_get($btn-secondary-scheme, active-font-color);
+    }
+}
+.button-toggle__item:first-child .button-toggle__button {
+    @include direction {
+        #{$border-start-start-radius}: $local-border-radius;
+        #{$border-end-start-radius}: $local-border-radius;
+    }
+}
+.button-toggle__item:last-child .button-toggle__button {
+    @include direction {
+        #{$border-start-end-radius}: $local-border-radius;
+        #{$border-end-end-radius}: $local-border-radius;
+    }
+}
+.button-toggle__input {
+    position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
+}
+.button-toggle__input:checked ~ .button-toggle__button {
+    background: map_get($btn-primary-scheme, normal-bg-color);
+    color: map_get($btn-primary-scheme, normal-font-color);
+}

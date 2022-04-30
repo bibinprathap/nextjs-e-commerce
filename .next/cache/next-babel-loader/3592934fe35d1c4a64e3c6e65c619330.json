@@ -1,0 +1,1 @@
+{"ast":null,"code":"/* eslint-disable import/prefer-default-export,no-useless-constructor,no-empty-function */\n// application\nexport class AbstractFilterBuilder {\n  constructor(slug, name) {\n    this.slug = slug;\n    this.name = name;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

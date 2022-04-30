@@ -1,0 +1,1 @@
+{"ast":null,"code":"import _classCallCheck from \"@babel/runtime/helpers/esm/classCallCheck\";\n\n/* eslint-disable import/prefer-default-export */\n// application\nexport var VehicleApi = function VehicleApi() {\n  _classCallCheck(this, VehicleApi);\n};","map":null,"metadata":{},"sourceType":"module"}

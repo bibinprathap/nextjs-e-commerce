@@ -1,0 +1,11 @@
+@import '../variables';
+
+
+@mixin card() {
+    background-color: map_get($card-scheme, main);
+    box-shadow: map_get($card-scheme, shadow);
+
+    @if(map_get($body-scheme, opposite) != map_get($card-scheme, opposite)) {
+        color: map_get($card-scheme, opposite);
+    }
+}

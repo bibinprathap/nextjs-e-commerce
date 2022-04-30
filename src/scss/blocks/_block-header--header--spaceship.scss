@@ -1,0 +1,19 @@
+/*
+// .block-header
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+@import '../mixins/header';
+
+
+@include desktop-header-variant-selector {
+    $local-title-padding-y: 36px;
+
+    @if($header-layout == spaceship) {
+        @include media-breakpoint-up(xl) {
+            .block-header:not(.block-header--has-breadcrumb) .block-header__title {
+                padding-top: $spaceship-ledge-height + $local-title-padding-y;
+            }
+        }
+    }
+}

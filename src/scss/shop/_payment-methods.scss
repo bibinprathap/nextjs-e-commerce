@@ -1,0 +1,73 @@
+/*
+// .payment-methods
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+$local-padding-x: 12px;
+$local-padding-y: 10px;
+$local-content-margin-top: 2px;
+
+
+.payment-methods {}
+.payment-methods__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.payment-methods__item {
+    border-radius: 2px;
+    padding-bottom: $local-content-margin-top;
+    border: 1px solid map_get($card-scheme, divider);
+    transition:
+        background .12s,
+        border-color .12s;
+
+    & + & {
+        margin-top: 6px;
+    }
+    &:hover {
+        background: map_get($child-card-scheme, main);
+        border-color: map_get($child-card-scheme, divider);
+    }
+}
+.payment-methods__item-header {
+    display: flex;
+    align-items: center;
+    line-height: 18px;
+    margin: 0;
+    padding: $local-padding-y $local-padding-x ($local-padding-y - $local-content-margin-top);
+    cursor: pointer;
+}
+.payment-methods__item-radio {
+    @include direction {
+        #{$margin-inline-end}: 8px;
+    }
+}
+.payment-methods__item-details {
+    font-size: 14px;
+    line-height: 22px;
+    padding: 0 $local-padding-x ($local-padding-y - $local-content-margin-top);
+}
+.payment-methods__item-container {
+    overflow: hidden;
+    opacity: 0;
+    height: 0;
+    transition:
+        height .3s,
+        opacity .3s;
+}
+
+.payment-methods__item--active {
+    &,
+    &:hover {
+        background: map_get($child-card-scheme, main);
+        border-color: map_get($child-card-scheme, divider);
+    }
+
+    .payment-methods__item-container {
+        opacity: 1;
+        height: auto;
+    }
+}

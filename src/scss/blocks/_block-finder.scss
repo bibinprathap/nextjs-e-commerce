@@ -1,0 +1,162 @@
+/*
+// .block-finder
+*/
+@import '../variables';
+@import '../functions';
+@import '../svg';
+@import '../mixins/card';
+@import '../mixins/breakpoints';
+@import '../mixins/direction';
+@import '../mixins/decor';
+@import '../mixins/scheme';
+@import '../mixins/loader';
+
+
+$local-control-gutter: 14px;
+
+
+.block-finder {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    padding-top: 24px;
+    padding-bottom: 60px;
+    display: flex;
+    align-items: center;
+    background: $block-finder-bg-color;
+}
+.block-finder__decor {
+    position: absolute;
+    bottom: -1px;
+    z-index: 2;
+
+    @include decor-style(map_get($body-scheme, main));
+}
+.block-finder__image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+    opacity: .35;
+}
+.block-finder__body {
+    color: $block-finder-font-color;
+    text-align: center;
+    z-index: 2;
+}
+.block-finder__title {
+    font-size: 48px;
+    font-weight: $font-weight-medium;
+    text-shadow: $block-finder-font-shadow;
+    margin: 0;
+}
+.block-finder__subtitle {
+    margin: 0 0 60px;
+    font-size: 18px;
+    text-shadow: $block-finder-font-shadow;
+}
+.block-finder__form {
+    display: flex;
+    margin: -($local-control-gutter / 2);
+}
+.block-finder__select,
+.block-finder__button {
+    margin: ($local-control-gutter / 2);
+}
+.block-finder__select {
+    width: 100%;
+}
+.block-finder__button {
+    height: 44px;
+    min-height: 44px;
+    border-radius: 2px;
+    border: none;
+    padding: 0 40px;
+    transition:
+        background .2s,
+        color .2s;
+
+    @include define-button-scheme($btn-dark-scheme);
+
+    &:active {
+        transition-duration: .1s,  .1s;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+
+@include media-breakpoint-down(lg) {
+    $local-control-width: 260px;
+
+    .block-finder {
+        padding-bottom: 36px;
+    }
+    .block-finder__subtitle {
+        margin-bottom: 48px;
+    }
+    .block-finder__form {
+        flex-wrap: wrap;
+        width: ($local-control-width * 2 + $local-control-gutter * 2);
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+    .block-finder__button {
+        width: $local-control-width;
+        flex-basis: $local-control-width;
+        margin-top: (7px + 28px);
+    }
+}
+@include media-breakpoint-down(md) {
+    .block-finder__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .block-finder__subtitle {
+        font-size: 16px;
+        margin-top: 8px;
+        margin-bottom: 40px;
+    }
+    .block-finder {
+        height: auto;
+        padding: 64px 0 76px;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .block-finder__title {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    .block-finder__subtitle {
+        font-size: 15px;
+    }
+    .block-finder__button {
+        height: 40px;
+        min-height: 40px;
+        margin-top: (7px + 28px);
+    }
+}
+@media (max-width: 399px) {
+    .block-finder {
+        height: auto;
+        padding: 40px 0 48px;
+    }
+    .block-finder__title {
+        font-size: 26px;
+        line-height: 34px;
+    }
+    .block-finder__subtitle {
+        font-size: 14px;
+        margin-bottom: 32px;
+    }
+    .block-finder__button {
+        margin-top: (7px + 14px);
+    }
+}

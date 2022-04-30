@@ -1,0 +1,105 @@
+/*
+// .widget-newsletter
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/direction';
+@import '../mixins/card';
+@import '../mixins/scheme';
+
+
+.widget-newsletter {
+    @include card;
+
+    display: block;
+    background: map_get($widget-newsletter-scheme, main);
+    border-radius: 2px;
+    padding: 2.25rem 2.5rem 2.5rem;
+    color: map_get($widget-newsletter-scheme, opposite);
+    text-align: center;
+}
+.widget-newsletter__title {
+    font-size: 24px;
+    letter-spacing: .02em;
+    position: relative;
+    margin-bottom: 1.375rem;
+    padding-bottom: 1.25rem;
+
+    &:after {
+        $local-width: 56px;
+
+        position: absolute;
+        display: block;
+        content: '';
+        height: 1px;
+        width: $local-width;
+        background: map_get($widget-newsletter-scheme, divider);
+        bottom: 0;
+
+        @include direction {
+            #{$inset-inline-start}: calc(50% - #{$local-width / 2});
+        }
+    }
+
+    h4 {
+        margin-bottom: 0;
+
+        @include scheme-font-weight($widget-newsletter-scheme, opposite, $font-weight-medium);
+    }
+}
+.widget-newsletter__text {
+    font-size: 15px;
+    color: map_get($widget-newsletter-scheme, muted);
+    line-height: 24px;
+    margin-bottom: 1.625rem;
+}
+.widget-newsletter__email {
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    height: 38px;
+    padding: 0 12px;
+    font-size: 15px;
+    font-family: inherit;
+    background-clip: padding-box;
+    transition:
+        border .2s,
+        background .2s;
+
+    @include define-input-scheme($form-control-dark-scheme, normal);
+
+    &::placeholder {
+        transition: color .2s;
+    }
+    &:hover {
+        @include define-input-scheme($form-control-dark-scheme, hover);
+    }
+    &:focus {
+        outline: none;
+
+        @include define-input-scheme($form-control-dark-scheme, focus);
+    }
+}
+.widget-newsletter__button {
+    border: none;
+    font-size: 15px;
+    border-radius: 2px;
+    padding: .5rem 1.3125rem;
+    margin-top: 1.25rem;
+    width: 100%;
+    transition:
+        background .2s,
+        color .2s;
+
+    @include define-button-scheme($btn-dark-scheme);
+
+    &:active {
+        transition-duration: .1s,  .1s;
+    }
+    &:focus {
+        outline: none;
+    }
+}

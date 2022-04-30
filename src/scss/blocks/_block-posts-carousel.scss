@@ -1,0 +1,119 @@
+/*
+// .block-posts-carousel
+*/
+@import '../variables';
+@import '../mixins/post-card';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+@import '../mixins/loader';
+
+
+$local-carousel-expand: 10px;
+
+
+.block-posts-carousel {
+    --block-products-carousel-gutter: 20px;
+
+    @include media-breakpoint-down(lg) {
+        --block-products-carousel-gutter: 16px;
+    }
+}
+.block-posts-carousel__carousel {
+    position: relative;
+
+    .slick-track {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .slick-list {
+        margin: (-$local-carousel-expand) calc(var(--block-products-carousel-gutter) / 2 * -1);
+        padding: $local-carousel-expand 0;
+    }
+    .slick-slide {
+        padding: 0 calc(var(--block-products-carousel-gutter) / 2);
+        height: auto;
+        display: flex;
+
+        & > div,
+        & > div > div {
+            width: 100%;
+            display: flex !important;
+            align-items: stretch;
+        }
+    }
+    .slick-slide,
+    .slick-slide > div > div {
+        &:focus {
+            outline: none;
+        }
+    }
+}
+.block-posts-carousel__carousel-loader {
+    @include loader-overlay(map_get($body-scheme, main), $local-carousel-expand, $local-carousel-expand, 100px, 2px, $body-loader-color);
+
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+        opacity .3s,
+        visibility 0s .3s;
+}
+.block-posts-carousel--loading {
+    .block-posts-carousel__carousel:not(.block-posts-carousel__carousel--has-items) {
+        min-height: 120px;
+    }
+
+    .block-posts-carousel__carousel-loader {
+        visibility: visible;
+        transition-delay: 0s;
+        opacity: 1;
+    }
+}
+.block-posts-carousel__item {
+    display: flex;
+}
+
+
+.block-posts-carousel--layout--grid {
+    .post-card {
+        @include post-card-grid-base;
+        @include post-card-grid-xs;
+    }
+}
+
+
+.block-posts-carousel--layout--list {
+    .post-card {
+        @include media-breakpoint-up(sm) {
+            @include post-card-list-base;
+        }
+        @include media-breakpoint-only(xxl) {
+            @include post-card-list-sm;
+        }
+        @include media-breakpoint-between(lg, xl) {
+            @include post-card-list-xs;
+        }
+        @include media-breakpoint-only(lg) {
+            .post-card__image {
+                width: 210px;
+            }
+            .post-card__title {
+                margin-bottom: 0;
+            }
+            .post-card__excerpt {
+                display: none;
+            }
+        }
+        @include media-breakpoint-only(md) {
+            @include post-card-list-sm;
+        }
+        @include media-breakpoint-only(sm) {
+            @include post-card-list-xs;
+        }
+        @include media-breakpoint-down(xs) {
+            @include post-card-grid-base;
+            @include post-card-grid-xs;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+/*
+// .logo
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/scheme';
+@import '../mixins/header';
+
+
+@include desktop-header-variant-selector {
+    .logo {}
+    .logo__slogan {
+        padding-top: 11px;
+        font-size: 11px;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+    .logo__image {
+        display: flex;
+        align-items: center;
+        height: 50px;
+    }
+
+    @if($header-layout == spaceship) {
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo__image {
+            justify-content: center;
+            flex-grow: 1;
+        }
+    }
+    @if($header-layout == classic) {
+        .logo__image {
+            height: 100%;
+        }
+        .logo__slogan {
+            display: none;
+        }
+    }
+
+
+    // define scheme
+    @if($header-layout == spaceship) {
+        .logo__slogan {
+            color: map_get($header-scheme, muted);
+
+            @include scheme-font-weight($header-scheme, muted, $font-weight-medium);
+        }
+    }
+
+    .logo__part-primary {
+        fill: map_get($logo-scheme, primary);
+    }
+    .logo__part-secondary {
+        fill: map_get($logo-scheme, secondary);
+    }
+}

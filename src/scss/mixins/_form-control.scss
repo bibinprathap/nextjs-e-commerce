@@ -1,0 +1,144 @@
+@import '../functions';
+@import '../svg';
+@import '../mixins/direction';
+@import '../mixins/scheme';
+
+
+$local-border-width: 1px;
+$local-height: (
+    lg: 42px,
+    nl: 36px,
+    sm: 30px,
+);
+$local-padding-x: (
+    lg: 12px,
+    nl: 10px,
+    sm: 8px,
+);
+$local-font-size: (
+    lg: 18px,
+    nl: 16px,
+    sm: 14px,
+);
+$local-line-height: (
+    lg: 21px,
+    nl: 19px,
+    sm: 17px,
+);
+
+
+@mixin form-control() {
+    border-radius: 2px;
+    border-width: $local-border-width;
+    border-style: solid;
+    background-clip: border-box;
+    appearance: none;
+    transition:
+        border-color .15s ease-in-out,
+        box-shadow .15s ease-in-out,
+        background .15s ease-in-out,
+        opacity .15s ease-in-out;
+
+
+    @include define-input-scheme($form-control-default-scheme, normal);
+
+    &[readonly] {
+        @include define-input-scheme($form-control-default-scheme, normal);
+    }
+
+    &:hover {
+        @include define-input-scheme($form-control-default-scheme, hover);
+    }
+    &:focus {
+        box-shadow: none;
+
+        @include define-input-scheme($form-control-default-scheme, focus);
+    }
+
+    &:disabled {
+        opacity: .7;
+
+        @include define-input-scheme($form-control-default-scheme, normal);
+    }
+
+    .was-validated &:invalid:focus,
+    .was-validated &:valid:focus,
+    &.is-invalid:focus,
+    &.is-valid:focus {
+        box-shadow: none;
+    }
+
+    .was-validated &:invalid,
+    .was-validated &:valid,
+    &.is-invalid,
+    &.is-valid {
+        background-image: none;
+    }
+
+    .was-validated &:valid,
+    &.is-valid {
+        @include define-input-scheme($form-control-valid-scheme, normal);
+
+        &:hover {
+            @include define-input-scheme($form-control-valid-scheme, hover);
+        }
+        &:focus {
+            @include define-input-scheme($form-control-valid-scheme, focus);
+        }
+    }
+
+    .was-validated &:invalid,
+    &.is-invalid {
+        @include define-input-scheme($form-control-invalid-scheme, normal);
+
+        &:hover {
+            @include define-input-scheme($form-control-invalid-scheme, hover);
+        }
+        &:focus {
+            @include define-input-scheme($form-control-invalid-scheme, focus);
+        }
+    }
+}
+
+// sizes
+@mixin form-control--size($size) {
+    height: map_get($local-height, $size);
+    padding:
+        calc(#{map_get($local-height, $size) - map_get($local-line-height, $size) - $local-border-width * 2} / 2)
+        map_get($local-padding-x, $size);
+    font-size: map_get($local-font-size, $size);
+    line-height: map_get($local-line-height, $size);
+}
+
+
+@mixin form-control-select() {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
+    &,
+    .was-validated &:invalid,
+    .was-validated &:valid,
+    &.is-invalid,
+    &.is-valid {
+        background-image: url(svg-select-arrow($form-control-select-arrow-color));
+        background-repeat: no-repeat;
+        background-size: 5px 10px;
+    }
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+
+@mixin form-control-select--size($size) {
+    @include direction {
+        #{$padding-inline-end}: (5px + map_get($local-padding-x, $size) * 2 + 2px);
+        background-position: $inline-end map_get($local-padding-x, $size) center;
+    }
+}

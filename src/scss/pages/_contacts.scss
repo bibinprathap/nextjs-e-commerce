@@ -1,0 +1,32 @@
+/*
+// .contacts
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+
+
+.contacts {}
+.contacts__map {
+    position: relative;
+    height: 400px;
+
+    iframe {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+@include media-breakpoint-down(md) {
+    .contacts__map {
+        height: 380px;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .contacts__map {
+        height: 360px;
+    }
+}

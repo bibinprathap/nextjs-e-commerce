@@ -1,0 +1,75 @@
+@import '../functions';
+
+
+@mixin decor-style($bg, $shadow: none) {
+    .decor__start,
+    .decor__end,
+    .decor__center {
+        background: $bg;
+    }
+    .decor__start,
+    .decor__end {
+        box-shadow: $shadow;
+    }
+}
+
+
+@mixin decor-bottom-height($height, $expand) {
+    height: $height + $expand;
+
+    .decor__start,
+    .decor__end {
+        height: $height;
+    }
+}
+@mixin decor-bottom-radius($radius) {
+    .decor__start {
+        border-top-right-radius: $radius;
+    }
+    .decor__end {
+        border-top-left-radius: $radius;
+    }
+}
+@mixin decor-bottom-skew($angel) {
+    .decor__start {
+        transform: skewX($angel);
+    }
+    .decor__end {
+        transform: skewX(-$angel);
+    }
+}
+
+
+@mixin decor-center-size($height, $expand, $angel) {
+    $padding-x-base: $height * tan($angel);
+
+    .decor__body {
+        height: $height + $expand;
+        margin: 0 (-$expand) (-$expand);
+    }
+    .decor__start,
+    .decor__end {
+        height: $height;
+        width: calc(50% - #{$expand + $padding-x-base});
+    }
+    .decor__start {
+        left: $expand;
+        transform: skewX($angel);
+    }
+    .decor__end {
+        right: $expand;
+        transform: skewX(-$angel);
+    }
+    .decor__center {
+        height: $height;
+        width: #{$padding-x-base * 2 + 2px};
+    }
+}
+@mixin decor-center-radius($radius) {
+    .decor__start {
+        border-bottom-left-radius: $radius;
+    }
+    .decor__end {
+        border-bottom-right-radius: $radius;
+    }
+}

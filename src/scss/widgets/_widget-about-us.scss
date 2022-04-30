@@ -1,0 +1,18 @@
+/*
+// .widget-about-us
+*/
+@import '../variables';
+
+
+.widget-about-us {}
+.widget-about-us__body {
+    padding: 0 $widget-padding $widget-padding;
+    margin-top: -.25rem;
+}
+.widget-about-us__text {
+    font-size: 16px;
+    line-height: 26px;
+}
+.widget-about-us__social-links {
+    margin-top: 16px;
+}

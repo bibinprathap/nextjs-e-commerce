@@ -1,0 +1,66 @@
+/*
+// .loading-bar
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+$local-duration: .8s;
+$local-hide-duration: .2s;
+
+
+.loading-bar {
+    position: fixed;
+    z-index: 9999;
+    height: 2px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+.loading-bar__inner {
+    position: relative;
+    height: inherit;
+    width: 100%;
+    transition: transform 0s 0s, opacity 0s 0s;
+    background-color: map_get($light-scheme, main);
+    box-shadow: 0 0 6px 1px rgba(#000, .17), 0 0 0 1px rgba(#000, .02);
+
+    @include direction {
+        transform: translateX(#{-110% * $transform-direction});
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 48px;
+        background-color: map_get($theme-scheme, main);
+        box-shadow: 0 0 6px 1px rgba(map_get($theme-scheme, main), .5);
+
+        @include direction {
+            #{$margin-inline-end}: -1px;
+            float: $inline-end;
+        }
+    }
+}
+.loading-bar--start {
+    .loading-bar__inner {
+        transition: transform $local-duration 0s, opacity 0s 0s;
+
+        @include direction {
+            transform: translateX(#{-80% * $transform-direction});
+        }
+    }
+}
+.loading-bar--complete {
+    .loading-bar__inner {
+        transform: translateX(0);
+        transition: transform $local-duration 0s, opacity $local-hide-duration ($local-duration + .1s);
+        opacity: 0;
+
+        @include direction {
+            transform: translateX(0);
+        }
+    }
+}

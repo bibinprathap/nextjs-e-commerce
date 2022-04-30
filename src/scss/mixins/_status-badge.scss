@@ -1,0 +1,16 @@
+@mixin status-badge-hide-text() {
+    .status-badge__text {
+        display: none;
+    }
+    .status-badge__tooltip {
+        display: block;
+    }
+}
+@mixin status-badge-show-text() {
+    .status-badge__text {
+        display: block;
+    }
+    .status-badge__tooltip {
+        display: none;
+    }
+}

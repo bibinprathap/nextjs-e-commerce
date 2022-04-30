@@ -1,0 +1,33 @@
+/*
+// .dashboard
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.dashboard__orders {
+    margin-top: 24px;
+    width: 100%;
+}
+
+
+@include media-breakpoint-up(md) {
+    .dashboard__profile,
+    .dashboard__address {
+        width: calc(50% - 12px);
+    }
+}
+@include media-breakpoint-down(sm) {
+    .dashboard__profile,
+    .dashboard__address {
+        width: 100%;
+    }
+    .dashboard__address {
+        margin-top: 24px;
+    }
+}

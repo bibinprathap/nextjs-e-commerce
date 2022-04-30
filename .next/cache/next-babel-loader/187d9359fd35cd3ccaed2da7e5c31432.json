@@ -1,0 +1,1 @@
+{"ast":null,"code":"// application\nexport const COMPARE_ADD_ITEM = 'COMPARE_ADD_ITEM';\nexport const COMPARE_REMOVE_ITEM = 'COMPARE_REMOVE_ITEM';\nexport const COMPARE_CLEAR = 'COMPARE_CLEAR';","map":null,"metadata":{},"sourceType":"module"}

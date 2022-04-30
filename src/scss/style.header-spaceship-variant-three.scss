@@ -1,0 +1,47 @@
+@import 'custom-variables';
+
+$header-variant-name: spaceship-three;
+
+$header-scheme-based-on:                 dark  !default;
+$topbar-spaceship-start-scheme-based-on: theme !default;
+$topbar-spaceship-end-scheme-based-on:   theme !default;
+$indicator-counter-scheme-based-on:      dark  !default;
+
+// logo
+$logo-scheme: (
+    primary:   rgba(#fff, .9),
+    secondary: rgba(#fff, .9),
+) !default;
+
+// search spaceship
+$search-spaceship-top-shadow: 0 -1px 4px rgba(#000, .32), 0 -1px rgba(#000, .02) !default;
+
+// departments button
+$departments-button-scheme-based-on: (
+    normal: accent,
+) !default;
+
+// search spaceship input
+$search-spaceship-input-scheme: (
+    // normal
+    normal-font-color: #fff,
+    // hover
+    hover-bg-color:    rgba(#fff, .1),
+    // focus
+    focus-bg-color:    rgba(#fff, .2),
+) !default;
+
+// search spaceship button
+$search-spaceship-button-scheme: (
+    // normal
+    normal-font-color: rgba(#fff, .35),
+    // hover
+    hover-bg-color:    rgba(#fff, .1),
+    // active
+    active-bg-color:   rgba(#fff, .2),
+) !default;
+
+// indicator counter
+$indicator-counter-scheme-based-on: accent !default;
+
+@import 'style.header';

@@ -1,0 +1,69 @@
+/*
+// .card
+*/
+@import '../variables';
+@import '../mixins/card';
+@import '../mixins/breakpoints';
+@import '../mixins/loader';
+
+
+.card {
+    @include card;
+
+    border: none;
+    border-radius: 0;
+}
+.card__loader {
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    pointer-events: none;
+    z-index: 2;
+
+    @include loader-overlay(map_get($card-scheme, main), 0px, 0px, 48px, 2px, #000);
+
+    &:before {
+        opacity: 1;
+    }
+}
+.card--loading .card__loader {
+    pointer-events: auto;
+    opacity: 1;
+}
+.card-body--padding--2 {
+    padding: 2rem;
+
+    @include media-breakpoint-down(xs) {
+        padding: 1.5rem;
+    }
+}
+.card-divider {
+    height: 1px;
+    background: map_get($card-scheme, divider);
+}
+.card-header {
+    border-radius: 0;
+    background: transparent;
+    padding: 1.25rem 2rem;
+    border: none;
+
+    & > h5 {
+        margin-bottom: 0;
+    }
+}
+.card-footer {
+    border-radius: 0;
+    background: transparent;
+    padding: 1.25rem 2rem;
+    border: none;
+}
+.card-title {
+    font-size: 24px;
+    font-weight: $font-weight-medium;
+    padding-bottom: 8px;
+    border-bottom: 1px solid map_get($card-scheme, divider);
+    margin-bottom: 2rem;
+    margin-top: -4px;
+}
+.card-title--lg {
+    font-size: 28px;
+}

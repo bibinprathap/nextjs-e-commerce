@@ -1,0 +1,99 @@
+/*
+// base
+*/
+@import '../variables';
+@import '../mixins/direction';
+
+
+html {
+    height: 100%;
+}
+
+
+body {
+    height: 100%;
+    background: map_get($body-scheme, main);
+    color: map_get($body-scheme, opposite);
+    font-family: $body-font-family;
+    font-size: $body-font-size;
+    font-weight: $body-font-weight;
+    line-height: $body-line-height;
+    overflow-y: scroll;
+    backface-visibility: hidden;
+
+    @include direction {
+        text-align: $inline-start;
+        direction: $direction;
+    }
+}
+
+
+#__next {
+    height: 100%;
+}
+
+
+.header,
+.mobile-header {
+    display: none;
+}
+
+
+a {
+    color: $link-color;
+}
+a:hover {
+    color: $link-color;
+    text-decoration: none;
+}
+
+
+label {
+    margin-bottom: .25rem;
+    font-size: 15px;
+}
+
+
+h1 {
+    @if ($h1-font-family != null) { font-family: $h1-font-family; }
+    @if ($h1-font-size != null)   { font-size: $h1-font-size; }
+    @if ($h1-font-weight != null) { font-weight: $h1-font-weight; }
+    @if ($h1-font-style != null)  { font-style: $h1-font-style; }
+}
+h2 {
+    @if ($h2-font-family != null) { font-family: $h2-font-family; }
+    @if ($h2-font-size != null)   { font-size: $h2-font-size; }
+    @if ($h2-font-weight != null) { font-weight: $h2-font-weight; }
+    @if ($h2-font-style != null)  { font-style: $h2-font-style; }
+}
+h3 {
+    @if ($h3-font-family != null) { font-family: $h3-font-family; }
+    @if ($h3-font-size != null)   { font-size: $h3-font-size; }
+    @if ($h3-font-weight != null) { font-weight: $h3-font-weight; }
+    @if ($h3-font-style != null)  { font-style: $h3-font-style; }
+}
+h4 {
+    @if ($h4-font-family != null) { font-family: $h4-font-family; }
+    @if ($h4-font-size != null)   { font-size: $h4-font-size; }
+    @if ($h4-font-weight != null) { font-weight: $h4-font-weight; }
+    @if ($h4-font-style != null)  { font-style: $h4-font-style; }
+}
+h5 {
+    @if ($h5-font-family != null) { font-family: $h5-font-family; }
+    @if ($h5-font-size != null)   { font-size: $h5-font-size; }
+    @if ($h5-font-weight != null) { font-weight: $h5-font-weight; }
+    @if ($h5-font-style != null)  { font-style: $h5-font-style; }
+}
+h6 {
+    @if ($h6-font-family != null) { font-family: $h6-font-family; }
+    @if ($h6-font-size != null)   { font-size: $h6-font-size; }
+    @if ($h6-font-weight != null) { font-weight: $h6-font-weight; }
+    @if ($h6-font-style != null)  { font-style: $h6-font-style; }
+}
+
+
+.reflect-rtl {
+    @include direction {
+        transform: scaleX(#{$transform-direction});
+    }
+}

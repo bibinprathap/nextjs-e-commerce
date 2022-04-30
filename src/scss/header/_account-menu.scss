@@ -1,0 +1,156 @@
+/*
+// .account-menu
+*/
+@import '../variables';
+@import '../functions';
+@import '../mixins/direction';
+@import '../mixins/scheme';
+@import '../mixins/header';
+
+
+@include desktop-header-variant-selector {
+    .account-menu {
+        display: block;
+        width: 280px;
+        background-color: map_get($menu-scheme, main);
+        box-shadow: map_get($menu-scheme, shadow);
+        border-radius: 1.5px;
+        color: map_get($menu-scheme, opposite);
+    }
+    .account-menu__form {
+        padding: 0 30px 32px;
+    }
+    .account-menu__form-title {
+        text-align: center;
+        padding: 32px 0 26px;
+
+        @include scheme-font-weight($menu-scheme, opposite, $font-weight-medium);
+    }
+    .account-menu__form-button {
+        margin-top: 32px;
+        text-align: center;
+
+        .btn {
+            padding-left: 28px;
+            padding-right: 28px;
+        }
+    }
+    .account-menu__form-link {
+        font-size: 14px;
+        text-align: center;
+
+        a {
+            color: map_get($menu-scheme, opposite-alt);
+            transition: color .1s;
+        }
+        a:hover {
+            color: inherit;
+        }
+    }
+    .account-menu__form-forgot {
+        position: relative;
+    }
+    .account-menu__form-forgot-link {
+        $local-offset: 5px;
+
+        position: absolute;
+        top: $local-offset;
+        bottom: $local-offset;
+        border-radius: 2px;
+        font-size: 12px;
+        background: map_get($form-control-button-scheme, normal-bg-color);
+        color: map_get($form-control-button-scheme, normal-font-color);
+        display: flex;
+        align-items: center;
+        padding: 0 7px;
+        transition:
+            background .1s,
+            color .1s;
+
+        @include direction {
+            #{$inset-inline-end}: $local-offset;
+        }
+
+        &:hover {
+            background: map_get($form-control-button-scheme, hover-bg-color);
+            color: map_get($form-control-button-scheme, hover-font-color);
+        }
+        &:active {
+            background: map_get($form-control-button-scheme, active-bg-color);
+            color: map_get($form-control-button-scheme, active-font-color);
+        }
+    }
+    .account-menu__divider {
+        height: 1px;
+        background: map_get($menu-scheme, divider);
+    }
+    .account-menu__user {
+        display: flex;
+        align-items: center;
+        padding: 14px 20px;
+        color: inherit;
+
+        &:hover {
+            color: inherit;
+            background: map_get($menu-scheme, hover);
+        }
+    }
+    .account-menu__user-avatar {
+        width: 44px;
+        flex-shrink: 0;
+
+        @include direction {
+            #{$margin-inline-end}: 14px;
+        }
+
+        img {
+            border-radius: 100%;
+            max-width: 100%;
+        }
+    }
+    .account-menu__user-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .account-menu__user-name {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .account-menu__user-email {
+        font-size: 14px;
+        line-height: 18px;
+        color: map_get($menu-scheme, opposite-alt);
+        margin-top: 1px;
+    }
+    .account-menu__links {
+        list-style: none;
+        padding: 12px 0;
+        margin: 0;
+
+        a,
+        button {
+            display: block;
+            color: inherit;
+            font-size: 15px;
+            font-family: inherit;
+            line-height: inherit;
+            padding: 5px 20px;
+            border: none;
+            width: 100%;
+            background: transparent;
+
+            @include direction {
+                text-align: $inline-start;
+            }
+            @include scheme-font-weight($menu-scheme, opposite, $font-weight-medium);
+
+            &:hover {
+                background: map_get($menu-scheme, hover);
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

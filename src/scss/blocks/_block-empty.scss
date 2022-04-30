@@ -1,0 +1,21 @@
+/*
+// .block-empty
+*/
+@import '../variables';
+
+
+.block-empty {}
+.block-empty__body {
+    text-align: center;
+}
+.block-empty__title {
+    margin-top: 12px;
+    font-size: 36px;
+    font-weight: $font-weight-bold;
+}
+.block-empty__message {
+    margin-top: 16px;
+}
+.block-empty__action {
+    margin-top: 32px;
+}

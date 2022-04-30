@@ -1,0 +1,1 @@
+{"ast":null,"code":"// application\nimport Page from './[slug]/index';\nexport { getServerSideProps } from './[slug]/index';\nexport default Page;","map":null,"metadata":{},"sourceType":"module"}

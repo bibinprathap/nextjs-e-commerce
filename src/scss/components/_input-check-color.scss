@@ -1,0 +1,97 @@
+/*
+// .input-check-color
+*/
+@import '../variables';
+
+
+$local-box-size: 22px;
+$local-box-disabled-size: 22px;
+$local-stick-length: 34px;
+$local-border-radius: 1.2px;
+$local-transition-duration: .15s;
+
+
+.input-check-color {
+    display: inline-block;
+}
+.input-check-color__body {
+    display: block;
+    position: relative;
+    width: $local-box-size;
+    height: $local-box-size;
+    border-radius: $local-border-radius;
+    overflow: hidden;
+    cursor: inherit;
+    margin: 0;
+}
+.input-check-color__input {
+    position: absolute;
+    visibility: hidden;
+}
+.input-check-color__box {
+    display: block;
+    width: $local-box-size;
+    height: $local-box-size;
+    border-radius: $local-border-radius;
+    background: currentColor;
+    cursor: inherit;
+}
+.input-check-color__icon {
+    position: absolute;
+    left: (4px + ($local-box-size - 20px) / 2);
+    top: (5px + ($local-box-size - 20px) / 2);
+    fill: $input-check-color-arrow-light-color;
+    transform: scale(0);
+    transition: transform $local-transition-duration;
+
+    svg {
+        display: block;
+    }
+}
+.input-check-color__input:checked ~ {
+    .input-check-color__icon {
+        transform: scale(1);
+    }
+}
+.input-check-color__input:disabled {
+    cursor: default;
+}
+.input-check-color__input:disabled ~ {
+    .input-check-color__box {
+        position: relative;
+        left: ($local-box-size - $local-box-disabled-size) / 2;
+        top: ($local-box-size - $local-box-disabled-size) / 2;
+        width: $local-box-disabled-size;
+        height: $local-box-disabled-size;
+        opacity: .5;
+        cursor: default;
+    }
+    .input-check-color__stick {
+        pointer-events: none;
+        display: block;
+        position: absolute;
+        width: 2px;
+        border-radius: 1px;
+        height: $local-stick-length;
+        left: calc(50% - 1px);
+        top: ($local-box-size - $local-stick-length) / 2;
+        background: $input-check-color-stick-color;
+        transform: rotateZ(45deg);
+        transform-origin: center center;
+    }
+}
+
+
+.input-check-color--light {
+    .input-check-color__icon {
+        fill: $input-check-color-arrow-dark-color;
+    }
+}
+.input-check-color--white {
+    .input-check-color__box {
+        box-shadow: $input-check-color-white-shadow;
+    }
+    .input-check-color__icon {
+        fill: $input-check-color-white-arrow-color;
+    }
+}

@@ -1,0 +1,129 @@
+@import 'loader';
+
+
+$local-btn-border-width: 1px;
+$local-btn-height: (
+    xl: 60px,
+    lg: 42px,
+    nl: 36px,
+    sm: 30px,
+    xs: 24px,
+);
+$local-btn-padding-x: (
+    xl: 40px,
+    lg: 24px,
+    nl: 16px,
+    sm: 12px,
+    xs: 9px,
+);
+$local-btn-font-size: (
+    xl: 20px,
+    lg: 18px,
+    nl: 16px,
+    sm: 14px,
+    xs: 13px,
+);
+$local-btn-line-height: (
+    xl: 26px,
+    lg: 22px,
+    nl: 19px,
+    sm: 17px,
+    xs: 15px,
+);
+
+
+@mixin btn() {
+    border: none;
+    border-radius: 2px;
+    fill: currentColor;
+    font-weight: $font-weight-medium;
+}
+
+@mixin btn-state-bg-color($name, $scheme) {
+    border-color: map_get($scheme, #{$name}-bg-color);
+    background: map_get($scheme, #{$name}-bg-color);
+}
+
+@mixin btn-state($name, $scheme) {
+    @include btn-state-bg-color($name, $scheme);
+
+    color: map_get($scheme, #{$name}-font-color);
+}
+
+@mixin btn-hide-content() {
+    /* hide button content */
+    &,
+        /* hover */
+    &:hover,
+        /* focus */
+    &.focus,
+    &:focus,
+        /* active */
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active,
+        /* disabled */
+    &.disabled,
+    &:disabled {
+        color: transparent;
+        fill: transparent;
+    }
+}
+
+@mixin btn-variant($variant-name, $scheme) {
+    .btn-#{$variant-name} {
+        &:hover {
+            @include btn-state(hover, $scheme);
+        }
+
+        &,
+        &.disabled,
+        &:disabled {
+            @include btn-state(normal, $scheme);
+        }
+
+        &.focus,
+        &:focus,
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus {
+            @include btn-state(hover, $scheme);
+
+            box-shadow: none;
+        }
+
+        &:not(:disabled):not(.disabled):active,
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus {
+            @include btn-state(active, $scheme);
+        }
+
+        &.btn-loading:not(:disabled):not(.disabled),
+        &.btn-loading:not(:disabled):not(.disabled):active,
+        &.btn-loading:not(:disabled):not(.disabled).active  {
+            @include btn-state-bg-color(normal, $scheme);
+
+            cursor: default;
+        }
+
+        &.btn-loading {
+            @include btn-hide-content;
+        }
+        &.btn-loading:after {
+            @include loader-color(map_get($scheme, loader-color));
+        }
+    }
+}
+
+@mixin btn-size($size) {
+    &:not(.btn-icon) {
+        font-size: map_get($local-btn-font-size, $size);
+        line-height: map_get($local-btn-line-height, $size);
+        padding:
+            calc(#{map_get($local-btn-height, $size) - map_get($local-btn-line-height, $size)} / 2)
+            map_get($local-btn-padding-x, $size);
+    }
+    &.btn-icon {
+        height: map_get($local-btn-height, $size);
+        width: map_get($local-btn-height, $size);
+    }
+}

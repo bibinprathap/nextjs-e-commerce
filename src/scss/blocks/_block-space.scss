@@ -1,0 +1,60 @@
+/*
+// .block-space
+*/
+@import '../variables';
+@import '../mixins/breakpoints';
+
+
+.block-space {
+    display: block;
+}
+.block-space--layout--after-header {
+    @include media-breakpoint-up(xl) {
+        height: (24px + 60px);
+
+        &.block-space--header--classic {
+            height: 72px;
+        }
+    }
+    @include media-breakpoint-down(lg) {
+        height: 56px;
+    }
+    @include media-breakpoint-down(sm) {
+        height: 48px;
+    }
+    @include media-breakpoint-down(xs) {
+        height: 36px;
+    }
+}
+.block-space--layout--before-footer {
+    height: 80px;
+
+    @include media-breakpoint-down(lg) {
+        height: 72px;
+    }
+    @include media-breakpoint-down(xs) {
+        height: 48px;
+    }
+}
+.block-space--layout--divider-xl {
+    height: 72px;
+}
+.block-space--layout--divider-lg {
+    height: 60px;
+}
+.block-space--layout--divider-nl {
+    height: 52px;
+}
+.block-space--layout--divider-sm {
+    height: 40px;
+}
+.block-space--layout--divider-xs {
+    height: 36px;
+}
+.block-space--layout--spaceship-ledge-height {
+    height: $spaceship-ledge-height;
+
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}

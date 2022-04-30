@@ -1,0 +1,13 @@
+@import '../variables';
+
+@mixin desktop-header-variant-selector() {
+    .site--desktop-header--#{$header-variant-name} {
+        @content;
+    }
+}
+
+@mixin mobile-header-variant-selector() {
+    .site--mobile-header--#{$header-variant-name} {
+        @content;
+    }
+}

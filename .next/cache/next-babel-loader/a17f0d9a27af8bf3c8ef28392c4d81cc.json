@@ -1,0 +1,1 @@
+{"ast":null,"code":"// application\nexport const QUICKVIEW_OPEN = 'QUICKVIEW_OPEN';\nexport const QUICKVIEW_CLOSE = 'QUICKVIEW_CLOSE';","map":null,"metadata":{},"sourceType":"module"}

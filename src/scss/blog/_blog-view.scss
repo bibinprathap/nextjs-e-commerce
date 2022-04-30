@@ -1,0 +1,59 @@
+/*
+// .blog-view
+*/
+@import '../variables';
+@import '../mixins/direction';
+@import '../mixins/breakpoints';
+
+
+.blog-view {}
+.blog-view__body {
+    display: flex;
+    justify-content: center;
+}
+.blog-view__item-posts {
+    flex-grow: 1;
+}
+.blog-view__item-sidebar {
+    width: 332px;
+    flex-shrink: 0;
+}
+.blog-view__item + .blog-view__item {
+    @include direction {
+        #{$margin-inline-start}: 48px;
+    }
+}
+
+
+.blog-view--layout--classic {
+    .blog-view__item-posts {
+        max-width: 730px;
+    }
+}
+
+
+@include media-breakpoint-only(lg) {
+    .blog-view__item-sidebar {
+        width: 290px;
+    }
+    .blog-view__item + .blog-view__item {
+        @include direction {
+            #{$margin-inline-start}: 36px;
+        }
+    }
+}
+@include media-breakpoint-down(md) {
+    .blog-view__body {
+        flex-direction: column;
+    }
+    .blog-view__item-sidebar {
+        width: 100%;
+        margin-top: 48px;
+        order: 1;
+    }
+    .blog-view__item + .blog-view__item {
+        @include direction {
+            #{$margin-inline-start}: 0;
+        }
+    }
+}

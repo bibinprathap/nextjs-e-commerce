@@ -1,0 +1,20 @@
+@mixin grid-override-gutter($gutter) {
+    .row {
+        margin: 0 #{-($gutter / 2)};
+    }
+
+    .col {
+        padding: 0 ($gutter / 2);
+    }
+
+    @for $i from 1 through 12 {
+        .col-#{$i} {
+            padding: 0 ($gutter / 2);
+        }
+    }
+    @for $i from 1 through 5 {
+        .col-1of#{$i} {
+            padding: 0 ($gutter / 2);
+        }
+    }
+}
