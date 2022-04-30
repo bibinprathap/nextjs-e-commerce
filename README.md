@@ -16,8 +16,8 @@ Search, Redis Caching. Hosted on Digital ocean Ubendu server
 
 <h3 align="left">Support:</h3>
 <p><a href="https://www.buymeacoffee.com/bibinprathap"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="bibinprathap" /></a></p><br><br>
-
- Mobile Application of this ecommerce application is developed using Flutter .Source code of this Flutter mobile app is available on https://github.com/bibinprathap/flutter-e-commerce-app
+## Flutter E Commerce Mobile App
+Mobile Application of this ecommerce application is developed using Flutter .Source code of this Flutter mobile app is available on https://github.com/bibinprathap/flutter-e-commerce-app
     
 <p align="center">
 <img src="https://cdn.rawgit.com/steverichey/google-play-badge-svg/master/img/fr_get.svg" width="50%">
