@@ -513,4 +513,159 @@ $direction:       ltr;   // specify the direction you need (ltr or rtl)
 $both-directions: false; // set to false to disable style compilation
                          // for two directions
 ```
- 
+ # Fonts
+
+<div class="docs-typography">
+
+We used two fonts in this template:
+
+-   **Roboto** (Google Web Font:
+    <https://fonts.google.com/specimen/Roboto> ) The main font used in
+    the template.
+
+-   **FontAwesome** ( <https://fontawesome.com/> ) Icon Font to display
+    some icons in the template.
+
+</div>
+    # Translation
+
+<div class="docs-typography">
+
+The language configuration is in the `src/data/shopLanguages.ts` file.
+
+Set the default language and an array of available languages:
+
+``` typescript
+const dataShopLanguages: ILanguage[] = [
+    {
+        locale: 'en',
+        code: 'en',
+        name: 'English',
+        icon: '/images/languages/language-1.png',
+        direction: 'ltr',
+    },
+    // ...
+];
+
+export const dataShopDefaultLocale = 'en';
+```
+
+## How to translate template?
+
+1.  Go to `public/i18n/` directory.
+
+2.  Then copy the `en.json` file and specify its name, for example
+    `[LANGUAGE_LOCALE].json`.
+
+3.  Open the copied file and translate all entries.
+
+4.  Add a new language to the configuration.  
+    `src/data/shopLanguages.ts`
+
+    ``` typescript
+    const dataShopLanguages: ILanguage[] = [
+        {
+            locale: 'en',
+            code: 'en',
+            name: 'English',
+            icon: '/images/languages/language-1.png',
+            direction: 'ltr',
+        },
+        {
+            locale: LANGUAGE_LOCALE,
+            code: LANGUAGE_CODE,
+            name: LANGUAGE_NAME,
+            icon: LANGUAGE_ICON, // path to the language icon
+            direction: LANGUAGE_DIRECTION, // ltr or rtl
+        },
+    ];
+    ```
+
+## Where can I get flag icons?
+
+You can get flag icons from the [https://github.com/gosquared/flags][]
+repository.
+
+The template uses a 24px (24.png) version of the icons.
+
+</div>
+
+  [https://github.com/gosquared/flags]: https://github.com/gosquared/flags/tree/master/src/flags
+
+# Currencies
+
+<div class="docs-typography">
+
+Currency configuration is in the `src/data/shopCurrencies.ts` file.
+
+Find the following piece of code and set the default currency and an
+array of available currencies:
+
+``` typescript
+const dataShopCurrencies: ICurrency[] = [
+    {
+        code: 'USD',
+        symbol: '$',
+        name: 'US Dollar',
+        rate: 1,
+    },
+    // ...
+];
+
+const dataShopDefaultCurrencyCode = 'USD';
+```
+
+</div>
+# Changelog
+
+<div class="docs-typography">
+
+**Version 1.2.0** – May 1, 2022
+
+-   Fixed: The provided \`href\` (/catalog/\[slug\]/products) value is
+    missing query values (slug) to be interpolated properly;
+-   Updated: Next.js from 10.2.0 to 11.1.2;
+-   Updated: Other dependencies.
+
+**Version 1.1.0** – january 5, 2022
+
+-   Added: Support for cursor based navigation;
+-   Fixed: range filter incorrectly rounds min and max values if they
+    have the same value;
+-   Fixed: Bug of displaying slides of a react-slick if the infinite
+    property is true and the slides are not enough to fill the entire
+    frame;
+-   Updated: Next.js from 9.5.2 to 10.2.0;
+-   Updated: React from 16.13.1 to 17.0.2;
+-   Updated: react-hook-form from 6.13.1 to 7.4.0;
+-   Updated: Other dependencies.
+
+**Version 1.0.0** – September 2, 2021
+
+-   Initial Release.
+
+</div>
+
+# Credits
+
+<div class="docs-typography">
+
+-   React (<https://reactjs.org/>)
+-   Next.js (<https://nextjs.org/>)
+-   Next Redux Wrapper
+    (<https://github.com/kirill-konshin/next-redux-wrapper>)
+-   React Hook Form (<https://react-hook-form.com/>)
+-   React Input Range (<https://github.com/davidchin/react-input-range>)
+-   React Intl (<https://www.npmjs.com/package/react-intl>)
+-   React Redux (<https://react-redux.js.org/>)
+-   React Slick (<https://react-slick.neostack.com/>)
+-   React Toastify (<https://fkhadra.github.io/react-toastify/>)
+-   Reactstrap (<https://reactstrap.github.io/>)
+-   Bootstrap (<https://getbootstrap.com/>)
+-   Classnames (<https://github.com/JedWatson/classnames>)
+-   Redux (<https://redux.js.org/>)
+-   Redux Thunk (<https://github.com/reduxjs/redux-thunk>)
+-   PhotoSwipe (<https://photoswipe.com/>)
+-   query-string (<https://github.com/sindresorhus/query-string>)
+
+</div>
