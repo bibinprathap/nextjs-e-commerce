@@ -318,3 +318,81 @@ store/
     import '../scss/style.mobile-header-variant-one.scss';
     import '../scss/style.mobile-header-variant-two.scss';
     ```
+  <h1 class="docs-section__title">Third-Party Packages</h1>
+ <p>This template uses third-party modules from the following packages:</p>
+-   **React** ( [https://reactjs.org/][] )  
+    A JavaScript library for building user interfaces
+
+-   **Next.js** ( [https://nextjs.org/][] )  
+    The React Framework for server side rendering.
+
+-   **Next Redux Wrapper** (
+    [https://github.com/kirill-konshin/next-redux-wrapper][] )  
+    A HOC that brings Next.js and Redux together.
+
+-   **React Hook Form** ( [https://react-hook-form.com/][] )  
+    Performant, flexible and extensible forms with easy-to-use
+    validation.
+
+-   **React Input Range** (
+    [https://github.com/davidchin/react-input-range][] )  
+    React component for inputting numeric values within a range (range
+    slider).
+
+-   **React Intl** ( [https://www.npmjs.com/package/react-intl][] )  
+    Internationalize React apps. This library provides React components
+    and an API to format dates, numbers, and strings, including
+    pluralization and handling translations.
+
+-   **React Redux** ( [https://react-redux.js.org/][] )  
+    Official React bindings for Redux.
+
+-   **React Slick** ( [https://react-slick.neostack.com/][] )  
+    React carousel component.
+
+  [https://reactjs.org/]: https://reactjs.org/
+  [https://nextjs.org/]: https://nextjs.org/
+  [https://github.com/kirill-konshin/next-redux-wrapper]: https://github.com/kirill-konshin/next-redux-wrapper
+  [https://react-hook-form.com/]: https://react-hook-form.com/
+  [https://github.com/davidchin/react-input-range]: https://github.com/davidchin/react-input-range
+  [https://www.npmjs.com/package/react-intl]: https://www.npmjs.com/package/react-intl
+  [https://react-redux.js.org/]: https://react-redux.js.org/
+  [https://react-slick.neostack.com/]: https://react-slick.neostack.com/
+-   **React Toastify** ( [https://fkhadra.github.io/react-toastify/][]
+    )  
+    React notification made easy.
+
+-   **Reactstrap** ( [https://reactstrap.github.io/][] )  
+    Simple React Bootstrap 4 components.
+
+  [https://fkhadra.github.io/react-toastify/]: https://fkhadra.github.io/react-toastify/
+  [https://reactstrap.github.io/]: https://reactstrap.github.io/
+
+  <p>The following libraries and frameworks are also used:</p>
+-   **Bootstrap** ( [https://getbootstrap.com/][] )  
+    Bootstrap is an open source toolkit for developing with HTML, CSS,
+    and JS.
+
+-   **Classnames** ( [https://github.com/JedWatson/classnames][] )  
+    A simple javascript utility for conditionally joining classNames
+    together.
+
+-   **Redux** ( [https://redux.js.org/][] )  
+    Predictable state container for JavaScript apps.
+
+-   **Redux Thunk** ( [https://github.com/reduxjs/redux-thunk][] )  
+    Thunk middleware for Redux.
+
+-   **PhotoSwipe** ( [https://photoswipe.com/][] )  
+    JavaScript gallery, no dependencies. Used on the product page.
+
+-   **query-string** ( [https://github.com/sindresorhus/query-string][]
+    )  
+    Parse and stringify URL query strings.
+
+  [https://getbootstrap.com/]: https://getbootstrap.com/
+  [https://github.com/JedWatson/classnames]: https://github.com/JedWatson/classnames
+  [https://redux.js.org/]: https://redux.js.org/
+  [https://github.com/reduxjs/redux-thunk]: https://github.com/reduxjs/redux-thunk
+  [https://photoswipe.com/]: https://photoswipe.com/
+  [https://github.com/sindresorhus/query-string]: https://github.com/sindresorhus/query-string
