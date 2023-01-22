@@ -1,9 +1,9 @@
 const theme = {
     name: 'Royal Auto Parts Market',
-    url: 'https://adroitclouderp.com/full-stack-developer/React-Power-BI-HR-Asset.html',
+    url: 'https://mobile-web-gis.pro/full-stack-developer/React-Power-BI-HR-Asset.html',
     author: {
         name: 'Bibin Prathap',
-        profile_url: 'https://adroitclouderp.com/full-stack-developer/React-Power-BI-HR-Asset.html',
+        profile_url: 'https://mobile-web-gis.pro/full-stack-developer/React-Power-BI-HR-Asset.html',
     },
     contacts: {
         address: ['AL NESR ALTHAHABI AUTO SPARE PARTS TR.P.O BOX:31893, BMW ROAD, SHARJAH, U.A.E Ph No. +97165391594',
