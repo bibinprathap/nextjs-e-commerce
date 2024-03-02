@@ -678,5 +678,5 @@ const dataShopDefaultCurrencyCode = 'USD';
 -   Redux Thunk (<https://github.com/reduxjs/redux-thunk>)
 -   PhotoSwipe (<https://photoswipe.com/>)
 -   query-string (<https://github.com/sindresorhus/query-string>)
-
+<a href="https://experttutorshub.com" target="_blank"> experttutorshub.com </a> 
 </div>
