@@ -2,7 +2,17 @@
 
 ## Next.js Shopping Website
 ![alt nextjs-e-commerce-shoping-website](https://media-exp1.licdn.com/dms/image/C4E2DAQGwkKGYdH0BIA/profile-treasury-image-shrink_800_800/0/1609766935867?e=2147483647&v=beta&t=6DJeDzQ4QExqo8q4JpX5bsAWymz_wwuDOuu5PxOC9Q0) 
+<p align="center"> 
+<img alt="stars" title="stars" src="https://img.shields.io/github/stars/bibinprathap/nextjs-e-commerce" />
+<img alt="issues" title="issues" src="https://img.shields.io/github/issues/bibinprathap/nextjs-e-commerce" />
+<img alt="forks" title="forks" src="https://img.shields.io/github/forks/bibinprathap/nextjs-e-commerce" />
+<img alt="stars" title="stars" src="https://img.shields.io/github/stars/bibinprathap/nextjs-e-commerce" />
+<img alt="license" title="license" src="https://img.shields.io/github/license/bibinprathap/nextjs-e-commerce" />
+<a href="https://linkedin.com/in/bibin-prathap-4a34a489/">
+<img src="https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin&labelColor=blue">
+</a>
 
+</p>
 This is a shopping website developed using Next.js, Node.js, React, Redux, Algoliya
 Search, Redis Caching. Hosted on Digital ocean Ubendu server
 
