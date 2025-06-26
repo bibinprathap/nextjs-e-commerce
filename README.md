@@ -17,7 +17,7 @@
 
 </p>
 
-# Whatsapp [wa.me/917994671704](http://wa.me/917994671704) 
+# Whatsapp [wa.me/917994671704](http://wa.me/917994671704)
 
 This is a shopping website developed using Next.js, Node.js, React, Redux, Algoliya
 Search, Redis Caching. Hosted on Digital ocean Ubendu server
